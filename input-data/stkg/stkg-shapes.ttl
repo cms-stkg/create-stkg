@@ -1,0 +1,54 @@
+@prefix sh:     <http://www.w3.org/ns/shacl#> .
+@prefix stkg:   <http://example.org/stkg/> .
+@prefix geo:    <http://www.w3.org/2003/01/geo/wgs84_pos#> .
+@prefix xsd:    <http://www.w3.org/2001/XMLSchema#> .
+
+stkg:PositionObservationShape a sh:NodeShape ;
+  sh:targetClass stkg:PositionObservation ;
+  sh:property [
+    sh:path stkg:observedEntity ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+  ] ;
+  sh:property [
+    sh:path stkg:time ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+    sh:datatype xsd:dateTime ;
+  ] ;
+  sh:property [
+    sh:path geo:lat ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+    sh:datatype xsd:decimal ;
+  ] ;
+  sh:property [
+    sh:path geo:long ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+    sh:datatype xsd:decimal ;
+  ] .
+
+stkg:SpatialRelationObservationShape a sh:NodeShape ;
+  sh:targetClass stkg:SpatialRelationObservation ;
+  sh:property [
+    sh:path stkg:subjectEntity ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+  ] ;
+  sh:property [
+    sh:path stkg:objectEntity ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+  ] ;
+  sh:property [
+    sh:path stkg:relationType ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+  ] ;
+  sh:property [
+    sh:path stkg:time ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+    sh:datatype xsd:dateTime ;
+  ] .

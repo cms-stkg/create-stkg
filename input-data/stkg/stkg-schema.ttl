@@ -1,0 +1,49 @@
+@prefix stkg:    <http://example.org/stkg/> .
+@prefix stkgrel: <http://example.org/stkg/relation/> .
+@prefix schema:  <http://schema.org/> .
+@prefix geo:     <http://www.w3.org/2003/01/geo/wgs84_pos#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+
+### Classes
+stkg:Platform a rdfs:Class ;
+  rdfs:label "Platform"@en .
+
+stkg:PositionObservation a rdfs:Class ;
+  rdfs:label "Position Observation"@en .
+
+stkg:SpatialRelationObservation a rdfs:Class ;
+  rdfs:label "Spatial Relation Observation"@en .
+
+### Properties
+stkg:observedEntity a rdf:Property ;
+  rdfs:domain stkg:PositionObservation ;
+  rdfs:range  stkg:Platform ;
+  rdfs:label "observed entity"@en .
+
+stkg:time a rdf:Property ;
+  rdfs:domain schema:Event ;
+  rdfs:range  xsd:dateTime ;
+  rdfs:label "time"@en .
+
+stkg:subjectEntity a rdf:Property ;
+  rdfs:domain stkg:SpatialRelationObservation ;
+  rdfs:range  stkg:Platform ;
+  rdfs:label "subject entity"@en .
+
+stkg:objectEntity a rdf:Property ;
+  rdfs:domain stkg:SpatialRelationObservation ;
+  rdfs:range  stkg:Platform ;
+  rdfs:label "object entity"@en .
+
+stkg:relationType a rdf:Property ;
+  rdfs:domain stkg:SpatialRelationObservation ;
+  rdfs:range  rdfs:Resource ;
+  rdfs:label "relation type"@en .
+
+stkg:sourceFile a rdf:Property ;
+  rdfs:label "source file"@en .
+
+stkg:sourceRow a rdf:Property ;
+  rdfs:label "source row index"@en .

@@ -1,0 +1,133 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <http://schema.org/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix wd: <http://www.wikidata.org/entity/> .
+@prefix wd: <http://www.wikidata.org/entity/> .
+@prefix wdt: <http://www.wikidata.org/prop/direct/> .
+@prefix wpq: <http://www.wikidata.org/prop/qualifier/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# Dummy item for the reader to start here
+wd:Elvis a wikibase:Item .
+
+# Only one disjoint class should survive
+
+wd:Q_Inconsistent wdt:P31 wd:Q_rock_singer, schema:Organization .
+
+# Web pages should become objects of schema:mainEntityOfPage
+<https://elvis.com> schema:about wd:Q_Elvis .
+
+wd:Q_Elvis wdt:P31 wd:Q_rock_singer;
+    # These are shortcuts that should not appear
+    wdt:P31 schema:Person ;
+    wdt:P31 wd:Q_singer ;
+	# Test cardinality constraint: Only one birth place should stay
+	wdt:P19 wd:Q_birth_place_1;
+	wdt:P19 wd:Q_birth_place_2;
+	# Check domain: the place should be removed
+	wdt:P150 wd:Q_inconsistent_place;
+	# Check bad property: fact should be removed
+	wdt:P10000000 wd:Q_bad_object;
+	# Normal range: fact should survive
+	wdt:P40 wd:Q_child;	
+	# Doctoral titles are OK
+	wdt:P512 wd:Q_doctoralDegree ;
+	# Good URIs should stay
+	wdt:P18 "http://good-image.com"^^xsd:anyURI ; 
+	# Bad URIs should go away
+	wdt:P18 "http://elibrary.unm.edu/sora/jrr/index.php#http://elibrary.unm.edu/sora/jrr/index.php#" ;
+    # Comments that shorter than others should go away
+    schema:description "Elvis Presley"@en, "Elvis Presley, the great singer"@en ;
+	# Literal range with invalid date should go away
+	wdt:P570 "0000-02-22T00:00:00Z"^^xsd:dateTime ;
+	# Literal range: should be OK
+	wdt:P569 "1935"^^xsd:gYear .
+	
+# Start and end dates should survive
+wd:Q_Elvis p:P40 s:Q_Elvis-5b0fdcdf-4815-583c-4dd3-914e1c5d95c0 .
+
+s:Q_Elvis-5b0fdcdf-4815-583c-4dd3-914e1c5d95c0 a wikibase:Statement,
+		wikibase:BestRank ;
+	wikibase:rank wikibase:NormalRank ;
+	ps:P40 wd:Q_child ;
+	psv:P1198 v:6c2312ad7ae86b184ccc35589ceaa308 ;
+	psn:P1198 v:ec871d8e6899d8d51a57e73ba5ef6cd7 ;
+	pq:P585 "2014-01-01T00:00:00Z"^^xsd:dateTime ;
+	pqv:P585 v:c91277cf69500270615dc91eeba92a40 ;
+	prov:wasDerivedFrom ref:da8b01072f4a5eb69892a71023670b9a528a0b97 .
+
+
+# Animals become instances of taxon
+wd:Q_tiger wdt:P171 wd:Q_cat ;
+    wdt:P1034 wd:Q_sheep .
+    
+# Disjoint ranges
+wd:Q_composition  wdt:P31 wd:Q207628;
+	wdt:P86 wd:Q_person_or_band .
+
+# Patterns
+wd:Q_product wdt:P31 wd:Q2424752;
+		wdt:P3962 "12345678".
+
+# Patterns
+wd:Q_org wdt:P31 schema:Organization;
+		wdt:P1451 "Blah blah"@en.
+
+# Geo locations
+wd:Q31  wdt:P31	schema:Country ;
+	schema:geo      "Point(4.6680555555556 50.641111111111)"^^geo:wktLiteral        .
+
+# Dates
+wd:Q31 wdt:P1082 "+11825551"^^xsd:decimal .
+wd:Q31 p:P1082 wds:Q31-93ba9638-404b-66ac-2733-e6292666a326 .
+wds:Q31-93ba9638-404b-66ac-2733-e6292666a326 a wikibase:Statement ;
+        wikibase:rank wikibase:NormalRank ;
+        ps:P1082 "+11825551"^^xsd:decimal ;
+        psv:P1082 wdv:61c224825d1bb84ae41079562dbf1d8d ;
+        pq:P585 "2014-01-01T00:00:00Z"^^xsd:dateTime ;
+        pqv:P585 wdv:867dd64466aae4fb2a651732ec5a1744 ;
+        prov:wasDerivedFrom wdref:9b216970abe8fb8f730ebadbbfecc1b19d17c900 .
+		
+# A single date should survive
+wd:Q312 wdt:P31 schema:Corporation ;
+    wdt:P571 "1976-04-01T00:00:00Z"^^xsd:dateTime,
+             "1976-01-01T00:00:00Z"^^xsd:dateTime .
+
+# Fictional entities
+wd:Q_fictional wdt:P31 wd:Q2593744, wd:Q_rock_singer ;	
+	schema:geo      "Point(4.6680555555556 50.641111111111)"^^geo:wktLiteral  ;
+	wdt:P19 wd:Q_birth_place_1 ;
+	wdt:P1080 wd:Q_book .
+	
+# Classes should survive
+
+<https://de.wikipedia.org/wiki/Mensch> a schema:Article ;
+	schema:about wd:Q_singer ;
+	schema:inLanguage "de" ;
+	schema:isPartOf <https://de.wikipedia.org/> ;
+	schema:name "Saenger"@de .
+	
+wd:Q_singer  schema:name "singer"@en ;
+	skos:prefLabel "singer"@en ;
+	schema:name "singer"@en ;
+	wdt:P646	<https://freebase.com/id> ;
+	schema:name "chanteur"@fr ;
+	schema:name "chanteur plus en détail"@fr ;
+	skos:prefLabel "chanteur pref"@fr ;
+	schema:name "chanteur"@fr ;	
+	schema:description "this is a singer"@en;
+	skos:altLabel "this is a human singer"@en .
+	
+# The labels of the second class should not survive, because both classes map to Worker
+wd:Q327055 schema:name "label that survives"@en ;
+    wdt:P646	<https://freebase.com/first-id-that-survives> .
+wd:Q702269 schema:name "label that does not survive"@en ;
+	wdt:P646	<https://freebase.com/second-id-that-survives> .
+    
+# Properties survive
+wdt:P26 schema:name "spouse of person"@en .
+
+

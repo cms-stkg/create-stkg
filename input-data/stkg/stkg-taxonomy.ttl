@@ -1,0 +1,8 @@
+@prefix stkg:   <http://example.org/stkg/> .
+@prefix schema: <http://schema.org/> .
+@prefix rdfs:   <http://www.w3.org/2000/01/rdf-schema#> .
+
+stkg:Platform rdfs:subClassOf schema:Thing .
+
+stkg:PositionObservation rdfs:subClassOf schema:Event .
+stkg:SpatialRelationObservation rdfs:subClassOf schema:Event .

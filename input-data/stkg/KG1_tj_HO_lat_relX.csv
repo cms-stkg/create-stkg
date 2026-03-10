@@ -1,0 +1,501 @@
+﻿time,BF_object_A,lat_A,long_A,BF_object_B,lat_B,long_B,BF_object_C,lat_C,long_C,A-B,B-A,B-C,C-B,A-C,C-A
++2026-02-05T22:36:32Z,T-72,35,130.0000878,T-62,35.0000541,130.000101,BTR-80,35.0000541,130.01756,side by side,side by side,in back of,in front of,in back of,in front of
++2026-02-05T22:36:33Z,T-72,35,130.0001756,T-62,35.0000541,130.0002019,BTR-80,35.0000541,130.01756,side by side,side by side,in back of,in front of,in back of,in front of
++2026-02-05T22:36:34Z,T-72,35,130.0002634,T-62,35.0000541,130.0003029,BTR-80,35.0000541,130.01756,side by side,side by side,in back of,in front of,in back of,in front of
++2026-02-05T22:36:35Z,T-72,35,130.0003512,T-62,35.0000541,130.0004039,BTR-80,35.0000541,130.01756,in back of,in front of,in back of,in front of,in back of,in front of
++2026-02-05T22:36:36Z,T-72,35,130.000439,T-62,35.0000541,130.0005049,BTR-80,35.0000541,130.01756,in back of,in front of,in back of,in front of,in back of,in front of
++2026-02-05T22:36:37Z,T-72,35,130.0005268,T-62,35.0000541,130.0006058,BTR-80,35.0000541,130.01756,in back of,in front of,in back of,in front of,in back of,in front of
++2026-02-05T22:36:38Z,T-72,35,130.0006146,T-62,35.0000541,130.0007068,BTR-80,35.0000541,130.01756,in back of,in front of,in back of,in front of,in back of,in front of
++2026-02-05T22:36:39Z,T-72,35,130.0007024,T-62,35.0000541,130.0008078,BTR-80,35.0000541,130.01756,in back of,in front of,in back of,in front of,in back of,in front of
++2026-02-05T22:36:40Z,T-72,35,130.0007902,T-62,35.0000541,130.0009087,BTR-80,35.0000541,130.01756,in back of,in front of,in back of,in front of,in back of,in front of
++2026-02-05T22:36:41Z,T-72,35,130.000878,T-62,35.0000541,130.0010097,BTR-80,35.0000541,130.01756,in back of,in front of,in back of,in front of,in back of,in front of
++2026-02-05T22:36:42Z,T-72,35,130.0009658,T-62,35.0000541,130.0011107,BTR-80,35.0000541,130.01756,in back of,in front of,in back of,in front of,in back of,in front of
++2026-02-05T22:36:43Z,T-72,35,130.0010536,T-62,35.0000541,130.0012116,BTR-80,35.0000541,130.01756,in back of,in front of,in back of,in front of,in back of,in front of
++2026-02-05T22:36:44Z,T-72,35,130.0011414,T-62,35.0000541,130.0013126,BTR-80,35.0000541,130.01756,in back of,in front of,in back of,in front of,in back of,in front of
++2026-02-05T22:36:45Z,T-72,35,130.0012292,T-62,35.0000541,130.0014136,BTR-80,35.0000541,130.01756,in back of,in front of,in back of,in front of,in back of,in front of
++2026-02-05T22:36:46Z,T-72,35,130.001317,T-62,35.0000541,130.0015146,BTR-80,35.0000541,130.01756,in back of,in front of,in back of,in front of,in back of,in front of
++2026-02-05T22:36:47Z,T-72,35,130.0014048,T-62,35.0000541,130.0016155,BTR-80,35.0000541,130.01756,in back of,in front of,in back of,in front of,in back of,in front of
++2026-02-05T22:36:48Z,T-72,35,130.0014926,T-62,35.0000541,130.0017165,BTR-80,35.0000541,130.01756,in back of,in front of,in back of,in front of,in back of,in front of
++2026-02-05T22:36:49Z,T-72,35,130.0015804,T-62,35.0000541,130.0018175,BTR-80,35.0000541,130.01756,in back of,in front of,in back of,in front of,in back of,in front of
++2026-02-05T22:36:50Z,T-72,35,130.0016682,T-62,35.0000541,130.0019184,BTR-80,35.0000541,130.01756,in back of,in front of,in back of,in front of,in back of,in front of
++2026-02-05T22:36:51Z,T-72,35,130.001756,T-62,35.0000541,130.0020194,BTR-80,35.0000541,130.01756,in back of,in front of,in back of,in front of,in back of,in front of
++2026-02-05T22:36:52Z,T-72,35,130.0018438,T-62,35.0000541,130.0021204,BTR-80,35.0000541,130.01756,in back of,in front of,in back of,in front of,in back of,in front of
++2026-02-05T22:36:53Z,T-72,35,130.0019316,T-62,35.0000541,130.0022213,BTR-80,35.0000541,130.01756,in back of,in front of,in back of,in front of,in back of,in front of
++2026-02-05T22:36:54Z,T-72,35,130.0020194,T-62,35.0000541,130.0023223,BTR-80,35.0000541,130.01756,in back of,in front of,in back of,in front of,in back of,in front of
++2026-02-05T22:36:55Z,T-72,35,130.0021072,T-62,35.0000541,130.0024233,BTR-80,35.0000541,130.01756,in back of,in front of,in back of,in front of,in back of,in front of
++2026-02-05T22:36:56Z,T-72,35,130.002195,T-62,35.0000541,130.0025243,BTR-80,35.0000541,130.01756,in back of,in front of,in back of,in front of,in back of,in front of
++2026-02-05T22:36:57Z,T-72,35,130.0022828,T-62,35.0000541,130.0026252,BTR-80,35.0000541,130.01756,in back of,in front of,in back of,in front of,in back of,in front of
++2026-02-05T22:36:58Z,T-72,35,130.0023706,T-62,35.0000541,130.0027262,BTR-80,35.0000541,130.01756,in back of,in front of,in back of,in front of,in back of,in front of
++2026-02-05T22:36:59Z,T-72,35,130.0024584,T-62,35.0000541,130.0028272,BTR-80,35.0000541,130.01756,in back of,in front of,in back of,in front of,in back of,in front of
++2026-02-05T22:37:00Z,T-72,35,130.0025462,T-62,35.0000541,130.0029281,BTR-80,35.0000541,130.01756,in back of,in front of,in back of,in front of,in back of,in front of
++2026-02-05T22:37:01Z,T-72,35,130.002634,T-62,35.0000541,130.0030291,BTR-80,35.0000541,130.01756,in back of,in front of,in back of,in front of,in back of,in front of
++2026-02-05T22:37:02Z,T-72,35,130.0027218,T-62,35.0000541,130.0031301,BTR-80,35.0000541,130.01756,in back of,in front of,in back of,in front of,in back of,in front of
++2026-02-05T22:37:03Z,T-72,35,130.0028096,T-62,35.0000541,130.003231,BTR-80,35.0000541,130.01756,in back of,in front of,in back of,in front of,in back of,in front of
++2026-02-05T22:37:04Z,T-72,35,130.0028974,T-62,35.0000541,130.003332,BTR-80,35.0000541,130.01756,in back of,in front of,in back of,in front of,in back of,in front of
++2026-02-05T22:37:05Z,T-72,35,130.0029852,T-62,35.0000541,130.003433,BTR-80,35.0000541,130.01756,in back of,in front of,in back of,in front of,in back of,in front of
++2026-02-05T22:37:06Z,T-72,35,130.003073,T-62,35.0000541,130.003534,BTR-80,35.0000541,130.01756,in back of,in front of,in back of,in front of,in back of,in front of
++2026-02-05T22:37:07Z,T-72,35,130.0031608,T-62,35.0000541,130.0036349,BTR-80,35.0000541,130.01756,in back of,in front of,in back of,in front of,in back of,in front of
++2026-02-05T22:37:08Z,T-72,35,130.0032486,T-62,35.0000541,130.0037359,BTR-80,35.0000541,130.01756,in back of,in front of,in back of,in front of,in back of,in front of
++2026-02-05T22:37:09Z,T-72,35,130.0033364,T-62,35.0000541,130.0038369,BTR-80,35.0000541,130.01756,in back of,in front of,in back of,in front of,in back of,in front of
++2026-02-05T22:37:10Z,T-72,35,130.0034242,T-62,35.0000541,130.0039378,BTR-80,35.0000541,130.01756,in back of,in front of,in back of,in front of,in back of,in front of
++2026-02-05T22:37:11Z,T-72,35,130.003512,T-62,35.0000541,130.0040388,BTR-80,35.0000541,130.01756,in back of,in front of,in back of,in front of,in back of,in front of
++2026-02-05T22:37:12Z,T-72,35,130.0035998,T-62,35.0000541,130.0041398,BTR-80,35.0000541,130.01756,in back of,in front of,in back of,in front of,in back of,in front of
++2026-02-05T22:37:13Z,T-72,35,130.0036876,T-62,35.0000541,130.0042407,BTR-80,35.0000541,130.01756,in back of,in front of,in back of,in front of,in back of,in front of
++2026-02-05T22:37:14Z,T-72,35,130.0037754,T-62,35.0000541,130.0043417,BTR-80,35.0000541,130.01756,in back of,in front of,in back of,in front of,in back of,in front of
++2026-02-05T22:37:15Z,T-72,35,130.0038632,T-62,35.0000541,130.0044427,BTR-80,35.0000541,130.01756,in back of,in front of,in back of,in front of,in back of,in front of
++2026-02-05T22:37:16Z,T-72,35,130.003951,T-62,35.0000541,130.0045437,BTR-80,35.0000541,130.01756,in back of,in front of,in back of,in front of,in back of,in front of
++2026-02-05T22:37:17Z,T-72,35,130.0040388,T-62,35.0000541,130.0046446,BTR-80,35.0000541,130.01756,in back of,in front of,in back of,in front of,in back of,in front of
++2026-02-05T22:37:18Z,T-72,35,130.0041266,T-62,35.0000541,130.0047456,BTR-80,35.0000541,130.01756,in back of,in front of,in back of,in front of,in back of,in front of
++2026-02-05T22:37:19Z,T-72,35,130.0042144,T-62,35.0000541,130.0048466,BTR-80,35.0000541,130.01756,in back of,in front of,in back of,in front of,in back of,in front of
++2026-02-05T22:37:20Z,T-72,35,130.0043022,T-62,35.0000541,130.0049475,BTR-80,35.0000541,130.01756,in back of,in front of,in back of,in front of,in back of,in front of
++2026-02-05T22:37:21Z,T-72,35,130.00439,T-62,35.0000541,130.0050485,BTR-80,35.0000541,130.01756,in back of,in front of,in back of,in front of,in back of,in front of
++2026-02-05T22:37:22Z,T-72,35,130.0044778,T-62,35.0000541,130.0051495,BTR-80,35.0000541,130.01756,in back of,in front of,in back of,in front of,in back of,in front of
++2026-02-05T22:37:23Z,T-72,35,130.0045656,T-62,35.0000541,130.0052504,BTR-80,35.0000541,130.01756,in back of,in front of,in back of,in front of,in back of,in front of
++2026-02-05T22:37:24Z,T-72,35,130.0046534,T-62,35.0000541,130.0053514,BTR-80,35.0000541,130.01756,in back of,in front of,in back of,in front of,in back of,in front of
++2026-02-05T22:37:25Z,T-72,35,130.0047412,T-62,35.0000541,130.0054524,BTR-80,35.0000541,130.01756,in back of,in front of,in back of,in front of,in back of,in front of
++2026-02-05T22:37:26Z,T-72,35,130.004829,T-62,35.0000541,130.0055534,BTR-80,35.0000541,130.01756,in back of,in front of,in back of,in front of,in back of,in front of
++2026-02-05T22:37:27Z,T-72,35,130.0049168,T-62,35.0000541,130.0056543,BTR-80,35.0000541,130.01756,in back of,in front of,in back of,in front of,in back of,in front of
++2026-02-05T22:37:28Z,T-72,35,130.0050046,T-62,35.0000541,130.0057553,BTR-80,35.0000541,130.01756,in back of,in front of,in back of,in front of,in back of,in front of
++2026-02-05T22:37:29Z,T-72,35,130.0050924,T-62,35.0000541,130.0058563,BTR-80,35.0000541,130.01756,in back of,in front of,in back of,in front of,in back of,in front of
++2026-02-05T22:37:30Z,T-72,35,130.0051802,T-62,35.0000541,130.0059572,BTR-80,35.0000541,130.01756,in back of,in front of,in back of,in front of,in back of,in front of
++2026-02-05T22:37:31Z,T-72,35,130.005268,T-62,35.0000541,130.0060582,BTR-80,35.0000541,130.01756,in back of,in front of,in back of,in front of,in back of,in front of
++2026-02-05T22:37:32Z,T-72,35,130.0053558,T-62,35.0000541,130.0061592,BTR-80,35.0000541,130.01756,in back of,in front of,in back of,in front of,in back of,in front of
++2026-02-05T22:37:33Z,T-72,35,130.0054436,T-62,35.0000541,130.0062601,BTR-80,35.0000541,130.01756,in back of,in front of,in back of,in front of,in back of,in front of
++2026-02-05T22:37:34Z,T-72,35,130.0055314,T-62,35.0000541,130.0063611,BTR-80,35.0000541,130.01756,in back of,in front of,in back of,in front of,in back of,in front of
++2026-02-05T22:37:35Z,T-72,35,130.0056192,T-62,35.0000541,130.0064621,BTR-80,35.0000541,130.01756,in back of,in front of,in back of,in front of,in back of,in front of
++2026-02-05T22:37:36Z,T-72,35,130.005707,T-62,35.0000541,130.0065631,BTR-80,35.0000541,130.01756,in back of,in front of,in back of,in front of,in back of,in front of
++2026-02-05T22:37:37Z,T-72,35,130.0057948,T-62,35.0000541,130.006664,BTR-80,35.0000541,130.01756,in back of,in front of,in back of,in front of,in back of,in front of
++2026-02-05T22:37:38Z,T-72,35,130.0058826,T-62,35.0000541,130.006765,BTR-80,35.0000541,130.01756,in back of,in front of,in back of,in front of,in back of,in front of
++2026-02-05T22:37:39Z,T-72,35,130.0059704,T-62,35.0000541,130.006866,BTR-80,35.0000541,130.01756,in back of,in front of,in back of,in front of,in back of,in front of
++2026-02-05T22:37:40Z,T-72,35,130.0060582,T-62,35.0000541,130.0069669,BTR-80,35.0000541,130.01756,in back of,in front of,in back of,in front of,in back of,in front of
++2026-02-05T22:37:41Z,T-72,35,130.006146,T-62,35.0000541,130.0070679,BTR-80,35.0000541,130.01756,in back of,in front of,in back of,in front of,in back of,in front of
++2026-02-05T22:37:42Z,T-72,35,130.0062338,T-62,35.0000541,130.0071689,BTR-80,35.0000541,130.01756,in back of,in front of,in back of,in front of,in back of,in front of
++2026-02-05T22:37:43Z,T-72,35,130.0063216,T-62,35.0000541,130.0072698,BTR-80,35.0000541,130.01756,in back of,in front of,in back of,in front of,in back of,in front of
++2026-02-05T22:37:44Z,T-72,35,130.0064094,T-62,35.0000541,130.0073708,BTR-80,35.0000541,130.01756,in back of,in front of,in back of,in front of,in back of,in front of
++2026-02-05T22:37:45Z,T-72,35,130.0064972,T-62,35.0000541,130.0074718,BTR-80,35.0000541,130.01756,in back of,in front of,in back of,in front of,in back of,in front of
++2026-02-05T22:37:46Z,T-72,35,130.006585,T-62,35.0000541,130.0075728,BTR-80,35.0000541,130.01756,in back of,in front of,in back of,in front of,in back of,in front of
++2026-02-05T22:37:47Z,T-72,35,130.0066728,T-62,35.0000541,130.0076737,BTR-80,35.0000541,130.01756,in back of,in front of,in back of,in front of,in back of,in front of
++2026-02-05T22:37:48Z,T-72,35,130.0067606,T-62,35.0000541,130.0077747,BTR-80,35.0000541,130.01756,in back of,in front of,in back of,in front of,in back of,in front of
++2026-02-05T22:37:49Z,T-72,35,130.0068484,T-62,35.0000541,130.0078757,BTR-80,35.0000541,130.01756,in back of,in front of,in back of,in front of,in back of,in front of
++2026-02-05T22:37:50Z,T-72,35,130.0069362,T-62,35.0000541,130.0079766,BTR-80,35.0000541,130.01756,in back of,in front of,in back of,in front of,in back of,in front of
++2026-02-05T22:37:51Z,T-72,35,130.007024,T-62,35.0000541,130.0080776,BTR-80,35.0000541,130.01756,in back of,in front of,in back of,in front of,in back of,in front of
++2026-02-05T22:37:52Z,T-72,35,130.0071118,T-62,35.0000541,130.0081786,BTR-80,35.0000541,130.01756,in back of,in front of,in back of,in front of,in back of,in front of
++2026-02-05T22:37:53Z,T-72,35,130.0071996,T-62,35.0000541,130.0082795,BTR-80,35.0000541,130.01756,in back of,in front of,in back of,in front of,in back of,in front of
++2026-02-05T22:37:54Z,T-72,35,130.0072874,T-62,35.0000541,130.0083805,BTR-80,35.0000541,130.01756,in back of,in front of,in back of,in front of,in back of,in front of
++2026-02-05T22:37:55Z,T-72,35,130.0073752,T-62,35.0000541,130.0084815,BTR-80,35.0000541,130.01756,in back of,in front of,in back of,in front of,in back of,in front of
++2026-02-05T22:37:56Z,T-72,35,130.007463,T-62,35.0000541,130.0085825,BTR-80,35.0000541,130.01756,in back of,in front of,in back of,in front of,in back of,in front of
++2026-02-05T22:37:57Z,T-72,35,130.0075508,T-62,35.0000541,130.0086834,BTR-80,35.0000541,130.01756,in back of,in front of,in back of,in front of,in back of,in front of
++2026-02-05T22:37:58Z,T-72,35,130.0076386,T-62,35.0000541,130.0087844,BTR-80,35.0000541,130.01756,in back of,in front of,in back of,in front of,in back of,in front of
++2026-02-05T22:37:59Z,T-72,35,130.0077264,T-62,35.0000541,130.0088854,BTR-80,35.0000541,130.01756,in back of,in front of,in back of,in front of,in back of,in front of
++2026-02-05T22:38:00Z,T-72,35,130.0078142,T-62,35.0000541,130.0089863,BTR-80,35.0000541,130.01756,in back of,in front of,in back of,in front of,in back of,in front of
++2026-02-05T22:38:01Z,T-72,35,130.007902,T-62,35.0000541,130.0090873,BTR-80,35.0000541,130.01756,in back of,in front of,in back of,in front of,in back of,in front of
++2026-02-05T22:38:02Z,T-72,35,130.0079898,T-62,35.0000541,130.0091883,BTR-80,35.0000541,130.01756,in back of,in front of,in back of,in front of,in back of,in front of
++2026-02-05T22:38:03Z,T-72,35,130.0080776,T-62,35.0000541,130.0092892,BTR-80,35.0000541,130.01756,in back of,in front of,in back of,in front of,in back of,in front of
++2026-02-05T22:38:04Z,T-72,35,130.0081654,T-62,35.0000541,130.0093902,BTR-80,35.0000541,130.01756,in back of,in front of,in back of,in front of,in back of,in front of
++2026-02-05T22:38:05Z,T-72,35,130.0082532,T-62,35.0000541,130.0094912,BTR-80,35.0000541,130.01756,in back of,in front of,in back of,in front of,in back of,in front of
++2026-02-05T22:38:06Z,T-72,35,130.008341,T-62,35.0000541,130.0095922,BTR-80,35.0000541,130.01756,in back of,in front of,in back of,in front of,in back of,in front of
++2026-02-05T22:38:07Z,T-72,35,130.0084288,T-62,35.0000541,130.0096931,BTR-80,35.0000541,130.01756,in back of,in front of,in back of,in front of,in back of,in front of
++2026-02-05T22:38:08Z,T-72,35,130.0085166,T-62,35.0000541,130.0097941,BTR-80,35.0000541,130.01756,in back of,in front of,in back of,in front of,in back of,in front of
++2026-02-05T22:38:09Z,T-72,35,130.0086044,T-62,35.0000541,130.0098951,BTR-80,35.0000541,130.01756,in back of,in front of,in back of,in front of,in back of,in front of
++2026-02-05T22:38:10Z,T-72,35,130.0086922,T-62,35.0000541,130.009996,BTR-80,35.0000541,130.01756,in back of,in front of,in back of,in front of,in back of,in front of
++2026-02-05T22:38:11Z,T-72,35,130.00878,T-62,35.0000541,130.010097,BTR-80,35.0000541,130.01756,in back of,in front of,in back of,in front of,in back of,in front of
++2026-02-05T22:38:12Z,T-72,35,130.0088678,T-62,35.0000541,130.010198,BTR-80,35.0000541,130.01756,in back of,in front of,in back of,in front of,in back of,in front of
++2026-02-05T22:38:13Z,T-72,35,130.0089556,T-62,35.0000541,130.0102989,BTR-80,35.0000541,130.01756,in back of,in front of,in back of,in front of,in back of,in front of
++2026-02-05T22:38:14Z,T-72,35,130.0090434,T-62,35.0000541,130.0103999,BTR-80,35.0000541,130.01756,in back of,in front of,in back of,in front of,in back of,in front of
++2026-02-05T22:38:15Z,T-72,35,130.0091312,T-62,35.0000541,130.0105009,BTR-80,35.0000541,130.01756,in back of,in front of,in back of,in front of,in back of,in front of
++2026-02-05T22:38:16Z,T-72,35,130.009219,T-62,35.0000541,130.0106019,BTR-80,35.0000541,130.01756,in back of,in front of,in back of,in front of,in back of,in front of
++2026-02-05T22:38:17Z,T-72,35,130.0093068,T-62,35.0000541,130.0107028,BTR-80,35.0000541,130.01756,in back of,in front of,in back of,in front of,in back of,in front of
++2026-02-05T22:38:18Z,T-72,35,130.0093946,T-62,35.0000541,130.0108038,BTR-80,35.0000541,130.01756,in back of,in front of,in back of,in front of,in back of,in front of
++2026-02-05T22:38:19Z,T-72,35,130.0094824,T-62,35.0000541,130.0109048,BTR-80,35.0000541,130.01756,in back of,in front of,in back of,in front of,in back of,in front of
++2026-02-05T22:38:20Z,T-72,35,130.0095702,T-62,35.0000541,130.0110057,BTR-80,35.0000541,130.01756,in back of,in front of,in back of,in front of,in back of,in front of
++2026-02-05T22:38:21Z,T-72,35,130.009658,T-62,35.0000541,130.0111067,BTR-80,35.0000541,130.01756,in back of,in front of,in back of,in front of,in back of,in front of
++2026-02-05T22:38:22Z,T-72,35,130.0097458,T-62,35.0000541,130.0112077,BTR-80,35.0000541,130.01756,in back of,in front of,in back of,in front of,in back of,in front of
++2026-02-05T22:38:23Z,T-72,35,130.0098336,T-62,35.0000541,130.0113086,BTR-80,35.0000541,130.01756,in back of,in front of,in back of,in front of,in back of,in front of
++2026-02-05T22:38:24Z,T-72,35,130.0099214,T-62,35.0000541,130.0114096,BTR-80,35.0000541,130.01756,in back of,in front of,in back of,in front of,in back of,in front of
++2026-02-05T22:38:25Z,T-72,35,130.0100092,T-62,35.0000541,130.0115106,BTR-80,35.0000541,130.01756,in back of,in front of,in back of,in front of,in back of,in front of
++2026-02-05T22:38:26Z,T-72,35,130.010097,T-62,35.0000541,130.0116116,BTR-80,35.0000541,130.01756,in back of,in front of,in back of,in front of,in back of,in front of
++2026-02-05T22:38:27Z,T-72,35,130.0101848,T-62,35.0000541,130.0117125,BTR-80,35.0000541,130.01756,in back of,in front of,in back of,in front of,in back of,in front of
++2026-02-05T22:38:28Z,T-72,35,130.0102726,T-62,35.0000541,130.0118135,BTR-80,35.0000541,130.01756,in back of,in front of,in back of,in front of,in back of,in front of
++2026-02-05T22:38:29Z,T-72,35,130.0103604,T-62,35.0000541,130.0119145,BTR-80,35.0000541,130.01756,in back of,in front of,in back of,in front of,in back of,in front of
++2026-02-05T22:38:30Z,T-72,35,130.0104482,T-62,35.0000541,130.0120154,BTR-80,35.0000541,130.01756,in back of,in front of,in back of,in front of,in back of,in front of
++2026-02-05T22:38:31Z,T-72,35,130.010536,T-62,35.0000541,130.0100092,BTR-80,35.0000541,130.01756,in front of,in back of,in back of,in front of,in back of,in front of
++2026-02-05T22:38:32Z,T-72,35,130.0106238,T-62,35.0000541,130.0100926,BTR-80,35.0000541,130.01756,in front of,in back of,in back of,in front of,in back of,in front of
++2026-02-05T22:38:33Z,T-72,35,130.0107116,T-62,35.0000541,130.010176,BTR-80,35.0000541,130.01756,in front of,in back of,in back of,in front of,in back of,in front of
++2026-02-05T22:38:34Z,T-72,35,130.0107994,T-62,35.0000541,130.0102594,BTR-80,35.0000541,130.01756,in front of,in back of,in back of,in front of,in back of,in front of
++2026-02-05T22:38:35Z,T-72,35,130.0108872,T-62,35.0000541,130.0103428,BTR-80,35.0000541,130.01756,in front of,in back of,in back of,in front of,in back of,in front of
++2026-02-05T22:38:36Z,T-72,35,130.010975,T-62,35.0000541,130.0104263,BTR-80,35.0000541,130.01756,in front of,in back of,in back of,in front of,in back of,in front of
++2026-02-05T22:38:37Z,T-72,35,130.0110628,T-62,35.0000541,130.0105097,BTR-80,35.0000541,130.01756,in front of,in back of,in back of,in front of,in back of,in front of
++2026-02-05T22:38:38Z,T-72,35,130.0111506,T-62,35.0000541,130.0105931,BTR-80,35.0000541,130.01756,in front of,in back of,in back of,in front of,in back of,in front of
++2026-02-05T22:38:39Z,T-72,35,130.0112384,T-62,35.0000541,130.0106765,BTR-80,35.0000541,130.01756,in front of,in back of,in back of,in front of,in back of,in front of
++2026-02-05T22:38:40Z,T-72,35,130.0113262,T-62,35.0000541,130.0107599,BTR-80,35.0000541,130.01756,in front of,in back of,in back of,in front of,in back of,in front of
++2026-02-05T22:38:41Z,T-72,35,130.011414,T-62,35.0000541,130.0108433,BTR-80,35.0000541,130.01756,in front of,in back of,in back of,in front of,in back of,in front of
++2026-02-05T22:38:42Z,T-72,35,130.0115018,T-62,35.0000541,130.0109267,BTR-80,35.0000541,130.01756,in front of,in back of,in back of,in front of,in back of,in front of
++2026-02-05T22:38:43Z,T-72,35,130.0115896,T-62,35.0000541,130.0110101,BTR-80,35.0000541,130.01756,in front of,in back of,in back of,in front of,in back of,in front of
++2026-02-05T22:38:44Z,T-72,35,130.0116774,T-62,35.0000541,130.0110935,BTR-80,35.0000541,130.01756,in front of,in back of,in back of,in front of,in back of,in front of
++2026-02-05T22:38:45Z,T-72,35,130.0117652,T-62,35.0000541,130.0111769,BTR-80,35.0000541,130.01756,in front of,in back of,in back of,in front of,in back of,in front of
++2026-02-05T22:38:46Z,T-72,35,130.011853,T-62,35.0000541,130.0112604,BTR-80,35.0000541,130.01756,in front of,in back of,in back of,in front of,in back of,in front of
++2026-02-05T22:38:47Z,T-72,35,130.0119408,T-62,35.0000541,130.0113438,BTR-80,35.0000541,130.01756,in front of,in back of,in back of,in front of,in back of,in front of
++2026-02-05T22:38:48Z,T-72,35,130.0120286,T-62,35.0000541,130.0114272,BTR-80,35.0000541,130.01756,in front of,in back of,in back of,in front of,in back of,in front of
++2026-02-05T22:38:49Z,T-72,35,130.0121164,T-62,35.0000541,130.0115106,BTR-80,35.0000541,130.01756,in front of,in back of,in back of,in front of,in back of,in front of
++2026-02-05T22:38:50Z,T-72,35,130.0122042,T-62,35.0000541,130.011594,BTR-80,35.0000541,130.01756,in front of,in back of,in back of,in front of,in back of,in front of
++2026-02-05T22:38:51Z,T-72,35,130.012292,T-62,35.0000541,130.0116774,BTR-80,35.0000541,130.01756,in front of,in back of,in back of,in front of,in back of,in front of
++2026-02-05T22:38:52Z,T-72,35,130.0123798,T-62,35.0000541,130.0117608,BTR-80,35.0000541,130.01756,in front of,in back of,in back of,in front of,in back of,in front of
++2026-02-05T22:38:53Z,T-72,35,130.0124676,T-62,35.0000541,130.0118442,BTR-80,35.0000541,130.01756,in front of,in back of,in back of,in front of,in back of,in front of
++2026-02-05T22:38:54Z,T-72,35,130.0125554,T-62,35.0000541,130.0119276,BTR-80,35.0000541,130.01756,in front of,in back of,in back of,in front of,in back of,in front of
++2026-02-05T22:38:55Z,T-72,35,130.0126432,T-62,35.0000541,130.012011,BTR-80,35.0000541,130.01756,in front of,in back of,in back of,in front of,in back of,in front of
++2026-02-05T22:38:56Z,T-72,35,130.012731,T-62,35.0000541,130.0120945,BTR-80,35.0000541,130.01756,in front of,in back of,in back of,in front of,in back of,in front of
++2026-02-05T22:38:57Z,T-72,35,130.0128188,T-62,35.0000541,130.0121779,BTR-80,35.0000541,130.01756,in front of,in back of,in back of,in front of,in back of,in front of
++2026-02-05T22:38:58Z,T-72,35,130.0129066,T-62,35.0000541,130.0122613,BTR-80,35.0000541,130.01756,in front of,in back of,in back of,in front of,in back of,in front of
++2026-02-05T22:38:59Z,T-72,35,130.0129944,T-62,35.0000541,130.0123447,BTR-80,35.0000541,130.01756,in front of,in back of,in back of,in front of,in back of,in front of
++2026-02-05T22:39:00Z,T-72,35,130.0130822,T-62,35.0000541,130.0124281,BTR-80,35.0000541,130.01756,in front of,in back of,in back of,in front of,in back of,in front of
++2026-02-05T22:39:01Z,T-72,35,130.01317,T-62,35.0000541,130.0125115,BTR-80,35.0000541,130.01756,in front of,in back of,in back of,in front of,in back of,in front of
++2026-02-05T22:39:02Z,T-72,35,130.0132578,T-62,35.0000541,130.0125949,BTR-80,35.0000541,130.01756,in front of,in back of,in back of,in front of,in back of,in front of
++2026-02-05T22:39:03Z,T-72,35,130.0133456,T-62,35.0000541,130.0126783,BTR-80,35.0000541,130.01756,in front of,in back of,in back of,in front of,in back of,in front of
++2026-02-05T22:39:04Z,T-72,35,130.0134334,T-62,35.0000541,130.0127617,BTR-80,35.0000541,130.01756,in front of,in back of,in back of,in front of,in back of,in front of
++2026-02-05T22:39:05Z,T-72,35,130.0135212,T-62,35.0000541,130.0128451,BTR-80,35.0000541,130.01756,in front of,in back of,in back of,in front of,in back of,in front of
++2026-02-05T22:39:06Z,T-72,35,130.013609,T-62,35.0000541,130.0129286,BTR-80,35.0000541,130.01756,in front of,in back of,in back of,in front of,in back of,in front of
++2026-02-05T22:39:07Z,T-72,35,130.0136968,T-62,35.0000541,130.013012,BTR-80,35.0000541,130.01756,in front of,in back of,in back of,in front of,in back of,in front of
++2026-02-05T22:39:08Z,T-72,35,130.0137846,T-62,35.0000541,130.0130954,BTR-80,35.0000541,130.01756,in front of,in back of,in back of,in front of,in back of,in front of
++2026-02-05T22:39:09Z,T-72,35,130.0138724,T-62,35.0000541,130.0131788,BTR-80,35.0000541,130.01756,in front of,in back of,in back of,in front of,in back of,in front of
++2026-02-05T22:39:10Z,T-72,35,130.0139602,T-62,35.0000541,130.0132622,BTR-80,35.0000541,130.01756,in front of,in back of,in back of,in front of,in back of,in front of
++2026-02-05T22:39:11Z,T-72,35,130.014048,T-62,35.0000541,130.0133456,BTR-80,35.0000541,130.01756,in front of,in back of,in back of,in front of,in back of,in front of
++2026-02-05T22:39:12Z,T-72,35,130.0141358,T-62,35.0000541,130.013429,BTR-80,35.0000541,130.01756,in front of,in back of,in back of,in front of,in back of,in front of
++2026-02-05T22:39:13Z,T-72,35,130.0142236,T-62,35.0000541,130.0135124,BTR-80,35.0000541,130.01756,in front of,in back of,in back of,in front of,in back of,in front of
++2026-02-05T22:39:14Z,T-72,35,130.0143114,T-62,35.0000541,130.0135958,BTR-80,35.0000541,130.01756,in front of,in back of,in back of,in front of,in back of,in front of
++2026-02-05T22:39:15Z,T-72,35,130.0143992,T-62,35.0000541,130.0136792,BTR-80,35.0000541,130.01756,in front of,in back of,in back of,in front of,in back of,in front of
++2026-02-05T22:39:16Z,T-72,35,130.014487,T-62,35.0000541,130.0137627,BTR-80,35.0000541,130.01756,in front of,in back of,in back of,in front of,in back of,in front of
++2026-02-05T22:39:17Z,T-72,35,130.0145748,T-62,35.0000541,130.0138461,BTR-80,35.0000541,130.01756,in front of,in back of,in back of,in front of,in back of,in front of
++2026-02-05T22:39:18Z,T-72,35,130.0146626,T-62,35.0000541,130.0139295,BTR-80,35.0000541,130.01756,in front of,in back of,in back of,in front of,in back of,in front of
++2026-02-05T22:39:19Z,T-72,35,130.0147504,T-62,35.0000541,130.0140129,BTR-80,35.0000541,130.01756,in front of,in back of,in back of,in front of,in back of,in front of
++2026-02-05T22:39:20Z,T-72,35,130.0148382,T-62,35.0000541,130.0140963,BTR-80,35.0000541,130.01756,in front of,in back of,in back of,in front of,in back of,in front of
++2026-02-05T22:39:21Z,T-72,35,130.014926,T-62,35.0000541,130.0141797,BTR-80,35.0000541,130.01756,in front of,in back of,in back of,in front of,in back of,in front of
++2026-02-05T22:39:22Z,T-72,35,130.0150138,T-62,35.0000541,130.0142631,BTR-80,35.0000541,130.01756,in front of,in back of,in back of,in front of,in back of,in front of
++2026-02-05T22:39:23Z,T-72,35,130.0151016,T-62,35.0000541,130.0143465,BTR-80,35.0000541,130.01756,in front of,in back of,in back of,in front of,in back of,in front of
++2026-02-05T22:39:24Z,T-72,35,130.0151894,T-62,35.0000541,130.0144299,BTR-80,35.0000541,130.01756,in front of,in back of,in back of,in front of,in back of,in front of
++2026-02-05T22:39:25Z,T-72,35,130.0152772,T-62,35.0000541,130.0145133,BTR-80,35.0000541,130.01756,in front of,in back of,in back of,in front of,in back of,in front of
++2026-02-05T22:39:26Z,T-72,35,130.015365,T-62,35.0000541,130.0145968,BTR-80,35.0000541,130.01756,in front of,in back of,in back of,in front of,in back of,in front of
++2026-02-05T22:39:27Z,T-72,35,130.0154528,T-62,35.0000541,130.0146802,BTR-80,35.0000541,130.01756,in front of,in back of,in back of,in front of,in back of,in front of
++2026-02-05T22:39:28Z,T-72,35,130.0155406,T-62,35.0000541,130.0147636,BTR-80,35.0000541,130.01756,in front of,in back of,in back of,in front of,in back of,in front of
++2026-02-05T22:39:29Z,T-72,35,130.0156284,T-62,35.0000541,130.014847,BTR-80,35.0000541,130.01756,in front of,in back of,in back of,in front of,in back of,in front of
++2026-02-05T22:39:30Z,T-72,35,130.0157162,T-62,35.0000541,130.0149304,BTR-80,35.0000541,130.01756,in front of,in back of,in back of,in front of,in back of,in front of
++2026-02-05T22:39:31Z,T-72,35,130.015804,T-62,35.0000541,130.0150138,BTR-80,35.0000541,130.01756,in front of,in back of,in back of,in front of,in back of,in front of
++2026-02-05T22:39:32Z,T-72,35,130.0158918,T-62,35.0000541,130.0150972,BTR-80,35.0000541,130.01756,in front of,in back of,in back of,in front of,in back of,in front of
++2026-02-05T22:39:33Z,T-72,35,130.0159796,T-62,35.0000541,130.0151806,BTR-80,35.0000541,130.01756,in front of,in back of,in back of,in front of,in back of,in front of
++2026-02-05T22:39:34Z,T-72,35,130.0160674,T-62,35.0000541,130.015264,BTR-80,35.0000541,130.01756,in front of,in back of,in back of,in front of,in back of,in front of
++2026-02-05T22:39:35Z,T-72,35,130.0161552,T-62,35.0000541,130.0153474,BTR-80,35.0000541,130.01756,in front of,in back of,in back of,in front of,in back of,in front of
++2026-02-05T22:39:36Z,T-72,35,130.016243,T-62,35.0000541,130.0154309,BTR-80,35.0000541,130.01756,in front of,in back of,in back of,in front of,in back of,in front of
++2026-02-05T22:39:37Z,T-72,35,130.0163308,T-62,35.0000541,130.0155143,BTR-80,35.0000541,130.01756,in front of,in back of,in back of,in front of,in back of,in front of
++2026-02-05T22:39:38Z,T-72,35,130.0164186,T-62,35.0000541,130.0155977,BTR-80,35.0000541,130.01756,in front of,in back of,in back of,in front of,in back of,in front of
++2026-02-05T22:39:39Z,T-72,35,130.0165064,T-62,35.0000541,130.0156811,BTR-80,35.0000541,130.01756,in front of,in back of,in back of,in front of,in back of,in front of
++2026-02-05T22:39:40Z,T-72,35,130.0165942,T-62,35.0000541,130.0157645,BTR-80,35.0000541,130.01756,in front of,in back of,in back of,in front of,in back of,in front of
++2026-02-05T22:39:41Z,T-72,35,130.016682,T-62,35.0000541,130.0158479,BTR-80,35.0000541,130.01756,in front of,in back of,in back of,in front of,in back of,in front of
++2026-02-05T22:39:42Z,T-72,35,130.0167698,T-62,35.0000541,130.0159313,BTR-80,35.0000541,130.01756,in front of,in back of,in back of,in front of,in back of,in front of
++2026-02-05T22:39:43Z,T-72,35,130.0168576,T-62,35.0000541,130.0160147,BTR-80,35.0000541,130.01756,in front of,in back of,in back of,in front of,in back of,in front of
++2026-02-05T22:39:44Z,T-72,35,130.0169454,T-62,35.0000541,130.0160981,BTR-80,35.0000541,130.01756,in front of,in back of,in back of,in front of,in back of,in front of
++2026-02-05T22:39:45Z,T-72,35,130.0170332,T-62,35.0000541,130.0161815,BTR-80,35.0000541,130.01756,in front of,in back of,in back of,in front of,in back of,in front of
++2026-02-05T22:39:46Z,T-72,35,130.017121,T-62,35.0000541,130.016265,BTR-80,35.0000541,130.01756,in front of,in back of,in back of,in front of,in back of,in front of
++2026-02-05T22:39:47Z,T-72,35,130.0172088,T-62,35.0000541,130.0163484,BTR-80,35.0000541,130.01756,in front of,in back of,in back of,in front of,in back of,in front of
++2026-02-05T22:39:48Z,T-72,35,130.0172966,T-62,35.0000541,130.0164318,BTR-80,35.0000541,130.01756,in front of,in back of,in back of,in front of,in back of,in front of
++2026-02-05T22:39:49Z,T-72,35,130.0173844,T-62,35.0000541,130.0165152,BTR-80,35.0000541,130.01756,in front of,in back of,in back of,in front of,in back of,in front of
++2026-02-05T22:39:50Z,T-72,35,130.0174722,T-62,35.0000541,130.0165986,BTR-80,35.0000541,130.01756,in front of,in back of,in back of,in front of,in back of,in front of
++2026-02-05T22:39:51Z,T-72,35,130.01756,T-62,35.0000541,130.0173844,BTR-80,35.0000541,130.01756,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:39:52Z,T-72,35,130.0176478,T-62,35.0000541,130.0174722,BTR-80,35.0000541,130.0176478,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:39:53Z,T-72,35,130.0177356,T-62,35.0000541,130.01756,BTR-80,35.0000541,130.0177356,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:39:54Z,T-72,35,130.0178234,T-62,35.0000541,130.0176478,BTR-80,35.0000541,130.0178234,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:39:55Z,T-72,35,130.0179112,T-62,35.0000541,130.0177356,BTR-80,35.0000541,130.0179112,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:39:56Z,T-72,35,130.017999,T-62,35.0000541,130.0178234,BTR-80,35.0000541,130.017999,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:39:57Z,T-72,35,130.0180868,T-62,35.0000541,130.0179112,BTR-80,35.0000541,130.0180868,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:39:58Z,T-72,35,130.0181746,T-62,35.0000541,130.017999,BTR-80,35.0000541,130.0181746,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:39:59Z,T-72,35,130.0182624,T-62,35.0000541,130.0180868,BTR-80,35.0000541,130.0182624,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:40:00Z,T-72,35,130.0183502,T-62,35.0000541,130.0181746,BTR-80,35.0000541,130.0183502,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:40:01Z,T-72,35,130.018438,T-62,35.0000541,130.0182624,BTR-80,35.0000541,130.018438,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:40:02Z,T-72,35,130.0185258,T-62,35.0000541,130.0183502,BTR-80,35.0000541,130.0185258,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:40:03Z,T-72,35,130.0186136,T-62,35.0000541,130.018438,BTR-80,35.0000541,130.0186136,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:40:04Z,T-72,35,130.0187014,T-62,35.0000541,130.0185258,BTR-80,35.0000541,130.0187014,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:40:05Z,T-72,35,130.0187892,T-62,35.0000541,130.0186136,BTR-80,35.0000541,130.0187892,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:40:06Z,T-72,35,130.018877,T-62,35.0000541,130.0187014,BTR-80,35.0000541,130.018877,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:40:07Z,T-72,35,130.0189648,T-62,35.0000541,130.0187892,BTR-80,35.0000541,130.0189648,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:40:08Z,T-72,35,130.0190526,T-62,35.0000541,130.018877,BTR-80,35.0000541,130.0190526,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:40:09Z,T-72,35,130.0191404,T-62,35.0000541,130.0189648,BTR-80,35.0000541,130.0191404,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:40:10Z,T-72,35,130.0192282,T-62,35.0000541,130.0190526,BTR-80,35.0000541,130.0192282,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:40:11Z,T-72,35,130.019316,T-62,35.0000541,130.0191404,BTR-80,35.0000541,130.019316,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:40:12Z,T-72,35,130.0194038,T-62,35.0000541,130.0192282,BTR-80,35.0000541,130.0194038,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:40:13Z,T-72,35,130.0194916,T-62,35.0000541,130.019316,BTR-80,35.0000541,130.0194916,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:40:14Z,T-72,35,130.0195794,T-62,35.0000541,130.0194038,BTR-80,35.0000541,130.0195794,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:40:15Z,T-72,35,130.0196672,T-62,35.0000541,130.0194916,BTR-80,35.0000541,130.0196672,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:40:16Z,T-72,35,130.019755,T-62,35.0000541,130.0195794,BTR-80,35.0000541,130.019755,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:40:17Z,T-72,35,130.0198428,T-62,35.0000541,130.0196672,BTR-80,35.0000541,130.0198428,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:40:18Z,T-72,35,130.0199306,T-62,35.0000541,130.019755,BTR-80,35.0000541,130.0199306,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:40:19Z,T-72,35,130.0200184,T-62,35.0000541,130.0198428,BTR-80,35.0000541,130.0200184,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:40:20Z,T-72,35,130.0201062,T-62,35.0000541,130.0199306,BTR-80,35.0000541,130.0201062,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:40:21Z,T-72,35,130.020194,T-62,35.0000541,130.0200184,BTR-80,35.0000541,130.020194,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:40:22Z,T-72,35,130.0202818,T-62,35.0000541,130.0201062,BTR-80,35.0000541,130.0202818,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:40:23Z,T-72,35,130.0203696,T-62,35.0000541,130.020194,BTR-80,35.0000541,130.0203696,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:40:24Z,T-72,35,130.0204574,T-62,35.0000541,130.0202818,BTR-80,35.0000541,130.0204574,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:40:25Z,T-72,35,130.0205452,T-62,35.0000541,130.0203696,BTR-80,35.0000541,130.0205452,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:40:26Z,T-72,35,130.020633,T-62,35.0000541,130.0204574,BTR-80,35.0000541,130.020633,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:40:27Z,T-72,35,130.0207208,T-62,35.0000541,130.0205452,BTR-80,35.0000541,130.0207208,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:40:28Z,T-72,35,130.0208086,T-62,35.0000541,130.020633,BTR-80,35.0000541,130.0208086,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:40:29Z,T-72,35,130.0208964,T-62,35.0000541,130.0207208,BTR-80,35.0000541,130.0208964,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:40:30Z,T-72,35,130.0209842,T-62,35.0000541,130.0208086,BTR-80,35.0000541,130.0209842,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:40:31Z,T-72,35,130.021072,T-62,35.0000541,130.0208964,BTR-80,35.0000541,130.021072,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:40:32Z,T-72,35,130.0211598,T-62,35.0000541,130.0209842,BTR-80,35.0000541,130.0211598,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:40:33Z,T-72,35,130.0212476,T-62,35.0000541,130.021072,BTR-80,35.0000541,130.0212476,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:40:34Z,T-72,35,130.0213354,T-62,35.0000541,130.0211598,BTR-80,35.0000541,130.0213354,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:40:35Z,T-72,35,130.0214232,T-62,35.0000541,130.0212476,BTR-80,35.0000541,130.0214232,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:40:36Z,T-72,35,130.021511,T-62,35.0000541,130.0213354,BTR-80,35.0000541,130.021511,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:40:37Z,T-72,35,130.0215988,T-62,35.0000541,130.0214232,BTR-80,35.0000541,130.0215988,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:40:38Z,T-72,35,130.0216866,T-62,35.0000541,130.021511,BTR-80,35.0000541,130.0216866,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:40:39Z,T-72,35,130.0217744,T-62,35.0000541,130.0215988,BTR-80,35.0000541,130.0217744,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:40:40Z,T-72,35,130.0218622,T-62,35.0000541,130.0216866,BTR-80,35.0000541,130.0218622,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:40:41Z,T-72,35,130.02195,T-62,35.0000541,130.0217744,BTR-80,35.0000541,130.02195,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:40:42Z,T-72,35,130.0220378,T-62,35.0000541,130.0218622,BTR-80,35.0000541,130.0220378,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:40:43Z,T-72,35,130.0221256,T-62,35.0000541,130.02195,BTR-80,35.0000541,130.0221256,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:40:44Z,T-72,35,130.0222134,T-62,35.0000541,130.0220378,BTR-80,35.0000541,130.0222134,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:40:45Z,T-72,35,130.0223012,T-62,35.0000541,130.0221256,BTR-80,35.0000541,130.0223012,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:40:46Z,T-72,35,130.022389,T-62,35.0000541,130.0222134,BTR-80,35.0000541,130.022389,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:40:47Z,T-72,35,130.0224768,T-62,35.0000541,130.0223012,BTR-80,35.0000541,130.0224768,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:40:48Z,T-72,35,130.0225646,T-62,35.0000541,130.022389,BTR-80,35.0000541,130.0225646,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:40:49Z,T-72,35,130.0226524,T-62,35.0000541,130.0224768,BTR-80,35.0000541,130.0226524,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:40:50Z,T-72,35,130.0227402,T-62,35.0000541,130.0225646,BTR-80,35.0000541,130.0227402,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:40:51Z,T-72,35,130.022828,T-62,35.0000541,130.0226524,BTR-80,35.0000541,130.022828,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:40:52Z,T-72,35,130.0229158,T-62,35.0000541,130.0227402,BTR-80,35.0000541,130.0229158,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:40:53Z,T-72,35,130.0230036,T-62,35.0000541,130.022828,BTR-80,35.0000541,130.0230036,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:40:54Z,T-72,35,130.0230914,T-62,35.0000541,130.0229158,BTR-80,35.0000541,130.0230914,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:40:55Z,T-72,35,130.0231792,T-62,35.0000541,130.0230036,BTR-80,35.0000541,130.0231792,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:40:56Z,T-72,35,130.023267,T-62,35.0000541,130.0230914,BTR-80,35.0000541,130.023267,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:40:57Z,T-72,35,130.0233548,T-62,35.0000541,130.0231792,BTR-80,35.0000541,130.0233548,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:40:58Z,T-72,35,130.0234426,T-62,35.0000541,130.023267,BTR-80,35.0000541,130.0234426,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:40:59Z,T-72,35,130.0235304,T-62,35.0000541,130.0233548,BTR-80,35.0000541,130.0235304,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:41:00Z,T-72,35,130.0236182,T-62,35.0000541,130.0234426,BTR-80,35.0000541,130.0236182,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:41:01Z,T-72,35,130.023706,T-62,35.0000541,130.0235304,BTR-80,35.0000541,130.023706,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:41:02Z,T-72,35,130.0237938,T-62,35.0000541,130.0236182,BTR-80,35.0000541,130.0237938,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:41:03Z,T-72,35,130.0238816,T-62,35.0000541,130.023706,BTR-80,35.0000541,130.0238816,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:41:04Z,T-72,35,130.0239694,T-62,35.0000541,130.0237938,BTR-80,35.0000541,130.0239694,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:41:05Z,T-72,35,130.0240572,T-62,35.0000541,130.0238816,BTR-80,35.0000541,130.0240572,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:41:06Z,T-72,35,130.024145,T-62,35.0000541,130.0239694,BTR-80,35.0000541,130.024145,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:41:07Z,T-72,35,130.0242328,T-62,35.0000541,130.0240572,BTR-80,35.0000541,130.0242328,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:41:08Z,T-72,35,130.0243206,T-62,35.0000541,130.024145,BTR-80,35.0000541,130.0243206,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:41:09Z,T-72,35,130.0244084,T-62,35.0000541,130.0242328,BTR-80,35.0000541,130.0244084,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:41:10Z,T-72,35,130.0244962,T-62,35.0000541,130.0243206,BTR-80,35.0000541,130.0244962,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:41:11Z,T-72,35,130.024584,T-62,35.0000541,130.0244084,BTR-80,35.0000541,130.024584,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:41:12Z,T-72,35,130.0246718,T-62,35.0000541,130.0244962,BTR-80,35.0000541,130.0246718,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:41:13Z,T-72,35,130.0247596,T-62,35.0000541,130.024584,BTR-80,35.0000541,130.0247596,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:41:14Z,T-72,35,130.0248474,T-62,35.0000541,130.0246718,BTR-80,35.0000541,130.0248474,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:41:15Z,T-72,35,130.0249352,T-62,35.0000541,130.0247596,BTR-80,35.0000541,130.0249352,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:41:16Z,T-72,35,130.025023,T-62,35.0000541,130.0248474,BTR-80,35.0000541,130.025023,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:41:17Z,T-72,35,130.0251108,T-62,35.0000541,130.0249352,BTR-80,35.0000541,130.0251108,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:41:18Z,T-72,35,130.0251986,T-62,35.0000541,130.025023,BTR-80,35.0000541,130.0251986,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:41:19Z,T-72,35,130.0252864,T-62,35.0000541,130.0251108,BTR-80,35.0000541,130.0252864,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:41:20Z,T-72,35,130.0253742,T-62,35.0000541,130.0251986,BTR-80,35.0000541,130.0253742,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:41:21Z,T-72,35,130.025462,T-62,35.0000541,130.0252864,BTR-80,35.0000541,130.025462,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:41:22Z,T-72,35,130.0255498,T-62,35.0000541,130.0253742,BTR-80,35.0000541,130.0255498,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:41:23Z,T-72,35,130.0256376,T-62,35.0000541,130.025462,BTR-80,35.0000541,130.0256376,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:41:24Z,T-72,35,130.0257254,T-62,35.0000541,130.0255498,BTR-80,35.0000541,130.0257254,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:41:25Z,T-72,35,130.0258132,T-62,35.0000541,130.0256376,BTR-80,35.0000541,130.0258132,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:41:26Z,T-72,35,130.025901,T-62,35.0000541,130.0257254,BTR-80,35.0000541,130.025901,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:41:27Z,T-72,35,130.0259888,T-62,35.0000541,130.0258132,BTR-80,35.0000541,130.0259888,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:41:28Z,T-72,35,130.0260766,T-62,35.0000541,130.025901,BTR-80,35.0000541,130.0260766,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:41:29Z,T-72,35,130.0261644,T-62,35.0000541,130.0259888,BTR-80,35.0000541,130.0261644,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:41:30Z,T-72,35,130.0262522,T-62,35.0000541,130.0260766,BTR-80,35.0000541,130.0262522,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:41:31Z,T-72,35,130.02634,T-62,35.0000541,130.0261644,BTR-80,35.0000541,130.02634,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:41:32Z,T-72,35,130.0264278,T-62,35.0000541,130.0262522,BTR-80,35.0000541,130.0264278,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:41:33Z,T-72,35,130.0265156,T-62,35.0000541,130.02634,BTR-80,35.0000541,130.0265156,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:41:34Z,T-72,35,130.0266034,T-62,35.0000541,130.0264278,BTR-80,35.0000541,130.0266034,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:41:35Z,T-72,35,130.0266912,T-62,35.0000541,130.0265156,BTR-80,35.0000541,130.0266912,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:41:36Z,T-72,35,130.026779,T-62,35.0000541,130.0266034,BTR-80,35.0000541,130.026779,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:41:37Z,T-72,35,130.0268668,T-62,35.0000541,130.0266912,BTR-80,35.0000541,130.0268668,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:41:38Z,T-72,35,130.0269546,T-62,35.0000541,130.026779,BTR-80,35.0000541,130.0269546,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:41:39Z,T-72,35,130.0270424,T-62,35.0000541,130.0268668,BTR-80,35.0000541,130.0270424,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:41:40Z,T-72,35,130.0271302,T-62,35.0000541,130.0269546,BTR-80,35.0000541,130.0271302,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:41:41Z,T-72,35,130.027218,T-62,35.0000541,130.0270424,BTR-80,35.0000541,130.027218,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:41:42Z,T-72,35,130.0273058,T-62,35.0000541,130.0271302,BTR-80,35.0000541,130.0273058,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:41:43Z,T-72,35,130.0273936,T-62,35.0000541,130.027218,BTR-80,35.0000541,130.0273936,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:41:44Z,T-72,35,130.0274814,T-62,35.0000541,130.0273058,BTR-80,35.0000541,130.0274814,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:41:45Z,T-72,35,130.0275692,T-62,35.0000541,130.0273936,BTR-80,35.0000541,130.0275692,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:41:46Z,T-72,35,130.027657,T-62,35.0000541,130.0274814,BTR-80,35.0000541,130.027657,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:41:47Z,T-72,35,130.0277448,T-62,35.0000541,130.0275692,BTR-80,35.0000541,130.0277448,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:41:48Z,T-72,35,130.0278326,T-62,35.0000541,130.027657,BTR-80,35.0000541,130.0278326,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:41:49Z,T-72,35,130.0279204,T-62,35.0000541,130.0277448,BTR-80,35.0000541,130.0279204,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:41:50Z,T-72,35,130.0280082,T-62,35.0000541,130.0278326,BTR-80,35.0000541,130.0280082,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:41:51Z,T-72,35,130.028096,T-62,35.0000541,130.0279204,BTR-80,35.0000541,130.028096,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:41:52Z,T-72,35,130.0281838,T-62,35.0000541,130.0280082,BTR-80,35.0000541,130.0281838,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:41:53Z,T-72,35,130.0282716,T-62,35.0000541,130.028096,BTR-80,35.0000541,130.0282716,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:41:54Z,T-72,35,130.0283594,T-62,35.0000541,130.0281838,BTR-80,35.0000541,130.0283594,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:41:55Z,T-72,35,130.0284472,T-62,35.0000541,130.0282716,BTR-80,35.0000541,130.0284472,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:41:56Z,T-72,35,130.028535,T-62,35.0000541,130.0283594,BTR-80,35.0000541,130.028535,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:41:57Z,T-72,35,130.0286228,T-62,35.0000541,130.0284472,BTR-80,35.0000541,130.0286228,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:41:58Z,T-72,35,130.0287106,T-62,35.0000541,130.028535,BTR-80,35.0000541,130.0287106,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:41:59Z,T-72,35,130.0287984,T-62,35.0000541,130.0286228,BTR-80,35.0000541,130.0287984,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:42:00Z,T-72,35,130.0288862,T-62,35.0000541,130.0287106,BTR-80,35.0000541,130.0288862,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:42:01Z,T-72,35,130.028974,T-62,35.0000541,130.0287984,BTR-80,35.0000541,130.028974,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:42:02Z,T-72,35,130.0290618,T-62,35.0000541,130.0288862,BTR-80,35.0000541,130.0290618,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:42:03Z,T-72,35,130.0291496,T-62,35.0000541,130.028974,BTR-80,35.0000541,130.0291496,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:42:04Z,T-72,35,130.0292374,T-62,35.0000541,130.0290618,BTR-80,35.0000541,130.0292374,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:42:05Z,T-72,35,130.0293252,T-62,35.0000541,130.0291496,BTR-80,35.0000541,130.0293252,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:42:06Z,T-72,35,130.029413,T-62,35.0000541,130.0292374,BTR-80,35.0000541,130.029413,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:42:07Z,T-72,35,130.0295008,T-62,35.0000541,130.0293252,BTR-80,35.0000541,130.0295008,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:42:08Z,T-72,35,130.0295886,T-62,35.0000541,130.029413,BTR-80,35.0000541,130.0295886,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:42:09Z,T-72,35,130.0296764,T-62,35.0000541,130.0295008,BTR-80,35.0000541,130.0296764,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:42:10Z,T-72,35,130.0297642,T-62,35.0000541,130.0295886,BTR-80,35.0000541,130.0297642,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:42:11Z,T-72,35,130.029852,T-62,35.0000541,130.0296764,BTR-80,35.0000541,130.029852,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:42:12Z,T-72,35,130.0299398,T-62,35.0000541,130.0297642,BTR-80,35.0000541,130.0299398,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:42:13Z,T-72,35,130.0300276,T-62,35.0000541,130.029852,BTR-80,35.0000541,130.0300276,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:42:14Z,T-72,35,130.0301154,T-62,35.0000541,130.0299398,BTR-80,35.0000541,130.0301154,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:42:15Z,T-72,35,130.0302032,T-62,35.0000541,130.0300276,BTR-80,35.0000541,130.0302032,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:42:16Z,T-72,35,130.030291,T-62,35.0000541,130.0301154,BTR-80,35.0000541,130.030291,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:42:17Z,T-72,35,130.0303788,T-62,35.0000541,130.0302032,BTR-80,35.0000541,130.0303788,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:42:18Z,T-72,35,130.0304666,T-62,35.0000541,130.030291,BTR-80,35.0000541,130.0304666,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:42:19Z,T-72,35,130.0305544,T-62,35.0000541,130.0303788,BTR-80,35.0000541,130.0305544,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:42:20Z,T-72,35,130.0306422,T-62,35.0000541,130.0304666,BTR-80,35.0000541,130.0306422,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:42:21Z,T-72,35,130.03073,T-62,35.0000541,130.0305544,BTR-80,35.0000541,130.03073,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:42:22Z,T-72,35,130.0308178,T-62,35.0000541,130.0306422,BTR-80,35.0000541,130.0308178,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:42:23Z,T-72,35,130.0309056,T-62,35.0000541,130.03073,BTR-80,35.0000541,130.0309056,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:42:24Z,T-72,35,130.0309934,T-62,35.0000541,130.0308178,BTR-80,35.0000541,130.0309934,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:42:25Z,T-72,35,130.0310812,T-62,35.0000541,130.0309056,BTR-80,35.0000541,130.0310812,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:42:26Z,T-72,35,130.031169,T-62,35.0000541,130.0309934,BTR-80,35.0000541,130.031169,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:42:27Z,T-72,35,130.0312568,T-62,35.0000541,130.0310812,BTR-80,35.0000541,130.0312568,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:42:28Z,T-72,35,130.0313446,T-62,35.0000541,130.031169,BTR-80,35.0000541,130.0313446,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:42:29Z,T-72,35,130.0314324,T-62,35.0000541,130.0312568,BTR-80,35.0000541,130.0314324,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:42:30Z,T-72,35,130.0315202,T-62,35.0000541,130.0313446,BTR-80,35.0000541,130.0315202,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:42:31Z,T-72,35,130.031608,T-62,35.0000541,130.0314324,BTR-80,35.0000541,130.031608,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:42:32Z,T-72,35,130.0316958,T-62,35.0000541,130.0315202,BTR-80,35.0000541,130.0316958,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:42:33Z,T-72,35,130.0317836,T-62,35.0000541,130.031608,BTR-80,35.0000541,130.0317836,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:42:34Z,T-72,35,130.0318714,T-62,35.0000541,130.0316958,BTR-80,35.0000541,130.0318714,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:42:35Z,T-72,35,130.0319592,T-62,35.0000541,130.0317836,BTR-80,35.0000541,130.0319592,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:42:36Z,T-72,35,130.032047,T-62,35.0000541,130.0318714,BTR-80,35.0000541,130.032047,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:42:37Z,T-72,35,130.0321348,T-62,35.0000541,130.0319592,BTR-80,35.0000541,130.0321348,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:42:38Z,T-72,35,130.0322226,T-62,35.0000541,130.032047,BTR-80,35.0000541,130.0322226,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:42:39Z,T-72,35,130.0323104,T-62,35.0000541,130.0321348,BTR-80,35.0000541,130.0323104,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:42:40Z,T-72,35,130.0323982,T-62,35.0000541,130.0322226,BTR-80,35.0000541,130.0323982,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:42:41Z,T-72,35,130.032486,T-62,35.0000541,130.0323104,BTR-80,35.0000541,130.032486,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:42:42Z,T-72,35,130.0325738,T-62,35.0000541,130.0323982,BTR-80,35.0000541,130.0325738,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:42:43Z,T-72,35,130.0326616,T-62,35.0000541,130.032486,BTR-80,35.0000541,130.0326616,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:42:44Z,T-72,35,130.0327494,T-62,35.0000541,130.0325738,BTR-80,35.0000541,130.0327494,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:42:45Z,T-72,35,130.0328372,T-62,35.0000541,130.0326616,BTR-80,35.0000541,130.0328372,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:42:46Z,T-72,35,130.032925,T-62,35.0000541,130.0327494,BTR-80,35.0000541,130.032925,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:42:47Z,T-72,35,130.0330128,T-62,35.0000541,130.0328372,BTR-80,35.0000541,130.0330128,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:42:48Z,T-72,35,130.0331006,T-62,35.0000541,130.032925,BTR-80,35.0000541,130.0331006,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:42:49Z,T-72,35,130.0331884,T-62,35.0000541,130.0330128,BTR-80,35.0000541,130.0331884,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:42:50Z,T-72,35,130.0332762,T-62,35.0000541,130.0331006,BTR-80,35.0000541,130.0332762,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:42:51Z,T-72,35,130.033364,T-62,35.0000541,130.0331884,BTR-80,35.0000541,130.033364,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:42:52Z,T-72,35,130.0334518,T-62,35.0000541,130.0332762,BTR-80,35.0000541,130.0334518,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:42:53Z,T-72,35,130.0335396,T-62,35.0000541,130.033364,BTR-80,35.0000541,130.0335396,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:42:54Z,T-72,35,130.0336274,T-62,35.0000541,130.0334518,BTR-80,35.0000541,130.0336274,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:42:55Z,T-72,35,130.0337152,T-62,35.0000541,130.0335396,BTR-80,35.0000541,130.0337152,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:42:56Z,T-72,35,130.033803,T-62,35.0000541,130.0336274,BTR-80,35.0000541,130.033803,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:42:57Z,T-72,35,130.0338908,T-62,35.0000541,130.0337152,BTR-80,35.0000541,130.0338908,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:42:58Z,T-72,35,130.0339786,T-62,35.0000541,130.033803,BTR-80,35.0000541,130.0339786,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:42:59Z,T-72,35,130.0340664,T-62,35.0000541,130.0338908,BTR-80,35.0000541,130.0340664,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:43:00Z,T-72,35,130.0341542,T-62,35.0000541,130.0339786,BTR-80,35.0000541,130.0341542,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:43:01Z,T-72,35,130.034242,T-62,35.0000541,130.0340664,BTR-80,35.0000541,130.034242,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:43:02Z,T-72,35,130.0343298,T-62,35.0000541,130.0341542,BTR-80,35.0000541,130.0343298,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:43:03Z,T-72,35,130.0344176,T-62,35.0000541,130.034242,BTR-80,35.0000541,130.0344176,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:43:04Z,T-72,35,130.0345054,T-62,35.0000541,130.0343298,BTR-80,35.0000541,130.0345054,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:43:05Z,T-72,35,130.0345932,T-62,35.0000541,130.0344176,BTR-80,35.0000541,130.0345932,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:43:06Z,T-72,35,130.034681,T-62,35.0000541,130.0345054,BTR-80,35.0000541,130.034681,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:43:07Z,T-72,35,130.0347688,T-62,35.0000541,130.0345932,BTR-80,35.0000541,130.0347688,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:43:08Z,T-72,35,130.0348566,T-62,35.0000541,130.034681,BTR-80,35.0000541,130.0348566,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:43:09Z,T-72,35,130.0349444,T-62,35.0000541,130.0347688,BTR-80,35.0000541,130.0349444,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:43:10Z,T-72,35,130.0350322,T-62,35.0000541,130.0348566,BTR-80,35.0000541,130.0350322,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:43:11Z,T-72,35,130.03512,T-62,35.0000541,130.0349444,BTR-80,35.0000541,130.03512,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:43:12Z,T-72,35,130.0352078,T-62,35.0000541,130.0350322,BTR-80,35.0000541,130.0352078,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:43:13Z,T-72,35,130.0352956,T-62,35.0000541,130.03512,BTR-80,35.0000541,130.0352956,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:43:14Z,T-72,35,130.0353834,T-62,35.0000541,130.0352078,BTR-80,35.0000541,130.0353834,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:43:15Z,T-72,35,130.0354712,T-62,35.0000541,130.0352956,BTR-80,35.0000541,130.0354712,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:43:16Z,T-72,35,130.035559,T-62,35.0000541,130.0353834,BTR-80,35.0000541,130.035559,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:43:17Z,T-72,35,130.0356468,T-62,35.0000541,130.0354712,BTR-80,35.0000541,130.0356468,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:43:18Z,T-72,35,130.0357346,T-62,35.0000541,130.035559,BTR-80,35.0000541,130.0357346,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:43:19Z,T-72,35,130.0358224,T-62,35.0000541,130.0356468,BTR-80,35.0000541,130.0358224,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:43:20Z,T-72,35,130.0359102,T-62,35.0000541,130.0357346,BTR-80,35.0000541,130.0359102,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:43:21Z,T-72,35,130.035998,T-62,35.0000541,130.0358224,BTR-80,35.0000541,130.035998,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:43:22Z,T-72,35,130.0360858,T-62,35.0000541,130.0359102,BTR-80,35.0000541,130.0360858,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:43:23Z,T-72,35,130.0361736,T-62,35.0000541,130.035998,BTR-80,35.0000541,130.0361736,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:43:24Z,T-72,35,130.0362614,T-62,35.0000541,130.0360858,BTR-80,35.0000541,130.0362614,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:43:25Z,T-72,35,130.0363492,T-62,35.0000541,130.0361736,BTR-80,35.0000541,130.0363492,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:43:26Z,T-72,35,130.036437,T-62,35.0000541,130.0362614,BTR-80,35.0000541,130.036437,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:43:27Z,T-72,35,130.0365248,T-62,35.0000541,130.0363492,BTR-80,35.0000541,130.0365248,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:43:28Z,T-72,35,130.0366126,T-62,35.0000541,130.036437,BTR-80,35.0000541,130.0366126,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:43:29Z,T-72,35,130.0367004,T-62,35.0000541,130.0365248,BTR-80,35.0000541,130.0367004,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:43:30Z,T-72,35,130.0367882,T-62,35.0000541,130.0366126,BTR-80,35.0000541,130.0367882,in front of,in back of,in back of,in front of,side by side,side by side
++2026-02-05T22:43:31Z,T-72,35,130.036876,T-62,35.0000541,130.036876,BTR-80,35.0000541,130.036876,side by side,side by side,collision with,collision with,side by side,side by side
++2026-02-05T22:43:32Z,T-72,35,130.0369638,T-62,35.0000541,130.036876,BTR-80,35.0000541,130.036876,in front of,in back of,collision with,collision with,in front of,in back of
++2026-02-05T22:43:33Z,T-72,35,130.0370516,T-62,35.0000541,130.036876,BTR-80,35.0000541,130.036876,in front of,in back of,collision with,collision with,in front of,in back of
++2026-02-05T22:43:34Z,T-72,35,130.0371394,T-62,35.0000541,130.036876,BTR-80,35.0000541,130.036876,in front of,in back of,collision with,collision with,in front of,in back of
++2026-02-05T22:43:35Z,T-72,35,130.0372272,T-62,35.0000541,130.036876,BTR-80,35.0000541,130.036876,in front of,in back of,collision with,collision with,in front of,in back of
++2026-02-05T22:43:36Z,T-72,35,130.037315,T-62,35.0000541,130.036876,BTR-80,35.0000541,130.036876,in front of,in back of,collision with,collision with,in front of,in back of
++2026-02-05T22:43:37Z,T-72,35,130.0374028,T-62,35.0000541,130.036876,BTR-80,35.0000541,130.036876,in front of,in back of,collision with,collision with,in front of,in back of
++2026-02-05T22:43:38Z,T-72,35,130.0374906,T-62,35.0000541,130.036876,BTR-80,35.0000541,130.036876,in front of,in back of,collision with,collision with,in front of,in back of
++2026-02-05T22:43:39Z,T-72,35,130.0375784,T-62,35.0000541,130.036876,BTR-80,35.0000541,130.036876,in front of,in back of,collision with,collision with,in front of,in back of
++2026-02-05T22:43:40Z,T-72,35,130.0376662,T-62,35.0000541,130.036876,BTR-80,35.0000541,130.036876,in front of,in back of,collision with,collision with,in front of,in back of
++2026-02-05T22:43:41Z,T-72,35,130.037754,T-62,35.0000541,130.036876,BTR-80,35.0000541,130.036876,in front of,in back of,collision with,collision with,in front of,in back of
++2026-02-05T22:43:42Z,T-72,35,130.0378418,T-62,35.0000541,130.036876,BTR-80,35.0000541,130.036876,in front of,in back of,collision with,collision with,in front of,in back of
++2026-02-05T22:43:43Z,T-72,35,130.0379296,T-62,35.0000541,130.036876,BTR-80,35.0000541,130.036876,in front of,in back of,collision with,collision with,in front of,in back of
++2026-02-05T22:43:44Z,T-72,35,130.0380174,T-62,35.0000541,130.036876,BTR-80,35.0000541,130.036876,in front of,in back of,collision with,collision with,in front of,in back of
++2026-02-05T22:43:45Z,T-72,35,130.0381052,T-62,35.0000541,130.036876,BTR-80,35.0000541,130.036876,in front of,in back of,collision with,collision with,in front of,in back of
++2026-02-05T22:43:46Z,T-72,35,130.038193,T-62,35.0000541,130.036876,BTR-80,35.0000541,130.036876,in front of,in back of,collision with,collision with,in front of,in back of
++2026-02-05T22:43:47Z,T-72,35,130.0382808,T-62,35.0000541,130.036876,BTR-80,35.0000541,130.036876,in front of,in back of,collision with,collision with,in front of,in back of
++2026-02-05T22:43:48Z,T-72,35,130.0383686,T-62,35.0000541,130.036876,BTR-80,35.0000541,130.036876,in front of,in back of,collision with,collision with,in front of,in back of
++2026-02-05T22:43:49Z,T-72,35,130.0384564,T-62,35.0000541,130.036876,BTR-80,35.0000541,130.036876,in front of,in back of,collision with,collision with,in front of,in back of
++2026-02-05T22:43:50Z,T-72,35,130.0385442,T-62,35.0000541,130.036876,BTR-80,35.0000541,130.036876,in front of,in back of,collision with,collision with,in front of,in back of
++2026-02-05T22:43:51Z,T-72,35,130.038632,T-62,35.0000541,130.036876,BTR-80,35.0000541,130.036876,in front of,in back of,collision with,collision with,in front of,in back of
++2026-02-05T22:43:52Z,T-72,35,130.0387198,T-62,35.0000541,130.036876,BTR-80,35.0000541,130.036876,in front of,in back of,collision with,collision with,in front of,in back of
++2026-02-05T22:43:53Z,T-72,35,130.0388076,T-62,35.0000541,130.036876,BTR-80,35.0000541,130.036876,in front of,in back of,collision with,collision with,in front of,in back of
++2026-02-05T22:43:54Z,T-72,35,130.0388954,T-62,35.0000541,130.036876,BTR-80,35.0000541,130.036876,in front of,in back of,collision with,collision with,in front of,in back of
++2026-02-05T22:43:55Z,T-72,35,130.0389832,T-62,35.0000541,130.036876,BTR-80,35.0000541,130.036876,in front of,in back of,collision with,collision with,in front of,in back of
++2026-02-05T22:43:56Z,T-72,35,130.039071,T-62,35.0000541,130.036876,BTR-80,35.0000541,130.036876,in front of,in back of,collision with,collision with,in front of,in back of
++2026-02-05T22:43:57Z,T-72,35,130.0391588,T-62,35.0000541,130.036876,BTR-80,35.0000541,130.036876,in front of,in back of,collision with,collision with,in front of,in back of
++2026-02-05T22:43:58Z,T-72,35,130.0392466,T-62,35.0000541,130.036876,BTR-80,35.0000541,130.036876,in front of,in back of,collision with,collision with,in front of,in back of
++2026-02-05T22:43:59Z,T-72,35,130.0393344,T-62,35.0000541,130.036876,BTR-80,35.0000541,130.036876,in front of,in back of,collision with,collision with,in front of,in back of
++2026-02-05T22:44:00Z,T-72,35,130.0394222,T-62,35.0000541,130.036876,BTR-80,35.0000541,130.036876,in front of,in back of,collision with,collision with,in front of,in back of
++2026-02-05T22:44:01Z,T-72,35,130.03951,T-62,35.0000541,130.036876,BTR-80,35.0000541,130.036876,in front of,in back of,collision with,collision with,in front of,in back of
++2026-02-05T22:44:02Z,T-72,35,130.0395978,T-62,35.0000541,130.036876,BTR-80,35.0000541,130.036876,in front of,in back of,collision with,collision with,in front of,in back of
++2026-02-05T22:44:03Z,T-72,35,130.0396856,T-62,35.0000541,130.036876,BTR-80,35.0000541,130.036876,in front of,in back of,collision with,collision with,in front of,in back of
++2026-02-05T22:44:04Z,T-72,35,130.0397734,T-62,35.0000541,130.036876,BTR-80,35.0000541,130.036876,in front of,in back of,collision with,collision with,in front of,in back of
++2026-02-05T22:44:05Z,T-72,35,130.0398612,T-62,35.0000541,130.036876,BTR-80,35.0000541,130.036876,in front of,in back of,collision with,collision with,in front of,in back of
++2026-02-05T22:44:06Z,T-72,35,130.039949,T-62,35.0000541,130.036876,BTR-80,35.0000541,130.036876,in front of,in back of,collision with,collision with,in front of,in back of
++2026-02-05T22:44:07Z,T-72,35,130.0400368,T-62,35.0000541,130.036876,BTR-80,35.0000541,130.036876,in front of,in back of,collision with,collision with,in front of,in back of
++2026-02-05T22:44:08Z,T-72,35,130.0401246,T-62,35.0000541,130.036876,BTR-80,35.0000541,130.036876,in front of,in back of,collision with,collision with,in front of,in back of
++2026-02-05T22:44:09Z,T-72,35,130.0402124,T-62,35.0000541,130.036876,BTR-80,35.0000541,130.036876,in front of,in back of,collision with,collision with,in front of,in back of
++2026-02-05T22:44:10Z,T-72,35,130.0403002,T-62,35.0000541,130.036876,BTR-80,35.0000541,130.036876,in front of,in back of,collision with,collision with,in front of,in back of
++2026-02-05T22:44:11Z,T-72,35,130.040388,T-62,35.0000541,130.036876,BTR-80,35.0000541,130.036876,in front of,in back of,collision with,collision with,in front of,in back of
++2026-02-05T22:44:12Z,T-72,35,130.0404758,T-62,35.0000541,130.036876,BTR-80,35.0000541,130.036876,in front of,in back of,collision with,collision with,in front of,in back of
++2026-02-05T22:44:13Z,T-72,35,130.0405636,T-62,35.0000541,130.036876,BTR-80,35.0000541,130.036876,in front of,in back of,collision with,collision with,in front of,in back of
++2026-02-05T22:44:14Z,T-72,35,130.0406514,T-62,35.0000541,130.036876,BTR-80,35.0000541,130.036876,in front of,in back of,collision with,collision with,in front of,in back of
++2026-02-05T22:44:15Z,T-72,35,130.0407392,T-62,35.0000541,130.036876,BTR-80,35.0000541,130.036876,in front of,in back of,collision with,collision with,in front of,in back of
++2026-02-05T22:44:16Z,T-72,35,130.040827,T-62,35.0000541,130.036876,BTR-80,35.0000541,130.036876,in front of,in back of,collision with,collision with,in front of,in back of
++2026-02-05T22:44:17Z,T-72,35,130.0409148,T-62,35.0000541,130.036876,BTR-80,35.0000541,130.036876,in front of,in back of,collision with,collision with,in front of,in back of
++2026-02-05T22:44:18Z,T-72,35,130.0410026,T-62,35.0000541,130.036876,BTR-80,35.0000541,130.036876,in front of,in back of,collision with,collision with,in front of,in back of
++2026-02-05T22:44:19Z,T-72,35,130.0410904,T-62,35.0000541,130.036876,BTR-80,35.0000541,130.036876,in front of,in back of,collision with,collision with,in front of,in back of
++2026-02-05T22:44:20Z,T-72,35,130.0411782,T-62,35.0000541,130.036876,BTR-80,35.0000541,130.036876,in front of,in back of,collision with,collision with,in front of,in back of
++2026-02-05T22:44:21Z,T-72,35,130.041266,T-62,35.0000541,130.036876,BTR-80,35.0000541,130.036876,in front of,in back of,collision with,collision with,in front of,in back of
++2026-02-05T22:44:22Z,T-72,35,130.0413538,T-62,35.0000541,130.036876,BTR-80,35.0000541,130.036876,in front of,in back of,collision with,collision with,in front of,in back of
++2026-02-05T22:44:23Z,T-72,35,130.0414416,T-62,35.0000541,130.036876,BTR-80,35.0000541,130.036876,in front of,in back of,collision with,collision with,in front of,in back of
++2026-02-05T22:44:24Z,T-72,35,130.0415294,T-62,35.0000541,130.036876,BTR-80,35.0000541,130.036876,in front of,in back of,collision with,collision with,in front of,in back of
++2026-02-05T22:44:25Z,T-72,35,130.0416172,T-62,35.0000541,130.036876,BTR-80,35.0000541,130.036876,in front of,in back of,collision with,collision with,in front of,in back of
++2026-02-05T22:44:26Z,T-72,35,130.041705,T-62,35.0000541,130.036876,BTR-80,35.0000541,130.036876,in front of,in back of,collision with,collision with,in front of,in back of
++2026-02-05T22:44:27Z,T-72,35,130.0417928,T-62,35.0000541,130.036876,BTR-80,35.0000541,130.036876,in front of,in back of,collision with,collision with,in front of,in back of
++2026-02-05T22:44:28Z,T-72,35,130.0418806,T-62,35.0000541,130.036876,BTR-80,35.0000541,130.036876,in front of,in back of,collision with,collision with,in front of,in back of
++2026-02-05T22:44:29Z,T-72,35,130.0419684,T-62,35.0000541,130.036876,BTR-80,35.0000541,130.036876,in front of,in back of,collision with,collision with,in front of,in back of
++2026-02-05T22:44:30Z,T-72,35,130.0420562,T-62,35.0000541,130.036876,BTR-80,35.0000541,130.036876,in front of,in back of,collision with,collision with,in front of,in back of
++2026-02-05T22:44:31Z,T-72,35,130.042144,T-62,35.0000541,130.036876,BTR-80,35.0000541,130.036876,in front of,in back of,collision with,collision with,in front of,in back of
++2026-02-05T22:44:32Z,T-72,35,130.0422318,T-62,35.0000541,130.036876,BTR-80,35.0000541,130.036876,in front of,in back of,collision with,collision with,in front of,in back of
++2026-02-05T22:44:33Z,T-72,35,130.0423196,T-62,35.0000541,130.036876,BTR-80,35.0000541,130.036876,in front of,in back of,collision with,collision with,in front of,in back of
++2026-02-05T22:44:34Z,T-72,35,130.0424074,T-62,35.0000541,130.036876,BTR-80,35.0000541,130.036876,in front of,in back of,collision with,collision with,in front of,in back of
++2026-02-05T22:44:35Z,T-72,35,130.0424952,T-62,35.0000541,130.036876,BTR-80,35.0000541,130.036876,in front of,in back of,collision with,collision with,in front of,in back of
++2026-02-05T22:44:36Z,T-72,35,130.042583,T-62,35.0000541,130.036876,BTR-80,35.0000541,130.036876,in front of,in back of,collision with,collision with,in front of,in back of
++2026-02-05T22:44:37Z,T-72,35,130.0426708,T-62,35.0000541,130.036876,BTR-80,35.0000541,130.036876,in front of,in back of,collision with,collision with,in front of,in back of
++2026-02-05T22:44:38Z,T-72,35,130.0427586,T-62,35.0000541,130.036876,BTR-80,35.0000541,130.036876,in front of,in back of,collision with,collision with,in front of,in back of
++2026-02-05T22:44:39Z,T-72,35,130.0428464,T-62,35.0000541,130.036876,BTR-80,35.0000541,130.036876,in front of,in back of,collision with,collision with,in front of,in back of
++2026-02-05T22:44:40Z,T-72,35,130.0429342,T-62,35.0000541,130.036876,BTR-80,35.0000541,130.036876,in front of,in back of,collision with,collision with,in front of,in back of
++2026-02-05T22:44:41Z,T-72,35,130.043022,T-62,35.0000541,130.036876,BTR-80,35.0000541,130.036876,in front of,in back of,collision with,collision with,in front of,in back of
++2026-02-05T22:44:42Z,T-72,35,130.0431098,T-62,35.0000541,130.036876,BTR-80,35.0000541,130.036876,in front of,in back of,collision with,collision with,in front of,in back of
++2026-02-05T22:44:43Z,T-72,35,130.0431976,T-62,35.0000541,130.036876,BTR-80,35.0000541,130.036876,in front of,in back of,collision with,collision with,in front of,in back of
++2026-02-05T22:44:44Z,T-72,35,130.0432854,T-62,35.0000541,130.036876,BTR-80,35.0000541,130.036876,in front of,in back of,collision with,collision with,in front of,in back of
++2026-02-05T22:44:45Z,T-72,35,130.0433732,T-62,35.0000541,130.036876,BTR-80,35.0000541,130.036876,in front of,in back of,collision with,collision with,in front of,in back of
++2026-02-05T22:44:46Z,T-72,35,130.043461,T-62,35.0000541,130.036876,BTR-80,35.0000541,130.036876,in front of,in back of,collision with,collision with,in front of,in back of
++2026-02-05T22:44:47Z,T-72,35,130.0435488,T-62,35.0000541,130.036876,BTR-80,35.0000541,130.036876,in front of,in back of,collision with,collision with,in front of,in back of
++2026-02-05T22:44:48Z,T-72,35,130.0436366,T-62,35.0000541,130.036876,BTR-80,35.0000541,130.036876,in front of,in back of,collision with,collision with,in front of,in back of
++2026-02-05T22:44:49Z,T-72,35,130.0437244,T-62,35.0000541,130.036876,BTR-80,35.0000541,130.036876,in front of,in back of,collision with,collision with,in front of,in back of
++2026-02-05T22:44:50Z,T-72,35,130.0438122,T-62,35.0000541,130.036876,BTR-80,35.0000541,130.036876,in front of,in back of,collision with,collision with,in front of,in back of
++2026-02-05T22:44:51Z,T-72,35,130.0439,T-62,35.0000541,130.036876,BTR-80,35.0000541,130.036876,in front of,in back of,collision with,collision with,in front of,in back of
