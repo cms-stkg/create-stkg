@@ -1,264 +1,381 @@
-"""
-Typechecks the facts of YAGO
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
 
-CC-BY 2022-2025 Fabian M. Suchanek
+"""
+Type-checks STKG facts using the STKG schema and taxonomy
 
 Call:
-  python3 make-typecheck.py
+  python3 04-make-typecheck.py
 
 Input:
-- 02-yago-taxonomy-to-rename.tsv
-- 03-yago-facts-to-type-check.tsv
+- yago-data/01-stkg-final-schema.ttl
+- yago-data/02-stkg-taxonomy.tsv
+- yago-data/03-stkg-facts.tsv
 
 Output:
-- 04-yago-facts-to-rename.tsv (type checked YAGO facts without correct ids)
-- 04-yago-ids.tsv (maps Wikidata ids to YAGO ids)
-- 04-yago-bad-classes.tsv (lists classes that don't have instances)
+- yago-data/04-stkg-facts-checked.tsv
+- yago-data/04-stkg-ids.tsv
+- yago-data/04-stkg-bad-classes.tsv
 
 Algorithm:
-- run through all facts of yago-facts-to-type-check.tsv, 
-  load classes and instances
-- run through all facts in yago-facts-to-type-check.tsv, do type check
-    - write out facts that fulfill the constraints to yago-facts-to-rename.tsv
-    - if there are any such facts, write out the id to yago-ids.tsv
-   
+1) Load schema classes and property constraints
+2) Load taxonomy
+3) Load rdf:type instances from facts
+4) Run through all facts and type-check them
+5) Write valid facts only
+6) Write provisional STKG ids for valid resources
+7) Write classes that do not have instances
 """
 
-##########################################################################
-#             Booting
-##########################################################################
-
-import sys
-from urllib import parse
-import TsvUtils
-import TurtleUtils
+import os
 import re
-import unicodedata
-import Evaluator
-import Prefixes
 from collections import defaultdict
+from urllib.parse import quote
 
-TEST=len(sys.argv)>1 and sys.argv[1]=="--test"
-FOLDER="test-data/04-make-typecheck/" if TEST else "yago-data/"
-        
-##########################################################################
-#             YAGO ids
-##########################################################################
+from rdflib import Graph, Namespace
+from rdflib.namespace import RDF, RDFS, XSD
 
-# Keeps all YAGO ids to make sure we do not have duplicates
-yagoIds=set()
 
-def hexCode(char):    
-    """ Hex-encodes the character """
-    return "_u{0:04X}_".format(ord(char))
+OUTPUT_FOLDER = "yago-data/"
+SCHEMA_FILE = os.path.join(OUTPUT_FOLDER, "01-stkg-final-schema.ttl")
+TAXONOMY_FILE = os.path.join(OUTPUT_FOLDER, "02-stkg-taxonomy.tsv")
+FACTS_FILE = os.path.join(OUTPUT_FOLDER, "03-stkg-facts.tsv")
 
-def inRange(char,start,end):
-    """ TRUE if the ordinal of the character is in the range of numbers"""
-    return ord(char)>=start and ord(char)<=end
-        
-def legal(char):
-    """ TRUE if a character is a valid CURIE character.
-    We're very restrictive here to make all parsers work.
-    For example, percentage codes are legal characters in the specification,
-    but don't work in Hermit. 
-    The accepted characters are PN_CHARS_U | '-' | [0-9]  -- without ranges above 0x0FFF
+OUT_FACTS = os.path.join(OUTPUT_FOLDER, "04-stkg-facts-checked.tsv")
+OUT_IDS = os.path.join(OUTPUT_FOLDER, "04-stkg-ids.tsv")
+OUT_BAD_CLASSES = os.path.join(OUTPUT_FOLDER, "04-stkg-bad-classes.tsv")
+
+
+STKG = "http://example.org/stkg/"
+STKGREL = "http://example.org/stkg/relation/"
+OWL_SAMEAS = "http://www.w3.org/2002/07/owl#sameAs"
+
+GEO_LAT = "http://www.w3.org/2003/01/geo/wgs84_pos#lat"
+GEO_LONG = "http://www.w3.org/2003/01/geo/wgs84_pos#long"
+
+RDF_TYPE = str(RDF.type)
+RDFS_SUBCLASS = str(RDFS.subClassOf)
+XSD_DATETIME = str(XSD.dateTime)
+XSD_DECIMAL = str(XSD.decimal)
+XSD_INTEGER = str(XSD.integer)
+XSD_STRING = str(XSD.string)
+
+
+def ensure_inputs():
+    for path in [SCHEMA_FILE, TAXONOMY_FILE, FACTS_FILE]:
+        if not os.path.exists(path):
+            raise FileNotFoundError(f"required input not found: {path}")
+
+
+def read_tsv(path):
+    with open(path, "r", encoding="utf-8") as f:
+        for line in f:
+            line = line.rstrip("\n")
+            if not line:
+                continue
+            parts = line.split("\t")
+            if len(parts) < 3:
+                continue
+            yield parts[0], parts[1], parts[2]
+
+
+def write_tsv(rows, path):
+    with open(path, "w", encoding="utf-8") as f:
+        for row in rows:
+            f.write("\t".join(row) + "\n")
+
+
+def is_uri(value: str) -> bool:
+    return value.startswith("http://") or value.startswith("https://")
+
+
+_TYPED_LITERAL_RE = re.compile(r'^"(.*)"\^\^<([^>]+)>$')
+
+
+def parse_typed_literal(value: str):
     """
-    return char=='_' or char=='-' or inRange(char, ord('0'), ord('9')) or inRange(char, ord('A'), ord('Z')) or inRange(char, ord('a'), ord('z')) or inRange(char, 0x00C0, 0x00D6) or inRange(char, 0x00D8, 0x00F6) or inRange(char, 0x00F8, 0x02FF) or inRange(char, 0x0370, 0x037D)
+    Returns:
+      ("literal", lexical_value, datatype_uri)
+      or ("uri", value, None)
+      or ("other", value, None)
+    """
+    if is_uri(value):
+        return ("uri", value, None)
 
-def allLegal(s):
-    """ True if all characters are legal characters """
-    return all(c==' ' or legal(c) for c in s)
-    
-def yagoIdFromString(s):
-    """ Creates a YAGO id from a string """
-    result=""
-    for c in s:
-        if legal(c):
-            result+=c
-        elif ord(c)<0x009F: # Punctuation becomes underscore
-            result+='_'
-        else: # Other letters become hyphen
-            result+="-"
-    # Compress subsequent underscores
-    result=re.sub("_+","_",result)
-    # Remove trailing underscore
-    if result.endswith("_"):
-        result=result[0:-1]
-    # Remove starting underscore
-    if result.startswith("_"):
-        result=result[1:]        
-    # Special case that is disallowed
-    if result.startswith("-"):
-        result="Y"+result
-    # Special case for Hermit parser
-    result=result.replace("genid","gen_id")
-    return result
- 
-def yagoIdFromWikipediaPage(wikipediaPageTitle):
-    """ Creates a YAGO id from a Wikipedia page title"""
-    return yagoIdFromString(parse.unquote(wikipediaPageTitle))
-    
-def yagoIdFromLabel(wikidataEntity,label):
-    """ Creates a YAGO id from a Wikidata entity and label """
-    return yagoIdFromString(label).title()+"_"+wikidataEntity[3:]
+    m = _TYPED_LITERAL_RE.match(value)
+    if m:
+        lexical = m.group(1)
+        datatype = m.group(2)
+        lexical = lexical.replace('\\"', '"').replace("\\\\", "\\")
+        return ("literal", lexical, datatype)
 
-def yagoIdFromWikidataId(wikidataEntity):
-    """ Creates a YAGO id from a Wikidata entity """
-    return wikidataEntity[3:]
+    return ("other", value, None)
 
-def isGoodYagoId(identifier):
-    """ TRUE if the string is long enough"""
-    return identifier and len(identifier.replace("-","").replace("-",""))>3
 
-def registerYagoId(identifier):
-    """ Registers YAGO id, returns TRUE on success"""
-    if identifier in yagoIds:
-        return False
-    yagoIds.add(identifier)
-    return True
-
-def tryYagoId(out,currentTopic, yagoId, isWikipedia=False):
-    """ Registers and writes out YAGO id, returns TRUE on success"""
-    if not isGoodYagoId(yagoId):
-        return False
-    if registerYagoId(yagoId):
-        out.write(currentTopic,"owl:sameAs","yago:"+yagoId,". #WIKI" if isWikipedia else ". #OTHER")
-    else:
-        out.write(currentTopic,"owl:sameAs","yago:"+yagoId+"_"+currentTopic[3:], ". #WIKI" if isWikipedia else ". #OTHER")
-    return True
-    
-def writeYagoId(out, currentTopic, currentEnglishLabel, currentLabel, currentWikipediaPage):
-    """ Writes wd:Q303 owl:sameAs yago:Elvis """ 
-    # Don't print ids for built-in classes
-    if currentTopic.startswith("schema:") or currentTopic.startswith("yago:"):
-        return
-    if currentWikipediaPage and tryYagoId(out,currentTopic, yagoIdFromWikipediaPage(currentWikipediaPage), True):
-        return
-    if currentEnglishLabel and tryYagoId(out,currentTopic, yagoIdFromLabel(currentTopic,currentEnglishLabel)):
-        return        
-    if currentLabel and tryYagoId(out,currentTopic, yagoIdFromLabel(currentTopic,currentLabel)):
-        return        
-    out.write(currentTopic,"owl:sameAs","yago:"+yagoIdFromWikidataId(currentTopic),". #OTHER")
-
-##########################################################################
-#             Class operations
-##########################################################################
-
-# We register here to which classes an instance belongs
-yagoInstances=defaultdict(set)
-
-def createGenericInstance(targetClass, outFile):
-    """ Creates a generic instance for a target class, registers the class in classesWithGenericInstances, and writes the instance facts to outFile """
-    objectName="_:"+targetClass+"_generic_instance"
-    if objectName not in yagoInstances:
-        yagoInstances[objectName].add(targetClass)
-        outFile.write(objectName, Prefixes.rdfType, targetClass, ".")        
-    return(objectName)
-
-# We store the global taxonomy here
-yagoTaxonomyUp={}
-
-def isSubclassOf(c1, c2):
-    if c1==c2:
+def safe_decimal(s: str) -> bool:
+    try:
+        float(s)
         return True
-    if c1 not in yagoTaxonomyUp:
-        return
-    for superclass in yagoTaxonomyUp[c1]:
-        if isSubclassOf(superclass, c2):
+    except Exception:
+        return False
+
+
+def safe_int(s: str) -> bool:
+    try:
+        int(s)
+        return True
+    except Exception:
+        return False
+
+
+def load_schema(schema_file):
+    g = Graph()
+    g.parse(schema_file, format="turtle")
+
+    classes = set()
+    property_domain = {}
+    property_range = {}
+
+    for s in g.subjects(RDF.type, RDFS.Class):
+        classes.add(str(s))
+
+    for p in g.subjects(RDF.type, RDF.Property):
+        p_str = str(p)
+        for d in g.objects(p, RDFS.domain):
+            property_domain[p_str] = str(d)
+        for r in g.objects(p, RDFS.range):
+            property_range[p_str] = str(r)
+
+    return classes, property_domain, property_range
+
+
+def load_taxonomy(taxonomy_file):
+    taxonomy_up = defaultdict(set)
+    all_taxonomy_classes = set()
+
+    for s, p, o in read_tsv(taxonomy_file):
+        if p != "rdfs:subClassOf" and p != RDFS_SUBCLASS:
+            continue
+        taxonomy_up[s].add(o)
+        all_taxonomy_classes.add(s)
+        all_taxonomy_classes.add(o)
+
+    return taxonomy_up, all_taxonomy_classes
+
+
+def ancestors(c, taxonomy_up, visited=None):
+    if visited is None:
+        visited = set()
+    if c in visited:
+        return set()
+    visited.add(c)
+
+    result = {c}
+    for parent in taxonomy_up.get(c, set()):
+        result.update(ancestors(parent, taxonomy_up, visited.copy()))
+    return result
+
+
+def is_subclass_of(c1, c2, taxonomy_up):
+    if c1 == c2:
+        return True
+    for parent in taxonomy_up.get(c1, set()):
+        if is_subclass_of(parent, c2, taxonomy_up):
             return True
     return False
-    
-def instanceOf(obj, cls):
-    return any(isSubclassOf(c, cls) for c in yagoInstances[obj])
-    
-def removeClass(c):
-    """ Removes this class and all superclasses from the YAGO taxonomy """    
-    # Happens for schema:Thing and rdfs:Class,
-    # and in case we already passed by
-    if c not in yagoTaxonomyUp:
-        return
-    for superClass in yagoTaxonomyUp[c]:
-        removeClass(superClass)
-    yagoTaxonomyUp.pop(c)
 
-##########################################################################
-#             Main
-##########################################################################
 
-with TsvUtils.Timer("Step 04: Type-checking YAGO"):
-    # Load taxonomy
-    for triple in TsvUtils.tsvTuples(FOLDER+"02-yago-taxonomy-to-rename.tsv", "  Loading YAGO taxonomy"):
-        if len(triple)>3:
-            if triple[0] not in yagoTaxonomyUp:
-                yagoTaxonomyUp[triple[0]]=set()
-            yagoTaxonomyUp[triple[0]].add(triple[2])
+def load_instances(facts_file):
+    instances = defaultdict(set)
+    for s, p, o in read_tsv(facts_file):
+        if p == RDF_TYPE and is_uri(o):
+            instances[s].add(o)
+    return instances
 
-    # Load instances
-    for triple in TsvUtils.tsvTuples(FOLDER+"03-yago-facts-to-type-check.tsv", "  Loading YAGO instances"):
-        if len(triple)>2 and triple[1]=="rdf:type":
-            yagoInstances[triple[0]].add(triple[2])
-    
-    count=0
-    with TsvUtils.TsvFileWriter(FOLDER+"04-yago-facts-to-rename.tsv") as out:
-        with TsvUtils.TsvFileWriter(FOLDER+"04-yago-ids.tsv") as idsFile:
-            currentTopic=""
-            currentEnglishLabel=""
-            currentLabel=""
-            currentWikipediaPage=""
-            wroteFacts=False # True if the entity had any valid facts
-            for split in TsvUtils.tsvTuples(FOLDER+"03-yago-facts-to-type-check.tsv", "  Type-checking facts"):
-                if len(split)<3:
-                    continue
-                    
-                # Next entity
-                if split[0]!=currentTopic:
-                    if wroteFacts:
-                        writeYagoId(idsFile, currentTopic, currentEnglishLabel, currentLabel, currentWikipediaPage)
-                    currentTopic=split[0]
-                    currentEnglishLabel=""
-                    currentLabel=""
-                    currentWikipediaPage=""
-                    wroteFacts=False
-                    
-                # Gather information for the entity id
-                if split[1]=="rdfs:label":
-                    if split[2].endswith('"@en'):
-                        currentEnglishLabel=split[2][1:-4]
-                    elif not currentEnglishLabel and not currentLabel:
-                        label=TurtleUtils.splitLiteral(split[2])[0]
-                        if allLegal(label):
-                            currentLabel=label    
-                elif split[1]=="schema:mainEntityOfPage" and split[2].startswith('"https://en.wikipedia.org/wiki/'):
-                    currentWikipediaPage=split[2][31:-13]
-                
-                # Write out the fact
-                startDate=split[5] if len(split)>5 else ""
-                endDate=split[6] if len(split)>6 else ""
-                classes=split[4].split(", ") if len(split)>4 and len(split[4])>0 else None
-                if classes is None or any(instanceOf(split[2],c) for c in classes):
-                    out.write(split[0], split[1], split[2], ". #", startDate, endDate)
-                    wroteFacts=True
-                    count+=1
-                elif any(isSubclassOf(split[2],c) for c in classes):
-                    newObject=createGenericInstance(split[2], out)
-                    out.write(split[0], split[1], newObject, ". #", startDate, endDate)
-                    count+=1
-                    wroteFacts=True
-                    
-            # Also flush the ids of the last entity...
-            if wroteFacts:
-                writeYagoId(idsFile, currentTopic, currentEnglishLabel, currentLabel, currentWikipediaPage)
 
-    print("  Info: Number of facts:",count)    
-    # Write out classes that did not get any instances    
-    for c in set([k for s in yagoInstances.values() for k in s]):
-        removeClass(c)        
-    print("  Info: Number of classes that don't have instances:",len(yagoTaxonomyUp))
-    with TsvUtils.TsvFileWriter(FOLDER+"04-yago-bad-classes.tsv") as badClassFile:
-        for c in yagoTaxonomyUp:
-            badClassFile.write(c)
+def instance_of(resource, target_class, instances, taxonomy_up):
+    for c in instances.get(resource, set()):
+        if is_subclass_of(c, target_class, taxonomy_up):
+            return True
+    return False
 
-if TEST:
-    Evaluator.compare(FOLDER+"04-yago-facts-to-rename.tsv")
-    Evaluator.compare(FOLDER+"04-yago-ids.tsv")
-    Evaluator.compare(FOLDER+"04-yago-bad-classes.tsv")
+
+def local_name(uri: str) -> str:
+    if "/" in uri:
+        return uri.rstrip("/").split("/")[-1]
+    if "#" in uri:
+        return uri.split("#")[-1]
+    return uri
+
+
+def normalize_id_token(text: str) -> str:
+    text = text.strip()
+    text = re.sub(r"[^A-Za-z0-9_\-]+", "_", text)
+    text = re.sub(r"_+", "_", text).strip("_")
+    if not text:
+        text = "resource"
+    return text
+
+
+def provisional_id_uri(resource_uri: str) -> str:
+    """
+    04단계에서는 최종 canonical id가 아니라
+    05단계에서 사용할 임시/stable id를 부여.
+    """
+    if resource_uri.startswith(STKG):
+        suffix = resource_uri[len(STKG):]
+    else:
+        suffix = local_name(resource_uri)
+
+    token = normalize_id_token(suffix.replace("/", "_"))
+    return STKG + "id/" + quote(token)
+
+
+def validate_fact(s, p, o, property_domain, property_range, instances, taxonomy_up, schema_classes):
+    """
+    Returns True if the fact is valid under the STKG schema/taxonomy.
+    """
+
+    # subject should be a URI
+    if not is_uri(s):
+        return False
+
+    kind, obj_val, obj_dt = parse_typed_literal(o)
+
+    # rdf:type validation
+    if p == RDF_TYPE:
+        if kind != "uri":
+            return False
+        if obj_val in schema_classes:
+            return True
+        if obj_val in taxonomy_up:
+            return True
+        return False
+
+    # observedEntity -> range Platform
+    if p == STKG + "observedEntity":
+        return kind == "uri" and instance_of(obj_val, STKG + "Platform", instances, taxonomy_up)
+
+    # subjectEntity / objectEntity -> range Platform
+    if p == STKG + "subjectEntity":
+        return kind == "uri" and instance_of(obj_val, STKG + "Platform", instances, taxonomy_up)
+
+    if p == STKG + "objectEntity":
+        return kind == "uri" and instance_of(obj_val, STKG + "Platform", instances, taxonomy_up)
+
+    # relationType -> resource URI
+    if p == STKG + "relationType":
+        return kind == "uri"
+
+    # time -> xsd:dateTime
+    if p == STKG + "time":
+        return kind == "literal" and obj_dt == XSD_DATETIME
+
+    # geo lat/long -> decimal
+    if p == GEO_LAT or p == GEO_LONG:
+        return kind == "literal" and obj_dt == XSD_DECIMAL and safe_decimal(obj_val)
+
+    # sourceRow -> integer
+    if p == STKG + "sourceRow":
+        return kind == "literal" and obj_dt == XSD_INTEGER and safe_int(obj_val)
+
+    # sourceFile -> typed string preferred, but any literal 허용
+    if p == STKG + "sourceFile":
+        return kind == "literal"
+
+    # For other schema properties, try generic range validation
+    rng = property_range.get(p)
+    if rng:
+        if rng.startswith("http://www.w3.org/2001/XMLSchema#"):
+            return kind == "literal" and obj_dt == rng
+        else:
+            return kind == "uri" and instance_of(obj_val, rng, instances, taxonomy_up)
+
+    # Unknown property -> reject
+    return False
+
+
+def collect_nonempty_classes(instances, taxonomy_up):
+    """
+    Returns classes that have at least one instance, directly or via subclass chain.
+    """
+    covered = set()
+    for _, classes in instances.items():
+        for c in classes:
+            covered.update(ancestors(c, taxonomy_up))
+    return covered
+
+
+def main():
+    print("Step 04: Type-checking STKG facts...")
+
+    ensure_inputs()
+
+    print(f"  Loading schema from {SCHEMA_FILE} ...", end="", flush=True)
+    schema_classes, property_domain, property_range = load_schema(SCHEMA_FILE)
+    print("done")
+
+    print(f"  Loading taxonomy from {TAXONOMY_FILE} ...", end="", flush=True)
+    taxonomy_up, taxonomy_classes = load_taxonomy(TAXONOMY_FILE)
+    print("done")
+
+    print(f"  Loading instances from {FACTS_FILE} ...", end="", flush=True)
+    instances = load_instances(FACTS_FILE)
+    print("done")
+
+    valid_rows = []
+    id_rows = []
+    seen_id_subjects = set()
+    valid_fact_count = 0
+    rejected_fact_count = 0
+
+    valid_subjects = set()
+    valid_resources = set()
+
+    print("  Type-checking facts ...", end="", flush=True)
+    for s, p, o in read_tsv(FACTS_FILE):
+        if validate_fact(s, p, o, property_domain, property_range, instances, taxonomy_up, schema_classes):
+            valid_rows.append((s, p, o))
+            valid_fact_count += 1
+            valid_subjects.add(s)
+            valid_resources.add(s)
+
+            kind, obj_val, _ = parse_typed_literal(o)
+            if kind == "uri":
+                valid_resources.add(obj_val)
+        else:
+            rejected_fact_count += 1
+    print("done")
+
+    # provisional ids for valid resources only
+    for resource in sorted(valid_resources):
+        if resource in seen_id_subjects:
+            continue
+        seen_id_subjects.add(resource)
+        id_rows.append((resource, OWL_SAMEAS, provisional_id_uri(resource)))
+
+    print(f"  Writing checked facts to {OUT_FACTS} ...", end="", flush=True)
+    write_tsv(valid_rows, OUT_FACTS)
+    print("done")
+
+    print(f"  Writing provisional ids to {OUT_IDS} ...", end="", flush=True)
+    write_tsv(id_rows, OUT_IDS)
+    print("done")
+
+    # classes with no instances
+    covered_classes = collect_nonempty_classes(instances, taxonomy_up)
+    all_classes = set(schema_classes) | set(taxonomy_classes)
+    bad_classes = sorted(c for c in all_classes if c.startswith(STKG) and c not in covered_classes)
+
+    print(f"  Writing bad classes to {OUT_BAD_CLASSES} ...", end="", flush=True)
+    write_tsv([(c, "", "") for c in bad_classes], OUT_BAD_CLASSES)
+    print("done")
+
+    print(f"  Info: Valid facts: {valid_fact_count}")
+    print(f"  Info: Rejected facts: {rejected_fact_count}")
+    print(f"  Info: Resources with provisional ids: {len(id_rows)}")
+    print(f"  Info: Classes without instances: {len(bad_classes)}")
+
+
+if __name__ == "__main__":
+    main()

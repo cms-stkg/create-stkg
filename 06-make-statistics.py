@@ -1,243 +1,433 @@
-"""
-Produces statistics about YAGO entities and predicates, and extracts samples
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
 
-CC-BY 2022-2025 Fabian M. Suchanek
+"""
+Produces statistics about STKG entities, observations, predicates, and taxonomy,
+and extracts sample entities/observations.
 
 Input:
-- 01-yago-final-schema.ttl
-- 05-yago-final-beyond-wikipedia.tsv
-- 05-yago-final-wikipedia.tsv
-- 05-yago-final-taxonomy.tsv
+- yago-data/01-stkg-final-schema.ttl
+- yago-data/05-stkg-final-entities.tsv
+- yago-data/05-stkg-final-observations.tsv
+- yago-data/05-stkg-final-relations.tsv
+- yago-data/05-stkg-final-meta.tsv
+- yago-data/05-stkg-final-taxonomy.tsv
 
 Output:
-- 06-statistics.txt
-- 06-taxonomy.html
-- 06-upper-taxonomy.html
-- 06-sample-entities.ttl
+- yago-data/06-statistics.txt
+- yago-data/06-taxonomy.html
+- yago-data/06-upper-taxonomy.html
+- yago-data/06-sample-entities.ttl
 
 Algorithm:
+- load schema
 - load taxonomy
-- run through yago-final-full
+- run through final STKG facts
   - update statistics
-  - sample entities
-- print statistics and trees
-   
+  - collect class counts
+  - sample resources
+- print statistics and taxonomy trees
 """
 
-##########################################################################
-#             Booting
-##########################################################################
-
-import sys
-import glob
-import re
-import Evaluator
-import itertools
-import TurtleUtils
-import TsvUtils
-import random
 import os
-import Prefixes
-from Schema import YagoSchema
+import glob
+import random
 from collections import defaultdict
 
-TEST=len(sys.argv)>1 and sys.argv[1]=="--test"
-FOLDER="test-data/06-make-statistics/" if TEST else "yago-data/"
+from rdflib import Graph, Namespace
+from rdflib.namespace import RDF, RDFS
 
-# Predicates that are excluded for fact counting
-excludePredicates=["rdfs:label", "rdfs:comment", "rdf:type", "schema:mainEntityOfPage", "owl:sameAs", "schema:alternateName"]
 
-def getFirst(myList):
-    """ Returns the first element of an iterable or none """    
-    for o in myList:
-        return o
-    return None
+FOLDER = "yago-data/"
 
-##########################################################################
-#             Full Taxonomy as HTML
-##########################################################################
+SCHEMA_FILE = os.path.join(FOLDER, "01-stkg-final-schema.ttl")
+ENTITIES_FILE = os.path.join(FOLDER, "05-stkg-final-entities.tsv")
+OBSERVATIONS_FILE = os.path.join(FOLDER, "05-stkg-final-observations.tsv")
+RELATIONS_FILE = os.path.join(FOLDER, "05-stkg-final-relations.tsv")
+META_FILE = os.path.join(FOLDER, "05-stkg-final-meta.tsv")
+TAXONOMY_FILE = os.path.join(FOLDER, "05-stkg-final-taxonomy.tsv")
 
-def getSuperClasses(cls, classes, yagoTaxonomyUp, pathsToRoot):
-    """Adds all superclasses of a class <cls> (including <cls>) to the set <classes>"""
-    classes.add(cls)
-    # Make a check before because it's a defaultdict,
-    # which would create cls if it's not there
-    if cls==Prefixes.schemaThing:
-        pathsToRoot[0]+=1
-    if cls in yagoTaxonomyUp:
-        for sc in yagoTaxonomyUp[cls]:
-            getSuperClasses(sc, classes, yagoTaxonomyUp, pathsToRoot)
+OUT_STATS = os.path.join(FOLDER, "06-statistics.txt")
+OUT_TAXONOMY_HTML = os.path.join(FOLDER, "06-taxonomy.html")
+OUT_UPPER_TAXONOMY_HTML = os.path.join(FOLDER, "06-upper-taxonomy.html")
+OUT_SAMPLE_TTL = os.path.join(FOLDER, "06-sample-entities.ttl")
 
-def _printTaxonomy(writer, cls=Prefixes.schemaThing):
-    """ Prints the taxonomy to the writer. <cls> is the class to start with, i.e., the top-level class. """
-    if cls not in yagoTaxonomyDown:
-        writer.write(f"<li>{cls.replace('yago:','y:')}: {str(classStats.get(cls,0))}\n")
-        return
-    writer.write(f"<li><details style='margin-left: 2em'><summary style='margin-left: -2em'>{cls.replace('yago:','y:')}: {str(classStats.get(cls,0))}</summary><ul>\n")
-    for subclass in yagoTaxonomyDown.get(cls, []):
-        _printTaxonomy(writer, subclass)
-    writer.write("</ul></details>\n")
 
-def printTaxonomy(file):
-    """ Prints the full taxonomy to the file """
-    with open(file, "wt", encoding="UTF-8") as writer:
-        writer.write("""
-<!DOCTYPE html>
-<html>
- <head>
-  <meta charset=utf-8>
-  <meta name=viewport content="width=device-width, initial-scale=1.0">   
-  <title>
-   YAGO Taxonomy
-  </title>
-  <style>
-  ul {list-style-type:none}
-  </style>
- </head>      
- <body>
- <h1>YAGO Taxonomy</h1>
- <ul>\n""")
-        _printTaxonomy(writer)
-        writer.write("</ul></body>\n</html>")
+STKG = Namespace("http://example.org/stkg/")
+GEO = Namespace("http://www.w3.org/2003/01/geo/wgs84_pos#")
 
-##########################################################################
-#             Top-level taxonomy as HTML
-##########################################################################
- 
-def printUpperTaxonomy(file):
-    """ Visualizes the top-level taxonomy as an HTML document"""
-    with open(file, "wt", encoding="UTF-8") as writer:
-        writer.write("""
-<h1>YAGO Schema</h1> 
-This is the top-level taxonomy of classes of YAGO 4.5, together with their properties.
- <ul style='list-style-type: none'>
-        """)
-        def add_node(yagoClass):
-            # Head
-            writer.write(f"<li><details style='margin-left: 2em'{' open' if yagoClass.identifier=='schema:Thing' else ''}><summary style='font-weight:bold; margin-left: -2em'>{yagoClass.identifier}</summary><details style='margin-left: 2em'><summary style='margin-left: -2em'>Outgoing properties</summary><ul style='list-style-type: none'>\n")
-            
-            # Outgoing properties
-            for yagoProperty in sorted(yagoClass.properties):
-                writer.write(f"<li>- {yagoProperty.identifier} &rarr;{'<sup>1</sup>' if yagoProperty.maxCount or yagoProperty.uniqueLang else ''} {', '.join(sorted(yagoProperty.objectTypes))}")
-            writer.write("</ul></details>\n<details style='margin-left: 2em'><summary style='margin-left: -2em'>Incoming properties</summary><ul style='list-style-type: none'>\n")
-            
-            # Incoming properties
-            for yagoProperty in sorted(prop for prop in yagoSchema.properties.values() if yagoClass.identifier in prop.objectTypes):                
-                 writer.write(f'<li>- ({", ".join(sorted(yagoProperty.subjectTypes))}) {yagoProperty.identifier}')
-            writer.write(f"</ul></details><details style='margin-left: 2em'{' open' if yagoClass.identifier=='schema:Thing' else ''}><summary style='margin-left: -2em'>Subclasses</summary><ul style='list-style-type: none'>\n")
-            
-            # Subclasses
-            for subclass in sorted(cls for cls in yagoSchema.classes.values() if yagoClass in cls.superClasses):
-                add_node(subclass)
-            writer.write("</ul></details></details>\n")
-        add_node(yagoSchema.classes["schema:Thing"])
-        writer.write("</ul>")
- 
-##########################################################################
-#             Main
-##########################################################################
+RDF_TYPE = str(RDF.type)
+RDFS_SUBCLASS = "rdfs:subClassOf"
 
-with TsvUtils.Timer("Step 06: Collecting YAGO statistics"):
+PLATFORM = str(STKG.Platform)
+POSITION_OBS = str(STKG.PositionObservation)
+SPATIAL_REL_OBS = str(STKG.SpatialRelationObservation)
 
-    # Load YAGO schema
-    yagoSchema = YagoSchema(FOLDER+"01-yago-final-schema.ttl")
+OBSERVED_ENTITY = str(STKG.observedEntity)
+SUBJECT_ENTITY = str(STKG.subjectEntity)
+OBJECT_ENTITY = str(STKG.objectEntity)
+RELATION_TYPE = str(STKG.relationType)
+TIME = str(STKG.time)
+SOURCE_FILE = str(STKG.sourceFile)
+SOURCE_ROW = str(STKG.sourceRow)
 
-    # Load YAGO taxonomy
-    yagoTaxonomyDown=defaultdict(set)
-    yagoTaxonomyUp=defaultdict(set)
-    for triple in TsvUtils.tsvTuples(FOLDER+"05-yago-final-taxonomy.tsv", "  Loading YAGO taxonomy"):
-        if len(triple)>3:
-            yagoTaxonomyUp[triple[0]].add(triple[2])
-            yagoTaxonomyDown[triple[2]].add(triple[0])
+GEO_LAT = str(GEO.lat)
+GEO_LONG = str(GEO.long)
 
-    # Initialize counters
-    predicateStats=defaultdict(int)
-    classStats=defaultdict(int)
-    samples=[]
-    entities=0
-    totalPathsToRoot=0
-    totalClassesPerInstance=0
-    humanReadableNames=0
+PLATFORM_LOCAL = "Platform"
+POSITION_OBS_LOCAL = "PositionObservation"
+SPATIAL_REL_OBS_LOCAL = "SpatialRelationObservation"
 
-    # Initialize predicateStats with predicates from schema, same for classes
-    for yagoProperty in yagoSchema.properties:
-        predicateStats[yagoProperty]=0
-    predicateStats[Prefixes.rdfType]=0    
-    for yagoClass in yagoSchema.classes:
-        classStats[yagoClass]=0
-     
-    genericInstancesCount=0
-    
-    # Run through the facts
-    for entityFacts in itertools.chain(TurtleUtils.tsvEntities(FOLDER+"05-yago-final-wikipedia.tsv", "  Parsing YAGO Wikipedia"), TurtleUtils.tsvEntities(FOLDER+"05-yago-final-beyond-wikipedia.tsv", "  Parsing YAGO beyond Wikipedia")):
-        mainEntity=entityFacts.mainSubject()
-        if (mainEntity, Prefixes.rdfType, Prefixes.rdfsClass) in entityFacts:
+def local_name(uri: str) -> str:
+    if "#" in uri:
+        return uri.rsplit("#", 1)[-1]
+    return uri.rstrip("/").rsplit("/", 1)[-1]
+
+def ensure_inputs():
+    required = [
+        SCHEMA_FILE,
+        ENTITIES_FILE,
+        OBSERVATIONS_FILE,
+        RELATIONS_FILE,
+        META_FILE,
+        TAXONOMY_FILE,
+    ]
+    for path in required:
+        if not os.path.exists(path):
+            raise FileNotFoundError(f"required input not found: {path}")
+
+
+def read_tsv(path):
+    with open(path, "r", encoding="utf-8") as f:
+        for line in f:
+            line = line.rstrip("\n")
+            if not line:
+                continue
+            parts = line.split("\t")
+            if len(parts) < 3:
+                continue
+            yield parts[0], parts[1], parts[2]
+
+
+def load_schema(schema_file):
+    g = Graph()
+    g.parse(schema_file, format="turtle")
+
+    classes = set()
+    properties = set()
+    class_to_properties = defaultdict(set)
+    property_to_range = defaultdict(set)
+    property_to_domain = defaultdict(set)
+
+    for s in g.subjects(RDF.type, RDFS.Class):
+        classes.add(str(s))
+
+    for p in g.subjects(RDF.type, RDF.Property):
+        p_str = str(p)
+        properties.add(p_str)
+        for d in g.objects(p, RDFS.domain):
+            class_to_properties[str(d)].add(p_str)
+            property_to_domain[p_str].add(str(d))
+        for r in g.objects(p, RDFS.range):
+            property_to_range[p_str].add(str(r))
+
+    return classes, properties, class_to_properties, property_to_domain, property_to_range
+
+
+def load_taxonomy(taxonomy_file):
+    taxonomy_up = defaultdict(set)
+    taxonomy_down = defaultdict(set)
+
+    for s, p, o in read_tsv(taxonomy_file):
+        if p not in {RDFS_SUBCLASS, str(RDFS.subClassOf)}:
             continue
-        for p in entityFacts.predicatesOf(mainEntity):
-            predicateStats[p]+=1
-        if mainEntity.endswith("_generic_instance"):
-            genericInstancesCount+=1                
-        entities+=1
-        if not re.match(r"yago:Q[0-9]+", mainEntity):
-            humanReadableNames+=1
-        superClasses=set()
-        pathsToRoot=[0]
-        for c in entityFacts.objectsOf(mainEntity, Prefixes.rdfType):
-            getSuperClasses(c, superClasses, yagoTaxonomyUp, pathsToRoot)
-        for c in superClasses:
-            classStats[c]+=1 
-        totalClassesPerInstance+=len(superClasses)   
-        totalPathsToRoot+=pathsToRoot[0]      
-        if (len(samples)<100 or (len(samples)==100 and random.random()<0.01)):
-            for c in superClasses:
-                entityFacts.add((mainEntity, 'rdf:type', c))
-            if len(samples)<100:
-                samples.append(entityFacts)
-            else:    
-                samples[int(random.random()*99)]=entityFacts        
-            
-    print("  Writing out sample entities... ",end="",flush=True)    
-    with open(FOLDER+"06-sample-entities.ttl", "wt", encoding="UTF-8") as sampleFile:
-        for sample in samples:
-            sample.printToWriter(sampleFile)
+        taxonomy_up[s].add(o)
+        taxonomy_down[o].add(s)
+
+    return taxonomy_up, taxonomy_down
+
+
+def ancestors(c, taxonomy_up, visited=None):
+    if visited is None:
+        visited = set()
+    if c in visited:
+        return set()
+    visited.add(c)
+
+    result = {c}
+    for parent in taxonomy_up.get(c, set()):
+        result.update(ancestors(parent, taxonomy_up, visited.copy()))
+    return result
+
+
+def group_by_subject(paths):
+    grouped = defaultdict(list)
+    for path in paths:
+        for s, p, o in read_tsv(path):
+            grouped[s].append((s, p, o))
+    return grouped
+
+
+def collect_subject_types(grouped_facts):
+    subject_types = defaultdict(set)
+    for s, facts in grouped_facts.items():
+        for _, p, o in facts:
+            if p == RDF_TYPE:
+                subject_types[s].add(o)
+    return subject_types
+
+
+def get_super_classes(cls, taxonomy_up):
+    return ancestors(cls, taxonomy_up)
+
+
+def print_taxonomy_html(out_file, taxonomy_down, class_stats, root_classes):
+    def _print_node(writer, cls):
+        children = sorted(taxonomy_down.get(cls, []))
+        if not children:
+            writer.write(f"<li>{cls}: {class_stats.get(cls, 0)}</li>\n")
+            return
+        writer.write(
+            f"<li><details style='margin-left: 2em'>"
+            f"<summary style='margin-left: -2em'>{cls}: {class_stats.get(cls, 0)}</summary><ul>\n"
+        )
+        for child in children:
+            _print_node(writer, child)
+        writer.write("</ul></details></li>\n")
+
+    with open(out_file, "w", encoding="utf-8") as writer:
+        writer.write("""<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>STKG Taxonomy</title>
+<style>ul { list-style-type:none; }</style>
+</head>
+<body>
+<h1>STKG Taxonomy</h1>
+<ul>
+""")
+        for root in sorted(root_classes):
+            _print_node(writer, root)
+        writer.write("</ul></body></html>\n")
+
+
+def print_upper_taxonomy_html(out_file, schema_classes, class_to_properties, property_to_domain, property_to_range, taxonomy_down):
+    def _print_class(writer, cls, opened=False):
+        props = sorted(class_to_properties.get(cls, []))
+        children = sorted(taxonomy_down.get(cls, []))
+
+        writer.write(
+            f"<li><details style='margin-left: 2em'{' open' if opened else ''}>"
+            f"<summary style='font-weight:bold; margin-left: -2em'>{cls}</summary>"
+        )
+
+        writer.write("<details style='margin-left: 2em'><summary style='margin-left: -2em'>Outgoing properties</summary><ul style='list-style-type:none'>\n")
+        for p in props:
+            ranges = ", ".join(sorted(property_to_range.get(p, []))) or "(unspecified)"
+            writer.write(f"<li>- {p} &rarr; {ranges}</li>\n")
+        writer.write("</ul></details>\n")
+
+        writer.write("<details style='margin-left: 2em'><summary style='margin-left: -2em'>Subclasses</summary><ul style='list-style-type:none'>\n")
+        for child in children:
+            _print_class(writer, child)
+        writer.write("</ul></details></details></li>\n")
+
+    all_children = {c for children in taxonomy_down.values() for c in children}
+    roots = sorted(c for c in schema_classes if c not in all_children)
+
+    with open(out_file, "w", encoding="utf-8") as writer:
+        writer.write("""<h1>STKG Schema</h1>
+This is the top-level taxonomy of classes of STKG, together with their properties.
+<ul style='list-style-type:none'>
+""")
+        for root in roots:
+            _print_class(writer, root, opened=True)
+        writer.write("</ul>\n")
+
+
+def triple_to_ttl(s, p, o):
+    s_ttl = f"<{s}>"
+    p_ttl = f"<{p}>"
+
+    if o.startswith('"') or o.startswith("_:"):
+        o_ttl = o
+    elif o.startswith("http://") or o.startswith("https://"):
+        o_ttl = f"<{o}>"
+    else:
+        o_ttl = o
+
+    return f"{s_ttl} {p_ttl} {o_ttl} .\n"
+
+
+def main():
+    print("Step 06: Collecting STKG statistics...")
+
+    ensure_inputs()
+
+    print(f"  Loading schema from {SCHEMA_FILE} ...", end="", flush=True)
+    schema_classes, schema_properties, class_to_properties, property_to_domain, property_to_range = load_schema(SCHEMA_FILE)
     print("done")
 
-    metaFacts=0
-    for triple in TsvUtils.tsvTuples(FOLDER+"05-yago-final-meta.tsv", "  Counting meta facts"):
-        metaFacts += 1
-    
-    print("  Computing dump size... ",end="",flush=True)    
-    dumpSize=0
-    for f in glob.glob(FOLDER+"*final*.tsv"):
-        dumpSize+=os.path.getsize(f)
+    print(f"  Loading taxonomy from {TAXONOMY_FILE} ...", end="", flush=True)
+    taxonomy_up, taxonomy_down = load_taxonomy(TAXONOMY_FILE)
     print("done")
-    
-    print("  Writing out statistics... ",end="",flush=True)    
-    with open(FOLDER+"06-statistics.txt", "wt", encoding="UTF-8") as writer:
-        writer.write("YAGO 4.5 statistics\n\n")
-        writer.write("Dump size: "+str(dumpSize/1024/1024/1024)+" GB\n\n")
-        writer.write("Total number of entities: "+str(entities)+"\n\n")
-        writer.write("  ... of which generic: "+str(genericInstancesCount)+"\n\n")
-        writer.write("Total number of classes: "+str(len(yagoTaxonomyUp))+"\n\n")
-        writer.write("Disjointness statements: "+str(sum(len(yagoClass.disjointWith) for yagoClass in yagoSchema.classes.values()))+"\n\n")
-        writer.write("Avg number of paths to root: "+str(totalPathsToRoot/entities)+"\n\n")        
-        writer.write("Avg number of classes per instance: "+str(totalClassesPerInstance/entities)+"\n\n")        
-        writer.write("Human-readable names: "+str(humanReadableNames*100.0/entities)+"%\n\n")
-        writer.write("Total number of facts (excluding labels etc.): "+str(sum([predicateStats[p] for p in predicateStats if p not in excludePredicates]))+"\n\n")
-        writer.write("Avg number of facts (excluding labels etc.) per entity: "+str(sum([predicateStats[p] for p in predicateStats if p not in excludePredicates])/entities)+"\n\n")
-        writer.write("Total number of meta facts: "+str(metaFacts)+"\n\n")
-        writer.write("Total number of predicates: "+str(len(predicateStats))+"\n\n")
-        writer.write("Predicates:\n")
-        for pred in sorted(predicateStats.items(), key=lambda x:-x[1]):
-            writer.write("  "+pred[0]+": "+str(pred[1])+"\n")        
+
+    # initialize counters
+    predicate_stats = defaultdict(int)
+    class_stats = defaultdict(int)
+
+    for p in schema_properties:
+        predicate_stats[p] = 0
+    predicate_stats[RDF_TYPE] = 0
+
+    for c in schema_classes:
+        class_stats[c] = 0
+
+    fact_files = [ENTITIES_FILE, OBSERVATIONS_FILE, RELATIONS_FILE]
+    grouped = group_by_subject(fact_files)
+    subject_types = collect_subject_types(grouped)
+
+    entity_count = 0
+    platform_count = 0
+    observation_count = 0
+    position_obs_count = 0
+    relation_obs_count = 0
+    total_facts = 0
+    total_classes_per_instance = 0
+
+    samples = []
+    random.seed(42)
+
+    print("  Parsing final STKG facts ...", end="", flush=True)
+    for subject, facts in grouped.items():
+        entity_count += 1
+
+        direct_types = subject_types.get(subject, set())
+        inherited_types = set()
+        for t in direct_types:
+            inherited_types.update(get_super_classes(t, taxonomy_up))
+
+        for c in inherited_types:
+            class_stats[c] += 1
+        total_classes_per_instance += len(inherited_types)
+
+        inherited_local_names = {local_name(c) for c in inherited_types}
+
+        if PLATFORM_LOCAL in inherited_local_names:
+            platform_count += 1
+        if POSITION_OBS_LOCAL in inherited_local_names:
+            position_obs_count += 1
+            observation_count += 1
+        if SPATIAL_REL_OBS_LOCAL in inherited_local_names:
+            relation_obs_count += 1
+            observation_count += 1
+
+        for _, p, _ in facts:
+            predicate_stats[p] += 1
+            total_facts += 1
+
+        if len(samples) < 100:
+            samples.append((subject, facts, inherited_types))
+        else:
+            if random.random() < 0.01:
+                samples[random.randint(0, 99)] = (subject, facts, inherited_types)
     print("done")
-     
-    print("  Writing out taxonomy... ",end="",flush=True)    
-    printTaxonomy(FOLDER+"06-taxonomy.html")
-    printUpperTaxonomy(FOLDER+"06-upper-taxonomy.html")
+
+    meta_facts = sum(1 for _ in read_tsv(META_FILE))
+
+    time_fact_count = predicate_stats.get(TIME, 0)
+    relation_type_fact_count = predicate_stats.get(RELATION_TYPE, 0)
+    geo_fact_count = predicate_stats.get(GEO_LAT, 0) + predicate_stats.get(GEO_LONG, 0)
+
+    print("  Computing dump size ...", end="", flush=True)
+    dump_size = 0
+    for f in glob.glob(os.path.join(FOLDER, "05-stkg-final-*.tsv")):
+        dump_size += os.path.getsize(f)
     print("done")
-    
-if TEST:
-    Evaluator.compare(FOLDER+"06-statistics.txt", FOLDER+"06-statistics-gold.txt")
-    Evaluator.compare(FOLDER+"06-taxonomy.html", FOLDER+"06-taxonomy-gold.html")
-    Evaluator.compare(FOLDER+"06-upper-taxonomy.html", FOLDER+"06-upper-taxonomy-gold.html")
+
+    print(f"  Writing sample entities to {OUT_SAMPLE_TTL} ...", end="", flush=True)
+    with open(OUT_SAMPLE_TTL, "w", encoding="utf-8") as writer:
+        for subject, facts, inherited_types in samples:
+            for s, p, o in facts:
+                writer.write(triple_to_ttl(s, p, o))
+            for c in sorted(inherited_types):
+                writer.write(triple_to_ttl(subject, RDF_TYPE, c))
+            writer.write("\n")
+    print("done")
+
+    avg_classes_per_instance = (total_classes_per_instance / entity_count) if entity_count else 0.0
+    avg_facts_per_resource = (total_facts / entity_count) if entity_count else 0.0
+    avg_facts_per_observation = (
+        (predicate_stats.get(TIME, 0) + predicate_stats.get(OBSERVED_ENTITY, 0) +
+         predicate_stats.get(SUBJECT_ENTITY, 0) + predicate_stats.get(OBJECT_ENTITY, 0) +
+         predicate_stats.get(RELATION_TYPE, 0) + predicate_stats.get(GEO_LAT, 0) +
+         predicate_stats.get(GEO_LONG, 0)) / observation_count
+        if observation_count else 0.0
+    )
+
+    print(f"  Writing statistics to {OUT_STATS} ...", end="", flush=True)
+    with open(OUT_STATS, "w", encoding="utf-8") as writer:
+        writer.write("STKG statistics\n\n")
+        writer.write(f"Dump size: {dump_size / 1024 / 1024:.4f} MB\n\n")
+        writer.write(f"Total number of resources: {entity_count}\n")
+        writer.write(f"  Platforms: {platform_count}\n")
+        writer.write(f"  Observations: {observation_count}\n")
+        writer.write(f"    PositionObservations: {position_obs_count}\n")
+        writer.write(f"    SpatialRelationObservations: {relation_obs_count}\n\n")
+
+        writer.write(f"Total number of classes: {len(set(list(schema_classes) + list(taxonomy_up.keys()) + list(taxonomy_down.keys())))}\n\n")
+        writer.write(f"Total number of predicates: {len(predicate_stats)}\n")
+        writer.write(f"Total number of facts: {total_facts}\n")
+        writer.write(f"Total number of meta facts: {meta_facts}\n\n")
+
+        writer.write(f"Avg number of classes per resource: {avg_classes_per_instance:.4f}\n")
+        writer.write(f"Avg number of facts per resource: {avg_facts_per_resource:.4f}\n")
+        writer.write(f"Avg number of facts per observation: {avg_facts_per_observation:.4f}\n\n")
+
+        writer.write("STKG-specific predicate counts:\n")
+        writer.write(f"  time: {time_fact_count}\n")
+        writer.write(f"  relationType: {relation_type_fact_count}\n")
+        writer.write(f"  geo facts (lat+long): {geo_fact_count}\n\n")
+
+        writer.write("Predicate counts:\n")
+        for pred, cnt in sorted(predicate_stats.items(), key=lambda x: (-x[1], x[0])):
+            writer.write(f"  {pred}: {cnt}\n")
+
+        writer.write("\nClass counts:\n")
+        for cls, cnt in sorted(class_stats.items(), key=lambda x: (-x[1], x[0])):
+            writer.write(f"  {cls}: {cnt}\n")
+    print("done")
+
+    # taxonomy roots = classes that are never children
+    all_children = {child for parent in taxonomy_down for child in taxonomy_down[parent]}
+    all_nodes = set(taxonomy_up.keys()) | set(taxonomy_down.keys())
+    root_classes = sorted(c for c in all_nodes if c not in all_children)
+
+    print(f"  Writing taxonomy HTML to {OUT_TAXONOMY_HTML} ...", end="", flush=True)
+    print_taxonomy_html(OUT_TAXONOMY_HTML, taxonomy_down, class_stats, root_classes)
+    print("done")
+
+    print(f"  Writing upper taxonomy HTML to {OUT_UPPER_TAXONOMY_HTML} ...", end="", flush=True)
+    print_upper_taxonomy_html(
+        OUT_UPPER_TAXONOMY_HTML,
+        schema_classes,
+        class_to_properties,
+        property_to_domain,
+        property_to_range,
+        taxonomy_down,
+    )
+    print("done")
+
+    print(f"  Info: Total resources: {entity_count}")
+    print(f"  Info: Platforms: {platform_count}")
+    print(f"  Info: Observations: {observation_count}")
+    print(f"  Info: PositionObservations: {position_obs_count}")
+    print(f"  Info: SpatialRelationObservations: {relation_obs_count}")
+    print(f"  Info: Meta facts: {meta_facts}")
+    print(f"  Info: Total facts: {total_facts}")
+
+
+if __name__ == "__main__":
+    main()

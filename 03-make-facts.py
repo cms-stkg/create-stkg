@@ -1,464 +1,339 @@
-"""
-Creates the the YAGO facts from the Wikidata facts
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
 
-CC-BY 2022-2025 Fabian M. Suchanek
+"""
+Creates STKG facts from raw CSV observations
 
 Call:
-  python3 make-facts.py
+  python3 03-make-facts.py --in input-data/stkg/raw/KG1.csv --out yago-data/03-stkg-facts.tsv
 
 Input:
-- 01-yago-final-schema.ttl
-- 02-yago-taxonomy-to-rename.tsv
-- Wikidata file
+- raw CSV observation file
+- optional relation-map.tsv
 
 Output:
-- 03-yago-facts-to-type-check.tsv
+- 03-stkg-facts.tsv
 
 Algorithm:
-- run through all entities of Wikidata, with its associated facts
-  - translate Wikidata classes/properties to YAGO classes/properties
-  - check for disjointness of classes
-  - check cardinality constraints
-  - check domain constraint
-  - check range constraints
-  - write out facts that fulfill the constraints to yago-facts-to-type-check.tsv  
+1) Read CSV rows
+2) Detect object slots, coordinates, and relation columns
+3) Create PositionObservation facts
+4) Create SpatialRelationObservation facts
+5) Write all facts as TSV triples
 """
 
-##########################################################################
-#             Booting
-##########################################################################
-
-import Prefixes
-import glob
-import TsvUtils
-import TurtleUtils
-from TurtleUtils import Graph
-import sys
-import re
+import argparse
+import csv
 import os
-import Evaluator
-from Schema import YagoSchema
-from collections import defaultdict
+import re
+from datetime import datetime, timezone
+from typing import Optional, Tuple, Dict, List, Set
 
-TEST=len(sys.argv)>1 and sys.argv[1]=="--test"
-FOLDER="test-data/03-make-facts/" if TEST else "yago-data/"
-WIKIDATA_FILE= "test-data/03-make-facts/00-wikidata.ttl" if TEST else "../wikidata.ttl"
 
-##########################################################################
-#             Debugging
-##########################################################################
+STKG = "http://example.org/stkg/"
+STKGREL = "http://example.org/stkg/relation/"
+RDF_TYPE = "http://www.w3.org/1999/02/22-rdf-syntax-ns#type"
+XSD_DATETIME = "http://www.w3.org/2001/XMLSchema#dateTime"
+XSD_DECIMAL = "http://www.w3.org/2001/XMLSchema#decimal"
+XSD_INTEGER = "http://www.w3.org/2001/XMLSchema#integer"
+GEO_LAT = "http://www.w3.org/2003/01/geo/wgs84_pos#lat"
+GEO_LONG = "http://www.w3.org/2003/01/geo/wgs84_pos#long"
 
-def debug(*message):
-    """ Prints a message if we're in TEST mode"""
-    if TEST:
-        sys.stdout.buffer.write(b"  DEBUG: ")
-        for m in message:
-            # Using this instead of print to allow printing unicode chars to pipes
-            sys.stdout.buffer.write(str(m).encode('utf8'))
-            sys.stdout.buffer.write(b" ")
-        print("")
-    
-def getFirst(myList):
-    """ Returns the first element of an iterable or none """    
-    for o in myList:
-        return o
-    return None
-    
-##########################################################################
-#             Cleaning of entities
-##########################################################################
 
-def translatePropertiesAndClasses(entityFacts, yagoSchema):
-    """ Replaces properties by their YAGO properties, and classes by their YAGO equivalents, returns new graph and fact dates """
-    newGraph=Graph()
-    dates={}
-    for (s,p,o) in entityFacts:
-        startDate, endDate=getStartAndEndDate(s, p, o, entityFacts)
-        s=yagoSchema.wikidataProperties[s].identifier if s in yagoSchema.wikidataProperties else s
-        p=yagoSchema.wikidataProperties[p].identifier if p in yagoSchema.wikidataProperties else p
-        o=yagoSchema.wikidataProperties[o].identifier if o in yagoSchema.wikidataProperties else o
-        s=yagoSchema.wikidataClasses[s].identifier if s in yagoSchema.wikidataClasses else s
-        p=yagoSchema.wikidataClasses[p].identifier if p in yagoSchema.wikidataClasses else p
-        o=yagoSchema.wikidataClasses[o].identifier if o in yagoSchema.wikidataClasses else o
-        newGraph.add((s,p,o))
-        if startDate or endDate:
-            dates[(s,p,o)]=(startDate, endDate)
-    return (newGraph, dates)
-   
-def handleWebPages(entityFacts):
-    """ Changes <page, schema:about, entity> to <entity, mainEntityOfPage, page> """
-    for s, p, o in entityFacts.triplesWithPredicate(Prefixes.schemaAbout):
-        entityFacts.remove((s, Prefixes.schemaAbout, o))
-        entityFacts.add((o, Prefixes.schemaPage, s))
-        debug("Fixed",o, Prefixes.schemaPage, s)
-    
-def handleTypeAssertions(entityFacts, yagoTaxonomyUp):
-    """Replace all facts <subject, wikidata:type, class> by <subject, rdf:type, class>"""
-    # Given types are mostly meta stuff
-    mainEntity=entityFacts.mainSubject()
-    entityFacts.removeObjects(mainEntity,Prefixes.rdfType)
-    for predicate in list(entityFacts.predicatesOf(mainEntity)):
-        if predicate==Prefixes.wikidataType or predicate==Prefixes.wikidataOccupation:
-            for obj in entityFacts.objectsOf(mainEntity, predicate):
-                entityFacts.add((mainEntity,Prefixes.rdfType,obj))  
-        # Anything that has a parent taxon is an instance of taxon
-        if predicate=="schema:parentTaxon":
-            entityFacts.add((mainEntity,Prefixes.rdfType,Prefixes.schemaTaxon))
-    entityFacts.removeObjects(mainEntity,Prefixes.wikidataType)
-    entityFacts.removeObjects(mainEntity,Prefixes.wikidataOccupation)
-    # If you're a class, say it
-    if mainEntity in yagoTaxonomyUp:
-        entityFacts.add((mainEntity ,Prefixes.rdfType,Prefixes.rdfsClass))
-        
-##########################################################################
-#             Start and end dates
-##########################################################################
+_TIME_PATTERNS = [
+    "%Y-%m-%dT%H:%M:%S%z",
+    "%Y-%m-%dT%H:%M:%S",
+    "%Y-%m-%d %H:%M:%S",
+    "%Y/%m/%d %H:%M:%S",
+    "%Y-%m-%d",
+]
 
-# Start and end dates are encoded as follows in Wikidata:
-#
-# # Belgium has 11m inhabitants
-# wd:Q31 wdt:P1082 "+11431406"^^xsd:decimal .
-# 
-# # This is true in the year 2014
-# 
-# wd:Q31 p:P1082 wds:Q31-93ba9638-404b-66ac-2733-e6292666a326 .
-# wds:Q31-93ba9638-404b-66ac-2733-e6292666a326 a wikibase:Statement ;
-#	ps:P1082 "+11150516"^^xsd:decimal ;
-#	pq:P585 "2014-01-01T00:00:00Z"^^xsd:dateTime ;
-    
-def getStartAndEndDate(s, p, o, entityGraph):
-    """ Returns a tuple of a start date and an end date for this fact.
-        Unknown components are None. """
-    # The property should be in the namespace WDT
-    if not p.startswith("wdt:"):
-        return (None, None)
-    # Translate to the namespace P
-    pStatement="p:"+p[4:]
-    # Translate to the namespace PS
-    pValue="ps:"+p[4:]
-    # Find all meta statements about (s, p, _)
-    for statement in entityGraph.objectsOf(s, pStatement):
-        # If the meta-statement concerns indeed the object o...
-        if (statement, pValue, o) in entityGraph:
-            # If there is a "duringTime" (pq:P585), return that one
-            for duringTime in entityGraph.objectsOf(statement, Prefixes.wikidataDuring):
-                if TurtleUtils.isDate(duringTime):
-                    return (duringTime, duringTime)
-                else:
-                    debug("Removing bad date",duringTime)
-            # Otherwise extract start time and end time
-            startDate=getFirst(entityGraph.objectsOf(statement, Prefixes.wikidataStart))
-            endDate=getFirst(entityGraph.objectsOf(statement, Prefixes.wikidataEnd))
-            return(normalizeDate(startDate) if TurtleUtils.isDate(startDate) else None, normalizeDate(endDate) if TurtleUtils.isDate(endDate) else None)
-    return (None, None)
 
-##########################################################################
-#             Taxonomy checks
-##########################################################################
+def parse_time(timestr: str) -> datetime:
+    s = (timestr or "").strip()
+    if not s:
+        raise ValueError("Empty time string")
 
-def handleAndReturnTypes(entityFacts, yagoSchema, yagoTaxonomyUp):
-    """Removes disjoint classes and shortcuts, returns types"""
-    mainEntity=entityFacts.mainSubject()
-    superTypes=set()
-    # Sort the list to make this deterministic
-    directTypes=sorted(entityFacts.objectsOf(mainEntity, Prefixes.rdfType))
-    for typ in directTypes:
-        mySuperClasses=getSuperClasses(typ,yagoTaxonomyUp, set())
-        for mySuperClass in mySuperClasses:
-            if mySuperClass in yagoSchema.classes:
-                for disjointYagoClass in yagoSchema.classes[mySuperClass].disjointWith:
-                    if disjointYagoClass.identifier in superTypes or disjointYagoClass.identifier in directTypes: 
-                        entityFacts.remove((mainEntity, Prefixes.rdfType, typ))
-                        debug("Removed disjoint type", typ, "from", mainEntity,"since disjoint with",disjointYagoClass)
-                        break
-        else:
-            mySuperClasses.remove(typ)
-            superTypes.update(mySuperClasses)
-            
-    # Remove shortcuts        
-    for typ in directTypes:
-        if typ in superTypes:
-            entityFacts.remove((mainEntity, Prefixes.rdfType, typ))
-            debug("Removed shortcut type", typ, "from", mainEntity, superTypes)
-    superTypes.update(directTypes)
-    return superTypes    
-    
-def getSuperClasses(cls, yagoTaxonomyUp, classes):
-    """Adds all superclasses of a class <cls> (including <cls>) to the set <classes>, returns it; start with empty classes set"""
-    classes.add(cls)
-    # Make a check before because it's a defaultdict,
-    # which would create cls if it's not there
-    if cls in yagoTaxonomyUp:
-        for sc in yagoTaxonomyUp[cls]:
-            getSuperClasses(sc, yagoTaxonomyUp, classes)
-    return classes
-        
-##########################################################################
-#             Handling domains and range
-##########################################################################
+    if s.startswith("+"):
+        s = s[1:].strip()
 
-def handleDomain(entityFacts, yagoSchema, fullTransitiveClasses):
-    """ Performs a domain check, removes offending facts"""
-    mainEntity=entityFacts.mainSubject()
-    for predicate in list(entityFacts.predicatesOf(mainEntity)):
-        if predicate==Prefixes.rdfType:
+    if s.endswith("Z"):
+        s2 = s[:-1]
+        try:
+            dt = datetime.fromisoformat(s2)
+            return dt.replace(tzinfo=timezone.utc)
+        except Exception:
+            pass
+
+    try:
+        dt = datetime.fromisoformat(s)
+        if dt.tzinfo is None:
+            dt = dt.replace(tzinfo=timezone.utc)
+        return dt.astimezone(timezone.utc)
+    except Exception:
+        pass
+
+    for p in _TIME_PATTERNS:
+        try:
+            dt = datetime.strptime(s, p)
+            if dt.tzinfo is None:
+                dt = dt.replace(tzinfo=timezone.utc)
+            return dt.astimezone(timezone.utc)
+        except Exception:
             continue
-        yagoProperty=yagoSchema.properties.get(predicate, None)
-        if not yagoProperty:
-           entityFacts.removeObjects(mainEntity,predicate)
-           debug("Removed unknown predicate",mainEntity,predicate)
-           continue
-        for obj in list(entityFacts.objectsOf(mainEntity, predicate)):
-            if not any(c in fullTransitiveClasses for c in yagoProperty.subjectTypes):
-                debug("Domain check failed for",mainEntity,yagoProperty, fullTransitiveClasses)
-                entityFacts.remove((mainEntity, predicate, obj))
-                     
-def isURI(s): 
-    """TRUE if s conforms to xsd:anyUri, as explained here:
-    https://stackoverflow.com/questions/14466585/is-this-regex-correct-for-xsdanyuri """
-    return not re.search("(%(?![0-9A-F]{2})|#.*#)", s)
 
-def normalizeString(s):
-    """ Makes sure that a string does not contain invalid characters or languages"""
-    if not s or not s.startswith('"'):
-        return s
-    return s.replace("\uFFFD","_").replace('"@zh-classical','"@zh')
+    raise ValueError(f"Unrecognized time format: {timestr}")
 
-def normalizeDate(literal):
-    """ Converts midnight dates to dates"""
-    return re.sub('T00:00:00Z"\\^\\^xsd:dateTime$','"^^xsd:date', literal) if literal else None
-    
-def cleanLiteralObject(obj,datatype):
-    """ Returns a version of obj that corresponds to the datatype -- or None"""
-    if datatype==Prefixes.xsdAnytype:
-        return obj if obj.startswith('"') else None
-    if datatype==Prefixes.xsdAnyURI and obj.startswith('<'):
-        obj=obj[1:-1]
-        if not isURI(obj):
-            return None
-        return '"'+obj+'"^^xsd:anyURI'
-    if datatype==Prefixes.xsdString and obj.startswith('<'):
-        return '"'+obj[1:-1]+'"'       
-    literalValue, _, lang, literalDataType = TurtleUtils.splitLiteral(obj)
-    if literalValue is None:
-        return None
-    if datatype==Prefixes.xsdAnyURI:
-        return '"'+literalValue+'"^^'+Prefixes.xsdAnyURI if isURI(literalValue) else None
-    if datatype==Prefixes.xsdString:
-        return '"'+literalValue+'"'
-    if datatype==Prefixes.rdfLangString:
-        return obj if literalDataType is None and lang is not None else None
-    if datatype==Prefixes.xsdDateTime:
-        # Erroneous default dates in Wikidata
-        if obj.startswith('"0000'):
-           return None
-        # Strings that are longer than any possible date   
-        if len(obj)>len('"+0000-01-01T00:00:00Z"^^xsd:dateTime'):
-           return None
-        # Fall through
-    return obj if literalDataType==datatype else None
-        
-def cleanObject(obj, yagoProperty):
-    """Returns an object that conforms to the range of the yagoProperty -- or None in case of failure"""
-    # Patterns are verified in a fall-through fashion,
-    # because verifying a pattern is a necessary but not sufficient condition
-    if yagoProperty.pattern:
-       objectValue=TurtleUtils.splitLiteral(obj)[0]
-       if objectValue is None:
-           debug("Object is not a literal",obj)
-           return None
-       if not re.match(yagoProperty.pattern, objectValue):
-            debug("Object does not match regex:",objectValue, yagoProperty.pattern)
-            return None
-    
-    # TRUE if this type admits entity objects (as opposed to literals)
-    couldBeEntity=False
-    
-    for objectType in yagoProperty.objectTypes:
-        if objectType.startswith("xsd:") or objectType.startswith("rdf:") or objectType.startswith("geo:"):
-            newObj=cleanLiteralObject(obj, objectType)
-            if newObj:
-                return normalizeDate(normalizeString(newObj))
-        else:
-            couldBeEntity=True
-            
-    # If the object is a literal, there is no chance we can make it fit the range
-    if TurtleUtils.isLiteral(obj):
-        debug("Could not match any object type for", obj,yagoProperty.objectTypes)
-        return None
-    
-    # If the object is not a literal, it can still work if we allow entities
-    return obj if couldBeEntity else None
 
-def handleRange(entityFacts, yagoSchema):
-    """ Performs a range check, removes offending facts"""
-    mainEntity=entityFacts.mainSubject()
-    for predicate in list(entityFacts.predicatesOf(mainEntity)):
-        yagoProperty=yagoSchema.properties.get(predicate, None)
-        if not yagoProperty:
-           continue 
-        for obj in list(entityFacts.objectsOf(mainEntity, predicate)):
-            cleanObj=normalizeDate(normalizeString(cleanObject(obj, yagoProperty)))
-            if cleanObj is None:
-                entityFacts.remove((mainEntity, predicate, obj))
-                debug("Range check failed for",obj,yagoProperty, yagoProperty.objectTypes)
-            elif cleanObj!=obj:
-                debug("Cleaned object",obj,cleanObj)
-                entityFacts.remove((mainEntity, predicate, obj))         
-                entityFacts.add((mainEntity, predicate, cleanObj))
-                
+def time_to_iso_z(dt: datetime) -> str:
+    return dt.astimezone(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
 
-##########################################################################
-#             Handling max counts
-##########################################################################
 
-def isSecondaryWikidataClass(entityFacts, yagoSchema):
-    """ TRUE if entityFacts describe a class that is mapped to a YAGO class, and this class is not the first among them"""
-    mainEntity=entityFacts.mainSubject()
-    if mainEntity in yagoSchema.wikidataClasses:
-        candidates=list(yagoSchema.wikidataClasses[mainEntity].fromClasses)
-        candidates.sort()
-        debug("Is Wikidata class",mainEntity,candidates)
-        return mainEntity!=candidates[0]
-    return False
+def time_to_key(dt: datetime) -> str:
+    return dt.astimezone(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
 
-def handleMaxCounts(entityFacts, yagoSchema, isSecondaryClass=False):
-    """ Performs uniqueLang and maxCount checks, removes offending facts """
-    mainEntity=entityFacts.mainSubject()            
-    for predicate in list(entityFacts.predicatesOf(mainEntity)):        
-        yagoProperty=yagoSchema.properties.get(predicate, None)
-        if not yagoProperty:
-            continue
-        # For secondary classes, we do not add anything that might violate maxcounts
-        if isSecondaryClass and (yagoProperty.maxCount or yagoProperty.uniqueLang):
-            debug("Secondary class",mainEntity,"loses",predicate)
-            entityFacts.removeObjects(mainEntity,predicate)
-            continue
-        # Check maxcount    
-        if yagoProperty.maxCount and len(entityFacts.objectsOf(mainEntity, predicate))>yagoProperty.maxCount:
-            objects=list(entityFacts.objectsOf(mainEntity, predicate))
-            objects.sort()
-            for i in range(yagoProperty.maxCount, len(objects)):
-                entityFacts.remove((mainEntity, predicate, objects[i]))
-        # Check unique languages
-        if yagoProperty.uniqueLang:
-            languages=set()
-            objects=list(entityFacts.objectsOf(mainEntity, predicate))
-            objects.sort(key=len)
-            objects.reverse()
-            debug("Unique language for",mainEntity,yagoProperty, objects)
-            if not objects:
-                debug("No objects:",mainEntity, predicate, objects)
+
+def normalize_rel_fallback(s: str) -> str:
+    s = (s or "").strip()
+    if not s:
+        return ""
+    s = s.lower()
+    s = re.sub(r"[^a-z0-9]+", "_", s).strip("_")
+    return s
+
+
+def load_relation_map_tsv(path: Optional[str]) -> Dict[str, str]:
+    if not path:
+        return {}
+
+    if not os.path.exists(path):
+        raise FileNotFoundError(f"relation map file not found: {path}")
+
+    mapping: Dict[str, str] = {}
+    with open(path, "r", encoding="utf-8") as f:
+        for line in f:
+            line = line.strip()
+            if not line or line.startswith("#"):
                 continue
-            for obj in objects:
-                _,_,lang,_=TurtleUtils.splitLiteral(obj)
-                if lang:
-                   if lang in languages:
-                        debug("Duplicate language:",mainEntity,predicate,lang)
-                        entityFacts.remove((mainEntity, predicate, obj))
-                   else:
-                        languages.add(lang)
+            parts = line.split("\t")
+            if len(parts) < 2:
+                continue
+            raw = parts[0].strip()
+            norm = parts[1].strip()
+            if raw and norm:
+                mapping[raw.lower()] = norm
+    return mapping
 
 
-##########################################################################
-#             Main method
-##########################################################################
-  
-class treatWikidataEntity():
-    """ Visitor that will handle every Wikidata entity """
-    def __init__(self,i):
-        """ We load everything once per process (!) in order to avoid problems with shared memory """
-        print("    Initializing Wikidata reader",i+1, flush=True)
-        self.number=i
-        print("    Wikidata reader",i+1, "loads YAGO schema", flush=True)
-        self.yagoSchema=YagoSchema(FOLDER+"01-yago-final-schema.ttl", False)
-        print("    Wikidata reader",i+1, "loads YAGO taxonomy", flush=True)
-        self.yagoTaxonomyUp=defaultdict(set)
-        for triple in TsvUtils.tsvTuples(FOLDER+"02-yago-taxonomy-to-rename.tsv"):
-            if len(triple)>3:
-                self.yagoTaxonomyUp[triple[0]].add(triple[2])
-                
-        print("    Done initializing Wikidata reader",i+1, flush=True)
-        self.writer=None
-                
-    def visit(self,entityFacts):
-        """ Writes out the facts for a single Wikidata entity """
-                    
-        # We have to open the file here and not in init() to avoid pickling problems
-        if not self.writer:
-            self.writer=TsvUtils.TsvFileWriter(FOLDER+"03-yago-facts-to-type-check-"+(str(self.number).rjust(4,'0'))+".tmp")
-            self.writer.__enter__()
-                    
-        handleWebPages(entityFacts)               
+def normalize_relation(raw: str, rel_map: Dict[str, str]) -> str:
+    r = (raw or "").strip()
+    if not r:
+        return ""
+    hit = rel_map.get(r.lower())
+    if hit:
+        return hit
+    return normalize_rel_fallback(r)
 
-        # Wikidata classes that are mapped to a YAGO class, but that are not the first
-        # among those mapped to the same YAG class
-        isSecondaryClass=isSecondaryWikidataClass(entityFacts, self.yagoSchema)
-        
-        entityFacts, dates=translatePropertiesAndClasses(entityFacts, self.yagoSchema)
-                
-        handleTypeAssertions(entityFacts, self.yagoTaxonomyUp)        
-                
-        types=handleAndReturnTypes(entityFacts, self.yagoSchema, self.yagoTaxonomyUp)
-        
-        handleDomain(entityFacts, self.yagoSchema, types)
-        
-        handleRange(entityFacts, self.yagoSchema)
-        
-        handleMaxCounts(entityFacts, self.yagoSchema, isSecondaryClass)
-        
-        s=entityFacts.mainSubject()
-        for p in entityFacts.predicatesOf(s):
-            for o in entityFacts.objectsOf(s,p):
-                if s==o:
-                    # Rare cases that are nonsense
-                    continue
-                if p==Prefixes.rdfType:
-                    self.writer.write(s,"rdf:type",o,".")
-                    continue
-                else:
-                    yagoProperty = self.yagoSchema.properties[p]
-                (startDate, endDate) = dates.get((s, p, o), (None, None))
-                # Remove end date for alumni
-                if p=="schema:alumniOf":
-                    endDate=None
-                if p=="schema:dateCreated":
-                    endDate=None
-                    startDate=None
-                if TurtleUtils.isLiteral(o):
-                    if startDate or endDate:
-                        self.writer.write(s,yagoProperty.identifier,o, ". #", "", normalizeDate(startDate), normalizeDate(endDate))                
-                    else:
-                        self.writer.write(s,yagoProperty.identifier,o, ".")                
-                else:
-                    self.writer.write(s,yagoProperty.identifier,o,". # IF",(", ".join(sorted(yagoProperty.objectTypes))), normalizeDate(startDate), normalizeDate(endDate))
 
-    def result(self):
-        self.writer.__exit__()
+def normalize_header(h: str) -> str:
+    if h is None:
+        return ""
+    return h.replace("\ufeff", "").strip()
+
+
+def normalize_row_keys(row: Dict[str, str]) -> Dict[str, str]:
+    return {normalize_header(k): v for k, v in (row or {}).items()}
+
+
+_SLOT_RE = re.compile(r"^BF_object_([A-Za-z0-9]+)$")
+_REL_RE_1 = re.compile(r"^([A-Za-z0-9]+)\-([A-Za-z0-9]+)$")
+_REL_RE_2 = re.compile(r"^([A-Za-z0-9]+)\-([A-Za-z0-9]+)\s*relation$", re.I)
+
+
+def detect_slots(fieldnames: List[str]) -> List[str]:
+    slots: Set[str] = set()
+    for h in fieldnames:
+        m = _SLOT_RE.match(h)
+        if m:
+            slots.add(m.group(1))
+    return sorted(slots)
+
+
+def pick_lat_lon_cols(fieldnames: List[str], slot: str) -> Tuple[Optional[str], Optional[str]]:
+    candidates_lat = [f"lat_{slot}", f"latitude_{slot}"]
+    candidates_lon = [f"long_{slot}", f"longitude_{slot}"]
+
+    lat_col = next((c for c in candidates_lat if c in fieldnames), None)
+    lon_col = next((c for c in candidates_lon if c in fieldnames), None)
+    return lat_col, lon_col
+
+
+def detect_relation_cols(fieldnames: List[str]) -> List[Tuple[str, str, str]]:
+    out: List[Tuple[str, str, str]] = []
+    for h in fieldnames:
+        m1 = _REL_RE_1.match(h)
+        if m1:
+            out.append((h, m1.group(1), m1.group(2)))
+            continue
+        m2 = _REL_RE_2.match(h)
+        if m2:
+            out.append((h, m2.group(1), m2.group(2)))
+            continue
+    return out
+
+
+def safe_decimal_lexical(s: str) -> Optional[str]:
+    if s is None:
         return None
-        
-if __name__ == '__main__':
-    with TsvUtils.Timer("Step 03: Creating YAGO facts"):
-        TurtleUtils.visitWikidata(WIKIDATA_FILE, treatWikidataEntity) 
-        print("  Collecting results...")
-        count=0
-        tempFiles=list(glob.glob(FOLDER+"03-yago-facts-to-type-check-*.tmp"))
-        tempFiles.sort()
-        with open(FOLDER+"03-yago-facts-to-type-check.tsv", "wb") as writer:
-            for file in tempFiles:
-                print("    Reading",file)
-                with open(file, "rb") as reader:
-                    for line in reader:
-                        writer.write(line)
-                        if not line.startswith(b"@"):
-                            count+=1
-        print("  done")
-        print("  Info: Number of facts:",count)
-        
-        print("  Deleting temporary files...", end="", flush=True)
-        for file in tempFiles:
-            os.remove(file)
-        print(" done")
-    
-    if TEST:
-        Evaluator.compare(FOLDER+"03-yago-facts-to-type-check.tsv")
+    ss = str(s).strip()
+    if ss == "":
+        return None
+    try:
+        v = float(ss)
+        return f"{v:.10f}".rstrip("0").rstrip(".")
+    except Exception:
+        return None
+
+
+def uri(local: str) -> str:
+    return STKG + local
+
+
+def rel_uri(token: str) -> str:
+    return STKGREL + token
+
+
+def typed_literal(value: str, datatype_uri: str) -> str:
+    escaped = value.replace("\\", "\\\\").replace('"', '\\"')
+    return f"\"{escaped}\"^^<{datatype_uri}>"
+
+
+def integer_literal(value: int) -> str:
+    return f"\"{value}\"^^<{XSD_INTEGER}>"
+
+
+def fact(s: str, p: str, o: str) -> Tuple[str, str, str]:
+    return (s, p, o)
+
+
+def write_tsv(facts: List[Tuple[str, str, str]], out_path: str) -> None:
+    with open(out_path, "w", encoding="utf-8", newline="") as f:
+        w = csv.writer(f, delimiter="\t", quoting=csv.QUOTE_MINIMAL)
+        for s, p, o in facts:
+            w.writerow([s, p, o])
+
+
+def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--in", dest="inp", required=True, help="input CSV")
+    ap.add_argument("--out", dest="out", required=True, help="output TSV")
+    ap.add_argument(
+        "--relation_map",
+        default="input-data/stkg/relation-map.tsv",
+        help="TSV mapping for relation tokens",
+    )
+    args = ap.parse_args()
+
+    os.makedirs(os.path.dirname(args.out) or ".", exist_ok=True)
+
+    rel_map = {}
+    if args.relation_map and os.path.exists(args.relation_map):
+        rel_map = load_relation_map_tsv(args.relation_map)
+
+    all_facts: List[Tuple[str, str, str]] = []
+
+    with open(args.inp, newline="", encoding="utf-8") as f:
+        reader = csv.DictReader(f)
+
+        raw_fieldnames = reader.fieldnames or []
+        fieldnames = [normalize_header(h) for h in raw_fieldnames]
+        reader.fieldnames = fieldnames
+
+        required_cols = {"time"}
+        missing = required_cols - set(fieldnames)
+        if missing:
+            raise ValueError(f"CSV missing required columns: {sorted(list(missing))}")
+
+        slots = detect_slots(fieldnames)
+        rel_cols = detect_relation_cols(fieldnames)
+
+        for row_idx, row in enumerate(reader):
+            row = normalize_row_keys(row)
+
+            dt = parse_time(row.get("time", ""))
+            iso_z = time_to_iso_z(dt)
+            t_key = time_to_key(dt)
+            time_lit = typed_literal(iso_z, XSD_DATETIME)
+
+            # PositionObservation facts
+            for slot in slots:
+                obj_id = (row.get(f"BF_object_{slot}") or "").strip()
+                if not obj_id:
+                    continue
+
+                lat_col, lon_col = pick_lat_lon_cols(fieldnames, slot)
+                if not lat_col or not lon_col:
+                    continue
+
+                lat_lex = safe_decimal_lexical(row.get(lat_col))
+                lon_lex = safe_decimal_lexical(row.get(lon_col))
+                if lat_lex is None or lon_lex is None:
+                    continue
+
+                platform = uri(f"platform/{obj_id}")
+                obs = uri(f"obs/pos/{obj_id}/{t_key}/{row_idx}")
+                src_file = typed_literal(os.path.basename(args.inp), "http://www.w3.org/2001/XMLSchema#string")
+                src_row = integer_literal(row_idx)
+
+                all_facts.extend([
+                    fact(platform, RDF_TYPE, uri("Platform")),
+                    fact(obs, RDF_TYPE, uri("PositionObservation")),
+                    fact(obs, uri("observedEntity"), platform),
+                    fact(obs, uri("time"), time_lit),
+                    fact(obs, GEO_LAT, typed_literal(lat_lex, XSD_DECIMAL)),
+                    fact(obs, GEO_LONG, typed_literal(lon_lex, XSD_DECIMAL)),
+                    fact(obs, uri("sourceFile"), src_file),
+                    fact(obs, uri("sourceRow"), src_row),
+                ])
+
+            # SpatialRelationObservation facts
+            for col_name, sub_slot, obj_slot in rel_cols:
+                rel_raw = (row.get(col_name) or "").strip()
+                if not rel_raw:
+                    continue
+
+                sub_id = (row.get(f"BF_object_{sub_slot}") or "").strip()
+                obj_id = (row.get(f"BF_object_{obj_slot}") or "").strip()
+                if not sub_id or not obj_id:
+                    continue
+
+                rel_token = normalize_relation(rel_raw, rel_map)
+                if not rel_token:
+                    continue
+
+                sub = uri(f"platform/{sub_id}")
+                obj = uri(f"platform/{obj_id}")
+                robs = uri(
+                    f"obs/rel/{sub_id}/{obj_id}/{t_key}/{row_idx}/{normalize_rel_fallback(col_name)}"
+                )
+                src_file = typed_literal(os.path.basename(args.inp), "http://www.w3.org/2001/XMLSchema#string")
+                src_row = integer_literal(row_idx)
+
+                all_facts.extend([
+                    fact(sub, RDF_TYPE, uri("Platform")),
+                    fact(obj, RDF_TYPE, uri("Platform")),
+                    fact(robs, RDF_TYPE, uri("SpatialRelationObservation")),
+                    fact(robs, uri("subjectEntity"), sub),
+                    fact(robs, uri("objectEntity"), obj),
+                    fact(robs, uri("relationType"), rel_uri(rel_token)),
+                    fact(robs, uri("time"), time_lit),
+                    fact(robs, uri("sourceFile"), src_file),
+                    fact(robs, uri("sourceRow"), src_row),
+                ])
+
+    write_tsv(all_facts, args.out)
+    print(f"Wrote facts: {args.out}")
+
+
+if __name__ == "__main__":
+    main()

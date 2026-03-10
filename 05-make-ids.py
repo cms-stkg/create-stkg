@@ -1,171 +1,268 @@
-"""
-Replaces the ids of the facts by YAGO ids
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
 
-CC-BY 2022-2025 Fabian M. Suchanek
+"""
+Replaces provisional STKG resource ids with canonical STKG ids
 
 Input:
-- 04-yago-facts-to-rename.tsv
-- 04-yago-ids.tsv
-- 04-yago-bad-classes.tsv
+- yago-data/04-stkg-facts-checked.tsv
+- yago-data/04-stkg-ids.tsv
+- yago-data/04-stkg-bad-classes.tsv
+- yago-data/02-stkg-taxonomy.tsv
 
 Output:
-- 05-yago-final-wikipedia.tsv
-- 05-yago-final-beyond-wikipedia.tsv
-- 05-yago-final-meta.tsv
-- 05-yago-final-taxonomy.tsv
-- 05-yago-final-wikipedia-labels.tsv
-- 05-yago-final-beyond-wikipedia-labels.tsv
+- yago-data/05-stkg-final-observations.tsv
+- yago-data/05-stkg-final-relations.tsv
+- yago-data/05-stkg-final-meta.tsv
+- yago-data/05-stkg-final-taxonomy.tsv
+- yago-data/05-stkg-final-entities.tsv
 
 Algorithm:
-- load yago-ids.tsv
-- run through yago-facts-to-rename.tsv
-  - replace the Wikidata ids by YAGO ids
-  - write out the facts to the output files
-   
+- load provisional id mappings
+- remove bad classes from id map
+- replace subject/object ids in checked facts
+- split facts into entity / observation / relation / meta outputs
+- rename taxonomy as well
 """
 
-##########################################################################
-#             Booting
-##########################################################################
+import os
 
-import sys
-import re
-import Evaluator
-import TsvUtils
-import TurtleUtils
+OUTPUT_FOLDER = "yago-data/"
 
-TEST=len(sys.argv)>1 and sys.argv[1]=="--test"
-FOLDER="test-data/05-make-ids/" if TEST else "yago-data/"
+IN_FACTS = os.path.join(OUTPUT_FOLDER, "04-stkg-facts-checked.tsv")
+IN_IDS = os.path.join(OUTPUT_FOLDER, "04-stkg-ids.tsv")
+IN_BAD_CLASSES = os.path.join(OUTPUT_FOLDER, "04-stkg-bad-classes.tsv")
+IN_TAXONOMY = os.path.join(OUTPUT_FOLDER, "02-stkg-taxonomy.tsv")
 
-##########################################################################
-#             Helper methods
-##########################################################################
+OUT_OBSERVATIONS = os.path.join(OUTPUT_FOLDER, "05-stkg-final-observations.tsv")
+OUT_RELATIONS = os.path.join(OUTPUT_FOLDER, "05-stkg-final-relations.tsv")
+OUT_META = os.path.join(OUTPUT_FOLDER, "05-stkg-final-meta.tsv")
+OUT_TAXONOMY = os.path.join(OUTPUT_FOLDER, "05-stkg-final-taxonomy.tsv")
+OUT_ENTITIES = os.path.join(OUTPUT_FOLDER, "05-stkg-final-entities.tsv")
 
-def isLiteral(entity):
-    """ TRUE for literals and external URLs """
-    return entity.startswith('"') or entity.startswith('<http://') or entity.startswith('<https://')
 
-def toYagoEntity(entity):
-    """ Translates an entity to a YAGO entity, passes through literals, returns NONE otherwise """
-    if entity.startswith('"'):
-        return entity
-    if entity.startswith('<http://') or entity.startswith('<https://'):
-        return entity
-    if entity.startswith("yago:") or entity.startswith("schema:") or entity.startswith("rdfs:") :
-        return entity
-    if entity.startswith("_:"):
-        # Anonymous members of lists etc.
-        if not entity.endswith("_generic_instance"):
-            return entity
-        # Generic instances
-        cls=entity[2:-17]
-        cls=yagoIds.get(cls, None)
-        if cls==None or cls.find(":")==-1:
-            return None
-        return cls+"_generic_instance"
-    if entity in yagoIds:
-        return yagoIds[entity]
-    return None
-    
-def goesToWikipediaVersion(entity):
-    """ TRUE if the entity is a literal or has a Wikipedia page or is a generic instance"""
-    return isLiteral(entity) or entity in entitiesWithWikipediaPage or entity.endswith("_generic_instance")
+STKG = "http://example.org/stkg/"
+OWL_SAMEAS = "http://www.w3.org/2002/07/owl#sameAs"
+RDF_TYPE = "http://www.w3.org/1999/02/22-rdf-syntax-ns#type"
+RDFS_SUBCLASS = "rdfs:subClassOf"
 
-wikipediaUrlPattern=re.compile("https://([a-z]+).wikipedia.org/.*")
+GEO_LAT = "http://www.w3.org/2003/01/geo/wgs84_pos#lat"
+GEO_LONG = "http://www.w3.org/2003/01/geo/wgs84_pos#long"
 
-def isNonEnglishLabel(literal):
-    """ TRUE for non-English labels and Wikipedia pages"""
-    if literal[2] and literal[2]!='en':
-        return True
-    if literal[0]:
-        match=wikipediaUrlPattern.match(literal[0])
-        if match  and  match.group(1)!='en':
-                return True                
-    return False
-    
-##########################################################################
-#             Main
-##########################################################################
+POSITION_OBS = STKG + "PositionObservation"
+SPATIAL_REL_OBS = STKG + "SpatialRelationObservation"
+PLATFORM = STKG + "Platform"
 
-with TsvUtils.Timer("Step 05: Renaming YAGO entities"):
+OBSERVED_ENTITY = STKG + "observedEntity"
+SUBJECT_ENTITY = STKG + "subjectEntity"
+OBJECT_ENTITY = STKG + "objectEntity"
+RELATION_TYPE = STKG + "relationType"
+TIME = STKG + "time"
+SOURCE_FILE = STKG + "sourceFile"
+SOURCE_ROW = STKG + "sourceRow"
 
-    yagoIds={}
-    entitiesWithWikipediaPage=set()
-    for split in TsvUtils.tsvTuples(FOLDER+"04-yago-ids.tsv", "  Loading YAGO ids"):
-        if len(split)<4:
+
+def ensure_inputs():
+    for path in [IN_FACTS, IN_IDS, IN_BAD_CLASSES, IN_TAXONOMY]:
+        if not os.path.exists(path):
+            raise FileNotFoundError(f"required input not found: {path}")
+
+
+def read_tsv(path):
+    with open(path, "r", encoding="utf-8") as f:
+        for line in f:
+            line = line.rstrip("\n")
+            if not line:
+                continue
+            parts = line.split("\t")
+            if len(parts) < 3:
+                continue
+            yield parts[0], parts[1], parts[2]
+
+
+def write_tsv(rows, path):
+    with open(path, "w", encoding="utf-8") as f:
+        for s, p, o in rows:
+            f.write(f"{s}\t{p}\t{o}\n")
+
+
+def is_uri(value: str) -> bool:
+    return value.startswith("http://") or value.startswith("https://")
+
+
+def load_id_map(path):
+    id_map = {}
+    for s, p, o in read_tsv(path):
+        if p != OWL_SAMEAS:
             continue
-        yagoIds[split[0]]=split[2]
-        if split[3]==". #WIKI":
-            entitiesWithWikipediaPage.add(split[2])
-    
-    for split in TsvUtils.tsvTuples(FOLDER+"04-yago-bad-classes.tsv", "  Removing bad YAGO classes"):
-        yagoIds.pop(split[0], None)
+        id_map[s] = o
+    return id_map
 
-    with TsvUtils.TsvFileWriter(FOLDER+"05-yago-final-meta.tsv") as metaFacts:
-        with TsvUtils.TsvFileWriter(FOLDER+"05-yago-final-beyond-wikipedia.tsv") as fullFacts:
-            with TsvUtils.TsvFileWriter(FOLDER+"05-yago-final-wikipedia.tsv") as wikipediaFacts:
-                with TsvUtils.TsvFileWriter(FOLDER+"05-yago-final-wikipedia-labels.tsv") as wikipediaLabelFacts:
-                    with TsvUtils.TsvFileWriter(FOLDER+"05-yago-final-beyond-wikipedia-labels.tsv") as fullLabelFacts:
-                        previousEntity="Elvis"
-                        for split in TsvUtils.tsvTuples(FOLDER+"04-yago-facts-to-rename.tsv", "  Renaming"):
-                            if len(split)<3:
-                                continue
-                            subject=toYagoEntity(split[0])
-                            if not subject:
-                                # Should not happen
-                                continue
-                            relation=split[1]
-                            object=toYagoEntity(split[2])
-                            if not object:
-                                # Should not happen
-                                continue
-                            literal=TurtleUtils.splitLiteral(object)
-                            # Write facts to Wikipedia version of YAGO
-                            if goesToWikipediaVersion(subject) and (relation=="rdf:type" or goesToWikipediaVersion(object)):
-                                if isNonEnglishLabel(literal):
-                                    wikipediaLabelFacts.writeFact(subject, relation, object)
-                                else:
-                                    wikipediaFacts.writeFact(subject, relation, object)
-                                if subject.endswith("_generic_instance"):
-                                    wikipediaFacts.writeFact(subject, "rdfs:label", f'"{subject[5:-17]}"@en')
-                                if subject!=previousEntity and split[0] in yagoIds:
-                                   wikipediaFacts.writeFact(subject, "owl:sameAs", split[0])
-                            else:
-                                if isNonEnglishLabel(literal):
-                                    fullLabelFacts.writeFact(subject, relation, object)
-                                else:
-                                    fullFacts.writeFact(subject, relation, object)
-                                if subject!=previousEntity and split[0] in yagoIds:
-                                   fullFacts.writeFact(subject, "owl:sameAs", split[0])                
-                            # If there is a meta-fact, write it out as well
-                            if len(split)>5:
-                                if split[4] and split[4]==split[5]:
-                                    metaFacts.write("<<", subject, relation, object, ">>", "yago:onDate", split[4], ".")
-                                else:
-                                    if split[4]: metaFacts.write("<<", subject, relation, object, ">>", "schema:startDate", split[4], ".")
-                                    if split[5]: metaFacts.write("<<", subject, relation, object, ">>", "schema:endDate", split[5], ".")
-                            if not subject.endswith("_generic_instance"):
-                                previousEntity=subject
-                    
-    with TsvUtils.TsvFileWriter(FOLDER+"05-yago-final-taxonomy.tsv") as taxFacts:
-        for split in TsvUtils.tsvTuples(FOLDER+"02-yago-taxonomy-to-rename.tsv", "  Renaming classes"):
-            if len(split)<3:
-                continue
-            subject=toYagoEntity(split[0])
-            if not subject:
-                # Happens if a class has no label or no instances
-                continue
-            relation=split[1]
-            object=split[2] if relation=="rdf:type" else toYagoEntity(split[2])
-            if not object:
-                # Happens if a class has no label or no instances
-                continue
-            # Write taxonomic fact
-            taxFacts.writeFact(subject, relation, object)            
 
-if TEST:
-    Evaluator.compare(FOLDER+"05-yago-final-wikipedia.tsv")
-    Evaluator.compare(FOLDER+"05-yago-final-beyond-wikipedia.tsv")
-    Evaluator.compare(FOLDER+"05-yago-final-meta.tsv")
-    Evaluator.compare(FOLDER+"05-yago-final-taxonomy.tsv")
-    Evaluator.compare(FOLDER+"05-yago-final-wikipedia-labels.tsv")
+def load_bad_classes(path):
+    bad = set()
+    with open(path, "r", encoding="utf-8") as f:
+        for line in f:
+            line = line.rstrip("\n")
+            if not line:
+                continue
+            parts = line.split("\t")
+            if parts and parts[0]:
+                bad.add(parts[0])
+    return bad
+
+
+def rename_entity(entity, id_map, bad_classes):
+    if not is_uri(entity):
+        return entity
+
+    if entity in bad_classes:
+        return None
+
+    if entity in id_map:
+        return id_map[entity]
+
+    return entity
+
+
+def classify_fact(s, p, o, subject_types):
+    """
+    Split facts into STKG-friendly output groups.
+    """
+    s_types = subject_types.get(s, set())
+
+    if p in {SOURCE_FILE, SOURCE_ROW}:
+        return "meta"
+
+    if POSITION_OBS in s_types or SPATIAL_REL_OBS in s_types:
+        if p in {OBSERVED_ENTITY, SUBJECT_ENTITY, OBJECT_ENTITY, RELATION_TYPE, TIME, GEO_LAT, GEO_LONG, RDF_TYPE}:
+            if p == RDF_TYPE and o == SPATIAL_REL_OBS:
+                return "relations"
+            if SPATIAL_REL_OBS in s_types:
+                return "relations"
+            return "observations"
+
+    if PLATFORM in s_types or (p == RDF_TYPE and o == PLATFORM):
+        return "entities"
+
+    # fallback rules by URI pattern
+    if "/obs/" in s:
+        if "/obs/rel/" in s:
+            return "relations"
+        return "observations"
+
+    if "/platform/" in s:
+        return "entities"
+
+    return "meta"
+
+
+def collect_subject_types(facts):
+    subject_types = {}
+    for s, p, o in facts:
+        if p == RDF_TYPE:
+            subject_types.setdefault(s, set()).add(o)
+    return subject_types
+
+
+def main():
+    print("Step 05: Renaming STKG entities...")
+
+    ensure_inputs()
+
+    print(f"  Loading provisional ids from {IN_IDS} ...", end="", flush=True)
+    id_map = load_id_map(IN_IDS)
+    print("done")
+
+    print(f"  Loading bad classes from {IN_BAD_CLASSES} ...", end="", flush=True)
+    bad_classes = load_bad_classes(IN_BAD_CLASSES)
+    print("done")
+
+    # remove bad classes from id map
+    for bad in list(bad_classes):
+        id_map.pop(bad, None)
+
+    print(f"  Loading checked facts from {IN_FACTS} ...", end="", flush=True)
+    raw_facts = list(read_tsv(IN_FACTS))
+    print("done")
+
+    print("  Renaming checked facts ...", end="", flush=True)
+    renamed_facts = []
+    for s, p, o in raw_facts:
+        new_s = rename_entity(s, id_map, bad_classes)
+        if not new_s:
+            continue
+
+        if is_uri(o):
+            new_o = rename_entity(o, id_map, bad_classes)
+            if not new_o:
+                continue
+        else:
+            new_o = o
+
+        renamed_facts.append(((s, p, o), (new_s, p, new_o)))
+    print("done")
+
+    subject_types = collect_subject_types([raw for raw, _ in renamed_facts])
+
+    observations_rows = []
+    relations_rows = []
+    meta_rows = []
+    entity_rows = []
+
+    print("  Splitting renamed facts ...", end="", flush=True)
+    for (raw_s, p, raw_o), (new_s, _, new_o) in renamed_facts:
+        bucket = classify_fact(raw_s, p, raw_o, subject_types)
+        if bucket == "observations":
+            observations_rows.append((new_s, p, new_o))
+        elif bucket == "relations":
+            relations_rows.append((new_s, p, new_o))
+        elif bucket == "entities":
+            entity_rows.append((new_s, p, new_o))
+        else:
+            meta_rows.append((new_s, p, new_o))
+    print("done")
+
+    print(f"  Writing observations to {OUT_OBSERVATIONS} ...", end="", flush=True)
+    write_tsv(observations_rows, OUT_OBSERVATIONS)
+    print("done")
+
+    print(f"  Writing relations to {OUT_RELATIONS} ...", end="", flush=True)
+    write_tsv(relations_rows, OUT_RELATIONS)
+    print("done")
+
+    print(f"  Writing entities to {OUT_ENTITIES} ...", end="", flush=True)
+    write_tsv(entity_rows, OUT_ENTITIES)
+    print("done")
+
+    print(f"  Writing meta facts to {OUT_META} ...", end="", flush=True)
+    write_tsv(meta_rows, OUT_META)
+    print("done")
+
+    # rename taxonomy too
+    print(f"  Renaming taxonomy from {IN_TAXONOMY} ...", end="", flush=True)
+    renamed_taxonomy = []
+    for s, p, o in read_tsv(IN_TAXONOMY):
+        new_s = rename_entity(s, id_map, bad_classes)
+        new_o = rename_entity(o, id_map, bad_classes)
+
+        if not new_s or not new_o:
+            continue
+
+        renamed_taxonomy.append((new_s, p, new_o))
+    print("done")
+
+    print(f"  Writing final taxonomy to {OUT_TAXONOMY} ...", end="", flush=True)
+    write_tsv(renamed_taxonomy, OUT_TAXONOMY)
+    print("done")
+
+    print(f"  Info: Renamed facts: {len(renamed_facts)}")
+    print(f"  Info: Observation facts: {len(observations_rows)}")
+    print(f"  Info: Relation facts: {len(relations_rows)}")
+    print(f"  Info: Entity facts: {len(entity_rows)}")
+    print(f"  Info: Meta facts: {len(meta_rows)}")
+    print(f"  Info: Final taxonomy facts: {len(renamed_taxonomy)}")
+
+
+if __name__ == "__main__":
+    main()
