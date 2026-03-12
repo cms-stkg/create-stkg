@@ -4,18 +4,21 @@
 """
 Replaces provisional STKG resource ids with canonical STKG ids
 
+Call:
+  python3 05-make-ids.py --outdir yago-data/KG1
+
 Input:
-- yago-data/04-stkg-facts-checked.tsv
-- yago-data/04-stkg-ids.tsv
-- yago-data/04-stkg-bad-classes.tsv
-- yago-data/02-stkg-taxonomy.tsv
+- <outdir>/04-stkg-facts-checked.tsv
+- <outdir>/04-stkg-ids.tsv
+- <outdir>/04-stkg-bad-classes.tsv
+- <outdir>/02-stkg-taxonomy.tsv
 
 Output:
-- yago-data/05-stkg-final-observations.tsv
-- yago-data/05-stkg-final-relations.tsv
-- yago-data/05-stkg-final-meta.tsv
-- yago-data/05-stkg-final-taxonomy.tsv
-- yago-data/05-stkg-final-entities.tsv
+- <outdir>/05-stkg-final-observations.tsv
+- <outdir>/05-stkg-final-relations.tsv
+- <outdir>/05-stkg-final-meta.tsv
+- <outdir>/05-stkg-final-taxonomy.tsv
+- <outdir>/05-stkg-final-entities.tsv
 
 Algorithm:
 - load provisional id mappings
@@ -26,20 +29,9 @@ Algorithm:
 """
 
 import os
+import argparse
 
-OUTPUT_FOLDER = "yago-data/"
-
-IN_FACTS = os.path.join(OUTPUT_FOLDER, "04-stkg-facts-checked.tsv")
-IN_IDS = os.path.join(OUTPUT_FOLDER, "04-stkg-ids.tsv")
-IN_BAD_CLASSES = os.path.join(OUTPUT_FOLDER, "04-stkg-bad-classes.tsv")
-IN_TAXONOMY = os.path.join(OUTPUT_FOLDER, "02-stkg-taxonomy.tsv")
-
-OUT_OBSERVATIONS = os.path.join(OUTPUT_FOLDER, "05-stkg-final-observations.tsv")
-OUT_RELATIONS = os.path.join(OUTPUT_FOLDER, "05-stkg-final-relations.tsv")
-OUT_META = os.path.join(OUTPUT_FOLDER, "05-stkg-final-meta.tsv")
-OUT_TAXONOMY = os.path.join(OUTPUT_FOLDER, "05-stkg-final-taxonomy.tsv")
-OUT_ENTITIES = os.path.join(OUTPUT_FOLDER, "05-stkg-final-entities.tsv")
-
+OUTPUT_DEFAULT = "yago-data"
 
 STKG = "http://example.org/stkg/"
 OWL_SAMEAS = "http://www.w3.org/2002/07/owl#sameAs"
@@ -62,8 +54,8 @@ SOURCE_FILE = STKG + "sourceFile"
 SOURCE_ROW = STKG + "sourceRow"
 
 
-def ensure_inputs():
-    for path in [IN_FACTS, IN_IDS, IN_BAD_CLASSES, IN_TAXONOMY]:
+def ensure_inputs(paths):
+    for path in paths:
         if not os.path.exists(path):
             raise FileNotFoundError(f"required input not found: {path}")
 
@@ -145,7 +137,6 @@ def classify_fact(s, p, o, subject_types):
     if PLATFORM in s_types or (p == RDF_TYPE and o == PLATFORM):
         return "entities"
 
-    # fallback rules by URI pattern
     if "/obs/" in s:
         if "/obs/rel/" in s:
             return "relations"
@@ -166,24 +157,41 @@ def collect_subject_types(facts):
 
 
 def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--outdir", default=OUTPUT_DEFAULT, help="output directory")
+    args = ap.parse_args()
+
+    output_folder = args.outdir
+
+    in_facts = os.path.join(output_folder, "04-stkg-facts-checked.tsv")
+    in_ids = os.path.join(output_folder, "04-stkg-ids.tsv")
+    in_bad_classes = os.path.join(output_folder, "04-stkg-bad-classes.tsv")
+    in_taxonomy = os.path.join(output_folder, "02-stkg-taxonomy.tsv")
+
+    out_observations = os.path.join(output_folder, "05-stkg-final-observations.tsv")
+    out_relations = os.path.join(output_folder, "05-stkg-final-relations.tsv")
+    out_meta = os.path.join(output_folder, "05-stkg-final-meta.tsv")
+    out_taxonomy = os.path.join(output_folder, "05-stkg-final-taxonomy.tsv")
+    out_entities = os.path.join(output_folder, "05-stkg-final-entities.tsv")
+
     print("Step 05: Renaming STKG entities...")
 
-    ensure_inputs()
+    ensure_inputs([in_facts, in_ids, in_bad_classes, in_taxonomy])
+    os.makedirs(output_folder, exist_ok=True)
 
-    print(f"  Loading provisional ids from {IN_IDS} ...", end="", flush=True)
-    id_map = load_id_map(IN_IDS)
+    print(f"  Loading provisional ids from {in_ids} ...", end="", flush=True)
+    id_map = load_id_map(in_ids)
     print("done")
 
-    print(f"  Loading bad classes from {IN_BAD_CLASSES} ...", end="", flush=True)
-    bad_classes = load_bad_classes(IN_BAD_CLASSES)
+    print(f"  Loading bad classes from {in_bad_classes} ...", end="", flush=True)
+    bad_classes = load_bad_classes(in_bad_classes)
     print("done")
 
-    # remove bad classes from id map
     for bad in list(bad_classes):
         id_map.pop(bad, None)
 
-    print(f"  Loading checked facts from {IN_FACTS} ...", end="", flush=True)
-    raw_facts = list(read_tsv(IN_FACTS))
+    print(f"  Loading checked facts from {in_facts} ...", end="", flush=True)
+    raw_facts = list(read_tsv(in_facts))
     print("done")
 
     print("  Renaming checked facts ...", end="", flush=True)
@@ -223,26 +231,25 @@ def main():
             meta_rows.append((new_s, p, new_o))
     print("done")
 
-    print(f"  Writing observations to {OUT_OBSERVATIONS} ...", end="", flush=True)
-    write_tsv(observations_rows, OUT_OBSERVATIONS)
+    print(f"  Writing observations to {out_observations} ...", end="", flush=True)
+    write_tsv(observations_rows, out_observations)
     print("done")
 
-    print(f"  Writing relations to {OUT_RELATIONS} ...", end="", flush=True)
-    write_tsv(relations_rows, OUT_RELATIONS)
+    print(f"  Writing relations to {out_relations} ...", end="", flush=True)
+    write_tsv(relations_rows, out_relations)
     print("done")
 
-    print(f"  Writing entities to {OUT_ENTITIES} ...", end="", flush=True)
-    write_tsv(entity_rows, OUT_ENTITIES)
+    print(f"  Writing entities to {out_entities} ...", end="", flush=True)
+    write_tsv(entity_rows, out_entities)
     print("done")
 
-    print(f"  Writing meta facts to {OUT_META} ...", end="", flush=True)
-    write_tsv(meta_rows, OUT_META)
+    print(f"  Writing meta facts to {out_meta} ...", end="", flush=True)
+    write_tsv(meta_rows, out_meta)
     print("done")
 
-    # rename taxonomy too
-    print(f"  Renaming taxonomy from {IN_TAXONOMY} ...", end="", flush=True)
+    print(f"  Renaming taxonomy from {in_taxonomy} ...", end="", flush=True)
     renamed_taxonomy = []
-    for s, p, o in read_tsv(IN_TAXONOMY):
+    for s, p, o in read_tsv(in_taxonomy):
         new_s = rename_entity(s, id_map, bad_classes)
         new_o = rename_entity(o, id_map, bad_classes)
 
@@ -252,8 +259,8 @@ def main():
         renamed_taxonomy.append((new_s, p, new_o))
     print("done")
 
-    print(f"  Writing final taxonomy to {OUT_TAXONOMY} ...", end="", flush=True)
-    write_tsv(renamed_taxonomy, OUT_TAXONOMY)
+    print(f"  Writing final taxonomy to {out_taxonomy} ...", end="", flush=True)
+    write_tsv(renamed_taxonomy, out_taxonomy)
     print("done")
 
     print(f"  Info: Renamed facts: {len(renamed_facts)}")

@@ -2,17 +2,25 @@
 # -*- coding: utf-8 -*-
 
 """
-Creates STKG facts from raw CSV observations
+Creates STKG facts from one or more raw CSV observation files.
 
-Call:
-  python3 03-make-facts.py --in input-data/stkg/raw/KG1.csv --out yago-data/03-stkg-facts.tsv
+Single-file call:
+  python3 03-make-facts.py \
+    --in input-data/stkg/raw/KG1.csv \
+    --out yago-data/KG1/03-stkg-facts.tsv
+
+Multi-file call (writes one TSV per CSV):
+  python3 03-make-facts.py \
+    --inputs input-data/stkg/raw/KG1.csv input-data/stkg/raw/KG2.csv input-data/stkg/raw/KG3.csv \
+    --outdir yago-data/facts
 
 Input:
-- raw CSV observation file
+- one or more raw CSV observation files
 - optional relation-map.tsv
 
 Output:
-- 03-stkg-facts.tsv
+- single mode: one TSV file
+- multi mode: one TSV file per CSV
 
 Algorithm:
 1) Read CSV rows
@@ -24,15 +32,17 @@ Algorithm:
 
 import argparse
 import csv
+import glob
 import os
 import re
 from datetime import datetime, timezone
-from typing import Optional, Tuple, Dict, List, Set
+from typing import Optional, Tuple, Dict, List, Set, Iterable
 
 
 STKG = "http://example.org/stkg/"
 STKGREL = "http://example.org/stkg/relation/"
 RDF_TYPE = "http://www.w3.org/1999/02/22-rdf-syntax-ns#type"
+XSD_STRING = "http://www.w3.org/2001/XMLSchema#string"
 XSD_DATETIME = "http://www.w3.org/2001/XMLSchema#dateTime"
 XSD_DECIMAL = "http://www.w3.org/2001/XMLSchema#decimal"
 XSD_INTEGER = "http://www.w3.org/2001/XMLSchema#integer"
@@ -47,6 +57,10 @@ _TIME_PATTERNS = [
     "%Y/%m/%d %H:%M:%S",
     "%Y-%m-%d",
 ]
+
+_SLOT_RE = re.compile(r"^BF_object_([A-Za-z0-9]+)$")
+_REL_RE_1 = re.compile(r"^([A-Za-z0-9]+)\-([A-Za-z0-9]+)$")
+_REL_RE_2 = re.compile(r"^([A-Za-z0-9]+)\-([A-Za-z0-9]+)\s*relation$", re.I)
 
 
 def parse_time(timestr: str) -> datetime:
@@ -132,6 +146,8 @@ def normalize_relation(raw: str, rel_map: Dict[str, str]) -> str:
     hit = rel_map.get(r.lower())
     if hit:
         return hit
+    # KG 생성 단계에서는 의미 정규화를 하지 않고
+    # 입력 표현 자체만 URI-safe 토큰으로 변환
     return normalize_rel_fallback(r)
 
 
@@ -145,11 +161,6 @@ def normalize_row_keys(row: Dict[str, str]) -> Dict[str, str]:
     return {normalize_header(k): v for k, v in (row or {}).items()}
 
 
-_SLOT_RE = re.compile(r"^BF_object_([A-Za-z0-9]+)$")
-_REL_RE_1 = re.compile(r"^([A-Za-z0-9]+)\-([A-Za-z0-9]+)$")
-_REL_RE_2 = re.compile(r"^([A-Za-z0-9]+)\-([A-Za-z0-9]+)\s*relation$", re.I)
-
-
 def detect_slots(fieldnames: List[str]) -> List[str]:
     slots: Set[str] = set()
     for h in fieldnames:
@@ -161,7 +172,7 @@ def detect_slots(fieldnames: List[str]) -> List[str]:
 
 def pick_lat_lon_cols(fieldnames: List[str], slot: str) -> Tuple[Optional[str], Optional[str]]:
     candidates_lat = [f"lat_{slot}", f"latitude_{slot}"]
-    candidates_lon = [f"long_{slot}", f"longitude_{slot}"]
+    candidates_lon = [f"long_{slot}", f"longitude_{slot}", f"lon_{slot}"]
 
     lat_col = next((c for c in candidates_lat if c in fieldnames), None)
     lon_col = next((c for c in candidates_lon if c in fieldnames), None)
@@ -205,11 +216,11 @@ def rel_uri(token: str) -> str:
 
 def typed_literal(value: str, datatype_uri: str) -> str:
     escaped = value.replace("\\", "\\\\").replace('"', '\\"')
-    return f"\"{escaped}\"^^<{datatype_uri}>"
+    return f'"{escaped}"^^<{datatype_uri}>'
 
 
 def integer_literal(value: int) -> str:
-    return f"\"{value}\"^^<{XSD_INTEGER}>"
+    return f'"{value}"^^<{XSD_INTEGER}>'
 
 
 def fact(s: str, p: str, o: str) -> Tuple[str, str, str]:
@@ -223,26 +234,20 @@ def write_tsv(facts: List[Tuple[str, str, str]], out_path: str) -> None:
             w.writerow([s, p, o])
 
 
-def main():
-    ap = argparse.ArgumentParser()
-    ap.add_argument("--in", dest="inp", required=True, help="input CSV")
-    ap.add_argument("--out", dest="out", required=True, help="output TSV")
-    ap.add_argument(
-        "--relation_map",
-        default="input-data/stkg/relation-map.tsv",
-        help="TSV mapping for relation tokens",
-    )
-    args = ap.parse_args()
+def dedupe_preserve_order(facts: Iterable[Tuple[str, str, str]]) -> List[Tuple[str, str, str]]:
+    seen: Set[Tuple[str, str, str]] = set()
+    out: List[Tuple[str, str, str]] = []
+    for item in facts:
+        if item not in seen:
+            seen.add(item)
+            out.append(item)
+    return out
 
-    os.makedirs(os.path.dirname(args.out) or ".", exist_ok=True)
 
-    rel_map = {}
-    if args.relation_map and os.path.exists(args.relation_map):
-        rel_map = load_relation_map_tsv(args.relation_map)
-
+def csv_to_facts(inp_path: str, rel_map: Dict[str, str]) -> List[Tuple[str, str, str]]:
     all_facts: List[Tuple[str, str, str]] = []
 
-    with open(args.inp, newline="", encoding="utf-8") as f:
+    with open(inp_path, newline="", encoding="utf-8-sig") as f:
         reader = csv.DictReader(f)
 
         raw_fieldnames = reader.fieldnames or []
@@ -256,8 +261,9 @@ def main():
 
         slots = detect_slots(fieldnames)
         rel_cols = detect_relation_cols(fieldnames)
+        src_basename = os.path.basename(inp_path)
 
-        for row_idx, row in enumerate(reader):
+        for row_idx, row in enumerate(reader, start=1):
             row = normalize_row_keys(row)
 
             dt = parse_time(row.get("time", ""))
@@ -282,7 +288,7 @@ def main():
 
                 platform = uri(f"platform/{obj_id}")
                 obs = uri(f"obs/pos/{obj_id}/{t_key}/{row_idx}")
-                src_file = typed_literal(os.path.basename(args.inp), "http://www.w3.org/2001/XMLSchema#string")
+                src_file = typed_literal(src_basename, XSD_STRING)
                 src_row = integer_literal(row_idx)
 
                 all_facts.extend([
@@ -316,7 +322,7 @@ def main():
                 robs = uri(
                     f"obs/rel/{sub_id}/{obj_id}/{t_key}/{row_idx}/{normalize_rel_fallback(col_name)}"
                 )
-                src_file = typed_literal(os.path.basename(args.inp), "http://www.w3.org/2001/XMLSchema#string")
+                src_file = typed_literal(src_basename, XSD_STRING)
                 src_row = integer_literal(row_idx)
 
                 all_facts.extend([
@@ -331,8 +337,80 @@ def main():
                     fact(robs, uri("sourceRow"), src_row),
                 ])
 
-    write_tsv(all_facts, args.out)
-    print(f"Wrote facts: {args.out}")
+    return dedupe_preserve_order(all_facts)
+
+
+def expand_inputs(values: List[str]) -> List[str]:
+    out: List[str] = []
+    for value in values:
+        hits = sorted(glob.glob(value))
+        if hits:
+            out.extend(hits)
+        else:
+            out.append(value)
+
+    seen: Set[str] = set()
+    uniq: List[str] = []
+    for p in out:
+        if p not in seen:
+            seen.add(p)
+            uniq.append(p)
+    return uniq
+
+
+def out_name_for_csv(csv_path: str) -> str:
+    stem = os.path.splitext(os.path.basename(csv_path))[0]
+    return f"03-stkg-facts-{stem}.tsv"
+
+
+def parse_args() -> argparse.Namespace:
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--in", dest="inp", help="single input CSV")
+    ap.add_argument("--out", dest="out", help="single output TSV")
+    ap.add_argument("--inputs", nargs="+", help="multiple input CSVs or glob patterns")
+    ap.add_argument("--outdir", help="output directory for multi-file mode")
+    ap.add_argument(
+        "--relation_map",
+        default="input-data/stkg/relation-map.tsv",
+        help="TSV mapping for relation tokens (optional)",
+    )
+    return ap.parse_args()
+
+
+def main() -> None:
+    args = parse_args()
+
+    single_mode = bool(args.inp or args.out)
+    multi_mode = bool(args.inputs or args.outdir)
+
+    if single_mode and multi_mode:
+        raise ValueError("Use either (--in, --out) or (--inputs, --outdir), not both.")
+
+    if args.inp or args.out:
+        if not (args.inp and args.out):
+            raise ValueError("Single-file mode requires both --in and --out.")
+        input_paths = [args.inp]
+        output_paths = [args.out]
+    else:
+        if not (args.inputs and args.outdir):
+            raise ValueError("Multi-file mode requires both --inputs and --outdir.")
+        input_paths = expand_inputs(args.inputs)
+        if not input_paths:
+            raise ValueError("No input CSV files found.")
+        os.makedirs(args.outdir, exist_ok=True)
+        output_paths = [os.path.join(args.outdir, out_name_for_csv(p)) for p in input_paths]
+
+    # KG 생성 단계에서는 의미 정규화를 하지 않으므로
+    # 기본 동의어 맵은 사용하지 않고, 사용자가 relation_map을 준 경우에만 적용
+    rel_map: Dict[str, str] = {}
+    if args.relation_map and os.path.exists(args.relation_map):
+        rel_map.update(load_relation_map_tsv(args.relation_map))
+
+    for inp_path, out_path in zip(input_paths, output_paths):
+        os.makedirs(os.path.dirname(out_path) or ".", exist_ok=True)
+        facts = csv_to_facts(inp_path, rel_map)
+        write_tsv(facts, out_path)
+        print(f"Wrote facts: {out_path} ({len(facts)} facts)")
 
 
 if __name__ == "__main__":

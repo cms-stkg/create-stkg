@@ -5,14 +5,14 @@
 Creates the STKG taxonomy from the STKG taxonomy file and schema
 
 Call:
-  python3 02-make-taxonomy.py
+  python3 02-make-taxonomy.py --outdir yago-data/KG1
 
 Input:
-- yago-data/01-stkg-final-schema.ttl
+- <outdir>/01-stkg-final-schema.ttl
 - input-data/stkg/stkg-taxonomy.ttl
 
 Output:
-- yago-data/02-stkg-taxonomy.tsv
+- <outdir>/02-stkg-taxonomy.tsv
 
 Algorithm:
 1) Load the final schema
@@ -23,28 +23,26 @@ Algorithm:
 """
 
 import os
+import argparse
 from collections import defaultdict
 from rdflib import Graph, Namespace
 from rdflib.namespace import RDF, RDFS
 
-OUTPUT_FOLDER = "yago-data/"
-SCHEMA_FILE = os.path.join(OUTPUT_FOLDER, "01-stkg-final-schema.ttl")
 TAXONOMY_FILE = "input-data/stkg/stkg-taxonomy.ttl"
-OUTPUT_FILE = os.path.join(OUTPUT_FOLDER, "02-stkg-taxonomy.tsv")
 
 STKG = Namespace("http://example.org/stkg/")
 
 
-def ensure_inputs():
-    if not os.path.exists(SCHEMA_FILE):
-        print(f"  Schema file {SCHEMA_FILE} not found\nfailed")
+def ensure_inputs(schema_file, taxonomy_file, output_folder):
+    if not os.path.exists(schema_file):
+        print(f"  Schema file {schema_file} not found\nfailed")
         exit(1)
 
-    if not os.path.exists(TAXONOMY_FILE):
-        print(f"  Taxonomy file {TAXONOMY_FILE} not found\nfailed")
+    if not os.path.exists(taxonomy_file):
+        print(f"  Taxonomy file {taxonomy_file} not found\nfailed")
         exit(1)
 
-    os.makedirs(OUTPUT_FOLDER, exist_ok=True)
+    os.makedirs(output_folder, exist_ok=True)
 
 
 def load_graph(path: str) -> Graph:
@@ -120,12 +118,20 @@ def write_taxonomy_tsv(taxonomy_up, out_path):
 
 
 def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--outdir", default="yago-data", help="output directory")
+    args = ap.parse_args()
+
+    output_folder = args.outdir
+    schema_file = os.path.join(output_folder, "01-stkg-final-schema.ttl")
+    output_file = os.path.join(output_folder, "02-stkg-taxonomy.tsv")
+
     print("Step 02: Creating STKG taxonomy...")
 
-    ensure_inputs()
+    ensure_inputs(schema_file, TAXONOMY_FILE, output_folder)
 
-    print(f"  Loading schema from {SCHEMA_FILE} ...", end="", flush=True)
-    schema_graph = load_graph(SCHEMA_FILE)
+    print(f"  Loading schema from {schema_file} ...", end="", flush=True)
+    schema_graph = load_graph(schema_file)
     schema_classes = get_schema_classes(schema_graph)
     print("done")
 
@@ -147,8 +153,8 @@ def main():
     print(f"  Info: Self-loops removed: {self_loop_count}")
     print(f"  Info: Cycles removed: {cycle_count}")
 
-    print(f"  Writing taxonomy to {OUTPUT_FILE} ...", end="", flush=True)
-    write_taxonomy_tsv(cleaned_taxonomy, OUTPUT_FILE)
+    print(f"  Writing taxonomy to {output_file} ...", end="", flush=True)
+    write_taxonomy_tsv(cleaned_taxonomy, output_file)
     print("done")
 
     print("done")

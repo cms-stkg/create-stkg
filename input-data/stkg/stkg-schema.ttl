@@ -46,9 +46,21 @@ stkg:relationType a rdf:Property ;
   rdfs:label "relation type"@en .
 
 stkg:sourceFile a rdf:Property ;
-  rdfs:label "source file"@en ;
-  rdfs:range xsd:string .
+  rdfs:domain stkg:Observation ;
+  rdfs:range xsd:string ;
+  rdfs:label "source file"@en .
 
 stkg:sourceRow a rdf:Property ;
-  rdfs:label "source row index"@en ;
-  rdfs:range xsd:integer .
+  rdfs:domain stkg:Observation ;
+  rdfs:range xsd:integer ;
+  rdfs:label "source row index"@en .
+
+geo:lat a rdf:Property ;
+  rdfs:domain stkg:PositionObservation ;
+  rdfs:range xsd:decimal ;
+  rdfs:label "latitude"@en .
+
+geo:long a rdf:Property ;
+  rdfs:domain stkg:PositionObservation ;
+  rdfs:range xsd:decimal ;
+  rdfs:label "longitude"@en .

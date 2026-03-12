@@ -5,17 +5,17 @@
 Type-checks STKG facts using the STKG schema and taxonomy
 
 Call:
-  python3 04-make-typecheck.py
+  python3 04-make-typecheck.py --outdir yago-data/KG1
 
 Input:
-- yago-data/01-stkg-final-schema.ttl
-- yago-data/02-stkg-taxonomy.tsv
-- yago-data/03-stkg-facts.tsv
+- <outdir>/01-stkg-final-schema.ttl
+- <outdir>/02-stkg-taxonomy.tsv
+- <outdir>/03-stkg-facts.tsv
 
 Output:
-- yago-data/04-stkg-facts-checked.tsv
-- yago-data/04-stkg-ids.tsv
-- yago-data/04-stkg-bad-classes.tsv
+- <outdir>/04-stkg-facts-checked.tsv
+- <outdir>/04-stkg-ids.tsv
+- <outdir>/04-stkg-bad-classes.tsv
 
 Algorithm:
 1) Load schema classes and property constraints
@@ -29,21 +29,13 @@ Algorithm:
 
 import os
 import re
+import csv
+import argparse
 from collections import defaultdict
 from urllib.parse import quote
 
-from rdflib import Graph, Namespace
+from rdflib import Graph
 from rdflib.namespace import RDF, RDFS, XSD
-
-
-OUTPUT_FOLDER = "yago-data/"
-SCHEMA_FILE = os.path.join(OUTPUT_FOLDER, "01-stkg-final-schema.ttl")
-TAXONOMY_FILE = os.path.join(OUTPUT_FOLDER, "02-stkg-taxonomy.tsv")
-FACTS_FILE = os.path.join(OUTPUT_FOLDER, "03-stkg-facts.tsv")
-
-OUT_FACTS = os.path.join(OUTPUT_FOLDER, "04-stkg-facts-checked.tsv")
-OUT_IDS = os.path.join(OUTPUT_FOLDER, "04-stkg-ids.tsv")
-OUT_BAD_CLASSES = os.path.join(OUTPUT_FOLDER, "04-stkg-bad-classes.tsv")
 
 
 STKG = "http://example.org/stkg/"
@@ -61,19 +53,16 @@ XSD_INTEGER = str(XSD.integer)
 XSD_STRING = str(XSD.string)
 
 
-def ensure_inputs():
-    for path in [SCHEMA_FILE, TAXONOMY_FILE, FACTS_FILE]:
+def ensure_inputs(schema_file, taxonomy_file, facts_file):
+    for path in [schema_file, taxonomy_file, facts_file]:
         if not os.path.exists(path):
             raise FileNotFoundError(f"required input not found: {path}")
 
 
 def read_tsv(path):
-    with open(path, "r", encoding="utf-8") as f:
-        for line in f:
-            line = line.rstrip("\n")
-            if not line:
-                continue
-            parts = line.split("\t")
+    with open(path, "r", encoding="utf-8", newline="") as f:
+        reader = csv.reader(f, delimiter="\t", quoting=csv.QUOTE_MINIMAL)
+        for parts in reader:
             if len(parts) < 3:
                 continue
             yield parts[0], parts[1], parts[2]
@@ -236,13 +225,11 @@ def validate_fact(s, p, o, property_domain, property_range, instances, taxonomy_
     Returns True if the fact is valid under the STKG schema/taxonomy.
     """
 
-    # subject should be a URI
     if not is_uri(s):
         return False
 
     kind, obj_val, obj_dt = parse_typed_literal(o)
 
-    # rdf:type validation
     if p == RDF_TYPE:
         if kind != "uri":
             return False
@@ -252,38 +239,30 @@ def validate_fact(s, p, o, property_domain, property_range, instances, taxonomy_
             return True
         return False
 
-    # observedEntity -> range Platform
     if p == STKG + "observedEntity":
         return kind == "uri" and instance_of(obj_val, STKG + "Platform", instances, taxonomy_up)
 
-    # subjectEntity / objectEntity -> range Platform
     if p == STKG + "subjectEntity":
         return kind == "uri" and instance_of(obj_val, STKG + "Platform", instances, taxonomy_up)
 
     if p == STKG + "objectEntity":
         return kind == "uri" and instance_of(obj_val, STKG + "Platform", instances, taxonomy_up)
 
-    # relationType -> resource URI
     if p == STKG + "relationType":
         return kind == "uri"
 
-    # time -> xsd:dateTime
     if p == STKG + "time":
         return kind == "literal" and obj_dt == XSD_DATETIME
 
-    # geo lat/long -> decimal
     if p == GEO_LAT or p == GEO_LONG:
         return kind == "literal" and obj_dt == XSD_DECIMAL and safe_decimal(obj_val)
 
-    # sourceRow -> integer
     if p == STKG + "sourceRow":
         return kind == "literal" and obj_dt == XSD_INTEGER and safe_int(obj_val)
 
-    # sourceFile -> typed string preferred, but any literal 허용
     if p == STKG + "sourceFile":
         return kind == "literal"
 
-    # For other schema properties, try generic range validation
     rng = property_range.get(p)
     if rng:
         if rng.startswith("http://www.w3.org/2001/XMLSchema#"):
@@ -291,7 +270,6 @@ def validate_fact(s, p, o, property_domain, property_range, instances, taxonomy_
         else:
             return kind == "uri" and instance_of(obj_val, rng, instances, taxonomy_up)
 
-    # Unknown property -> reject
     return False
 
 
@@ -307,20 +285,33 @@ def collect_nonempty_classes(instances, taxonomy_up):
 
 
 def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--outdir", default="yago-data", help="output directory")
+    args = ap.parse_args()
+
+    output_folder = args.outdir
+    schema_file = os.path.join(output_folder, "01-stkg-final-schema.ttl")
+    taxonomy_file = os.path.join(output_folder, "02-stkg-taxonomy.tsv")
+    facts_file = os.path.join(output_folder, "03-stkg-facts.tsv")
+
+    out_facts = os.path.join(output_folder, "04-stkg-facts-checked.tsv")
+    out_ids = os.path.join(output_folder, "04-stkg-ids.tsv")
+    out_bad_classes = os.path.join(output_folder, "04-stkg-bad-classes.tsv")
+
     print("Step 04: Type-checking STKG facts...")
 
-    ensure_inputs()
+    ensure_inputs(schema_file, taxonomy_file, facts_file)
 
-    print(f"  Loading schema from {SCHEMA_FILE} ...", end="", flush=True)
-    schema_classes, property_domain, property_range = load_schema(SCHEMA_FILE)
+    print(f"  Loading schema from {schema_file} ...", end="", flush=True)
+    schema_classes, property_domain, property_range = load_schema(schema_file)
     print("done")
 
-    print(f"  Loading taxonomy from {TAXONOMY_FILE} ...", end="", flush=True)
-    taxonomy_up, taxonomy_classes = load_taxonomy(TAXONOMY_FILE)
+    print(f"  Loading taxonomy from {taxonomy_file} ...", end="", flush=True)
+    taxonomy_up, taxonomy_classes = load_taxonomy(taxonomy_file)
     print("done")
 
-    print(f"  Loading instances from {FACTS_FILE} ...", end="", flush=True)
-    instances = load_instances(FACTS_FILE)
+    print(f"  Loading instances from {facts_file} ...", end="", flush=True)
+    instances = load_instances(facts_file)
     print("done")
 
     valid_rows = []
@@ -329,15 +320,13 @@ def main():
     valid_fact_count = 0
     rejected_fact_count = 0
 
-    valid_subjects = set()
     valid_resources = set()
 
     print("  Type-checking facts ...", end="", flush=True)
-    for s, p, o in read_tsv(FACTS_FILE):
+    for s, p, o in read_tsv(facts_file):
         if validate_fact(s, p, o, property_domain, property_range, instances, taxonomy_up, schema_classes):
             valid_rows.append((s, p, o))
             valid_fact_count += 1
-            valid_subjects.add(s)
             valid_resources.add(s)
 
             kind, obj_val, _ = parse_typed_literal(o)
@@ -347,28 +336,26 @@ def main():
             rejected_fact_count += 1
     print("done")
 
-    # provisional ids for valid resources only
     for resource in sorted(valid_resources):
         if resource in seen_id_subjects:
             continue
         seen_id_subjects.add(resource)
         id_rows.append((resource, OWL_SAMEAS, provisional_id_uri(resource)))
 
-    print(f"  Writing checked facts to {OUT_FACTS} ...", end="", flush=True)
-    write_tsv(valid_rows, OUT_FACTS)
+    print(f"  Writing checked facts to {out_facts} ...", end="", flush=True)
+    write_tsv(valid_rows, out_facts)
     print("done")
 
-    print(f"  Writing provisional ids to {OUT_IDS} ...", end="", flush=True)
-    write_tsv(id_rows, OUT_IDS)
+    print(f"  Writing provisional ids to {out_ids} ...", end="", flush=True)
+    write_tsv(id_rows, out_ids)
     print("done")
 
-    # classes with no instances
     covered_classes = collect_nonempty_classes(instances, taxonomy_up)
     all_classes = set(schema_classes) | set(taxonomy_classes)
     bad_classes = sorted(c for c in all_classes if c.startswith(STKG) and c not in covered_classes)
 
-    print(f"  Writing bad classes to {OUT_BAD_CLASSES} ...", end="", flush=True)
-    write_tsv([(c, "", "") for c in bad_classes], OUT_BAD_CLASSES)
+    print(f"  Writing bad classes to {out_bad_classes} ...", end="", flush=True)
+    write_tsv([(c, "", "") for c in bad_classes], out_bad_classes)
     print("done")
 
     print(f"  Info: Valid facts: {valid_fact_count}")

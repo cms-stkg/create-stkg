@@ -4,48 +4,35 @@
 """
 Exports final STKG TSV files into RDF serializations.
 
+Call:
+  python3 07-export.py --outdir yago-data/KG1
+
 Input:
-- yago-data/01-stkg-final-schema.ttl
-- yago-data/05-stkg-final-taxonomy.tsv
-- yago-data/05-stkg-final-entities.tsv
-- yago-data/05-stkg-final-observations.tsv
-- yago-data/05-stkg-final-relations.tsv
-- yago-data/05-stkg-final-meta.tsv
+- <outdir>/01-stkg-final-schema.ttl
+- <outdir>/05-stkg-final-taxonomy.tsv
+- <outdir>/05-stkg-final-entities.tsv
+- <outdir>/05-stkg-final-observations.tsv
+- <outdir>/05-stkg-final-relations.tsv
+- <outdir>/05-stkg-final-meta.tsv
 
 Output:
-- yago-data/stkg-final.ttl
-- yago-data/stkg-final.nt
-- yago-data/stkg-tiny.ttl
+- <outdir>/stkg-final.ttl
+- <outdir>/stkg-final.nt
+- <outdir>/stkg-tiny.ttl
 """
 
 import os
 import re
+import argparse
 from rdflib import Graph, Literal, URIRef
 from rdflib.namespace import RDF, RDFS, XSD
 
-FOLDER = "yago-data/"
 
-SCHEMA_FILE = os.path.join(FOLDER, "01-stkg-final-schema.ttl")
-TAXONOMY_FILE = os.path.join(FOLDER, "05-stkg-final-taxonomy.tsv")
-ENTITIES_FILE = os.path.join(FOLDER, "05-stkg-final-entities.tsv")
-OBSERVATIONS_FILE = os.path.join(FOLDER, "05-stkg-final-observations.tsv")
-RELATIONS_FILE = os.path.join(FOLDER, "05-stkg-final-relations.tsv")
-META_FILE = os.path.join(FOLDER, "05-stkg-final-meta.tsv")
-
-OUT_TTL = os.path.join(FOLDER, "stkg-final.ttl")
-OUT_NT = os.path.join(FOLDER, "stkg-final.nt")
-OUT_TINY = os.path.join(FOLDER, "stkg-tiny.ttl")
+_TYPED_LITERAL_RE = re.compile(r'^"(.*)"\^\^<([^>]+)>$')
 
 
-def ensure_inputs():
-    for path in [
-        SCHEMA_FILE,
-        TAXONOMY_FILE,
-        ENTITIES_FILE,
-        OBSERVATIONS_FILE,
-        RELATIONS_FILE,
-        META_FILE,
-    ]:
+def ensure_inputs(paths):
+    for path in paths:
         if not os.path.exists(path):
             raise FileNotFoundError(f"required input not found: {path}")
 
@@ -60,9 +47,6 @@ def read_tsv(path):
             if len(parts) < 3:
                 continue
             yield parts[0], parts[1], parts[2]
-
-
-_TYPED_LITERAL_RE = re.compile(r'^"(.*)"\^\^<([^>]+)>$')
 
 
 def parse_object(value: str):
@@ -104,11 +88,9 @@ def build_tiny_graph(full_graph: Graph):
     count_resources = 0
 
     for s, p, o in full_graph:
-        # keep all schema/class/property definition triples
         if p in {RDF.type, RDFS.domain, RDFS.range, RDFS.label, RDFS.subClassOf}:
             tiny.add((s, p, o))
 
-    # keep first ~200 non-schema resources
     for s, p, o in full_graph:
         s_str = str(s)
         if "example.org/stkg/id/" in s_str or "example.org/stkg/platform/" in s_str or "example.org/stkg/obs/" in s_str:
@@ -123,32 +105,56 @@ def build_tiny_graph(full_graph: Graph):
 
 
 def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--outdir", default="yago-data", help="output directory")
+    args = ap.parse_args()
+
+    folder = args.outdir
+
+    schema_file = os.path.join(folder, "01-stkg-final-schema.ttl")
+    taxonomy_file = os.path.join(folder, "05-stkg-final-taxonomy.tsv")
+    entities_file = os.path.join(folder, "05-stkg-final-entities.tsv")
+    observations_file = os.path.join(folder, "05-stkg-final-observations.tsv")
+    relations_file = os.path.join(folder, "05-stkg-final-relations.tsv")
+    meta_file = os.path.join(folder, "05-stkg-final-meta.tsv")
+
+    out_ttl = os.path.join(folder, "stkg-final.ttl")
+    out_nt = os.path.join(folder, "stkg-final.nt")
+    out_tiny = os.path.join(folder, "stkg-tiny.ttl")
+
     print("Step 07: Exporting STKG...")
 
-    ensure_inputs()
+    ensure_inputs([
+        schema_file,
+        taxonomy_file,
+        entities_file,
+        observations_file,
+        relations_file,
+        meta_file,
+    ])
 
     g = Graph()
 
-    print(f"  Loading schema from {SCHEMA_FILE} ...", end="", flush=True)
-    g.parse(SCHEMA_FILE, format="turtle")
+    print(f"  Loading schema from {schema_file} ...", end="", flush=True)
+    g.parse(schema_file, format="turtle")
     print("done")
 
     print("  Merging final TSV outputs ...", end="", flush=True)
-    for path in [TAXONOMY_FILE, ENTITIES_FILE, OBSERVATIONS_FILE, RELATIONS_FILE, META_FILE]:
+    for path in [taxonomy_file, entities_file, observations_file, relations_file, meta_file]:
         add_tsv_to_graph(g, path)
     print("done")
 
-    print(f"  Writing Turtle to {OUT_TTL} ...", end="", flush=True)
-    g.serialize(destination=OUT_TTL, format="turtle")
+    print(f"  Writing Turtle to {out_ttl} ...", end="", flush=True)
+    g.serialize(destination=out_ttl, format="turtle")
     print("done")
 
-    print(f"  Writing N-Triples to {OUT_NT} ...", end="", flush=True)
-    g.serialize(destination=OUT_NT, format="nt")
+    print(f"  Writing N-Triples to {out_nt} ...", end="", flush=True)
+    g.serialize(destination=out_nt, format="nt")
     print("done")
 
-    print(f"  Creating tiny graph {OUT_TINY} ...", end="", flush=True)
+    print(f"  Creating tiny graph {out_tiny} ...", end="", flush=True)
     tiny = build_tiny_graph(g)
-    tiny.serialize(destination=OUT_TINY, format="turtle")
+    tiny.serialize(destination=out_tiny, format="turtle")
     print("done")
 
     print(f"  Info: Total triples exported: {len(g)}")

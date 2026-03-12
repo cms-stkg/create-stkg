@@ -5,13 +5,13 @@
 Creates the STKG schema from stkg-schema.ttl
 
 Call:
-  python3 01-make-schema.py
+  python3 01-make-schema.py --outdir yago-data/KG1
 
 Input:
 - input-data/stkg/stkg-schema.ttl
 
 Output:
-- yago-data/01-stkg-final-schema.ttl
+- <outdir>/01-stkg-final-schema.ttl
 
 Algorithm:
 1) Load the schema
@@ -20,13 +20,12 @@ Algorithm:
 """
 
 import os
+import argparse
 from rdflib import Graph, Namespace
 from rdflib.namespace import RDF, RDFS, XSD
 
-OUTPUT_FOLDER = "yago-data/"
 INPUT_FOLDER = "input-data/stkg"
 INPUT_SCHEMA = os.path.join(INPUT_FOLDER, "stkg-schema.ttl")
-OUTPUT_SCHEMA = os.path.join(OUTPUT_FOLDER, "01-stkg-final-schema.ttl")
 
 STKG = Namespace("http://example.org/stkg/")
 STKGREL = Namespace("http://example.org/stkg/relation/")
@@ -34,7 +33,7 @@ SCHEMA = Namespace("http://schema.org/")
 GEO = Namespace("http://www.w3.org/2003/01/geo/wgs84_pos#")
 
 
-def ensure_dirs():
+def ensure_dirs(output_folder):
     if not os.path.exists(INPUT_FOLDER):
         print(f"  Input folder {INPUT_FOLDER} not found\nfailed")
         exit(1)
@@ -43,7 +42,7 @@ def ensure_dirs():
         print(f"  Input schema file {INPUT_SCHEMA} not found\nfailed")
         exit(1)
 
-    os.makedirs(OUTPUT_FOLDER, exist_ok=True)
+    os.makedirs(output_folder, exist_ok=True)
 
 
 def bind_prefixes(g: Graph):
@@ -91,9 +90,16 @@ def validate_required_terms(g: Graph):
 
 
 def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--outdir", default="yago-data", help="output directory")
+    args = ap.parse_args()
+
+    output_folder = args.outdir
+    output_schema = os.path.join(output_folder, "01-stkg-final-schema.ttl")
+
     print("Step 01: Creating STKG schema...")
 
-    ensure_dirs()
+    ensure_dirs(output_folder)
 
     g = Graph()
     bind_prefixes(g)
@@ -106,8 +112,8 @@ def main():
     validate_required_terms(g)
     print("done")
 
-    print(f"  Writing schema to {OUTPUT_SCHEMA} ...", end="", flush=True)
-    g.serialize(destination=OUTPUT_SCHEMA, format="turtle")
+    print(f"  Writing schema to {output_schema} ...", end="", flush=True)
+    g.serialize(destination=output_schema, format="turtle")
     print("done")
 
     print("done")

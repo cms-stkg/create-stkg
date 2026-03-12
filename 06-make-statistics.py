@@ -5,19 +5,22 @@
 Produces statistics about STKG entities, observations, predicates, and taxonomy,
 and extracts sample entities/observations.
 
+Call:
+  python3 06-make-statistics.py --outdir yago-data/KG1
+
 Input:
-- yago-data/01-stkg-final-schema.ttl
-- yago-data/05-stkg-final-entities.tsv
-- yago-data/05-stkg-final-observations.tsv
-- yago-data/05-stkg-final-relations.tsv
-- yago-data/05-stkg-final-meta.tsv
-- yago-data/05-stkg-final-taxonomy.tsv
+- <outdir>/01-stkg-final-schema.ttl
+- <outdir>/05-stkg-final-entities.tsv
+- <outdir>/05-stkg-final-observations.tsv
+- <outdir>/05-stkg-final-relations.tsv
+- <outdir>/05-stkg-final-meta.tsv
+- <outdir>/05-stkg-final-taxonomy.tsv
 
 Output:
-- yago-data/06-statistics.txt
-- yago-data/06-taxonomy.html
-- yago-data/06-upper-taxonomy.html
-- yago-data/06-sample-entities.ttl
+- <outdir>/06-statistics.txt
+- <outdir>/06-taxonomy.html
+- <outdir>/06-upper-taxonomy.html
+- <outdir>/06-sample-entities.ttl
 
 Algorithm:
 - load schema
@@ -32,25 +35,11 @@ Algorithm:
 import os
 import glob
 import random
+import argparse
 from collections import defaultdict
 
 from rdflib import Graph, Namespace
 from rdflib.namespace import RDF, RDFS
-
-
-FOLDER = "yago-data/"
-
-SCHEMA_FILE = os.path.join(FOLDER, "01-stkg-final-schema.ttl")
-ENTITIES_FILE = os.path.join(FOLDER, "05-stkg-final-entities.tsv")
-OBSERVATIONS_FILE = os.path.join(FOLDER, "05-stkg-final-observations.tsv")
-RELATIONS_FILE = os.path.join(FOLDER, "05-stkg-final-relations.tsv")
-META_FILE = os.path.join(FOLDER, "05-stkg-final-meta.tsv")
-TAXONOMY_FILE = os.path.join(FOLDER, "05-stkg-final-taxonomy.tsv")
-
-OUT_STATS = os.path.join(FOLDER, "06-statistics.txt")
-OUT_TAXONOMY_HTML = os.path.join(FOLDER, "06-taxonomy.html")
-OUT_UPPER_TAXONOMY_HTML = os.path.join(FOLDER, "06-upper-taxonomy.html")
-OUT_SAMPLE_TTL = os.path.join(FOLDER, "06-sample-entities.ttl")
 
 
 STKG = Namespace("http://example.org/stkg/")
@@ -78,20 +67,14 @@ PLATFORM_LOCAL = "Platform"
 POSITION_OBS_LOCAL = "PositionObservation"
 SPATIAL_REL_OBS_LOCAL = "SpatialRelationObservation"
 
+
 def local_name(uri: str) -> str:
     if "#" in uri:
         return uri.rsplit("#", 1)[-1]
     return uri.rstrip("/").rsplit("/", 1)[-1]
 
-def ensure_inputs():
-    required = [
-        SCHEMA_FILE,
-        ENTITIES_FILE,
-        OBSERVATIONS_FILE,
-        RELATIONS_FILE,
-        META_FILE,
-        TAXONOMY_FILE,
-    ]
+
+def ensure_inputs(required):
     for path in required:
         if not os.path.exists(path):
             raise FileNotFoundError(f"required input not found: {path}")
@@ -262,19 +245,43 @@ def triple_to_ttl(s, p, o):
 
 
 def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--outdir", default="yago-data", help="output directory")
+    args = ap.parse_args()
+
+    folder = args.outdir
+
+    schema_file = os.path.join(folder, "01-stkg-final-schema.ttl")
+    entities_file = os.path.join(folder, "05-stkg-final-entities.tsv")
+    observations_file = os.path.join(folder, "05-stkg-final-observations.tsv")
+    relations_file = os.path.join(folder, "05-stkg-final-relations.tsv")
+    meta_file = os.path.join(folder, "05-stkg-final-meta.tsv")
+    taxonomy_file = os.path.join(folder, "05-stkg-final-taxonomy.tsv")
+
+    out_stats = os.path.join(folder, "06-statistics.txt")
+    out_taxonomy_html = os.path.join(folder, "06-taxonomy.html")
+    out_upper_taxonomy_html = os.path.join(folder, "06-upper-taxonomy.html")
+    out_sample_ttl = os.path.join(folder, "06-sample-entities.ttl")
+
     print("Step 06: Collecting STKG statistics...")
 
-    ensure_inputs()
+    ensure_inputs([
+        schema_file,
+        entities_file,
+        observations_file,
+        relations_file,
+        meta_file,
+        taxonomy_file,
+    ])
 
-    print(f"  Loading schema from {SCHEMA_FILE} ...", end="", flush=True)
-    schema_classes, schema_properties, class_to_properties, property_to_domain, property_to_range = load_schema(SCHEMA_FILE)
+    print(f"  Loading schema from {schema_file} ...", end="", flush=True)
+    schema_classes, schema_properties, class_to_properties, property_to_domain, property_to_range = load_schema(schema_file)
     print("done")
 
-    print(f"  Loading taxonomy from {TAXONOMY_FILE} ...", end="", flush=True)
-    taxonomy_up, taxonomy_down = load_taxonomy(TAXONOMY_FILE)
+    print(f"  Loading taxonomy from {taxonomy_file} ...", end="", flush=True)
+    taxonomy_up, taxonomy_down = load_taxonomy(taxonomy_file)
     print("done")
 
-    # initialize counters
     predicate_stats = defaultdict(int)
     class_stats = defaultdict(int)
 
@@ -285,7 +292,7 @@ def main():
     for c in schema_classes:
         class_stats[c] = 0
 
-    fact_files = [ENTITIES_FILE, OBSERVATIONS_FILE, RELATIONS_FILE]
+    fact_files = [entities_file, observations_file, relations_file]
     grouped = group_by_subject(fact_files)
     subject_types = collect_subject_types(grouped)
 
@@ -335,7 +342,7 @@ def main():
                 samples[random.randint(0, 99)] = (subject, facts, inherited_types)
     print("done")
 
-    meta_facts = sum(1 for _ in read_tsv(META_FILE))
+    meta_facts = sum(1 for _ in read_tsv(meta_file))
 
     time_fact_count = predicate_stats.get(TIME, 0)
     relation_type_fact_count = predicate_stats.get(RELATION_TYPE, 0)
@@ -343,12 +350,12 @@ def main():
 
     print("  Computing dump size ...", end="", flush=True)
     dump_size = 0
-    for f in glob.glob(os.path.join(FOLDER, "05-stkg-final-*.tsv")):
+    for f in glob.glob(os.path.join(folder, "05-stkg-final-*.tsv")):
         dump_size += os.path.getsize(f)
     print("done")
 
-    print(f"  Writing sample entities to {OUT_SAMPLE_TTL} ...", end="", flush=True)
-    with open(OUT_SAMPLE_TTL, "w", encoding="utf-8") as writer:
+    print(f"  Writing sample entities to {out_sample_ttl} ...", end="", flush=True)
+    with open(out_sample_ttl, "w", encoding="utf-8") as writer:
         for subject, facts, inherited_types in samples:
             for s, p, o in facts:
                 writer.write(triple_to_ttl(s, p, o))
@@ -367,8 +374,8 @@ def main():
         if observation_count else 0.0
     )
 
-    print(f"  Writing statistics to {OUT_STATS} ...", end="", flush=True)
-    with open(OUT_STATS, "w", encoding="utf-8") as writer:
+    print(f"  Writing statistics to {out_stats} ...", end="", flush=True)
+    with open(out_stats, "w", encoding="utf-8") as writer:
         writer.write("STKG statistics\n\n")
         writer.write(f"Dump size: {dump_size / 1024 / 1024:.4f} MB\n\n")
         writer.write(f"Total number of resources: {entity_count}\n")
@@ -400,18 +407,17 @@ def main():
             writer.write(f"  {cls}: {cnt}\n")
     print("done")
 
-    # taxonomy roots = classes that are never children
     all_children = {child for parent in taxonomy_down for child in taxonomy_down[parent]}
     all_nodes = set(taxonomy_up.keys()) | set(taxonomy_down.keys())
     root_classes = sorted(c for c in all_nodes if c not in all_children)
 
-    print(f"  Writing taxonomy HTML to {OUT_TAXONOMY_HTML} ...", end="", flush=True)
-    print_taxonomy_html(OUT_TAXONOMY_HTML, taxonomy_down, class_stats, root_classes)
+    print(f"  Writing taxonomy HTML to {out_taxonomy_html} ...", end="", flush=True)
+    print_taxonomy_html(out_taxonomy_html, taxonomy_down, class_stats, root_classes)
     print("done")
 
-    print(f"  Writing upper taxonomy HTML to {OUT_UPPER_TAXONOMY_HTML} ...", end="", flush=True)
+    print(f"  Writing upper taxonomy HTML to {out_upper_taxonomy_html} ...", end="", flush=True)
     print_upper_taxonomy_html(
-        OUT_UPPER_TAXONOMY_HTML,
+        out_upper_taxonomy_html,
         schema_classes,
         class_to_properties,
         property_to_domain,
