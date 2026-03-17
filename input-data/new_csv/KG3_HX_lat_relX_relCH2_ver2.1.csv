@@ -1,0 +1,501 @@
+time,BF_object_F,lat_F,long_F,BF_object_G,lat_G,long_G,BF_object_H,lat_H,long_H,F-G,G-F,G-H,H-G,F-H,H-F
++2026-02-06T07:07:32Z,T62,37.5,127.0000878,K2BlackPanther,37.5000541,127.00010097,BTR60,37.5001082,127.01756,next to,next to,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:07:33Z,T62,37.5,127.0001756,K2BlackPanther,37.5000541,127.00020194,BTR60,37.5001082,127.01756,next to,next to,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:07:34Z,T62,37.5,127.0002634,K2BlackPanther,37.5000541,127.00030291,BTR60,37.5001082,127.01756,next to,next to,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:07:35Z,T62,37.5,127.0003512,K2BlackPanther,37.5000541,127.00040388,BTR60,37.5001082,127.01756,located behind,located ahead of,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:07:36Z,T62,37.5,127.000439,K2BlackPanther,37.5000541,127.00050485,BTR60,37.5001082,127.01756,located behind,located ahead of,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:07:37Z,T62,37.5,127.0005268,K2BlackPanther,37.5000541,127.00060582,BTR60,37.5001082,127.01756,located behind,located ahead of,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:07:38Z,T62,37.5,127.0006146,K2BlackPanther,37.5000541,127.00070679,BTR60,37.5001082,127.01756,located behind,located ahead of,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:07:39Z,T62,37.5,127.0007024,K2BlackPanther,37.5000541,127.00080776,BTR60,37.5001082,127.01756,located behind,located ahead of,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:07:40Z,T62,37.5,127.0007902,K2BlackPanther,37.5000541,127.00090873,BTR60,37.5001082,127.01756,located behind,located ahead of,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:07:41Z,T62,37.5,127.000878,K2BlackPanther,37.5000541,127.0010097,BTR60,37.5001082,127.01756,located behind,located ahead of,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:07:42Z,T62,37.5,127.0009658,K2BlackPanther,37.5000541,127.00111067,BTR60,37.5001082,127.01756,located behind,located ahead of,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:07:43Z,T62,37.5,127.0010536,K2BlackPanther,37.5000541,127.00121164,BTR60,37.5001082,127.01756,located behind,located ahead of,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:07:44Z,T62,37.5,127.0011414,K2BlackPanther,37.5000541,127.00131261,BTR60,37.5001082,127.01756,located behind,located ahead of,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:07:45Z,T62,37.5,127.0012292,K2BlackPanther,37.5000541,127.00141358,BTR60,37.5001082,127.01756,located behind,located ahead of,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:07:46Z,T62,37.5,127.001317,K2BlackPanther,37.5000541,127.00151455,BTR60,37.5001082,127.01756,located behind,located ahead of,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:07:47Z,T62,37.5,127.0014048,K2BlackPanther,37.5000541,127.00161552,BTR60,37.5001082,127.01756,located behind,located ahead of,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:07:48Z,T62,37.5,127.0014926,K2BlackPanther,37.5000541,127.00171649,BTR60,37.5001082,127.01756,located behind,located ahead of,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:07:49Z,T62,37.5,127.0015804,K2BlackPanther,37.5000541,127.00181746,BTR60,37.5001082,127.01756,located behind,located ahead of,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:07:50Z,T62,37.5,127.0016682,K2BlackPanther,37.5000541,127.00191843,BTR60,37.5001082,127.01756,located behind,located ahead of,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:07:51Z,T62,37.5,127.001756,K2BlackPanther,37.5000541,127.0020194,BTR60,37.5001082,127.01756,located behind,located ahead of,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:07:52Z,T62,37.5,127.0018438,K2BlackPanther,37.5000541,127.00212037,BTR60,37.5001082,127.01756,located behind,located ahead of,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:07:53Z,T62,37.5,127.0019316,K2BlackPanther,37.5000541,127.00222134,BTR60,37.5001082,127.01756,located behind,located ahead of,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:07:54Z,T62,37.5,127.0020194,K2BlackPanther,37.5000541,127.00232231,BTR60,37.5001082,127.01756,located behind,located ahead of,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:07:55Z,T62,37.5,127.0021072,K2BlackPanther,37.5000541,127.00242328,BTR60,37.5001082,127.01756,located behind,located ahead of,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:07:56Z,T62,37.5,127.002195,K2BlackPanther,37.5000541,127.00252425,BTR60,37.5001082,127.01756,located behind,located ahead of,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:07:57Z,T62,37.5,127.0022828,K2BlackPanther,37.5000541,127.00262522,BTR60,37.5001082,127.01756,located behind,located ahead of,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:07:58Z,T62,37.5,127.0023706,K2BlackPanther,37.5000541,127.00272619,BTR60,37.5001082,127.01756,located behind,located ahead of,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:07:59Z,T62,37.5,127.0024584,K2BlackPanther,37.5000541,127.00282716,BTR60,37.5001082,127.01756,located behind,located ahead of,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:08:00Z,T62,37.5,127.0025462,K2BlackPanther,37.5000541,127.00292813,BTR60,37.5001082,127.01756,located behind,located ahead of,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:08:01Z,T62,37.5,127.002634,K2BlackPanther,37.5000541,127.0030291,BTR60,37.5001082,127.01756,located behind,located ahead of,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:08:02Z,T62,37.5,127.0027218,K2BlackPanther,37.5000541,127.00313007,BTR60,37.5001082,127.01756,located behind,located ahead of,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:08:03Z,T62,37.5,127.0028096,K2BlackPanther,37.5000541,127.00323104,BTR60,37.5001082,127.01756,located behind,located ahead of,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:08:04Z,T62,37.5,127.0028974,K2BlackPanther,37.5000541,127.00333201,BTR60,37.5001082,127.01756,located behind,located ahead of,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:08:05Z,T62,37.5,127.0029852,K2BlackPanther,37.5000541,127.00343298,BTR60,37.5001082,127.01756,located behind,located ahead of,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:08:06Z,T62,37.5,127.003073,K2BlackPanther,37.5000541,127.00353395,BTR60,37.5001082,127.01756,located behind,located ahead of,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:08:07Z,T62,37.5,127.0031608,K2BlackPanther,37.5000541,127.00363492,BTR60,37.5001082,127.01756,located behind,located ahead of,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:08:08Z,T62,37.5,127.0032486,K2BlackPanther,37.5000541,127.00373589,BTR60,37.5001082,127.01756,located behind,located ahead of,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:08:09Z,T62,37.5,127.0033364,K2BlackPanther,37.5000541,127.00383686,BTR60,37.5001082,127.01756,located behind,located ahead of,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:08:10Z,T62,37.5,127.0034242,K2BlackPanther,37.5000541,127.00393783,BTR60,37.5001082,127.01756,located behind,located ahead of,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:08:11Z,T62,37.5,127.003512,K2BlackPanther,37.5000541,127.0040388,BTR60,37.5001082,127.01756,located behind,located ahead of,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:08:12Z,T62,37.5,127.0035998,K2BlackPanther,37.5000541,127.00413977,BTR60,37.5001082,127.01756,located behind,located ahead of,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:08:13Z,T62,37.5,127.0036876,K2BlackPanther,37.5000541,127.00424074,BTR60,37.5001082,127.01756,located behind,located ahead of,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:08:14Z,T62,37.5,127.0037754,K2BlackPanther,37.5000541,127.00434171,BTR60,37.5001082,127.01756,located behind,located ahead of,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:08:15Z,T62,37.5,127.0038632,K2BlackPanther,37.5000541,127.00444268,BTR60,37.5001082,127.01756,located behind,located ahead of,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:08:16Z,T62,37.5,127.003951,K2BlackPanther,37.5000541,127.00454365,BTR60,37.5001082,127.01756,located behind,located ahead of,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:08:17Z,T62,37.5,127.0040388,K2BlackPanther,37.5000541,127.00464462,BTR60,37.5001082,127.01756,located behind,located ahead of,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:08:18Z,T62,37.5,127.0041266,K2BlackPanther,37.5000541,127.00474559,BTR60,37.5001082,127.01756,located behind,located ahead of,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:08:19Z,T62,37.5,127.0042144,K2BlackPanther,37.5000541,127.00484656,BTR60,37.5001082,127.01756,located behind,located ahead of,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:08:20Z,T62,37.5,127.0043022,K2BlackPanther,37.5000541,127.00494753,BTR60,37.5001082,127.01756,located behind,located ahead of,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:08:21Z,T62,37.5,127.00439,K2BlackPanther,37.5000541,127.0050485,BTR60,37.5001082,127.01756,located behind,located ahead of,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:08:22Z,T62,37.5,127.0044778,K2BlackPanther,37.5000541,127.00514947,BTR60,37.5001082,127.01756,located behind,located ahead of,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:08:23Z,T62,37.5,127.0045656,K2BlackPanther,37.5000541,127.00525044,BTR60,37.5001082,127.01756,located behind,located ahead of,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:08:24Z,T62,37.5,127.0046534,K2BlackPanther,37.5000541,127.00535141,BTR60,37.5001082,127.01756,located behind,located ahead of,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:08:25Z,T62,37.5,127.0047412,K2BlackPanther,37.5000541,127.00545238,BTR60,37.5001082,127.01756,located behind,located ahead of,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:08:26Z,T62,37.5,127.004829,K2BlackPanther,37.5000541,127.00555335,BTR60,37.5001082,127.01756,located behind,located ahead of,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:08:27Z,T62,37.5,127.0049168,K2BlackPanther,37.5000541,127.00565432,BTR60,37.5001082,127.01756,located behind,located ahead of,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:08:28Z,T62,37.5,127.0050046,K2BlackPanther,37.5000541,127.00575529,BTR60,37.5001082,127.01756,located behind,located ahead of,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:08:29Z,T62,37.5,127.0050924,K2BlackPanther,37.5000541,127.00585626,BTR60,37.5001082,127.01756,located behind,located ahead of,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:08:30Z,T62,37.5,127.0051802,K2BlackPanther,37.5000541,127.00595723,BTR60,37.5001082,127.01756,located behind,located ahead of,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:08:31Z,T62,37.5,127.005268,K2BlackPanther,37.5000541,127.0060582,BTR60,37.5001082,127.01756,located behind,located ahead of,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:08:32Z,T62,37.5,127.0053558,K2BlackPanther,37.5000541,127.00615917,BTR60,37.5001082,127.01756,located behind,located ahead of,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:08:33Z,T62,37.5,127.0054436,K2BlackPanther,37.5000541,127.00626014,BTR60,37.5001082,127.01756,located behind,located ahead of,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:08:34Z,T62,37.5,127.0055314,K2BlackPanther,37.5000541,127.00636111,BTR60,37.5001082,127.01756,located behind,located ahead of,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:08:35Z,T62,37.5,127.0056192,K2BlackPanther,37.5000541,127.00646208,BTR60,37.5001082,127.01756,located behind,located ahead of,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:08:36Z,T62,37.5,127.005707,K2BlackPanther,37.5000541,127.00656305,BTR60,37.5001082,127.01756,located behind,located ahead of,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:08:37Z,T62,37.5,127.0057948,K2BlackPanther,37.5000541,127.00666402,BTR60,37.5001082,127.01756,located behind,located ahead of,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:08:38Z,T62,37.5,127.0058826,K2BlackPanther,37.5000541,127.00676499,BTR60,37.5001082,127.01756,located behind,located ahead of,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:08:39Z,T62,37.5,127.0059704,K2BlackPanther,37.5000541,127.00686596,BTR60,37.5001082,127.01756,located behind,located ahead of,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:08:40Z,T62,37.5,127.0060582,K2BlackPanther,37.5000541,127.00696693,BTR60,37.5001082,127.01756,located behind,located ahead of,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:08:41Z,T62,37.5,127.006146,K2BlackPanther,37.5000541,127.0070679,BTR60,37.5001082,127.01756,located behind,located ahead of,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:08:42Z,T62,37.5,127.0062338,K2BlackPanther,37.5000541,127.00716887,BTR60,37.5001082,127.01756,located behind,located ahead of,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:08:43Z,T62,37.5,127.0063216,K2BlackPanther,37.5000541,127.00726984,BTR60,37.5001082,127.01756,located behind,located ahead of,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:08:44Z,T62,37.5,127.0064094,K2BlackPanther,37.5000541,127.00737081,BTR60,37.5001082,127.01756,located behind,located ahead of,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:08:45Z,T62,37.5,127.0064972,K2BlackPanther,37.5000541,127.00747178,BTR60,37.5001082,127.01756,located behind,located ahead of,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:08:46Z,T62,37.5,127.006585,K2BlackPanther,37.5000541,127.00757275,BTR60,37.5001082,127.01756,located behind,located ahead of,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:08:47Z,T62,37.5,127.0066728,K2BlackPanther,37.5000541,127.00767372,BTR60,37.5001082,127.01756,located behind,located ahead of,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:08:48Z,T62,37.5,127.0067606,K2BlackPanther,37.5000541,127.00777469,BTR60,37.5001082,127.01756,located behind,located ahead of,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:08:49Z,T62,37.5,127.0068484,K2BlackPanther,37.5000541,127.00787566,BTR60,37.5001082,127.01756,located behind,located ahead of,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:08:50Z,T62,37.5,127.0069362,K2BlackPanther,37.5000541,127.00797663,BTR60,37.5001082,127.01756,located behind,located ahead of,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:08:51Z,T62,37.5,127.007024,K2BlackPanther,37.5000541,127.0080776,BTR60,37.5001082,127.01756,located behind,located ahead of,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:08:52Z,T62,37.5,127.0071118,K2BlackPanther,37.5000541,127.00817857,BTR60,37.5001082,127.01756,located behind,located ahead of,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:08:53Z,T62,37.5,127.0071996,K2BlackPanther,37.5000541,127.00827954,BTR60,37.5001082,127.01756,located behind,located ahead of,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:08:54Z,T62,37.5,127.0072874,K2BlackPanther,37.5000541,127.00838051,BTR60,37.5001082,127.01756,located behind,located ahead of,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:08:55Z,T62,37.5,127.0073752,K2BlackPanther,37.5000541,127.00848148,BTR60,37.5001082,127.01756,located behind,located ahead of,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:08:56Z,T62,37.5,127.007463,K2BlackPanther,37.5000541,127.00858245,BTR60,37.5001082,127.01756,located behind,located ahead of,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:08:57Z,T62,37.5,127.0075508,K2BlackPanther,37.5000541,127.00868342,BTR60,37.5001082,127.01756,located behind,located ahead of,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:08:58Z,T62,37.5,127.0076386,K2BlackPanther,37.5000541,127.00878439,BTR60,37.5001082,127.01756,located behind,located ahead of,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:08:59Z,T62,37.5,127.0077264,K2BlackPanther,37.5000541,127.00888536,BTR60,37.5001082,127.01756,located behind,located ahead of,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:09:00Z,T62,37.5,127.0078142,K2BlackPanther,37.5000541,127.00898633,BTR60,37.5001082,127.01756,located behind,located ahead of,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:09:01Z,T62,37.5,127.007902,K2BlackPanther,37.5000541,127.0090873,BTR60,37.5001082,127.01756,located behind,located ahead of,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:09:02Z,T62,37.5,127.0079898,K2BlackPanther,37.5000541,127.00918827,BTR60,37.5001082,127.01756,located behind,located ahead of,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:09:03Z,T62,37.5,127.0080776,K2BlackPanther,37.5000541,127.00928924,BTR60,37.5001082,127.01756,located behind,located ahead of,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:09:04Z,T62,37.5,127.0081654,K2BlackPanther,37.5000541,127.00939021,BTR60,37.5001082,127.01756,located behind,located ahead of,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:09:05Z,T62,37.5,127.0082532,K2BlackPanther,37.5000541,127.00949118,BTR60,37.5001082,127.01756,located behind,located ahead of,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:09:06Z,T62,37.5,127.008341,K2BlackPanther,37.5000541,127.00959215,BTR60,37.5001082,127.01756,located behind,located ahead of,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:09:07Z,T62,37.5,127.0084288,K2BlackPanther,37.5000541,127.00969312,BTR60,37.5001082,127.01756,located behind,located ahead of,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:09:08Z,T62,37.5,127.0085166,K2BlackPanther,37.5000541,127.00979409,BTR60,37.5001082,127.01756,located behind,located ahead of,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:09:09Z,T62,37.5,127.0086044,K2BlackPanther,37.5000541,127.00989506,BTR60,37.5001082,127.01756,located behind,located ahead of,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:09:10Z,T62,37.5,127.0086922,K2BlackPanther,37.5000541,127.00999603,BTR60,37.5001082,127.01756,located behind,located ahead of,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:09:11Z,T62,37.5,127.00878,K2BlackPanther,37.5000541,127.010097,BTR60,37.5001082,127.01756,located behind,located ahead of,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:09:12Z,T62,37.5,127.0088678,K2BlackPanther,37.5000541,127.01019797,BTR60,37.5001082,127.01756,located behind,located ahead of,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:09:13Z,T62,37.5,127.0089556,K2BlackPanther,37.5000541,127.01029894,BTR60,37.5001082,127.01756,located behind,located ahead of,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:09:14Z,T62,37.5,127.0090434,K2BlackPanther,37.5000541,127.01039991,BTR60,37.5001082,127.01756,located behind,located ahead of,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:09:15Z,T62,37.5,127.0091312,K2BlackPanther,37.5000541,127.01050088,BTR60,37.5001082,127.01756,located behind,located ahead of,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:09:16Z,T62,37.5,127.009219,K2BlackPanther,37.5000541,127.01060185,BTR60,37.5001082,127.01756,located behind,located ahead of,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:09:17Z,T62,37.5,127.0093068,K2BlackPanther,37.5000541,127.01070282,BTR60,37.5001082,127.01756,located behind,located ahead of,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:09:18Z,T62,37.5,127.0093946,K2BlackPanther,37.5000541,127.01080379,BTR60,37.5001082,127.01756,located behind,located ahead of,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:09:19Z,T62,37.5,127.0094824,K2BlackPanther,37.5000541,127.01090476,BTR60,37.5001082,127.01756,located behind,located ahead of,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:09:20Z,T62,37.5,127.0095702,K2BlackPanther,37.5000541,127.01100573,BTR60,37.5001082,127.01756,located behind,located ahead of,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:09:21Z,T62,37.5,127.009658,K2BlackPanther,37.5000541,127.0111067,BTR60,37.5001082,127.01756,located behind,located ahead of,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:09:22Z,T62,37.5,127.0097458,K2BlackPanther,37.5000541,127.01120767,BTR60,37.5001082,127.01756,located behind,located ahead of,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:09:23Z,T62,37.5,127.0098336,K2BlackPanther,37.5000541,127.01130864,BTR60,37.5001082,127.01756,located behind,located ahead of,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:09:24Z,T62,37.5,127.0099214,K2BlackPanther,37.5000541,127.01140961,BTR60,37.5001082,127.01756,located behind,located ahead of,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:09:25Z,T62,37.5,127.0100092,K2BlackPanther,37.5000541,127.01151058,BTR60,37.5001082,127.01756,located behind,located ahead of,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:09:26Z,T62,37.5,127.010097,K2BlackPanther,37.5000541,127.01161155,BTR60,37.5001082,127.01756,located behind,located ahead of,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:09:27Z,T62,37.5,127.0101848,K2BlackPanther,37.5000541,127.01171252,BTR60,37.5001082,127.01756,located behind,located ahead of,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:09:28Z,T62,37.5,127.0102726,K2BlackPanther,37.5000541,127.01181349,BTR60,37.5001082,127.01756,located behind,located ahead of,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:09:29Z,T62,37.5,127.0103604,K2BlackPanther,37.5000541,127.01191446,BTR60,37.5001082,127.01756,located behind,located ahead of,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:09:30Z,T62,37.5,127.0104482,K2BlackPanther,37.5000541,127.01201543,BTR60,37.5001082,127.01756,located behind,located ahead of,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:09:31Z,T62,37.5,127.010536,K2BlackPanther,37.5000541,127.0100092,BTR60,37.5001082,127.01756,located ahead of,located behind,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:09:32Z,T62,37.5,127.0106238,K2BlackPanther,37.5000541,127.01009261,BTR60,37.5001082,127.01756,located ahead of,located behind,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:09:33Z,T62,37.5,127.0107116,K2BlackPanther,37.5000541,127.01017602,BTR60,37.5001082,127.01756,located ahead of,located behind,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:09:34Z,T62,37.5,127.0107994,K2BlackPanther,37.5000541,127.01025943,BTR60,37.5001082,127.01756,located ahead of,located behind,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:09:35Z,T62,37.5,127.0108872,K2BlackPanther,37.5000541,127.01034284,BTR60,37.5001082,127.01756,located ahead of,located behind,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:09:36Z,T62,37.5,127.010975,K2BlackPanther,37.5000541,127.01042625,BTR60,37.5001082,127.01756,located ahead of,located behind,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:09:37Z,T62,37.5,127.0110628,K2BlackPanther,37.5000541,127.01050966,BTR60,37.5001082,127.01756,located ahead of,located behind,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:09:38Z,T62,37.5,127.0111506,K2BlackPanther,37.5000541,127.01059307,BTR60,37.5001082,127.01756,located ahead of,located behind,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:09:39Z,T62,37.5,127.0112384,K2BlackPanther,37.5000541,127.01067648,BTR60,37.5001082,127.01756,located ahead of,located behind,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:09:40Z,T62,37.5,127.0113262,K2BlackPanther,37.5000541,127.01075989,BTR60,37.5001082,127.01756,located ahead of,located behind,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:09:41Z,T62,37.5,127.011414,K2BlackPanther,37.5000541,127.0108433,BTR60,37.5001082,127.01756,located ahead of,located behind,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:09:42Z,T62,37.5,127.0115018,K2BlackPanther,37.5000541,127.01092671,BTR60,37.5001082,127.01756,located ahead of,located behind,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:09:43Z,T62,37.5,127.0115896,K2BlackPanther,37.5000541,127.01101012,BTR60,37.5001082,127.01756,located ahead of,located behind,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:09:44Z,T62,37.5,127.0116774,K2BlackPanther,37.5000541,127.01109353,BTR60,37.5001082,127.01756,located ahead of,located behind,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:09:45Z,T62,37.5,127.0117652,K2BlackPanther,37.5000541,127.01117694,BTR60,37.5001082,127.01756,located ahead of,located behind,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:09:46Z,T62,37.5,127.011853,K2BlackPanther,37.5000541,127.01126035,BTR60,37.5001082,127.01756,located ahead of,located behind,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:09:47Z,T62,37.5,127.0119408,K2BlackPanther,37.5000541,127.01134376,BTR60,37.5001082,127.01756,located ahead of,located behind,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:09:48Z,T62,37.5,127.0120286,K2BlackPanther,37.5000541,127.01142717,BTR60,37.5001082,127.01756,located ahead of,located behind,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:09:49Z,T62,37.5,127.0121164,K2BlackPanther,37.5000541,127.01151058,BTR60,37.5001082,127.01756,located ahead of,located behind,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:09:50Z,T62,37.5,127.0122042,K2BlackPanther,37.5000541,127.01159399,BTR60,37.5001082,127.01756,located ahead of,located behind,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:09:51Z,T62,37.5,127.012292,K2BlackPanther,37.5000541,127.0116774,BTR60,37.5001082,127.01756,located ahead of,located behind,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:09:52Z,T62,37.5,127.0123798,K2BlackPanther,37.5000541,127.01176081,BTR60,37.5001082,127.01756,located ahead of,located behind,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:09:53Z,T62,37.5,127.0124676,K2BlackPanther,37.5000541,127.01184422,BTR60,37.5001082,127.01756,located ahead of,located behind,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:09:54Z,T62,37.5,127.0125554,K2BlackPanther,37.5000541,127.01192763,BTR60,37.5001082,127.01756,located ahead of,located behind,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:09:55Z,T62,37.5,127.0126432,K2BlackPanther,37.5000541,127.01201104,BTR60,37.5001082,127.01756,located ahead of,located behind,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:09:56Z,T62,37.5,127.012731,K2BlackPanther,37.5000541,127.01209445,BTR60,37.5001082,127.01756,located ahead of,located behind,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:09:57Z,T62,37.5,127.0128188,K2BlackPanther,37.5000541,127.01217786,BTR60,37.5001082,127.01756,located ahead of,located behind,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:09:58Z,T62,37.5,127.0129066,K2BlackPanther,37.5000541,127.01226127,BTR60,37.5001082,127.01756,located ahead of,located behind,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:09:59Z,T62,37.5,127.0129944,K2BlackPanther,37.5000541,127.01234468,BTR60,37.5001082,127.01756,located ahead of,located behind,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:10:00Z,T62,37.5,127.0130822,K2BlackPanther,37.5000541,127.01242809,BTR60,37.5001082,127.01756,located ahead of,located behind,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:10:01Z,T62,37.5,127.01317,K2BlackPanther,37.5000541,127.0125115,BTR60,37.5001082,127.01756,located ahead of,located behind,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:10:02Z,T62,37.5,127.0132578,K2BlackPanther,37.5000541,127.01259491,BTR60,37.5001082,127.01756,located ahead of,located behind,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:10:03Z,T62,37.5,127.0133456,K2BlackPanther,37.5000541,127.01267832,BTR60,37.5001082,127.01756,located ahead of,located behind,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:10:04Z,T62,37.5,127.0134334,K2BlackPanther,37.5000541,127.01276173,BTR60,37.5001082,127.01756,located ahead of,located behind,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:10:05Z,T62,37.5,127.0135212,K2BlackPanther,37.5000541,127.01284514,BTR60,37.5001082,127.01756,located ahead of,located behind,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:10:06Z,T62,37.5,127.013609,K2BlackPanther,37.5000541,127.01292855,BTR60,37.5001082,127.01756,located ahead of,located behind,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:10:07Z,T62,37.5,127.0136968,K2BlackPanther,37.5000541,127.01301196,BTR60,37.5001082,127.01756,located ahead of,located behind,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:10:08Z,T62,37.5,127.0137846,K2BlackPanther,37.5000541,127.01309537,BTR60,37.5001082,127.01756,located ahead of,located behind,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:10:09Z,T62,37.5,127.0138724,K2BlackPanther,37.5000541,127.01317878,BTR60,37.5001082,127.01756,located ahead of,located behind,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:10:10Z,T62,37.5,127.0139602,K2BlackPanther,37.5000541,127.01326219,BTR60,37.5001082,127.01756,located ahead of,located behind,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:10:11Z,T62,37.5,127.014048,K2BlackPanther,37.5000541,127.0133456,BTR60,37.5001082,127.01756,located ahead of,located behind,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:10:12Z,T62,37.5,127.0141358,K2BlackPanther,37.5000541,127.01342901,BTR60,37.5001082,127.01756,located ahead of,located behind,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:10:13Z,T62,37.5,127.0142236,K2BlackPanther,37.5000541,127.01351242,BTR60,37.5001082,127.01756,located ahead of,located behind,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:10:14Z,T62,37.5,127.0143114,K2BlackPanther,37.5000541,127.01359583,BTR60,37.5001082,127.01756,located ahead of,located behind,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:10:15Z,T62,37.5,127.0143992,K2BlackPanther,37.5000541,127.01367924,BTR60,37.5001082,127.01756,located ahead of,located behind,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:10:16Z,T62,37.5,127.014487,K2BlackPanther,37.5000541,127.01376265,BTR60,37.5001082,127.01756,located ahead of,located behind,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:10:17Z,T62,37.5,127.0145748,K2BlackPanther,37.5000541,127.01384606,BTR60,37.5001082,127.01756,located ahead of,located behind,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:10:18Z,T62,37.5,127.0146626,K2BlackPanther,37.5000541,127.01392947,BTR60,37.5001082,127.01756,located ahead of,located behind,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:10:19Z,T62,37.5,127.0147504,K2BlackPanther,37.5000541,127.01401288,BTR60,37.5001082,127.01756,located ahead of,located behind,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:10:20Z,T62,37.5,127.0148382,K2BlackPanther,37.5000541,127.01409629,BTR60,37.5001082,127.01756,located ahead of,located behind,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:10:21Z,T62,37.5,127.014926,K2BlackPanther,37.5000541,127.0141797,BTR60,37.5001082,127.01756,located ahead of,located behind,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:10:22Z,T62,37.5,127.0150138,K2BlackPanther,37.5000541,127.01426311,BTR60,37.5001082,127.01756,located ahead of,located behind,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:10:23Z,T62,37.5,127.0151016,K2BlackPanther,37.5000541,127.01434652,BTR60,37.5001082,127.01756,located ahead of,located behind,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:10:24Z,T62,37.5,127.0151894,K2BlackPanther,37.5000541,127.01442993,BTR60,37.5001082,127.01756,located ahead of,located behind,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:10:25Z,T62,37.5,127.0152772,K2BlackPanther,37.5000541,127.01451334,BTR60,37.5001082,127.01756,located ahead of,located behind,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:10:26Z,T62,37.5,127.015365,K2BlackPanther,37.5000541,127.01459675,BTR60,37.5001082,127.01756,located ahead of,located behind,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:10:27Z,T62,37.5,127.0154528,K2BlackPanther,37.5000541,127.01468016,BTR60,37.5001082,127.01756,located ahead of,located behind,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:10:28Z,T62,37.5,127.0155406,K2BlackPanther,37.5000541,127.01476357,BTR60,37.5001082,127.01756,located ahead of,located behind,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:10:29Z,T62,37.5,127.0156284,K2BlackPanther,37.5000541,127.01484698,BTR60,37.5001082,127.01756,located ahead of,located behind,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:10:30Z,T62,37.5,127.0157162,K2BlackPanther,37.5000541,127.01493039,BTR60,37.5001082,127.01756,located ahead of,located behind,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:10:31Z,T62,37.5,127.015804,K2BlackPanther,37.5000541,127.0150138,BTR60,37.5001082,127.01756,located ahead of,located behind,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:10:32Z,T62,37.5,127.0158918,K2BlackPanther,37.5000541,127.01509721,BTR60,37.5001082,127.01756,located ahead of,located behind,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:10:33Z,T62,37.5,127.0159796,K2BlackPanther,37.5000541,127.01518062,BTR60,37.5001082,127.01756,located ahead of,located behind,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:10:34Z,T62,37.5,127.0160674,K2BlackPanther,37.5000541,127.01526403,BTR60,37.5001082,127.01756,located ahead of,located behind,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:10:35Z,T62,37.5,127.0161552,K2BlackPanther,37.5000541,127.01534744,BTR60,37.5001082,127.01756,located ahead of,located behind,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:10:36Z,T62,37.5,127.016243,K2BlackPanther,37.5000541,127.01543085,BTR60,37.5001082,127.01756,located ahead of,located behind,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:10:37Z,T62,37.5,127.0163308,K2BlackPanther,37.5000541,127.01551426,BTR60,37.5001082,127.01756,located ahead of,located behind,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:10:38Z,T62,37.5,127.0164186,K2BlackPanther,37.5000541,127.01559767,BTR60,37.5001082,127.01756,located ahead of,located behind,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:10:39Z,T62,37.5,127.0165064,K2BlackPanther,37.5000541,127.01568108,BTR60,37.5001082,127.01756,located ahead of,located behind,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:10:40Z,T62,37.5,127.0165942,K2BlackPanther,37.5000541,127.01576449,BTR60,37.5001082,127.01756,located ahead of,located behind,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:10:41Z,T62,37.5,127.016682,K2BlackPanther,37.5000541,127.0158479,BTR60,37.5001082,127.01756,located ahead of,located behind,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:10:42Z,T62,37.5,127.0167698,K2BlackPanther,37.5000541,127.01593131,BTR60,37.5001082,127.01756,located ahead of,located behind,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:10:43Z,T62,37.5,127.0168576,K2BlackPanther,37.5000541,127.01601472,BTR60,37.5001082,127.01756,located ahead of,located behind,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:10:44Z,T62,37.5,127.0169454,K2BlackPanther,37.5000541,127.01609813,BTR60,37.5001082,127.01756,located ahead of,located behind,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:10:45Z,T62,37.5,127.0170332,K2BlackPanther,37.5000541,127.01618154,BTR60,37.5001082,127.01756,located ahead of,located behind,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:10:46Z,T62,37.5,127.017121,K2BlackPanther,37.5000541,127.01626495,BTR60,37.5001082,127.01756,located ahead of,located behind,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:10:47Z,T62,37.5,127.0172088,K2BlackPanther,37.5000541,127.01634836,BTR60,37.5001082,127.01756,located ahead of,located behind,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:10:48Z,T62,37.5,127.0172966,K2BlackPanther,37.5000541,127.01643177,BTR60,37.5001082,127.01756,located ahead of,located behind,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:10:49Z,T62,37.5,127.0173844,K2BlackPanther,37.5000541,127.01651518,BTR60,37.5001082,127.01756,located ahead of,located behind,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:10:50Z,T62,37.5,127.0174722,K2BlackPanther,37.5000541,127.01659859,BTR60,37.5001082,127.01756,located ahead of,located behind,located behind,located ahead of,located behind,located ahead of
++2026-02-06T07:10:51Z,T62,37.5,127.01756,K2BlackPanther,37.5000541,127.0173844,BTR60,37.5001082,127.01756,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:10:52Z,T62,37.5,127.0176478,K2BlackPanther,37.5000541,127.0174722,BTR60,37.5001082,127.0176478,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:10:53Z,T62,37.5,127.0177356,K2BlackPanther,37.5000541,127.01755999999999,BTR60,37.5001082,127.0177356,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:10:54Z,T62,37.5,127.0178234,K2BlackPanther,37.5000541,127.01764779999999,BTR60,37.5001082,127.0178234,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:10:55Z,T62,37.5,127.0179112,K2BlackPanther,37.5000541,127.0177356,BTR60,37.5001082,127.0179112,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:10:56Z,T62,37.5,127.017999,K2BlackPanther,37.5000541,127.0178234,BTR60,37.5001082,127.017999,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:10:57Z,T62,37.5,127.0180868,K2BlackPanther,37.5000541,127.0179112,BTR60,37.5001082,127.0180868,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:10:58Z,T62,37.5,127.0181746,K2BlackPanther,37.5000541,127.01799899999999,BTR60,37.5001082,127.0181746,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:10:59Z,T62,37.5,127.0182624,K2BlackPanther,37.5000541,127.01808679999999,BTR60,37.5001082,127.0182624,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:11:00Z,T62,37.5,127.0183502,K2BlackPanther,37.5000541,127.0181746,BTR60,37.5001082,127.0183502,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:11:01Z,T62,37.5,127.018438,K2BlackPanther,37.5000541,127.0182624,BTR60,37.5001082,127.018438,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:11:02Z,T62,37.5,127.0185258,K2BlackPanther,37.5000541,127.0183502,BTR60,37.5001082,127.0185258,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:11:03Z,T62,37.5,127.0186136,K2BlackPanther,37.5000541,127.01843799999999,BTR60,37.5001082,127.0186136,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:11:04Z,T62,37.5,127.0187014,K2BlackPanther,37.5000541,127.01852579999999,BTR60,37.5001082,127.0187014,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:11:05Z,T62,37.5,127.0187892,K2BlackPanther,37.5000541,127.0186136,BTR60,37.5001082,127.0187892,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:11:06Z,T62,37.5,127.018877,K2BlackPanther,37.5000541,127.0187014,BTR60,37.5001082,127.018877,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:11:07Z,T62,37.5,127.0189648,K2BlackPanther,37.5000541,127.0187892,BTR60,37.5001082,127.0189648,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:11:08Z,T62,37.5,127.0190526,K2BlackPanther,37.5000541,127.01887699999999,BTR60,37.5001082,127.0190526,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:11:09Z,T62,37.5,127.0191404,K2BlackPanther,37.5000541,127.01896479999999,BTR60,37.5001082,127.0191404,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:11:10Z,T62,37.5,127.0192282,K2BlackPanther,37.5000541,127.0190526,BTR60,37.5001082,127.0192282,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:11:11Z,T62,37.5,127.019316,K2BlackPanther,37.5000541,127.0191404,BTR60,37.5001082,127.019316,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:11:12Z,T62,37.5,127.0194038,K2BlackPanther,37.5000541,127.0192282,BTR60,37.5001082,127.0194038,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:11:13Z,T62,37.5,127.0194916,K2BlackPanther,37.5000541,127.01931599999999,BTR60,37.5001082,127.0194916,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:11:14Z,T62,37.5,127.0195794,K2BlackPanther,37.5000541,127.01940379999999,BTR60,37.5001082,127.0195794,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:11:15Z,T62,37.5,127.0196672,K2BlackPanther,37.5000541,127.0194916,BTR60,37.5001082,127.0196672,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:11:16Z,T62,37.5,127.019755,K2BlackPanther,37.5000541,127.0195794,BTR60,37.5001082,127.019755,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:11:17Z,T62,37.5,127.0198428,K2BlackPanther,37.5000541,127.0196672,BTR60,37.5001082,127.0198428,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:11:18Z,T62,37.5,127.0199306,K2BlackPanther,37.5000541,127.01975499999999,BTR60,37.5001082,127.0199306,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:11:19Z,T62,37.5,127.0200184,K2BlackPanther,37.5000541,127.01984279999999,BTR60,37.5001082,127.0200184,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:11:20Z,T62,37.5,127.0201062,K2BlackPanther,37.5000541,127.0199306,BTR60,37.5001082,127.0201062,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:11:21Z,T62,37.5,127.020194,K2BlackPanther,37.5000541,127.0200184,BTR60,37.5001082,127.020194,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:11:22Z,T62,37.5,127.0202818,K2BlackPanther,37.5000541,127.0201062,BTR60,37.5001082,127.0202818,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:11:23Z,T62,37.5,127.0203696,K2BlackPanther,37.5000541,127.02019399999999,BTR60,37.5001082,127.0203696,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:11:24Z,T62,37.5,127.0204574,K2BlackPanther,37.5000541,127.02028179999999,BTR60,37.5001082,127.0204574,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:11:25Z,T62,37.5,127.0205452,K2BlackPanther,37.5000541,127.0203696,BTR60,37.5001082,127.0205452,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:11:26Z,T62,37.5,127.020633,K2BlackPanther,37.5000541,127.0204574,BTR60,37.5001082,127.020633,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:11:27Z,T62,37.5,127.0207208,K2BlackPanther,37.5000541,127.0205452,BTR60,37.5001082,127.0207208,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:11:28Z,T62,37.5,127.0208086,K2BlackPanther,37.5000541,127.02063299999999,BTR60,37.5001082,127.0208086,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:11:29Z,T62,37.5,127.0208964,K2BlackPanther,37.5000541,127.02072079999999,BTR60,37.5001082,127.0208964,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:11:30Z,T62,37.5,127.0209842,K2BlackPanther,37.5000541,127.0208086,BTR60,37.5001082,127.0209842,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:11:31Z,T62,37.5,127.021072,K2BlackPanther,37.5000541,127.0208964,BTR60,37.5001082,127.021072,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:11:32Z,T62,37.5,127.0211598,K2BlackPanther,37.5000541,127.0209842,BTR60,37.5001082,127.0211598,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:11:33Z,T62,37.5,127.0212476,K2BlackPanther,37.5000541,127.02107199999999,BTR60,37.5001082,127.0212476,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:11:34Z,T62,37.5,127.0213354,K2BlackPanther,37.5000541,127.02115979999999,BTR60,37.5001082,127.0213354,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:11:35Z,T62,37.5,127.0214232,K2BlackPanther,37.5000541,127.0212476,BTR60,37.5001082,127.0214232,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:11:36Z,T62,37.5,127.021511,K2BlackPanther,37.5000541,127.0213354,BTR60,37.5001082,127.021511,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:11:37Z,T62,37.5,127.0215988,K2BlackPanther,37.5000541,127.0214232,BTR60,37.5001082,127.0215988,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:11:38Z,T62,37.5,127.0216866,K2BlackPanther,37.5000541,127.02151099999999,BTR60,37.5001082,127.0216866,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:11:39Z,T62,37.5,127.0217744,K2BlackPanther,37.5000541,127.02159879999999,BTR60,37.5001082,127.0217744,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:11:40Z,T62,37.5,127.0218622,K2BlackPanther,37.5000541,127.0216866,BTR60,37.5001082,127.0218622,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:11:41Z,T62,37.5,127.02195,K2BlackPanther,37.5000541,127.0217744,BTR60,37.5001082,127.02195,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:11:42Z,T62,37.5,127.0220378,K2BlackPanther,37.5000541,127.0218622,BTR60,37.5001082,127.0220378,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:11:43Z,T62,37.5,127.0221256,K2BlackPanther,37.5000541,127.02194999999999,BTR60,37.5001082,127.0221256,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:11:44Z,T62,37.5,127.0222134,K2BlackPanther,37.5000541,127.02203779999999,BTR60,37.5001082,127.0222134,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:11:45Z,T62,37.5,127.0223012,K2BlackPanther,37.5000541,127.0221256,BTR60,37.5001082,127.0223012,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:11:46Z,T62,37.5,127.022389,K2BlackPanther,37.5000541,127.0222134,BTR60,37.5001082,127.022389,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:11:47Z,T62,37.5,127.0224768,K2BlackPanther,37.5000541,127.0223012,BTR60,37.5001082,127.0224768,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:11:48Z,T62,37.5,127.0225646,K2BlackPanther,37.5000541,127.02238899999999,BTR60,37.5001082,127.0225646,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:11:49Z,T62,37.5,127.0226524,K2BlackPanther,37.5000541,127.02247679999999,BTR60,37.5001082,127.0226524,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:11:50Z,T62,37.5,127.0227402,K2BlackPanther,37.5000541,127.0225646,BTR60,37.5001082,127.0227402,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:11:51Z,T62,37.5,127.022828,K2BlackPanther,37.5000541,127.0226524,BTR60,37.5001082,127.022828,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:11:52Z,T62,37.5,127.0229158,K2BlackPanther,37.5000541,127.0227402,BTR60,37.5001082,127.0229158,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:11:53Z,T62,37.5,127.0230036,K2BlackPanther,37.5000541,127.02282799999999,BTR60,37.5001082,127.0230036,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:11:54Z,T62,37.5,127.0230914,K2BlackPanther,37.5000541,127.02291579999999,BTR60,37.5001082,127.0230914,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:11:55Z,T62,37.5,127.0231792,K2BlackPanther,37.5000541,127.0230036,BTR60,37.5001082,127.0231792,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:11:56Z,T62,37.5,127.023267,K2BlackPanther,37.5000541,127.0230914,BTR60,37.5001082,127.023267,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:11:57Z,T62,37.5,127.0233548,K2BlackPanther,37.5000541,127.0231792,BTR60,37.5001082,127.0233548,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:11:58Z,T62,37.5,127.0234426,K2BlackPanther,37.5000541,127.02326699999999,BTR60,37.5001082,127.0234426,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:11:59Z,T62,37.5,127.0235304,K2BlackPanther,37.5000541,127.02335479999999,BTR60,37.5001082,127.0235304,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:12:00Z,T62,37.5,127.0236182,K2BlackPanther,37.5000541,127.0234426,BTR60,37.5001082,127.0236182,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:12:01Z,T62,37.5,127.023706,K2BlackPanther,37.5000541,127.0235304,BTR60,37.5001082,127.023706,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:12:02Z,T62,37.5,127.0237938,K2BlackPanther,37.5000541,127.0236182,BTR60,37.5001082,127.0237938,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:12:03Z,T62,37.5,127.0238816,K2BlackPanther,37.5000541,127.02370599999999,BTR60,37.5001082,127.0238816,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:12:04Z,T62,37.5,127.0239694,K2BlackPanther,37.5000541,127.02379379999999,BTR60,37.5001082,127.0239694,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:12:05Z,T62,37.5,127.0240572,K2BlackPanther,37.5000541,127.0238816,BTR60,37.5001082,127.0240572,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:12:06Z,T62,37.5,127.024145,K2BlackPanther,37.5000541,127.0239694,BTR60,37.5001082,127.024145,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:12:07Z,T62,37.5,127.0242328,K2BlackPanther,37.5000541,127.02405719999999,BTR60,37.5001082,127.0242328,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:12:08Z,T62,37.5,127.0243206,K2BlackPanther,37.5000541,127.02414499999999,BTR60,37.5001082,127.0243206,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:12:09Z,T62,37.5,127.0244084,K2BlackPanther,37.5000541,127.0242328,BTR60,37.5001082,127.0244084,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:12:10Z,T62,37.5,127.0244962,K2BlackPanther,37.5000541,127.0243206,BTR60,37.5001082,127.0244962,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:12:11Z,T62,37.5,127.024584,K2BlackPanther,37.5000541,127.0244084,BTR60,37.5001082,127.024584,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:12:12Z,T62,37.5,127.0246718,K2BlackPanther,37.5000541,127.02449619999999,BTR60,37.5001082,127.0246718,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:12:13Z,T62,37.5,127.0247596,K2BlackPanther,37.5000541,127.02458399999999,BTR60,37.5001082,127.0247596,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:12:14Z,T62,37.5,127.0248474,K2BlackPanther,37.5000541,127.0246718,BTR60,37.5001082,127.0248474,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:12:15Z,T62,37.5,127.0249352,K2BlackPanther,37.5000541,127.0247596,BTR60,37.5001082,127.0249352,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:12:16Z,T62,37.5,127.025023,K2BlackPanther,37.5000541,127.0248474,BTR60,37.5001082,127.025023,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:12:17Z,T62,37.5,127.0251108,K2BlackPanther,37.5000541,127.02493519999999,BTR60,37.5001082,127.0251108,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:12:18Z,T62,37.5,127.0251986,K2BlackPanther,37.5000541,127.02502299999999,BTR60,37.5001082,127.0251986,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:12:19Z,T62,37.5,127.0252864,K2BlackPanther,37.5000541,127.0251108,BTR60,37.5001082,127.0252864,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:12:20Z,T62,37.5,127.0253742,K2BlackPanther,37.5000541,127.0251986,BTR60,37.5001082,127.0253742,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:12:21Z,T62,37.5,127.025462,K2BlackPanther,37.5000541,127.0252864,BTR60,37.5001082,127.025462,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:12:22Z,T62,37.5,127.0255498,K2BlackPanther,37.5000541,127.02537419999999,BTR60,37.5001082,127.0255498,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:12:23Z,T62,37.5,127.0256376,K2BlackPanther,37.5000541,127.02546199999999,BTR60,37.5001082,127.0256376,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:12:24Z,T62,37.5,127.0257254,K2BlackPanther,37.5000541,127.0255498,BTR60,37.5001082,127.0257254,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:12:25Z,T62,37.5,127.0258132,K2BlackPanther,37.5000541,127.0256376,BTR60,37.5001082,127.0258132,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:12:26Z,T62,37.5,127.025901,K2BlackPanther,37.5000541,127.0257254,BTR60,37.5001082,127.025901,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:12:27Z,T62,37.5,127.0259888,K2BlackPanther,37.5000541,127.02581319999999,BTR60,37.5001082,127.0259888,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:12:28Z,T62,37.5,127.0260766,K2BlackPanther,37.5000541,127.02590099999999,BTR60,37.5001082,127.0260766,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:12:29Z,T62,37.5,127.0261644,K2BlackPanther,37.5000541,127.0259888,BTR60,37.5001082,127.0261644,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:12:30Z,T62,37.5,127.0262522,K2BlackPanther,37.5000541,127.0260766,BTR60,37.5001082,127.0262522,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:12:31Z,T62,37.5,127.02634,K2BlackPanther,37.5000541,127.0261644,BTR60,37.5001082,127.02634,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:12:32Z,T62,37.5,127.0264278,K2BlackPanther,37.5000541,127.02625219999999,BTR60,37.5001082,127.0264278,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:12:33Z,T62,37.5,127.0265156,K2BlackPanther,37.5000541,127.02633999999999,BTR60,37.5001082,127.0265156,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:12:34Z,T62,37.5,127.0266034,K2BlackPanther,37.5000541,127.0264278,BTR60,37.5001082,127.0266034,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:12:35Z,T62,37.5,127.0266912,K2BlackPanther,37.5000541,127.0265156,BTR60,37.5001082,127.0266912,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:12:36Z,T62,37.5,127.026779,K2BlackPanther,37.5000541,127.0266034,BTR60,37.5001082,127.026779,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:12:37Z,T62,37.5,127.0268668,K2BlackPanther,37.5000541,127.02669119999999,BTR60,37.5001082,127.0268668,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:12:38Z,T62,37.5,127.0269546,K2BlackPanther,37.5000541,127.02677899999999,BTR60,37.5001082,127.0269546,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:12:39Z,T62,37.5,127.0270424,K2BlackPanther,37.5000541,127.0268668,BTR60,37.5001082,127.0270424,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:12:40Z,T62,37.5,127.0271302,K2BlackPanther,37.5000541,127.0269546,BTR60,37.5001082,127.0271302,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:12:41Z,T62,37.5,127.027218,K2BlackPanther,37.5000541,127.0270424,BTR60,37.5001082,127.027218,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:12:42Z,T62,37.5,127.0273058,K2BlackPanther,37.5000541,127.02713019999999,BTR60,37.5001082,127.0273058,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:12:43Z,T62,37.5,127.0273936,K2BlackPanther,37.5000541,127.02721799999999,BTR60,37.5001082,127.0273936,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:12:44Z,T62,37.5,127.0274814,K2BlackPanther,37.5000541,127.0273058,BTR60,37.5001082,127.0274814,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:12:45Z,T62,37.5,127.0275692,K2BlackPanther,37.5000541,127.0273936,BTR60,37.5001082,127.0275692,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:12:46Z,T62,37.5,127.027657,K2BlackPanther,37.5000541,127.0274814,BTR60,37.5001082,127.027657,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:12:47Z,T62,37.5,127.0277448,K2BlackPanther,37.5000541,127.02756919999999,BTR60,37.5001082,127.0277448,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:12:48Z,T62,37.5,127.0278326,K2BlackPanther,37.5000541,127.02765699999999,BTR60,37.5001082,127.0278326,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:12:49Z,T62,37.5,127.0279204,K2BlackPanther,37.5000541,127.0277448,BTR60,37.5001082,127.0279204,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:12:50Z,T62,37.5,127.0280082,K2BlackPanther,37.5000541,127.0278326,BTR60,37.5001082,127.0280082,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:12:51Z,T62,37.5,127.028096,K2BlackPanther,37.5000541,127.0279204,BTR60,37.5001082,127.028096,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:12:52Z,T62,37.5,127.0281838,K2BlackPanther,37.5000541,127.02800819999999,BTR60,37.5001082,127.0281838,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:12:53Z,T62,37.5,127.0282716,K2BlackPanther,37.5000541,127.02809599999999,BTR60,37.5001082,127.0282716,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:12:54Z,T62,37.5,127.0283594,K2BlackPanther,37.5000541,127.0281838,BTR60,37.5001082,127.0283594,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:12:55Z,T62,37.5,127.0284472,K2BlackPanther,37.5000541,127.0282716,BTR60,37.5001082,127.0284472,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:12:56Z,T62,37.5,127.028535,K2BlackPanther,37.5000541,127.0283594,BTR60,37.5001082,127.028535,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:12:57Z,T62,37.5,127.0286228,K2BlackPanther,37.5000541,127.02844719999999,BTR60,37.5001082,127.0286228,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:12:58Z,T62,37.5,127.0287106,K2BlackPanther,37.5000541,127.02853499999999,BTR60,37.5001082,127.0287106,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:12:59Z,T62,37.5,127.0287984,K2BlackPanther,37.5000541,127.0286228,BTR60,37.5001082,127.0287984,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:13:00Z,T62,37.5,127.0288862,K2BlackPanther,37.5000541,127.0287106,BTR60,37.5001082,127.0288862,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:13:01Z,T62,37.5,127.028974,K2BlackPanther,37.5000541,127.0287984,BTR60,37.5001082,127.028974,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:13:02Z,T62,37.5,127.0290618,K2BlackPanther,37.5000541,127.02888619999999,BTR60,37.5001082,127.0290618,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:13:03Z,T62,37.5,127.0291496,K2BlackPanther,37.5000541,127.02897399999999,BTR60,37.5001082,127.0291496,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:13:04Z,T62,37.5,127.0292374,K2BlackPanther,37.5000541,127.0290618,BTR60,37.5001082,127.0292374,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:13:05Z,T62,37.5,127.0293252,K2BlackPanther,37.5000541,127.0291496,BTR60,37.5001082,127.0293252,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:13:06Z,T62,37.5,127.029413,K2BlackPanther,37.5000541,127.0292374,BTR60,37.5001082,127.029413,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:13:07Z,T62,37.5,127.0295008,K2BlackPanther,37.5000541,127.02932519999999,BTR60,37.5001082,127.0295008,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:13:08Z,T62,37.5,127.0295886,K2BlackPanther,37.5000541,127.02941299999999,BTR60,37.5001082,127.0295886,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:13:09Z,T62,37.5,127.0296764,K2BlackPanther,37.5000541,127.0295008,BTR60,37.5001082,127.0296764,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:13:10Z,T62,37.5,127.0297642,K2BlackPanther,37.5000541,127.0295886,BTR60,37.5001082,127.0297642,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:13:11Z,T62,37.5,127.029852,K2BlackPanther,37.5000541,127.0296764,BTR60,37.5001082,127.029852,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:13:12Z,T62,37.5,127.0299398,K2BlackPanther,37.5000541,127.02976419999999,BTR60,37.5001082,127.0299398,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:13:13Z,T62,37.5,127.0300276,K2BlackPanther,37.5000541,127.02985199999999,BTR60,37.5001082,127.0300276,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:13:14Z,T62,37.5,127.0301154,K2BlackPanther,37.5000541,127.0299398,BTR60,37.5001082,127.0301154,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:13:15Z,T62,37.5,127.0302032,K2BlackPanther,37.5000541,127.0300276,BTR60,37.5001082,127.0302032,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:13:16Z,T62,37.5,127.030291,K2BlackPanther,37.5000541,127.0301154,BTR60,37.5001082,127.030291,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:13:17Z,T62,37.5,127.0303788,K2BlackPanther,37.5000541,127.03020319999999,BTR60,37.5001082,127.0303788,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:13:18Z,T62,37.5,127.0304666,K2BlackPanther,37.5000541,127.03029099999999,BTR60,37.5001082,127.0304666,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:13:19Z,T62,37.5,127.0305544,K2BlackPanther,37.5000541,127.0303788,BTR60,37.5001082,127.0305544,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:13:20Z,T62,37.5,127.0306422,K2BlackPanther,37.5000541,127.0304666,BTR60,37.5001082,127.0306422,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:13:21Z,T62,37.5,127.03073,K2BlackPanther,37.5000541,127.0305544,BTR60,37.5001082,127.03073,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:13:22Z,T62,37.5,127.0308178,K2BlackPanther,37.5000541,127.03064219999999,BTR60,37.5001082,127.0308178,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:13:23Z,T62,37.5,127.0309056,K2BlackPanther,37.5000541,127.03072999999999,BTR60,37.5001082,127.0309056,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:13:24Z,T62,37.5,127.0309934,K2BlackPanther,37.5000541,127.0308178,BTR60,37.5001082,127.0309934,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:13:25Z,T62,37.5,127.0310812,K2BlackPanther,37.5000541,127.0309056,BTR60,37.5001082,127.0310812,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:13:26Z,T62,37.5,127.031169,K2BlackPanther,37.5000541,127.0309934,BTR60,37.5001082,127.031169,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:13:27Z,T62,37.5,127.0312568,K2BlackPanther,37.5000541,127.03108119999999,BTR60,37.5001082,127.0312568,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:13:28Z,T62,37.5,127.0313446,K2BlackPanther,37.5000541,127.03116899999999,BTR60,37.5001082,127.0313446,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:13:29Z,T62,37.5,127.0314324,K2BlackPanther,37.5000541,127.0312568,BTR60,37.5001082,127.0314324,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:13:30Z,T62,37.5,127.0315202,K2BlackPanther,37.5000541,127.0313446,BTR60,37.5001082,127.0315202,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:13:31Z,T62,37.5,127.031608,K2BlackPanther,37.5000541,127.0314324,BTR60,37.5001082,127.031608,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:13:32Z,T62,37.5,127.0316958,K2BlackPanther,37.5000541,127.03152019999999,BTR60,37.5001082,127.0316958,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:13:33Z,T62,37.5,127.0317836,K2BlackPanther,37.5000541,127.03160799999999,BTR60,37.5001082,127.0317836,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:13:34Z,T62,37.5,127.0318714,K2BlackPanther,37.5000541,127.0316958,BTR60,37.5001082,127.0318714,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:13:35Z,T62,37.5,127.0319592,K2BlackPanther,37.5000541,127.0317836,BTR60,37.5001082,127.0319592,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:13:36Z,T62,37.5,127.032047,K2BlackPanther,37.5000541,127.0318714,BTR60,37.5001082,127.032047,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:13:37Z,T62,37.5,127.0321348,K2BlackPanther,37.5000541,127.03195919999999,BTR60,37.5001082,127.0321348,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:13:38Z,T62,37.5,127.0322226,K2BlackPanther,37.5000541,127.03204699999999,BTR60,37.5001082,127.0322226,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:13:39Z,T62,37.5,127.0323104,K2BlackPanther,37.5000541,127.0321348,BTR60,37.5001082,127.0323104,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:13:40Z,T62,37.5,127.0323982,K2BlackPanther,37.5000541,127.0322226,BTR60,37.5001082,127.0323982,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:13:41Z,T62,37.5,127.032486,K2BlackPanther,37.5000541,127.0323104,BTR60,37.5001082,127.032486,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:13:42Z,T62,37.5,127.0325738,K2BlackPanther,37.5000541,127.03239819999999,BTR60,37.5001082,127.0325738,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:13:43Z,T62,37.5,127.0326616,K2BlackPanther,37.5000541,127.03248599999999,BTR60,37.5001082,127.0326616,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:13:44Z,T62,37.5,127.0327494,K2BlackPanther,37.5000541,127.0325738,BTR60,37.5001082,127.0327494,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:13:45Z,T62,37.5,127.0328372,K2BlackPanther,37.5000541,127.0326616,BTR60,37.5001082,127.0328372,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:13:46Z,T62,37.5,127.032925,K2BlackPanther,37.5000541,127.0327494,BTR60,37.5001082,127.032925,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:13:47Z,T62,37.5,127.0330128,K2BlackPanther,37.5000541,127.03283719999999,BTR60,37.5001082,127.0330128,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:13:48Z,T62,37.5,127.0331006,K2BlackPanther,37.5000541,127.03292499999999,BTR60,37.5001082,127.0331006,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:13:49Z,T62,37.5,127.0331884,K2BlackPanther,37.5000541,127.0330128,BTR60,37.5001082,127.0331884,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:13:50Z,T62,37.5,127.0332762,K2BlackPanther,37.5000541,127.0331006,BTR60,37.5001082,127.0332762,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:13:51Z,T62,37.5,127.033364,K2BlackPanther,37.5000541,127.0331884,BTR60,37.5001082,127.033364,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:13:52Z,T62,37.5,127.0334518,K2BlackPanther,37.5000541,127.03327619999999,BTR60,37.5001082,127.0334518,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:13:53Z,T62,37.5,127.0335396,K2BlackPanther,37.5000541,127.03336399999999,BTR60,37.5001082,127.0335396,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:13:54Z,T62,37.5,127.0336274,K2BlackPanther,37.5000541,127.0334518,BTR60,37.5001082,127.0336274,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:13:55Z,T62,37.5,127.0337152,K2BlackPanther,37.5000541,127.0335396,BTR60,37.5001082,127.0337152,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:13:56Z,T62,37.5,127.033803,K2BlackPanther,37.5000541,127.0336274,BTR60,37.5001082,127.033803,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:13:57Z,T62,37.5,127.0338908,K2BlackPanther,37.5000541,127.03371519999999,BTR60,37.5001082,127.0338908,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:13:58Z,T62,37.5,127.0339786,K2BlackPanther,37.5000541,127.03380299999999,BTR60,37.5001082,127.0339786,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:13:59Z,T62,37.5,127.0340664,K2BlackPanther,37.5000541,127.0338908,BTR60,37.5001082,127.0340664,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:14:00Z,T62,37.5,127.0341542,K2BlackPanther,37.5000541,127.0339786,BTR60,37.5001082,127.0341542,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:14:01Z,T62,37.5,127.034242,K2BlackPanther,37.5000541,127.0340664,BTR60,37.5001082,127.034242,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:14:02Z,T62,37.5,127.0343298,K2BlackPanther,37.5000541,127.03415419999999,BTR60,37.5001082,127.0343298,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:14:03Z,T62,37.5,127.0344176,K2BlackPanther,37.5000541,127.03424199999999,BTR60,37.5001082,127.0344176,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:14:04Z,T62,37.5,127.0345054,K2BlackPanther,37.5000541,127.0343298,BTR60,37.5001082,127.0345054,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:14:05Z,T62,37.5,127.0345932,K2BlackPanther,37.5000541,127.0344176,BTR60,37.5001082,127.0345932,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:14:06Z,T62,37.5,127.034681,K2BlackPanther,37.5000541,127.0345054,BTR60,37.5001082,127.034681,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:14:07Z,T62,37.5,127.0347688,K2BlackPanther,37.5000541,127.03459319999999,BTR60,37.5001082,127.0347688,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:14:08Z,T62,37.5,127.0348566,K2BlackPanther,37.5000541,127.03468099999999,BTR60,37.5001082,127.0348566,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:14:09Z,T62,37.5,127.0349444,K2BlackPanther,37.5000541,127.0347688,BTR60,37.5001082,127.0349444,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:14:10Z,T62,37.5,127.0350322,K2BlackPanther,37.5000541,127.0348566,BTR60,37.5001082,127.0350322,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:14:11Z,T62,37.5,127.03512,K2BlackPanther,37.5000541,127.0349444,BTR60,37.5001082,127.03512,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:14:12Z,T62,37.5,127.0352078,K2BlackPanther,37.5000541,127.03503219999999,BTR60,37.5001082,127.0352078,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:14:13Z,T62,37.5,127.0352956,K2BlackPanther,37.5000541,127.03511999999999,BTR60,37.5001082,127.0352956,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:14:14Z,T62,37.5,127.0353834,K2BlackPanther,37.5000541,127.0352078,BTR60,37.5001082,127.0353834,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:14:15Z,T62,37.5,127.0354712,K2BlackPanther,37.5000541,127.0352956,BTR60,37.5001082,127.0354712,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:14:16Z,T62,37.5,127.035559,K2BlackPanther,37.5000541,127.0353834,BTR60,37.5001082,127.035559,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:14:17Z,T62,37.5,127.0356468,K2BlackPanther,37.5000541,127.03547119999999,BTR60,37.5001082,127.0356468,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:14:18Z,T62,37.5,127.0357346,K2BlackPanther,37.5000541,127.03555899999999,BTR60,37.5001082,127.0357346,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:14:19Z,T62,37.5,127.0358224,K2BlackPanther,37.5000541,127.0356468,BTR60,37.5001082,127.0358224,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:14:20Z,T62,37.5,127.0359102,K2BlackPanther,37.5000541,127.0357346,BTR60,37.5001082,127.0359102,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:14:21Z,T62,37.5,127.035998,K2BlackPanther,37.5000541,127.0358224,BTR60,37.5001082,127.035998,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:14:22Z,T62,37.5,127.0360858,K2BlackPanther,37.5000541,127.03591019999999,BTR60,37.5001082,127.0360858,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:14:23Z,T62,37.5,127.0361736,K2BlackPanther,37.5000541,127.03599799999999,BTR60,37.5001082,127.0361736,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:14:24Z,T62,37.5,127.0362614,K2BlackPanther,37.5000541,127.0360858,BTR60,37.5001082,127.0362614,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:14:25Z,T62,37.5,127.0363492,K2BlackPanther,37.5000541,127.0361736,BTR60,37.5001082,127.0363492,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:14:26Z,T62,37.5,127.036437,K2BlackPanther,37.5000541,127.0362614,BTR60,37.5001082,127.036437,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:14:27Z,T62,37.5,127.0365248,K2BlackPanther,37.5000541,127.03634919999999,BTR60,37.5001082,127.0365248,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:14:28Z,T62,37.5,127.0366126,K2BlackPanther,37.5000541,127.03643699999999,BTR60,37.5001082,127.0366126,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:14:29Z,T62,37.5,127.0367004,K2BlackPanther,37.5000541,127.0365248,BTR60,37.5001082,127.0367004,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:14:30Z,T62,37.5,127.0367882,K2BlackPanther,37.5000541,127.0366126,BTR60,37.5001082,127.0367882,located ahead of,located behind,located behind,located ahead of,next to,next to
++2026-02-06T07:14:31Z,T62,37.5,127.036876,K2BlackPanther,37.5000541,127.036876,BTR60,37.5001082,127.036876,next to,next to,collision with,collision with,next to,next to
++2026-02-06T07:14:32Z,T62,37.5,127.0369638,K2BlackPanther,37.5000541,127.036876,BTR60,37.5001082,127.036876,located ahead of,located behind,collision with,collision with,located ahead of,located behind
++2026-02-06T07:14:33Z,T62,37.5,127.0370516,K2BlackPanther,37.5000541,127.036876,BTR60,37.5001082,127.036876,located ahead of,located behind,collision with,collision with,located ahead of,located behind
++2026-02-06T07:14:34Z,T62,37.5,127.0371394,K2BlackPanther,37.5000541,127.036876,BTR60,37.5001082,127.036876,located ahead of,located behind,collision with,collision with,located ahead of,located behind
++2026-02-06T07:14:35Z,T62,37.5,127.0372272,K2BlackPanther,37.5000541,127.036876,BTR60,37.5001082,127.036876,located ahead of,located behind,collision with,collision with,located ahead of,located behind
++2026-02-06T07:14:36Z,T62,37.5,127.037315,K2BlackPanther,37.5000541,127.036876,BTR60,37.5001082,127.036876,located ahead of,located behind,collision with,collision with,located ahead of,located behind
++2026-02-06T07:14:37Z,T62,37.5,127.0374028,K2BlackPanther,37.5000541,127.036876,BTR60,37.5001082,127.036876,located ahead of,located behind,collision with,collision with,located ahead of,located behind
++2026-02-06T07:14:38Z,T62,37.5,127.0374906,K2BlackPanther,37.5000541,127.036876,BTR60,37.5001082,127.036876,located ahead of,located behind,collision with,collision with,located ahead of,located behind
++2026-02-06T07:14:39Z,T62,37.5,127.0375784,K2BlackPanther,37.5000541,127.036876,BTR60,37.5001082,127.036876,located ahead of,located behind,collision with,collision with,located ahead of,located behind
++2026-02-06T07:14:40Z,T62,37.5,127.0376662,K2BlackPanther,37.5000541,127.036876,BTR60,37.5001082,127.036876,located ahead of,located behind,collision with,collision with,located ahead of,located behind
++2026-02-06T07:14:41Z,T62,37.5,127.037754,K2BlackPanther,37.5000541,127.036876,BTR60,37.5001082,127.036876,located ahead of,located behind,collision with,collision with,located ahead of,located behind
++2026-02-06T07:14:42Z,T62,37.5,127.0378418,K2BlackPanther,37.5000541,127.036876,BTR60,37.5001082,127.036876,located ahead of,located behind,collision with,collision with,located ahead of,located behind
++2026-02-06T07:14:43Z,T62,37.5,127.0379296,K2BlackPanther,37.5000541,127.036876,BTR60,37.5001082,127.036876,located ahead of,located behind,collision with,collision with,located ahead of,located behind
++2026-02-06T07:14:44Z,T62,37.5,127.0380174,K2BlackPanther,37.5000541,127.036876,BTR60,37.5001082,127.036876,located ahead of,located behind,collision with,collision with,located ahead of,located behind
++2026-02-06T07:14:45Z,T62,37.5,127.0381052,K2BlackPanther,37.5000541,127.036876,BTR60,37.5001082,127.036876,located ahead of,located behind,collision with,collision with,located ahead of,located behind
++2026-02-06T07:14:46Z,T62,37.5,127.038193,K2BlackPanther,37.5000541,127.036876,BTR60,37.5001082,127.036876,located ahead of,located behind,collision with,collision with,located ahead of,located behind
++2026-02-06T07:14:47Z,T62,37.5,127.0382808,K2BlackPanther,37.5000541,127.036876,BTR60,37.5001082,127.036876,located ahead of,located behind,collision with,collision with,located ahead of,located behind
++2026-02-06T07:14:48Z,T62,37.5,127.0383686,K2BlackPanther,37.5000541,127.036876,BTR60,37.5001082,127.036876,located ahead of,located behind,collision with,collision with,located ahead of,located behind
++2026-02-06T07:14:49Z,T62,37.5,127.0384564,K2BlackPanther,37.5000541,127.036876,BTR60,37.5001082,127.036876,located ahead of,located behind,collision with,collision with,located ahead of,located behind
++2026-02-06T07:14:50Z,T62,37.5,127.0385442,K2BlackPanther,37.5000541,127.036876,BTR60,37.5001082,127.036876,located ahead of,located behind,collision with,collision with,located ahead of,located behind
++2026-02-06T07:14:51Z,T62,37.5,127.038632,K2BlackPanther,37.5000541,127.036876,BTR60,37.5001082,127.036876,located ahead of,located behind,collision with,collision with,located ahead of,located behind
++2026-02-06T07:14:52Z,T62,37.5,127.0387198,K2BlackPanther,37.5000541,127.036876,BTR60,37.5001082,127.036876,located ahead of,located behind,collision with,collision with,located ahead of,located behind
++2026-02-06T07:14:53Z,T62,37.5,127.0388076,K2BlackPanther,37.5000541,127.036876,BTR60,37.5001082,127.036876,located ahead of,located behind,collision with,collision with,located ahead of,located behind
++2026-02-06T07:14:54Z,T62,37.5,127.0388954,K2BlackPanther,37.5000541,127.036876,BTR60,37.5001082,127.036876,located ahead of,located behind,collision with,collision with,located ahead of,located behind
++2026-02-06T07:14:55Z,T62,37.5,127.0389832,K2BlackPanther,37.5000541,127.036876,BTR60,37.5001082,127.036876,located ahead of,located behind,collision with,collision with,located ahead of,located behind
++2026-02-06T07:14:56Z,T62,37.5,127.039071,K2BlackPanther,37.5000541,127.036876,BTR60,37.5001082,127.036876,located ahead of,located behind,collision with,collision with,located ahead of,located behind
++2026-02-06T07:14:57Z,T62,37.5,127.0391588,K2BlackPanther,37.5000541,127.036876,BTR60,37.5001082,127.036876,located ahead of,located behind,collision with,collision with,located ahead of,located behind
++2026-02-06T07:14:58Z,T62,37.5,127.0392466,K2BlackPanther,37.5000541,127.036876,BTR60,37.5001082,127.036876,located ahead of,located behind,collision with,collision with,located ahead of,located behind
++2026-02-06T07:14:59Z,T62,37.5,127.0393344,K2BlackPanther,37.5000541,127.036876,BTR60,37.5001082,127.036876,located ahead of,located behind,collision with,collision with,located ahead of,located behind
++2026-02-06T07:15:00Z,T62,37.5,127.0394222,K2BlackPanther,37.5000541,127.036876,BTR60,37.5001082,127.036876,located ahead of,located behind,collision with,collision with,located ahead of,located behind
++2026-02-06T07:15:01Z,T62,37.5,127.03951,K2BlackPanther,37.5000541,127.036876,BTR60,37.5001082,127.036876,located ahead of,located behind,collision with,collision with,located ahead of,located behind
++2026-02-06T07:15:02Z,T62,37.5,127.0395978,K2BlackPanther,37.5000541,127.036876,BTR60,37.5001082,127.036876,located ahead of,located behind,collision with,collision with,located ahead of,located behind
++2026-02-06T07:15:03Z,T62,37.5,127.0396856,K2BlackPanther,37.5000541,127.036876,BTR60,37.5001082,127.036876,located ahead of,located behind,collision with,collision with,located ahead of,located behind
++2026-02-06T07:15:04Z,T62,37.5,127.0397734,K2BlackPanther,37.5000541,127.036876,BTR60,37.5001082,127.036876,located ahead of,located behind,collision with,collision with,located ahead of,located behind
++2026-02-06T07:15:05Z,T62,37.5,127.0398612,K2BlackPanther,37.5000541,127.036876,BTR60,37.5001082,127.036876,located ahead of,located behind,collision with,collision with,located ahead of,located behind
++2026-02-06T07:15:06Z,T62,37.5,127.039949,K2BlackPanther,37.5000541,127.036876,BTR60,37.5001082,127.036876,located ahead of,located behind,collision with,collision with,located ahead of,located behind
++2026-02-06T07:15:07Z,T62,37.5,127.0400368,K2BlackPanther,37.5000541,127.036876,BTR60,37.5001082,127.036876,located ahead of,located behind,collision with,collision with,located ahead of,located behind
++2026-02-06T07:15:08Z,T62,37.5,127.0401246,K2BlackPanther,37.5000541,127.036876,BTR60,37.5001082,127.036876,located ahead of,located behind,collision with,collision with,located ahead of,located behind
++2026-02-06T07:15:09Z,T62,37.5,127.0402124,K2BlackPanther,37.5000541,127.036876,BTR60,37.5001082,127.036876,located ahead of,located behind,collision with,collision with,located ahead of,located behind
++2026-02-06T07:15:10Z,T62,37.5,127.0403002,K2BlackPanther,37.5000541,127.036876,BTR60,37.5001082,127.036876,located ahead of,located behind,collision with,collision with,located ahead of,located behind
++2026-02-06T07:15:11Z,T62,37.5,127.040388,K2BlackPanther,37.5000541,127.036876,BTR60,37.5001082,127.036876,located ahead of,located behind,collision with,collision with,located ahead of,located behind
++2026-02-06T07:15:12Z,T62,37.5,127.0404758,K2BlackPanther,37.5000541,127.036876,BTR60,37.5001082,127.036876,located ahead of,located behind,collision with,collision with,located ahead of,located behind
++2026-02-06T07:15:13Z,T62,37.5,127.0405636,K2BlackPanther,37.5000541,127.036876,BTR60,37.5001082,127.036876,located ahead of,located behind,collision with,collision with,located ahead of,located behind
++2026-02-06T07:15:14Z,T62,37.5,127.0406514,K2BlackPanther,37.5000541,127.036876,BTR60,37.5001082,127.036876,located ahead of,located behind,collision with,collision with,located ahead of,located behind
++2026-02-06T07:15:15Z,T62,37.5,127.0407392,K2BlackPanther,37.5000541,127.036876,BTR60,37.5001082,127.036876,located ahead of,located behind,collision with,collision with,located ahead of,located behind
++2026-02-06T07:15:16Z,T62,37.5,127.040827,K2BlackPanther,37.5000541,127.036876,BTR60,37.5001082,127.036876,located ahead of,located behind,collision with,collision with,located ahead of,located behind
++2026-02-06T07:15:17Z,T62,37.5,127.0409148,K2BlackPanther,37.5000541,127.036876,BTR60,37.5001082,127.036876,located ahead of,located behind,collision with,collision with,located ahead of,located behind
++2026-02-06T07:15:18Z,T62,37.5,127.0410026,K2BlackPanther,37.5000541,127.036876,BTR60,37.5001082,127.036876,located ahead of,located behind,collision with,collision with,located ahead of,located behind
++2026-02-06T07:15:19Z,T62,37.5,127.0410904,K2BlackPanther,37.5000541,127.036876,BTR60,37.5001082,127.036876,located ahead of,located behind,collision with,collision with,located ahead of,located behind
++2026-02-06T07:15:20Z,T62,37.5,127.0411782,K2BlackPanther,37.5000541,127.036876,BTR60,37.5001082,127.036876,located ahead of,located behind,collision with,collision with,located ahead of,located behind
++2026-02-06T07:15:21Z,T62,37.5,127.041266,K2BlackPanther,37.5000541,127.036876,BTR60,37.5001082,127.036876,located ahead of,located behind,collision with,collision with,located ahead of,located behind
++2026-02-06T07:15:22Z,T62,37.5,127.0413538,K2BlackPanther,37.5000541,127.036876,BTR60,37.5001082,127.036876,located ahead of,located behind,collision with,collision with,located ahead of,located behind
++2026-02-06T07:15:23Z,T62,37.5,127.0414416,K2BlackPanther,37.5000541,127.036876,BTR60,37.5001082,127.036876,located ahead of,located behind,collision with,collision with,located ahead of,located behind
++2026-02-06T07:15:24Z,T62,37.5,127.0415294,K2BlackPanther,37.5000541,127.036876,BTR60,37.5001082,127.036876,located ahead of,located behind,collision with,collision with,located ahead of,located behind
++2026-02-06T07:15:25Z,T62,37.5,127.0416172,K2BlackPanther,37.5000541,127.036876,BTR60,37.5001082,127.036876,located ahead of,located behind,collision with,collision with,located ahead of,located behind
++2026-02-06T07:15:26Z,T62,37.5,127.041705,K2BlackPanther,37.5000541,127.036876,BTR60,37.5001082,127.036876,located ahead of,located behind,collision with,collision with,located ahead of,located behind
++2026-02-06T07:15:27Z,T62,37.5,127.0417928,K2BlackPanther,37.5000541,127.036876,BTR60,37.5001082,127.036876,located ahead of,located behind,collision with,collision with,located ahead of,located behind
++2026-02-06T07:15:28Z,T62,37.5,127.0418806,K2BlackPanther,37.5000541,127.036876,BTR60,37.5001082,127.036876,located ahead of,located behind,collision with,collision with,located ahead of,located behind
++2026-02-06T07:15:29Z,T62,37.5,127.0419684,K2BlackPanther,37.5000541,127.036876,BTR60,37.5001082,127.036876,located ahead of,located behind,collision with,collision with,located ahead of,located behind
++2026-02-06T07:15:30Z,T62,37.5,127.0420562,K2BlackPanther,37.5000541,127.036876,BTR60,37.5001082,127.036876,located ahead of,located behind,collision with,collision with,located ahead of,located behind
++2026-02-06T07:15:31Z,T62,37.5,127.042144,K2BlackPanther,37.5000541,127.036876,BTR60,37.5001082,127.036876,located ahead of,located behind,collision with,collision with,located ahead of,located behind
++2026-02-06T07:15:32Z,T62,37.5,127.0422318,K2BlackPanther,37.5000541,127.036876,BTR60,37.5001082,127.036876,located ahead of,located behind,collision with,collision with,located ahead of,located behind
++2026-02-06T07:15:33Z,T62,37.5,127.0423196,K2BlackPanther,37.5000541,127.036876,BTR60,37.5001082,127.036876,located ahead of,located behind,collision with,collision with,located ahead of,located behind
++2026-02-06T07:15:34Z,T62,37.5,127.0424074,K2BlackPanther,37.5000541,127.036876,BTR60,37.5001082,127.036876,located ahead of,located behind,collision with,collision with,located ahead of,located behind
++2026-02-06T07:15:35Z,T62,37.5,127.0424952,K2BlackPanther,37.5000541,127.036876,BTR60,37.5001082,127.036876,located ahead of,located behind,collision with,collision with,located ahead of,located behind
++2026-02-06T07:15:36Z,T62,37.5,127.042583,K2BlackPanther,37.5000541,127.036876,BTR60,37.5001082,127.036876,located ahead of,located behind,collision with,collision with,located ahead of,located behind
++2026-02-06T07:15:37Z,T62,37.5,127.0426708,K2BlackPanther,37.5000541,127.036876,BTR60,37.5001082,127.036876,located ahead of,located behind,collision with,collision with,located ahead of,located behind
++2026-02-06T07:15:38Z,T62,37.5,127.0427586,K2BlackPanther,37.5000541,127.036876,BTR60,37.5001082,127.036876,located ahead of,located behind,collision with,collision with,located ahead of,located behind
++2026-02-06T07:15:39Z,T62,37.5,127.0428464,K2BlackPanther,37.5000541,127.036876,BTR60,37.5001082,127.036876,located ahead of,located behind,collision with,collision with,located ahead of,located behind
++2026-02-06T07:15:40Z,T62,37.5,127.0429342,K2BlackPanther,37.5000541,127.036876,BTR60,37.5001082,127.036876,located ahead of,located behind,collision with,collision with,located ahead of,located behind
++2026-02-06T07:15:41Z,T62,37.5,127.043022,K2BlackPanther,37.5000541,127.036876,BTR60,37.5001082,127.036876,located ahead of,located behind,collision with,collision with,located ahead of,located behind
++2026-02-06T07:15:42Z,T62,37.5,127.0431098,K2BlackPanther,37.5000541,127.036876,BTR60,37.5001082,127.036876,located ahead of,located behind,collision with,collision with,located ahead of,located behind
++2026-02-06T07:15:43Z,T62,37.5,127.0431976,K2BlackPanther,37.5000541,127.036876,BTR60,37.5001082,127.036876,located ahead of,located behind,collision with,collision with,located ahead of,located behind
++2026-02-06T07:15:44Z,T62,37.5,127.0432854,K2BlackPanther,37.5000541,127.036876,BTR60,37.5001082,127.036876,located ahead of,located behind,collision with,collision with,located ahead of,located behind
++2026-02-06T07:15:45Z,T62,37.5,127.0433732,K2BlackPanther,37.5000541,127.036876,BTR60,37.5001082,127.036876,located ahead of,located behind,collision with,collision with,located ahead of,located behind
++2026-02-06T07:15:46Z,T62,37.5,127.043461,K2BlackPanther,37.5000541,127.036876,BTR60,37.5001082,127.036876,located ahead of,located behind,collision with,collision with,located ahead of,located behind
++2026-02-06T07:15:47Z,T62,37.5,127.0435488,K2BlackPanther,37.5000541,127.036876,BTR60,37.5001082,127.036876,located ahead of,located behind,collision with,collision with,located ahead of,located behind
++2026-02-06T07:15:48Z,T62,37.5,127.0436366,K2BlackPanther,37.5000541,127.036876,BTR60,37.5001082,127.036876,located ahead of,located behind,collision with,collision with,located ahead of,located behind
++2026-02-06T07:15:49Z,T62,37.5,127.0437244,K2BlackPanther,37.5000541,127.036876,BTR60,37.5001082,127.036876,located ahead of,located behind,collision with,collision with,located ahead of,located behind
++2026-02-06T07:15:50Z,T62,37.5,127.0438122,K2BlackPanther,37.5000541,127.036876,BTR60,37.5001082,127.036876,located ahead of,located behind,collision with,collision with,located ahead of,located behind
++2026-02-06T07:15:51Z,T62,37.5,127.0439,K2BlackPanther,37.5000541,127.036876,BTR60,37.5001082,127.036876,located ahead of,located behind,collision with,collision with,located ahead of,located behind

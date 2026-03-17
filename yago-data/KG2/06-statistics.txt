@@ -1,6 +1,6 @@
 STKG statistics
 
-Dump size: 5.1112 MB
+Dump size: 5.1113 MB
 
 Total number of resources: 4503
   Platforms: 3
