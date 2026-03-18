@@ -10,20 +10,18 @@
     
     pip install -r requirements.txt
 
-3. /input-data/stkg/ 경로에 stkg로 생성할 로우 데이터(csv) 파일 삽입
-4. KG 생성 명령어
+3. 사전 입력 데이터 준비
+
+    /input-data/ 경로에 stkg로 생성할 로우 데이터(csv) 파일 삽입
+
+    /input-data/stkg/ 경로에 사전 정의된 schema.ttl, taxonomy.ttl 파일 삽입
+
+4. KG 생성 방법
+
+    make.bat파일에서
     
-    python 03c-make-stkg.py --in (로우 데이터) --out (출력 폴더) --graph_mode by_file --file_tag KG3 --emit nq
+    ![alt text](images/image.png)
+    
+    입력 csv 파일과 결과 출력 폴더 설정
 
-    - emit : nq, trig, ttl 중 선택 가능
-5. KG 병합 명령어
-
-    python merge-kg.py --kg1 C:\Users\foxes\LYS\cybermarine\STKG\yago-4.5\yago-data\KG1.nq --kg2 C:\Users\foxes\LYS\cybermarine\STKG\yago-4.5\yago-data\KG2.nq --out yago-data\KG1_KG2_merged_dedup_2 --emit nq
-
-## KG 경로
-    1. 시나리오 별 KG
-        - yago-data\KG1.nq
-        - yago-data\KG2.nq
-        - yago-data\KG3.nq
-    2. KG1, KG2 병합 KG
-        - yago-data\KG1_KG2_merged_dedup.nq
+    명령어 : make.bat
