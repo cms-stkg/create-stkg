@@ -1,0 +1,45 @@
+<h1>STKG Schema</h1>
+This is the top-level taxonomy of classes of STKG, together with their properties.
+<ul style='list-style-type:none'>
+<li><details style='margin-left: 2em' open><summary style='font-weight:bold; margin-left: -2em'>http://example.org/stkg/Entity</summary><details style='margin-left: 2em'><summary style='margin-left: -2em'>Outgoing properties</summary><ul style='list-style-type:none'>
+</ul></details>
+<details style='margin-left: 2em'><summary style='margin-left: -2em'>Subclasses</summary><ul style='list-style-type:none'>
+<li><details style='margin-left: 2em'><summary style='font-weight:bold; margin-left: -2em'>http://example.org/stkg/id/Platform</summary><details style='margin-left: 2em'><summary style='margin-left: -2em'>Outgoing properties</summary><ul style='list-style-type:none'>
+</ul></details>
+<details style='margin-left: 2em'><summary style='margin-left: -2em'>Subclasses</summary><ul style='list-style-type:none'>
+</ul></details></details></li>
+</ul></details></details></li>
+<li><details style='margin-left: 2em' open><summary style='font-weight:bold; margin-left: -2em'>http://example.org/stkg/Observation</summary><details style='margin-left: 2em'><summary style='margin-left: -2em'>Outgoing properties</summary><ul style='list-style-type:none'>
+<li>- http://example.org/stkg/sourceFile &rarr; http://www.w3.org/2001/XMLSchema#string</li>
+<li>- http://example.org/stkg/sourceRow &rarr; http://www.w3.org/2001/XMLSchema#integer</li>
+<li>- http://example.org/stkg/time &rarr; http://www.w3.org/2001/XMLSchema#dateTime</li>
+</ul></details>
+<details style='margin-left: 2em'><summary style='margin-left: -2em'>Subclasses</summary><ul style='list-style-type:none'>
+<li><details style='margin-left: 2em'><summary style='font-weight:bold; margin-left: -2em'>http://example.org/stkg/id/PositionObservation</summary><details style='margin-left: 2em'><summary style='margin-left: -2em'>Outgoing properties</summary><ul style='list-style-type:none'>
+</ul></details>
+<details style='margin-left: 2em'><summary style='margin-left: -2em'>Subclasses</summary><ul style='list-style-type:none'>
+</ul></details></details></li>
+<li><details style='margin-left: 2em'><summary style='font-weight:bold; margin-left: -2em'>http://example.org/stkg/id/SpatialRelationObservation</summary><details style='margin-left: 2em'><summary style='margin-left: -2em'>Outgoing properties</summary><ul style='list-style-type:none'>
+</ul></details>
+<details style='margin-left: 2em'><summary style='margin-left: -2em'>Subclasses</summary><ul style='list-style-type:none'>
+</ul></details></details></li>
+</ul></details></details></li>
+<li><details style='margin-left: 2em' open><summary style='font-weight:bold; margin-left: -2em'>http://example.org/stkg/Platform</summary><details style='margin-left: 2em'><summary style='margin-left: -2em'>Outgoing properties</summary><ul style='list-style-type:none'>
+</ul></details>
+<details style='margin-left: 2em'><summary style='margin-left: -2em'>Subclasses</summary><ul style='list-style-type:none'>
+</ul></details></details></li>
+<li><details style='margin-left: 2em' open><summary style='font-weight:bold; margin-left: -2em'>http://example.org/stkg/PositionObservation</summary><details style='margin-left: 2em'><summary style='margin-left: -2em'>Outgoing properties</summary><ul style='list-style-type:none'>
+<li>- http://example.org/stkg/observedEntity &rarr; http://example.org/stkg/Platform</li>
+<li>- http://www.w3.org/2003/01/geo/wgs84_pos#lat &rarr; http://www.w3.org/2001/XMLSchema#decimal</li>
+<li>- http://www.w3.org/2003/01/geo/wgs84_pos#long &rarr; http://www.w3.org/2001/XMLSchema#decimal</li>
+</ul></details>
+<details style='margin-left: 2em'><summary style='margin-left: -2em'>Subclasses</summary><ul style='list-style-type:none'>
+</ul></details></details></li>
+<li><details style='margin-left: 2em' open><summary style='font-weight:bold; margin-left: -2em'>http://example.org/stkg/SpatialRelationObservation</summary><details style='margin-left: 2em'><summary style='margin-left: -2em'>Outgoing properties</summary><ul style='list-style-type:none'>
+<li>- http://example.org/stkg/objectEntity &rarr; http://example.org/stkg/Platform</li>
+<li>- http://example.org/stkg/relationType &rarr; http://www.w3.org/2000/01/rdf-schema#Resource</li>
+<li>- http://example.org/stkg/subjectEntity &rarr; http://example.org/stkg/Platform</li>
+</ul></details>
+<details style='margin-left: 2em'><summary style='margin-left: -2em'>Subclasses</summary><ul style='list-style-type:none'>
+</ul></details></details></li>
+</ul>

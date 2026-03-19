@@ -12,15 +12,17 @@ from collections import Counter
 # 설정
 # =========================
 KG1_FILE = "C:\\Users\\foxes\\LYS\\cybermarine\\STKG\\create-stkg\\yago-data6\\KG1\\stkg-final.ttl"
-KG2_FILE = "C:\\Users\\foxes\\LYS\\cybermarine\\STKG\\create-stkg\\yago-data6\\KG2\\stkg-final.ttl"
-OUT_FILE = "C:\\Users\\foxes\\LYS\\cybermarine\\STKG\\create-stkg\\yago-data6\\output\\merged_dedup_ver2.2_integrated_1.ttl"
+KG2_FILE = "C:\\Users\\foxes\\LYS\\cybermarine\\STKG\\create-stkg\\yago-data6\\KG3\\stkg-final.ttl"
+OUT_FILE = "C:\\Users\\foxes\\LYS\\cybermarine\\STKG\\create-stkg\\yago-data6\\output\\1_7.ttl"
 
 # 센서 오차 허용 범위
 SENSOR_ERROR_TOLERANCE = 1
 sensorErrorTol = [2, 1]
 
-LAT_TOL = (5.41e-5 / 3) / sensorErrorTol[SENSOR_ERROR_TOLERANCE]
-LONG_TOL = (8.78e-5 / 4) / sensorErrorTol[SENSOR_ERROR_TOLERANCE]
+LAT_TOL = (5.41e-5 / 6) / 10
+LONG_TOL = (8.78e-5 / 8) / 10
+# LAT_TOL = (5.41e-5 / 6) / sensorErrorTol[SENSOR_ERROR_TOLERANCE]
+# LONG_TOL = (8.78e-5 / 8) / sensorErrorTol[SENSOR_ERROR_TOLERANCE]
 
 # =========================
 # Namespace
