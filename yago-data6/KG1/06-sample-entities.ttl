@@ -1,0 +1,796 @@
+<http://example.org/stkg/id/platform_T-62> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/Platform> .
+<http://example.org/stkg/id/platform_T-62> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/Entity> .
+<http://example.org/stkg/id/platform_T-62> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/Platform> .
+
+<http://example.org/stkg/id/obs_rel_BTR-80_T-62_20260205T224006Z_215_c_a> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/SpatialRelationObservation> .
+<http://example.org/stkg/id/obs_rel_BTR-80_T-62_20260205T224006Z_215_c_a> <http://example.org/stkg/subjectEntity> <http://example.org/stkg/id/platform_BTR-80> .
+<http://example.org/stkg/id/obs_rel_BTR-80_T-62_20260205T224006Z_215_c_a> <http://example.org/stkg/objectEntity> <http://example.org/stkg/id/platform_T-62> .
+<http://example.org/stkg/id/obs_rel_BTR-80_T-62_20260205T224006Z_215_c_a> <http://example.org/stkg/relationType> <http://example.org/stkg/id/relation_side_by_side> .
+<http://example.org/stkg/id/obs_rel_BTR-80_T-62_20260205T224006Z_215_c_a> <http://example.org/stkg/time> "2026-02-05T22:40:06Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<http://example.org/stkg/id/obs_rel_BTR-80_T-62_20260205T224006Z_215_c_a> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/Observation> .
+<http://example.org/stkg/id/obs_rel_BTR-80_T-62_20260205T224006Z_215_c_a> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/SpatialRelationObservation> .
+
+<http://example.org/stkg/id/obs_rel_BTR-80_T-72_20260205T223803Z_92_c_b> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/SpatialRelationObservation> .
+<http://example.org/stkg/id/obs_rel_BTR-80_T-72_20260205T223803Z_92_c_b> <http://example.org/stkg/subjectEntity> <http://example.org/stkg/id/platform_BTR-80> .
+<http://example.org/stkg/id/obs_rel_BTR-80_T-72_20260205T223803Z_92_c_b> <http://example.org/stkg/objectEntity> <http://example.org/stkg/id/platform_T-72> .
+<http://example.org/stkg/id/obs_rel_BTR-80_T-72_20260205T223803Z_92_c_b> <http://example.org/stkg/relationType> <http://example.org/stkg/id/relation_in_front_of> .
+<http://example.org/stkg/id/obs_rel_BTR-80_T-72_20260205T223803Z_92_c_b> <http://example.org/stkg/time> "2026-02-05T22:38:03Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<http://example.org/stkg/id/obs_rel_BTR-80_T-72_20260205T223803Z_92_c_b> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/Observation> .
+<http://example.org/stkg/id/obs_rel_BTR-80_T-72_20260205T223803Z_92_c_b> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/SpatialRelationObservation> .
+
+<http://example.org/stkg/id/obs_pos_T-62_20260205T223632Z_1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/PositionObservation> .
+<http://example.org/stkg/id/obs_pos_T-62_20260205T223632Z_1> <http://example.org/stkg/observedEntity> <http://example.org/stkg/id/platform_T-62> .
+<http://example.org/stkg/id/obs_pos_T-62_20260205T223632Z_1> <http://example.org/stkg/time> "2026-02-05T22:36:32Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<http://example.org/stkg/id/obs_pos_T-62_20260205T223632Z_1> <http://www.w3.org/2003/01/geo/wgs84_pos#lat> "35"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<http://example.org/stkg/id/obs_pos_T-62_20260205T223632Z_1> <http://www.w3.org/2003/01/geo/wgs84_pos#long> "130.0000878"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<http://example.org/stkg/id/obs_pos_T-62_20260205T223632Z_1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/Observation> .
+<http://example.org/stkg/id/obs_pos_T-62_20260205T223632Z_1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/PositionObservation> .
+
+<http://example.org/stkg/id/obs_pos_T-72_20260205T223632Z_1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/PositionObservation> .
+<http://example.org/stkg/id/obs_pos_T-72_20260205T223632Z_1> <http://example.org/stkg/observedEntity> <http://example.org/stkg/id/platform_T-72> .
+<http://example.org/stkg/id/obs_pos_T-72_20260205T223632Z_1> <http://example.org/stkg/time> "2026-02-05T22:36:32Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<http://example.org/stkg/id/obs_pos_T-72_20260205T223632Z_1> <http://www.w3.org/2003/01/geo/wgs84_pos#lat> "35.0001082"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<http://example.org/stkg/id/obs_pos_T-72_20260205T223632Z_1> <http://www.w3.org/2003/01/geo/wgs84_pos#long> "130.00010097"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<http://example.org/stkg/id/obs_pos_T-72_20260205T223632Z_1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/Observation> .
+<http://example.org/stkg/id/obs_pos_T-72_20260205T223632Z_1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/PositionObservation> .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223632Z_1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/PositionObservation> .
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223632Z_1> <http://example.org/stkg/observedEntity> <http://example.org/stkg/id/platform_BTR-80> .
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223632Z_1> <http://example.org/stkg/time> "2026-02-05T22:36:32Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223632Z_1> <http://www.w3.org/2003/01/geo/wgs84_pos#lat> "35.0001082"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223632Z_1> <http://www.w3.org/2003/01/geo/wgs84_pos#long> "130.01756"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223632Z_1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/Observation> .
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223632Z_1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/PositionObservation> .
+
+<http://example.org/stkg/id/obs_pos_T-62_20260205T223633Z_2> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/PositionObservation> .
+<http://example.org/stkg/id/obs_pos_T-62_20260205T223633Z_2> <http://example.org/stkg/observedEntity> <http://example.org/stkg/id/platform_T-62> .
+<http://example.org/stkg/id/obs_pos_T-62_20260205T223633Z_2> <http://example.org/stkg/time> "2026-02-05T22:36:33Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<http://example.org/stkg/id/obs_pos_T-62_20260205T223633Z_2> <http://www.w3.org/2003/01/geo/wgs84_pos#lat> "35"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<http://example.org/stkg/id/obs_pos_T-62_20260205T223633Z_2> <http://www.w3.org/2003/01/geo/wgs84_pos#long> "130.0001756"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<http://example.org/stkg/id/obs_pos_T-62_20260205T223633Z_2> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/Observation> .
+<http://example.org/stkg/id/obs_pos_T-62_20260205T223633Z_2> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/PositionObservation> .
+
+<http://example.org/stkg/id/obs_pos_T-72_20260205T223633Z_2> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/PositionObservation> .
+<http://example.org/stkg/id/obs_pos_T-72_20260205T223633Z_2> <http://example.org/stkg/observedEntity> <http://example.org/stkg/id/platform_T-72> .
+<http://example.org/stkg/id/obs_pos_T-72_20260205T223633Z_2> <http://example.org/stkg/time> "2026-02-05T22:36:33Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<http://example.org/stkg/id/obs_pos_T-72_20260205T223633Z_2> <http://www.w3.org/2003/01/geo/wgs84_pos#lat> "35.0001082"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<http://example.org/stkg/id/obs_pos_T-72_20260205T223633Z_2> <http://www.w3.org/2003/01/geo/wgs84_pos#long> "130.00020194"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<http://example.org/stkg/id/obs_pos_T-72_20260205T223633Z_2> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/Observation> .
+<http://example.org/stkg/id/obs_pos_T-72_20260205T223633Z_2> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/PositionObservation> .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223633Z_2> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/PositionObservation> .
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223633Z_2> <http://example.org/stkg/observedEntity> <http://example.org/stkg/id/platform_BTR-80> .
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223633Z_2> <http://example.org/stkg/time> "2026-02-05T22:36:33Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223633Z_2> <http://www.w3.org/2003/01/geo/wgs84_pos#lat> "35.0001082"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223633Z_2> <http://www.w3.org/2003/01/geo/wgs84_pos#long> "130.01756"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223633Z_2> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/Observation> .
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223633Z_2> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/PositionObservation> .
+
+<http://example.org/stkg/id/obs_pos_T-62_20260205T223634Z_3> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/PositionObservation> .
+<http://example.org/stkg/id/obs_pos_T-62_20260205T223634Z_3> <http://example.org/stkg/observedEntity> <http://example.org/stkg/id/platform_T-62> .
+<http://example.org/stkg/id/obs_pos_T-62_20260205T223634Z_3> <http://example.org/stkg/time> "2026-02-05T22:36:34Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<http://example.org/stkg/id/obs_pos_T-62_20260205T223634Z_3> <http://www.w3.org/2003/01/geo/wgs84_pos#lat> "35"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<http://example.org/stkg/id/obs_pos_T-62_20260205T223634Z_3> <http://www.w3.org/2003/01/geo/wgs84_pos#long> "130.0002634"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<http://example.org/stkg/id/obs_pos_T-62_20260205T223634Z_3> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/Observation> .
+<http://example.org/stkg/id/obs_pos_T-62_20260205T223634Z_3> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/PositionObservation> .
+
+<http://example.org/stkg/id/obs_pos_T-72_20260205T223634Z_3> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/PositionObservation> .
+<http://example.org/stkg/id/obs_pos_T-72_20260205T223634Z_3> <http://example.org/stkg/observedEntity> <http://example.org/stkg/id/platform_T-72> .
+<http://example.org/stkg/id/obs_pos_T-72_20260205T223634Z_3> <http://example.org/stkg/time> "2026-02-05T22:36:34Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<http://example.org/stkg/id/obs_pos_T-72_20260205T223634Z_3> <http://www.w3.org/2003/01/geo/wgs84_pos#lat> "35.0001082"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<http://example.org/stkg/id/obs_pos_T-72_20260205T223634Z_3> <http://www.w3.org/2003/01/geo/wgs84_pos#long> "130.00030291"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<http://example.org/stkg/id/obs_pos_T-72_20260205T223634Z_3> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/Observation> .
+<http://example.org/stkg/id/obs_pos_T-72_20260205T223634Z_3> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/PositionObservation> .
+
+<http://example.org/stkg/id/obs_rel_T-72_T-62_20260205T224446Z_495_b_a> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/SpatialRelationObservation> .
+<http://example.org/stkg/id/obs_rel_T-72_T-62_20260205T224446Z_495_b_a> <http://example.org/stkg/subjectEntity> <http://example.org/stkg/id/platform_T-72> .
+<http://example.org/stkg/id/obs_rel_T-72_T-62_20260205T224446Z_495_b_a> <http://example.org/stkg/objectEntity> <http://example.org/stkg/id/platform_T-62> .
+<http://example.org/stkg/id/obs_rel_T-72_T-62_20260205T224446Z_495_b_a> <http://example.org/stkg/relationType> <http://example.org/stkg/id/relation_in_back_of> .
+<http://example.org/stkg/id/obs_rel_T-72_T-62_20260205T224446Z_495_b_a> <http://example.org/stkg/time> "2026-02-05T22:44:46Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<http://example.org/stkg/id/obs_rel_T-72_T-62_20260205T224446Z_495_b_a> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/Observation> .
+<http://example.org/stkg/id/obs_rel_T-72_T-62_20260205T224446Z_495_b_a> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/SpatialRelationObservation> .
+
+<http://example.org/stkg/id/obs_pos_T-62_20260205T223635Z_4> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/PositionObservation> .
+<http://example.org/stkg/id/obs_pos_T-62_20260205T223635Z_4> <http://example.org/stkg/observedEntity> <http://example.org/stkg/id/platform_T-62> .
+<http://example.org/stkg/id/obs_pos_T-62_20260205T223635Z_4> <http://example.org/stkg/time> "2026-02-05T22:36:35Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<http://example.org/stkg/id/obs_pos_T-62_20260205T223635Z_4> <http://www.w3.org/2003/01/geo/wgs84_pos#lat> "35"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<http://example.org/stkg/id/obs_pos_T-62_20260205T223635Z_4> <http://www.w3.org/2003/01/geo/wgs84_pos#long> "130.0003512"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<http://example.org/stkg/id/obs_pos_T-62_20260205T223635Z_4> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/Observation> .
+<http://example.org/stkg/id/obs_pos_T-62_20260205T223635Z_4> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/PositionObservation> .
+
+<http://example.org/stkg/id/obs_pos_T-72_20260205T223635Z_4> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/PositionObservation> .
+<http://example.org/stkg/id/obs_pos_T-72_20260205T223635Z_4> <http://example.org/stkg/observedEntity> <http://example.org/stkg/id/platform_T-72> .
+<http://example.org/stkg/id/obs_pos_T-72_20260205T223635Z_4> <http://example.org/stkg/time> "2026-02-05T22:36:35Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<http://example.org/stkg/id/obs_pos_T-72_20260205T223635Z_4> <http://www.w3.org/2003/01/geo/wgs84_pos#lat> "35.0001082"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<http://example.org/stkg/id/obs_pos_T-72_20260205T223635Z_4> <http://www.w3.org/2003/01/geo/wgs84_pos#long> "130.00040388"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<http://example.org/stkg/id/obs_pos_T-72_20260205T223635Z_4> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/Observation> .
+<http://example.org/stkg/id/obs_pos_T-72_20260205T223635Z_4> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/PositionObservation> .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223635Z_4> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/PositionObservation> .
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223635Z_4> <http://example.org/stkg/observedEntity> <http://example.org/stkg/id/platform_BTR-80> .
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223635Z_4> <http://example.org/stkg/time> "2026-02-05T22:36:35Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223635Z_4> <http://www.w3.org/2003/01/geo/wgs84_pos#lat> "35.0001082"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223635Z_4> <http://www.w3.org/2003/01/geo/wgs84_pos#long> "130.01756"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223635Z_4> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/Observation> .
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223635Z_4> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/PositionObservation> .
+
+<http://example.org/stkg/id/obs_pos_T-62_20260205T223636Z_5> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/PositionObservation> .
+<http://example.org/stkg/id/obs_pos_T-62_20260205T223636Z_5> <http://example.org/stkg/observedEntity> <http://example.org/stkg/id/platform_T-62> .
+<http://example.org/stkg/id/obs_pos_T-62_20260205T223636Z_5> <http://example.org/stkg/time> "2026-02-05T22:36:36Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<http://example.org/stkg/id/obs_pos_T-62_20260205T223636Z_5> <http://www.w3.org/2003/01/geo/wgs84_pos#lat> "35"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<http://example.org/stkg/id/obs_pos_T-62_20260205T223636Z_5> <http://www.w3.org/2003/01/geo/wgs84_pos#long> "130.000439"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<http://example.org/stkg/id/obs_pos_T-62_20260205T223636Z_5> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/Observation> .
+<http://example.org/stkg/id/obs_pos_T-62_20260205T223636Z_5> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/PositionObservation> .
+
+<http://example.org/stkg/id/obs_rel_BTR-80_T-62_20260205T224129Z_298_c_a> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/SpatialRelationObservation> .
+<http://example.org/stkg/id/obs_rel_BTR-80_T-62_20260205T224129Z_298_c_a> <http://example.org/stkg/subjectEntity> <http://example.org/stkg/id/platform_BTR-80> .
+<http://example.org/stkg/id/obs_rel_BTR-80_T-62_20260205T224129Z_298_c_a> <http://example.org/stkg/objectEntity> <http://example.org/stkg/id/platform_T-62> .
+<http://example.org/stkg/id/obs_rel_BTR-80_T-62_20260205T224129Z_298_c_a> <http://example.org/stkg/relationType> <http://example.org/stkg/id/relation_side_by_side> .
+<http://example.org/stkg/id/obs_rel_BTR-80_T-62_20260205T224129Z_298_c_a> <http://example.org/stkg/time> "2026-02-05T22:41:29Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<http://example.org/stkg/id/obs_rel_BTR-80_T-62_20260205T224129Z_298_c_a> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/Observation> .
+<http://example.org/stkg/id/obs_rel_BTR-80_T-62_20260205T224129Z_298_c_a> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/SpatialRelationObservation> .
+
+<http://example.org/stkg/id/obs_rel_T-62_T-72_20260205T224330Z_419_a_b> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/SpatialRelationObservation> .
+<http://example.org/stkg/id/obs_rel_T-62_T-72_20260205T224330Z_419_a_b> <http://example.org/stkg/subjectEntity> <http://example.org/stkg/id/platform_T-62> .
+<http://example.org/stkg/id/obs_rel_T-62_T-72_20260205T224330Z_419_a_b> <http://example.org/stkg/objectEntity> <http://example.org/stkg/id/platform_T-72> .
+<http://example.org/stkg/id/obs_rel_T-62_T-72_20260205T224330Z_419_a_b> <http://example.org/stkg/relationType> <http://example.org/stkg/id/relation_in_front_of> .
+<http://example.org/stkg/id/obs_rel_T-62_T-72_20260205T224330Z_419_a_b> <http://example.org/stkg/time> "2026-02-05T22:43:30Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<http://example.org/stkg/id/obs_rel_T-62_T-72_20260205T224330Z_419_a_b> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/Observation> .
+<http://example.org/stkg/id/obs_rel_T-62_T-72_20260205T224330Z_419_a_b> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/SpatialRelationObservation> .
+
+<http://example.org/stkg/id/obs_pos_T-72_20260205T224244Z_373> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/PositionObservation> .
+<http://example.org/stkg/id/obs_pos_T-72_20260205T224244Z_373> <http://example.org/stkg/observedEntity> <http://example.org/stkg/id/platform_T-72> .
+<http://example.org/stkg/id/obs_pos_T-72_20260205T224244Z_373> <http://example.org/stkg/time> "2026-02-05T22:42:44Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<http://example.org/stkg/id/obs_pos_T-72_20260205T224244Z_373> <http://www.w3.org/2003/01/geo/wgs84_pos#lat> "35.0001082"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<http://example.org/stkg/id/obs_pos_T-72_20260205T224244Z_373> <http://www.w3.org/2003/01/geo/wgs84_pos#long> "130.0325738"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<http://example.org/stkg/id/obs_pos_T-72_20260205T224244Z_373> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/Observation> .
+<http://example.org/stkg/id/obs_pos_T-72_20260205T224244Z_373> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/PositionObservation> .
+
+<http://example.org/stkg/id/obs_pos_T-72_20260205T223637Z_6> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/PositionObservation> .
+<http://example.org/stkg/id/obs_pos_T-72_20260205T223637Z_6> <http://example.org/stkg/observedEntity> <http://example.org/stkg/id/platform_T-72> .
+<http://example.org/stkg/id/obs_pos_T-72_20260205T223637Z_6> <http://example.org/stkg/time> "2026-02-05T22:36:37Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<http://example.org/stkg/id/obs_pos_T-72_20260205T223637Z_6> <http://www.w3.org/2003/01/geo/wgs84_pos#lat> "35.0001082"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<http://example.org/stkg/id/obs_pos_T-72_20260205T223637Z_6> <http://www.w3.org/2003/01/geo/wgs84_pos#long> "130.00060582"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<http://example.org/stkg/id/obs_pos_T-72_20260205T223637Z_6> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/Observation> .
+<http://example.org/stkg/id/obs_pos_T-72_20260205T223637Z_6> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/PositionObservation> .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223710Z_39> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/PositionObservation> .
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223710Z_39> <http://example.org/stkg/observedEntity> <http://example.org/stkg/id/platform_BTR-80> .
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223710Z_39> <http://example.org/stkg/time> "2026-02-05T22:37:10Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223710Z_39> <http://www.w3.org/2003/01/geo/wgs84_pos#lat> "35.0001082"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223710Z_39> <http://www.w3.org/2003/01/geo/wgs84_pos#long> "130.01756"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223710Z_39> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/Observation> .
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223710Z_39> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/PositionObservation> .
+
+<http://example.org/stkg/id/obs_pos_T-62_20260205T223638Z_7> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/PositionObservation> .
+<http://example.org/stkg/id/obs_pos_T-62_20260205T223638Z_7> <http://example.org/stkg/observedEntity> <http://example.org/stkg/id/platform_T-62> .
+<http://example.org/stkg/id/obs_pos_T-62_20260205T223638Z_7> <http://example.org/stkg/time> "2026-02-05T22:36:38Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<http://example.org/stkg/id/obs_pos_T-62_20260205T223638Z_7> <http://www.w3.org/2003/01/geo/wgs84_pos#lat> "35"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<http://example.org/stkg/id/obs_pos_T-62_20260205T223638Z_7> <http://www.w3.org/2003/01/geo/wgs84_pos#long> "130.0006146"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<http://example.org/stkg/id/obs_pos_T-62_20260205T223638Z_7> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/Observation> .
+<http://example.org/stkg/id/obs_pos_T-62_20260205T223638Z_7> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/PositionObservation> .
+
+<http://example.org/stkg/id/obs_rel_T-62_BTR-80_20260205T224400Z_449_a_c> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/SpatialRelationObservation> .
+<http://example.org/stkg/id/obs_rel_T-62_BTR-80_20260205T224400Z_449_a_c> <http://example.org/stkg/subjectEntity> <http://example.org/stkg/id/platform_T-62> .
+<http://example.org/stkg/id/obs_rel_T-62_BTR-80_20260205T224400Z_449_a_c> <http://example.org/stkg/objectEntity> <http://example.org/stkg/id/platform_BTR-80> .
+<http://example.org/stkg/id/obs_rel_T-62_BTR-80_20260205T224400Z_449_a_c> <http://example.org/stkg/relationType> <http://example.org/stkg/id/relation_in_front_of> .
+<http://example.org/stkg/id/obs_rel_T-62_BTR-80_20260205T224400Z_449_a_c> <http://example.org/stkg/time> "2026-02-05T22:44:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<http://example.org/stkg/id/obs_rel_T-62_BTR-80_20260205T224400Z_449_a_c> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/Observation> .
+<http://example.org/stkg/id/obs_rel_T-62_BTR-80_20260205T224400Z_449_a_c> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/SpatialRelationObservation> .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223638Z_7> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/PositionObservation> .
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223638Z_7> <http://example.org/stkg/observedEntity> <http://example.org/stkg/id/platform_BTR-80> .
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223638Z_7> <http://example.org/stkg/time> "2026-02-05T22:36:38Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223638Z_7> <http://www.w3.org/2003/01/geo/wgs84_pos#lat> "35.0001082"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223638Z_7> <http://www.w3.org/2003/01/geo/wgs84_pos#long> "130.01756"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223638Z_7> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/Observation> .
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223638Z_7> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/PositionObservation> .
+
+<http://example.org/stkg/id/obs_pos_T-62_20260205T223639Z_8> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/PositionObservation> .
+<http://example.org/stkg/id/obs_pos_T-62_20260205T223639Z_8> <http://example.org/stkg/observedEntity> <http://example.org/stkg/id/platform_T-62> .
+<http://example.org/stkg/id/obs_pos_T-62_20260205T223639Z_8> <http://example.org/stkg/time> "2026-02-05T22:36:39Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<http://example.org/stkg/id/obs_pos_T-62_20260205T223639Z_8> <http://www.w3.org/2003/01/geo/wgs84_pos#lat> "35"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<http://example.org/stkg/id/obs_pos_T-62_20260205T223639Z_8> <http://www.w3.org/2003/01/geo/wgs84_pos#long> "130.0007024"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<http://example.org/stkg/id/obs_pos_T-62_20260205T223639Z_8> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/Observation> .
+<http://example.org/stkg/id/obs_pos_T-62_20260205T223639Z_8> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/PositionObservation> .
+
+<http://example.org/stkg/id/obs_rel_T-62_BTR-80_20260205T224011Z_220_a_c> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/SpatialRelationObservation> .
+<http://example.org/stkg/id/obs_rel_T-62_BTR-80_20260205T224011Z_220_a_c> <http://example.org/stkg/subjectEntity> <http://example.org/stkg/id/platform_T-62> .
+<http://example.org/stkg/id/obs_rel_T-62_BTR-80_20260205T224011Z_220_a_c> <http://example.org/stkg/objectEntity> <http://example.org/stkg/id/platform_BTR-80> .
+<http://example.org/stkg/id/obs_rel_T-62_BTR-80_20260205T224011Z_220_a_c> <http://example.org/stkg/relationType> <http://example.org/stkg/id/relation_side_by_side> .
+<http://example.org/stkg/id/obs_rel_T-62_BTR-80_20260205T224011Z_220_a_c> <http://example.org/stkg/time> "2026-02-05T22:40:11Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<http://example.org/stkg/id/obs_rel_T-62_BTR-80_20260205T224011Z_220_a_c> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/Observation> .
+<http://example.org/stkg/id/obs_rel_T-62_BTR-80_20260205T224011Z_220_a_c> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/SpatialRelationObservation> .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223639Z_8> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/PositionObservation> .
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223639Z_8> <http://example.org/stkg/observedEntity> <http://example.org/stkg/id/platform_BTR-80> .
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223639Z_8> <http://example.org/stkg/time> "2026-02-05T22:36:39Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223639Z_8> <http://www.w3.org/2003/01/geo/wgs84_pos#lat> "35.0001082"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223639Z_8> <http://www.w3.org/2003/01/geo/wgs84_pos#long> "130.01756"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223639Z_8> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/Observation> .
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223639Z_8> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/PositionObservation> .
+
+<http://example.org/stkg/id/obs_pos_T-62_20260205T223640Z_9> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/PositionObservation> .
+<http://example.org/stkg/id/obs_pos_T-62_20260205T223640Z_9> <http://example.org/stkg/observedEntity> <http://example.org/stkg/id/platform_T-62> .
+<http://example.org/stkg/id/obs_pos_T-62_20260205T223640Z_9> <http://example.org/stkg/time> "2026-02-05T22:36:40Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<http://example.org/stkg/id/obs_pos_T-62_20260205T223640Z_9> <http://www.w3.org/2003/01/geo/wgs84_pos#lat> "35"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<http://example.org/stkg/id/obs_pos_T-62_20260205T223640Z_9> <http://www.w3.org/2003/01/geo/wgs84_pos#long> "130.0007902"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<http://example.org/stkg/id/obs_pos_T-62_20260205T223640Z_9> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/Observation> .
+<http://example.org/stkg/id/obs_pos_T-62_20260205T223640Z_9> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/PositionObservation> .
+
+<http://example.org/stkg/id/obs_pos_T-72_20260205T223640Z_9> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/PositionObservation> .
+<http://example.org/stkg/id/obs_pos_T-72_20260205T223640Z_9> <http://example.org/stkg/observedEntity> <http://example.org/stkg/id/platform_T-72> .
+<http://example.org/stkg/id/obs_pos_T-72_20260205T223640Z_9> <http://example.org/stkg/time> "2026-02-05T22:36:40Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<http://example.org/stkg/id/obs_pos_T-72_20260205T223640Z_9> <http://www.w3.org/2003/01/geo/wgs84_pos#lat> "35.0001082"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<http://example.org/stkg/id/obs_pos_T-72_20260205T223640Z_9> <http://www.w3.org/2003/01/geo/wgs84_pos#long> "130.00090873"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<http://example.org/stkg/id/obs_pos_T-72_20260205T223640Z_9> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/Observation> .
+<http://example.org/stkg/id/obs_pos_T-72_20260205T223640Z_9> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/PositionObservation> .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223640Z_9> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/PositionObservation> .
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223640Z_9> <http://example.org/stkg/observedEntity> <http://example.org/stkg/id/platform_BTR-80> .
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223640Z_9> <http://example.org/stkg/time> "2026-02-05T22:36:40Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223640Z_9> <http://www.w3.org/2003/01/geo/wgs84_pos#lat> "35.0001082"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223640Z_9> <http://www.w3.org/2003/01/geo/wgs84_pos#long> "130.01756"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223640Z_9> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/Observation> .
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223640Z_9> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/PositionObservation> .
+
+<http://example.org/stkg/id/obs_pos_T-62_20260205T223641Z_10> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/PositionObservation> .
+<http://example.org/stkg/id/obs_pos_T-62_20260205T223641Z_10> <http://example.org/stkg/observedEntity> <http://example.org/stkg/id/platform_T-62> .
+<http://example.org/stkg/id/obs_pos_T-62_20260205T223641Z_10> <http://example.org/stkg/time> "2026-02-05T22:36:41Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<http://example.org/stkg/id/obs_pos_T-62_20260205T223641Z_10> <http://www.w3.org/2003/01/geo/wgs84_pos#lat> "35"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<http://example.org/stkg/id/obs_pos_T-62_20260205T223641Z_10> <http://www.w3.org/2003/01/geo/wgs84_pos#long> "130.000878"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<http://example.org/stkg/id/obs_pos_T-62_20260205T223641Z_10> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/Observation> .
+<http://example.org/stkg/id/obs_pos_T-62_20260205T223641Z_10> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/PositionObservation> .
+
+<http://example.org/stkg/id/obs_pos_T-72_20260205T223641Z_10> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/PositionObservation> .
+<http://example.org/stkg/id/obs_pos_T-72_20260205T223641Z_10> <http://example.org/stkg/observedEntity> <http://example.org/stkg/id/platform_T-72> .
+<http://example.org/stkg/id/obs_pos_T-72_20260205T223641Z_10> <http://example.org/stkg/time> "2026-02-05T22:36:41Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<http://example.org/stkg/id/obs_pos_T-72_20260205T223641Z_10> <http://www.w3.org/2003/01/geo/wgs84_pos#lat> "35.0001082"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<http://example.org/stkg/id/obs_pos_T-72_20260205T223641Z_10> <http://www.w3.org/2003/01/geo/wgs84_pos#long> "130.0010097"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<http://example.org/stkg/id/obs_pos_T-72_20260205T223641Z_10> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/Observation> .
+<http://example.org/stkg/id/obs_pos_T-72_20260205T223641Z_10> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/PositionObservation> .
+
+<http://example.org/stkg/id/obs_rel_T-72_BTR-80_20260205T224130Z_299_b_c> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/SpatialRelationObservation> .
+<http://example.org/stkg/id/obs_rel_T-72_BTR-80_20260205T224130Z_299_b_c> <http://example.org/stkg/subjectEntity> <http://example.org/stkg/id/platform_T-72> .
+<http://example.org/stkg/id/obs_rel_T-72_BTR-80_20260205T224130Z_299_b_c> <http://example.org/stkg/objectEntity> <http://example.org/stkg/id/platform_BTR-80> .
+<http://example.org/stkg/id/obs_rel_T-72_BTR-80_20260205T224130Z_299_b_c> <http://example.org/stkg/relationType> <http://example.org/stkg/id/relation_in_back_of> .
+<http://example.org/stkg/id/obs_rel_T-72_BTR-80_20260205T224130Z_299_b_c> <http://example.org/stkg/time> "2026-02-05T22:41:30Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<http://example.org/stkg/id/obs_rel_T-72_BTR-80_20260205T224130Z_299_b_c> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/Observation> .
+<http://example.org/stkg/id/obs_rel_T-72_BTR-80_20260205T224130Z_299_b_c> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/SpatialRelationObservation> .
+
+<http://example.org/stkg/id/obs_rel_T-62_BTR-80_20260205T224405Z_454_a_c> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/SpatialRelationObservation> .
+<http://example.org/stkg/id/obs_rel_T-62_BTR-80_20260205T224405Z_454_a_c> <http://example.org/stkg/subjectEntity> <http://example.org/stkg/id/platform_T-62> .
+<http://example.org/stkg/id/obs_rel_T-62_BTR-80_20260205T224405Z_454_a_c> <http://example.org/stkg/objectEntity> <http://example.org/stkg/id/platform_BTR-80> .
+<http://example.org/stkg/id/obs_rel_T-62_BTR-80_20260205T224405Z_454_a_c> <http://example.org/stkg/relationType> <http://example.org/stkg/id/relation_in_front_of> .
+<http://example.org/stkg/id/obs_rel_T-62_BTR-80_20260205T224405Z_454_a_c> <http://example.org/stkg/time> "2026-02-05T22:44:05Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<http://example.org/stkg/id/obs_rel_T-62_BTR-80_20260205T224405Z_454_a_c> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/Observation> .
+<http://example.org/stkg/id/obs_rel_T-62_BTR-80_20260205T224405Z_454_a_c> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/SpatialRelationObservation> .
+
+<http://example.org/stkg/id/obs_pos_T-72_20260205T223642Z_11> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/PositionObservation> .
+<http://example.org/stkg/id/obs_pos_T-72_20260205T223642Z_11> <http://example.org/stkg/observedEntity> <http://example.org/stkg/id/platform_T-72> .
+<http://example.org/stkg/id/obs_pos_T-72_20260205T223642Z_11> <http://example.org/stkg/time> "2026-02-05T22:36:42Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<http://example.org/stkg/id/obs_pos_T-72_20260205T223642Z_11> <http://www.w3.org/2003/01/geo/wgs84_pos#lat> "35.0001082"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<http://example.org/stkg/id/obs_pos_T-72_20260205T223642Z_11> <http://www.w3.org/2003/01/geo/wgs84_pos#long> "130.00111067"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<http://example.org/stkg/id/obs_pos_T-72_20260205T223642Z_11> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/Observation> .
+<http://example.org/stkg/id/obs_pos_T-72_20260205T223642Z_11> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/PositionObservation> .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223642Z_11> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/PositionObservation> .
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223642Z_11> <http://example.org/stkg/observedEntity> <http://example.org/stkg/id/platform_BTR-80> .
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223642Z_11> <http://example.org/stkg/time> "2026-02-05T22:36:42Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223642Z_11> <http://www.w3.org/2003/01/geo/wgs84_pos#lat> "35.0001082"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223642Z_11> <http://www.w3.org/2003/01/geo/wgs84_pos#long> "130.01756"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223642Z_11> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/Observation> .
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223642Z_11> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/PositionObservation> .
+
+<http://example.org/stkg/id/obs_pos_T-62_20260205T223643Z_12> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/PositionObservation> .
+<http://example.org/stkg/id/obs_pos_T-62_20260205T223643Z_12> <http://example.org/stkg/observedEntity> <http://example.org/stkg/id/platform_T-62> .
+<http://example.org/stkg/id/obs_pos_T-62_20260205T223643Z_12> <http://example.org/stkg/time> "2026-02-05T22:36:43Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<http://example.org/stkg/id/obs_pos_T-62_20260205T223643Z_12> <http://www.w3.org/2003/01/geo/wgs84_pos#lat> "35"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<http://example.org/stkg/id/obs_pos_T-62_20260205T223643Z_12> <http://www.w3.org/2003/01/geo/wgs84_pos#long> "130.0010536"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<http://example.org/stkg/id/obs_pos_T-62_20260205T223643Z_12> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/Observation> .
+<http://example.org/stkg/id/obs_pos_T-62_20260205T223643Z_12> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/PositionObservation> .
+
+<http://example.org/stkg/id/obs_pos_T-72_20260205T223643Z_12> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/PositionObservation> .
+<http://example.org/stkg/id/obs_pos_T-72_20260205T223643Z_12> <http://example.org/stkg/observedEntity> <http://example.org/stkg/id/platform_T-72> .
+<http://example.org/stkg/id/obs_pos_T-72_20260205T223643Z_12> <http://example.org/stkg/time> "2026-02-05T22:36:43Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<http://example.org/stkg/id/obs_pos_T-72_20260205T223643Z_12> <http://www.w3.org/2003/01/geo/wgs84_pos#lat> "35.0001082"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<http://example.org/stkg/id/obs_pos_T-72_20260205T223643Z_12> <http://www.w3.org/2003/01/geo/wgs84_pos#long> "130.00121164"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<http://example.org/stkg/id/obs_pos_T-72_20260205T223643Z_12> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/Observation> .
+<http://example.org/stkg/id/obs_pos_T-72_20260205T223643Z_12> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/PositionObservation> .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223643Z_12> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/PositionObservation> .
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223643Z_12> <http://example.org/stkg/observedEntity> <http://example.org/stkg/id/platform_BTR-80> .
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223643Z_12> <http://example.org/stkg/time> "2026-02-05T22:36:43Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223643Z_12> <http://www.w3.org/2003/01/geo/wgs84_pos#lat> "35.0001082"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223643Z_12> <http://www.w3.org/2003/01/geo/wgs84_pos#long> "130.01756"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223643Z_12> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/Observation> .
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223643Z_12> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/PositionObservation> .
+
+<http://example.org/stkg/id/obs_pos_T-62_20260205T223644Z_13> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/PositionObservation> .
+<http://example.org/stkg/id/obs_pos_T-62_20260205T223644Z_13> <http://example.org/stkg/observedEntity> <http://example.org/stkg/id/platform_T-62> .
+<http://example.org/stkg/id/obs_pos_T-62_20260205T223644Z_13> <http://example.org/stkg/time> "2026-02-05T22:36:44Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<http://example.org/stkg/id/obs_pos_T-62_20260205T223644Z_13> <http://www.w3.org/2003/01/geo/wgs84_pos#lat> "35"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<http://example.org/stkg/id/obs_pos_T-62_20260205T223644Z_13> <http://www.w3.org/2003/01/geo/wgs84_pos#long> "130.0011414"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<http://example.org/stkg/id/obs_pos_T-62_20260205T223644Z_13> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/Observation> .
+<http://example.org/stkg/id/obs_pos_T-62_20260205T223644Z_13> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/PositionObservation> .
+
+<http://example.org/stkg/id/obs_pos_T-72_20260205T223644Z_13> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/PositionObservation> .
+<http://example.org/stkg/id/obs_pos_T-72_20260205T223644Z_13> <http://example.org/stkg/observedEntity> <http://example.org/stkg/id/platform_T-72> .
+<http://example.org/stkg/id/obs_pos_T-72_20260205T223644Z_13> <http://example.org/stkg/time> "2026-02-05T22:36:44Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<http://example.org/stkg/id/obs_pos_T-72_20260205T223644Z_13> <http://www.w3.org/2003/01/geo/wgs84_pos#lat> "35.0001082"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<http://example.org/stkg/id/obs_pos_T-72_20260205T223644Z_13> <http://www.w3.org/2003/01/geo/wgs84_pos#long> "130.00131261"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<http://example.org/stkg/id/obs_pos_T-72_20260205T223644Z_13> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/Observation> .
+<http://example.org/stkg/id/obs_pos_T-72_20260205T223644Z_13> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/PositionObservation> .
+
+<http://example.org/stkg/id/obs_pos_T-72_20260205T223745Z_74> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/PositionObservation> .
+<http://example.org/stkg/id/obs_pos_T-72_20260205T223745Z_74> <http://example.org/stkg/observedEntity> <http://example.org/stkg/id/platform_T-72> .
+<http://example.org/stkg/id/obs_pos_T-72_20260205T223745Z_74> <http://example.org/stkg/time> "2026-02-05T22:37:45Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<http://example.org/stkg/id/obs_pos_T-72_20260205T223745Z_74> <http://www.w3.org/2003/01/geo/wgs84_pos#lat> "35.0001082"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<http://example.org/stkg/id/obs_pos_T-72_20260205T223745Z_74> <http://www.w3.org/2003/01/geo/wgs84_pos#long> "130.00747178"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<http://example.org/stkg/id/obs_pos_T-72_20260205T223745Z_74> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/Observation> .
+<http://example.org/stkg/id/obs_pos_T-72_20260205T223745Z_74> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/PositionObservation> .
+
+<http://example.org/stkg/id/obs_rel_T-62_BTR-80_20260205T224014Z_223_a_c> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/SpatialRelationObservation> .
+<http://example.org/stkg/id/obs_rel_T-62_BTR-80_20260205T224014Z_223_a_c> <http://example.org/stkg/subjectEntity> <http://example.org/stkg/id/platform_T-62> .
+<http://example.org/stkg/id/obs_rel_T-62_BTR-80_20260205T224014Z_223_a_c> <http://example.org/stkg/objectEntity> <http://example.org/stkg/id/platform_BTR-80> .
+<http://example.org/stkg/id/obs_rel_T-62_BTR-80_20260205T224014Z_223_a_c> <http://example.org/stkg/relationType> <http://example.org/stkg/id/relation_side_by_side> .
+<http://example.org/stkg/id/obs_rel_T-62_BTR-80_20260205T224014Z_223_a_c> <http://example.org/stkg/time> "2026-02-05T22:40:14Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<http://example.org/stkg/id/obs_rel_T-62_BTR-80_20260205T224014Z_223_a_c> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/Observation> .
+<http://example.org/stkg/id/obs_rel_T-62_BTR-80_20260205T224014Z_223_a_c> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/SpatialRelationObservation> .
+
+<http://example.org/stkg/id/obs_rel_T-72_BTR-80_20260205T223944Z_193_b_c> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/SpatialRelationObservation> .
+<http://example.org/stkg/id/obs_rel_T-72_BTR-80_20260205T223944Z_193_b_c> <http://example.org/stkg/subjectEntity> <http://example.org/stkg/id/platform_T-72> .
+<http://example.org/stkg/id/obs_rel_T-72_BTR-80_20260205T223944Z_193_b_c> <http://example.org/stkg/objectEntity> <http://example.org/stkg/id/platform_BTR-80> .
+<http://example.org/stkg/id/obs_rel_T-72_BTR-80_20260205T223944Z_193_b_c> <http://example.org/stkg/relationType> <http://example.org/stkg/id/relation_in_back_of> .
+<http://example.org/stkg/id/obs_rel_T-72_BTR-80_20260205T223944Z_193_b_c> <http://example.org/stkg/time> "2026-02-05T22:39:44Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<http://example.org/stkg/id/obs_rel_T-72_BTR-80_20260205T223944Z_193_b_c> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/Observation> .
+<http://example.org/stkg/id/obs_rel_T-72_BTR-80_20260205T223944Z_193_b_c> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/SpatialRelationObservation> .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223645Z_14> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/PositionObservation> .
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223645Z_14> <http://example.org/stkg/observedEntity> <http://example.org/stkg/id/platform_BTR-80> .
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223645Z_14> <http://example.org/stkg/time> "2026-02-05T22:36:45Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223645Z_14> <http://www.w3.org/2003/01/geo/wgs84_pos#lat> "35.0001082"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223645Z_14> <http://www.w3.org/2003/01/geo/wgs84_pos#long> "130.01756"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223645Z_14> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/Observation> .
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223645Z_14> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/PositionObservation> .
+
+<http://example.org/stkg/id/obs_rel_T-72_T-62_20260205T224224Z_353_b_a> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/SpatialRelationObservation> .
+<http://example.org/stkg/id/obs_rel_T-72_T-62_20260205T224224Z_353_b_a> <http://example.org/stkg/subjectEntity> <http://example.org/stkg/id/platform_T-72> .
+<http://example.org/stkg/id/obs_rel_T-72_T-62_20260205T224224Z_353_b_a> <http://example.org/stkg/objectEntity> <http://example.org/stkg/id/platform_T-62> .
+<http://example.org/stkg/id/obs_rel_T-72_T-62_20260205T224224Z_353_b_a> <http://example.org/stkg/relationType> <http://example.org/stkg/id/relation_in_back_of> .
+<http://example.org/stkg/id/obs_rel_T-72_T-62_20260205T224224Z_353_b_a> <http://example.org/stkg/time> "2026-02-05T22:42:24Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<http://example.org/stkg/id/obs_rel_T-72_T-62_20260205T224224Z_353_b_a> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/Observation> .
+<http://example.org/stkg/id/obs_rel_T-72_T-62_20260205T224224Z_353_b_a> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/SpatialRelationObservation> .
+
+<http://example.org/stkg/id/obs_pos_T-72_20260205T223646Z_15> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/PositionObservation> .
+<http://example.org/stkg/id/obs_pos_T-72_20260205T223646Z_15> <http://example.org/stkg/observedEntity> <http://example.org/stkg/id/platform_T-72> .
+<http://example.org/stkg/id/obs_pos_T-72_20260205T223646Z_15> <http://example.org/stkg/time> "2026-02-05T22:36:46Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<http://example.org/stkg/id/obs_pos_T-72_20260205T223646Z_15> <http://www.w3.org/2003/01/geo/wgs84_pos#lat> "35.0001082"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<http://example.org/stkg/id/obs_pos_T-72_20260205T223646Z_15> <http://www.w3.org/2003/01/geo/wgs84_pos#long> "130.00151455"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<http://example.org/stkg/id/obs_pos_T-72_20260205T223646Z_15> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/Observation> .
+<http://example.org/stkg/id/obs_pos_T-72_20260205T223646Z_15> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/PositionObservation> .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223646Z_15> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/PositionObservation> .
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223646Z_15> <http://example.org/stkg/observedEntity> <http://example.org/stkg/id/platform_BTR-80> .
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223646Z_15> <http://example.org/stkg/time> "2026-02-05T22:36:46Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223646Z_15> <http://www.w3.org/2003/01/geo/wgs84_pos#lat> "35.0001082"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223646Z_15> <http://www.w3.org/2003/01/geo/wgs84_pos#long> "130.01756"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223646Z_15> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/Observation> .
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223646Z_15> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/PositionObservation> .
+
+<http://example.org/stkg/id/obs_pos_T-62_20260205T223647Z_16> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/PositionObservation> .
+<http://example.org/stkg/id/obs_pos_T-62_20260205T223647Z_16> <http://example.org/stkg/observedEntity> <http://example.org/stkg/id/platform_T-62> .
+<http://example.org/stkg/id/obs_pos_T-62_20260205T223647Z_16> <http://example.org/stkg/time> "2026-02-05T22:36:47Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<http://example.org/stkg/id/obs_pos_T-62_20260205T223647Z_16> <http://www.w3.org/2003/01/geo/wgs84_pos#lat> "35"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<http://example.org/stkg/id/obs_pos_T-62_20260205T223647Z_16> <http://www.w3.org/2003/01/geo/wgs84_pos#long> "130.0014048"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<http://example.org/stkg/id/obs_pos_T-62_20260205T223647Z_16> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/Observation> .
+<http://example.org/stkg/id/obs_pos_T-62_20260205T223647Z_16> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/PositionObservation> .
+
+<http://example.org/stkg/id/obs_rel_BTR-80_T-62_20260205T224053Z_262_c_a> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/SpatialRelationObservation> .
+<http://example.org/stkg/id/obs_rel_BTR-80_T-62_20260205T224053Z_262_c_a> <http://example.org/stkg/subjectEntity> <http://example.org/stkg/id/platform_BTR-80> .
+<http://example.org/stkg/id/obs_rel_BTR-80_T-62_20260205T224053Z_262_c_a> <http://example.org/stkg/objectEntity> <http://example.org/stkg/id/platform_T-62> .
+<http://example.org/stkg/id/obs_rel_BTR-80_T-62_20260205T224053Z_262_c_a> <http://example.org/stkg/relationType> <http://example.org/stkg/id/relation_side_by_side> .
+<http://example.org/stkg/id/obs_rel_BTR-80_T-62_20260205T224053Z_262_c_a> <http://example.org/stkg/time> "2026-02-05T22:40:53Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<http://example.org/stkg/id/obs_rel_BTR-80_T-62_20260205T224053Z_262_c_a> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/Observation> .
+<http://example.org/stkg/id/obs_rel_BTR-80_T-62_20260205T224053Z_262_c_a> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/SpatialRelationObservation> .
+
+<http://example.org/stkg/id/obs_rel_T-62_T-72_20260205T223853Z_142_a_b> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/SpatialRelationObservation> .
+<http://example.org/stkg/id/obs_rel_T-62_T-72_20260205T223853Z_142_a_b> <http://example.org/stkg/subjectEntity> <http://example.org/stkg/id/platform_T-62> .
+<http://example.org/stkg/id/obs_rel_T-62_T-72_20260205T223853Z_142_a_b> <http://example.org/stkg/objectEntity> <http://example.org/stkg/id/platform_T-72> .
+<http://example.org/stkg/id/obs_rel_T-62_T-72_20260205T223853Z_142_a_b> <http://example.org/stkg/relationType> <http://example.org/stkg/id/relation_in_front_of> .
+<http://example.org/stkg/id/obs_rel_T-62_T-72_20260205T223853Z_142_a_b> <http://example.org/stkg/time> "2026-02-05T22:38:53Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<http://example.org/stkg/id/obs_rel_T-62_T-72_20260205T223853Z_142_a_b> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/Observation> .
+<http://example.org/stkg/id/obs_rel_T-62_T-72_20260205T223853Z_142_a_b> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/SpatialRelationObservation> .
+
+<http://example.org/stkg/id/obs_pos_T-62_20260205T223648Z_17> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/PositionObservation> .
+<http://example.org/stkg/id/obs_pos_T-62_20260205T223648Z_17> <http://example.org/stkg/observedEntity> <http://example.org/stkg/id/platform_T-62> .
+<http://example.org/stkg/id/obs_pos_T-62_20260205T223648Z_17> <http://example.org/stkg/time> "2026-02-05T22:36:48Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<http://example.org/stkg/id/obs_pos_T-62_20260205T223648Z_17> <http://www.w3.org/2003/01/geo/wgs84_pos#lat> "35"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<http://example.org/stkg/id/obs_pos_T-62_20260205T223648Z_17> <http://www.w3.org/2003/01/geo/wgs84_pos#long> "130.0014926"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<http://example.org/stkg/id/obs_pos_T-62_20260205T223648Z_17> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/Observation> .
+<http://example.org/stkg/id/obs_pos_T-62_20260205T223648Z_17> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/PositionObservation> .
+
+<http://example.org/stkg/id/obs_pos_T-72_20260205T223648Z_17> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/PositionObservation> .
+<http://example.org/stkg/id/obs_pos_T-72_20260205T223648Z_17> <http://example.org/stkg/observedEntity> <http://example.org/stkg/id/platform_T-72> .
+<http://example.org/stkg/id/obs_pos_T-72_20260205T223648Z_17> <http://example.org/stkg/time> "2026-02-05T22:36:48Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<http://example.org/stkg/id/obs_pos_T-72_20260205T223648Z_17> <http://www.w3.org/2003/01/geo/wgs84_pos#lat> "35.0001082"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<http://example.org/stkg/id/obs_pos_T-72_20260205T223648Z_17> <http://www.w3.org/2003/01/geo/wgs84_pos#long> "130.00171649"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<http://example.org/stkg/id/obs_pos_T-72_20260205T223648Z_17> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/Observation> .
+<http://example.org/stkg/id/obs_pos_T-72_20260205T223648Z_17> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/PositionObservation> .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223648Z_17> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/PositionObservation> .
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223648Z_17> <http://example.org/stkg/observedEntity> <http://example.org/stkg/id/platform_BTR-80> .
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223648Z_17> <http://example.org/stkg/time> "2026-02-05T22:36:48Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223648Z_17> <http://www.w3.org/2003/01/geo/wgs84_pos#lat> "35.0001082"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223648Z_17> <http://www.w3.org/2003/01/geo/wgs84_pos#long> "130.01756"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223648Z_17> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/Observation> .
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223648Z_17> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/PositionObservation> .
+
+<http://example.org/stkg/id/obs_pos_T-62_20260205T223649Z_18> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/PositionObservation> .
+<http://example.org/stkg/id/obs_pos_T-62_20260205T223649Z_18> <http://example.org/stkg/observedEntity> <http://example.org/stkg/id/platform_T-62> .
+<http://example.org/stkg/id/obs_pos_T-62_20260205T223649Z_18> <http://example.org/stkg/time> "2026-02-05T22:36:49Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<http://example.org/stkg/id/obs_pos_T-62_20260205T223649Z_18> <http://www.w3.org/2003/01/geo/wgs84_pos#lat> "35"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<http://example.org/stkg/id/obs_pos_T-62_20260205T223649Z_18> <http://www.w3.org/2003/01/geo/wgs84_pos#long> "130.0015804"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<http://example.org/stkg/id/obs_pos_T-62_20260205T223649Z_18> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/Observation> .
+<http://example.org/stkg/id/obs_pos_T-62_20260205T223649Z_18> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/PositionObservation> .
+
+<http://example.org/stkg/id/obs_rel_T-62_BTR-80_20260205T224439Z_488_a_c> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/SpatialRelationObservation> .
+<http://example.org/stkg/id/obs_rel_T-62_BTR-80_20260205T224439Z_488_a_c> <http://example.org/stkg/subjectEntity> <http://example.org/stkg/id/platform_T-62> .
+<http://example.org/stkg/id/obs_rel_T-62_BTR-80_20260205T224439Z_488_a_c> <http://example.org/stkg/objectEntity> <http://example.org/stkg/id/platform_BTR-80> .
+<http://example.org/stkg/id/obs_rel_T-62_BTR-80_20260205T224439Z_488_a_c> <http://example.org/stkg/relationType> <http://example.org/stkg/id/relation_in_front_of> .
+<http://example.org/stkg/id/obs_rel_T-62_BTR-80_20260205T224439Z_488_a_c> <http://example.org/stkg/time> "2026-02-05T22:44:39Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<http://example.org/stkg/id/obs_rel_T-62_BTR-80_20260205T224439Z_488_a_c> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/Observation> .
+<http://example.org/stkg/id/obs_rel_T-62_BTR-80_20260205T224439Z_488_a_c> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/SpatialRelationObservation> .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223649Z_18> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/PositionObservation> .
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223649Z_18> <http://example.org/stkg/observedEntity> <http://example.org/stkg/id/platform_BTR-80> .
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223649Z_18> <http://example.org/stkg/time> "2026-02-05T22:36:49Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223649Z_18> <http://www.w3.org/2003/01/geo/wgs84_pos#lat> "35.0001082"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223649Z_18> <http://www.w3.org/2003/01/geo/wgs84_pos#long> "130.01756"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223649Z_18> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/Observation> .
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223649Z_18> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/PositionObservation> .
+
+<http://example.org/stkg/id/obs_pos_T-62_20260205T223650Z_19> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/PositionObservation> .
+<http://example.org/stkg/id/obs_pos_T-62_20260205T223650Z_19> <http://example.org/stkg/observedEntity> <http://example.org/stkg/id/platform_T-62> .
+<http://example.org/stkg/id/obs_pos_T-62_20260205T223650Z_19> <http://example.org/stkg/time> "2026-02-05T22:36:50Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<http://example.org/stkg/id/obs_pos_T-62_20260205T223650Z_19> <http://www.w3.org/2003/01/geo/wgs84_pos#lat> "35"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<http://example.org/stkg/id/obs_pos_T-62_20260205T223650Z_19> <http://www.w3.org/2003/01/geo/wgs84_pos#long> "130.0016682"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<http://example.org/stkg/id/obs_pos_T-62_20260205T223650Z_19> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/Observation> .
+<http://example.org/stkg/id/obs_pos_T-62_20260205T223650Z_19> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/PositionObservation> .
+
+<http://example.org/stkg/id/obs_pos_T-72_20260205T223650Z_19> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/PositionObservation> .
+<http://example.org/stkg/id/obs_pos_T-72_20260205T223650Z_19> <http://example.org/stkg/observedEntity> <http://example.org/stkg/id/platform_T-72> .
+<http://example.org/stkg/id/obs_pos_T-72_20260205T223650Z_19> <http://example.org/stkg/time> "2026-02-05T22:36:50Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<http://example.org/stkg/id/obs_pos_T-72_20260205T223650Z_19> <http://www.w3.org/2003/01/geo/wgs84_pos#lat> "35.0001082"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<http://example.org/stkg/id/obs_pos_T-72_20260205T223650Z_19> <http://www.w3.org/2003/01/geo/wgs84_pos#long> "130.00191843"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<http://example.org/stkg/id/obs_pos_T-72_20260205T223650Z_19> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/Observation> .
+<http://example.org/stkg/id/obs_pos_T-72_20260205T223650Z_19> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/PositionObservation> .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T224156Z_325> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/PositionObservation> .
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T224156Z_325> <http://example.org/stkg/observedEntity> <http://example.org/stkg/id/platform_BTR-80> .
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T224156Z_325> <http://example.org/stkg/time> "2026-02-05T22:41:56Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T224156Z_325> <http://www.w3.org/2003/01/geo/wgs84_pos#lat> "35.0001082"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T224156Z_325> <http://www.w3.org/2003/01/geo/wgs84_pos#long> "130.028535"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T224156Z_325> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/Observation> .
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T224156Z_325> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/PositionObservation> .
+
+<http://example.org/stkg/id/obs_pos_T-62_20260205T223651Z_20> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/PositionObservation> .
+<http://example.org/stkg/id/obs_pos_T-62_20260205T223651Z_20> <http://example.org/stkg/observedEntity> <http://example.org/stkg/id/platform_T-62> .
+<http://example.org/stkg/id/obs_pos_T-62_20260205T223651Z_20> <http://example.org/stkg/time> "2026-02-05T22:36:51Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<http://example.org/stkg/id/obs_pos_T-62_20260205T223651Z_20> <http://www.w3.org/2003/01/geo/wgs84_pos#lat> "35"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<http://example.org/stkg/id/obs_pos_T-62_20260205T223651Z_20> <http://www.w3.org/2003/01/geo/wgs84_pos#long> "130.001756"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<http://example.org/stkg/id/obs_pos_T-62_20260205T223651Z_20> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/Observation> .
+<http://example.org/stkg/id/obs_pos_T-62_20260205T223651Z_20> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/PositionObservation> .
+
+<http://example.org/stkg/id/obs_pos_T-72_20260205T223651Z_20> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/PositionObservation> .
+<http://example.org/stkg/id/obs_pos_T-72_20260205T223651Z_20> <http://example.org/stkg/observedEntity> <http://example.org/stkg/id/platform_T-72> .
+<http://example.org/stkg/id/obs_pos_T-72_20260205T223651Z_20> <http://example.org/stkg/time> "2026-02-05T22:36:51Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<http://example.org/stkg/id/obs_pos_T-72_20260205T223651Z_20> <http://www.w3.org/2003/01/geo/wgs84_pos#lat> "35.0001082"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<http://example.org/stkg/id/obs_pos_T-72_20260205T223651Z_20> <http://www.w3.org/2003/01/geo/wgs84_pos#long> "130.0020194"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<http://example.org/stkg/id/obs_pos_T-72_20260205T223651Z_20> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/Observation> .
+<http://example.org/stkg/id/obs_pos_T-72_20260205T223651Z_20> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/PositionObservation> .
+
+<http://example.org/stkg/id/obs_rel_T-72_T-62_20260205T224439Z_488_b_a> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/SpatialRelationObservation> .
+<http://example.org/stkg/id/obs_rel_T-72_T-62_20260205T224439Z_488_b_a> <http://example.org/stkg/subjectEntity> <http://example.org/stkg/id/platform_T-72> .
+<http://example.org/stkg/id/obs_rel_T-72_T-62_20260205T224439Z_488_b_a> <http://example.org/stkg/objectEntity> <http://example.org/stkg/id/platform_T-62> .
+<http://example.org/stkg/id/obs_rel_T-72_T-62_20260205T224439Z_488_b_a> <http://example.org/stkg/relationType> <http://example.org/stkg/id/relation_in_back_of> .
+<http://example.org/stkg/id/obs_rel_T-72_T-62_20260205T224439Z_488_b_a> <http://example.org/stkg/time> "2026-02-05T22:44:39Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<http://example.org/stkg/id/obs_rel_T-72_T-62_20260205T224439Z_488_b_a> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/Observation> .
+<http://example.org/stkg/id/obs_rel_T-72_T-62_20260205T224439Z_488_b_a> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/SpatialRelationObservation> .
+
+<http://example.org/stkg/id/obs_pos_T-62_20260205T223652Z_21> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/PositionObservation> .
+<http://example.org/stkg/id/obs_pos_T-62_20260205T223652Z_21> <http://example.org/stkg/observedEntity> <http://example.org/stkg/id/platform_T-62> .
+<http://example.org/stkg/id/obs_pos_T-62_20260205T223652Z_21> <http://example.org/stkg/time> "2026-02-05T22:36:52Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<http://example.org/stkg/id/obs_pos_T-62_20260205T223652Z_21> <http://www.w3.org/2003/01/geo/wgs84_pos#lat> "35"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<http://example.org/stkg/id/obs_pos_T-62_20260205T223652Z_21> <http://www.w3.org/2003/01/geo/wgs84_pos#long> "130.0018438"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<http://example.org/stkg/id/obs_pos_T-62_20260205T223652Z_21> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/Observation> .
+<http://example.org/stkg/id/obs_pos_T-62_20260205T223652Z_21> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/PositionObservation> .
+
+<http://example.org/stkg/id/obs_rel_BTR-80_T-72_20260205T223828Z_117_c_b> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/SpatialRelationObservation> .
+<http://example.org/stkg/id/obs_rel_BTR-80_T-72_20260205T223828Z_117_c_b> <http://example.org/stkg/subjectEntity> <http://example.org/stkg/id/platform_BTR-80> .
+<http://example.org/stkg/id/obs_rel_BTR-80_T-72_20260205T223828Z_117_c_b> <http://example.org/stkg/objectEntity> <http://example.org/stkg/id/platform_T-72> .
+<http://example.org/stkg/id/obs_rel_BTR-80_T-72_20260205T223828Z_117_c_b> <http://example.org/stkg/relationType> <http://example.org/stkg/id/relation_in_front_of> .
+<http://example.org/stkg/id/obs_rel_BTR-80_T-72_20260205T223828Z_117_c_b> <http://example.org/stkg/time> "2026-02-05T22:38:28Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<http://example.org/stkg/id/obs_rel_BTR-80_T-72_20260205T223828Z_117_c_b> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/Observation> .
+<http://example.org/stkg/id/obs_rel_BTR-80_T-72_20260205T223828Z_117_c_b> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/SpatialRelationObservation> .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223652Z_21> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/PositionObservation> .
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223652Z_21> <http://example.org/stkg/observedEntity> <http://example.org/stkg/id/platform_BTR-80> .
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223652Z_21> <http://example.org/stkg/time> "2026-02-05T22:36:52Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223652Z_21> <http://www.w3.org/2003/01/geo/wgs84_pos#lat> "35.0001082"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223652Z_21> <http://www.w3.org/2003/01/geo/wgs84_pos#long> "130.01756"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223652Z_21> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/Observation> .
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223652Z_21> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/PositionObservation> .
+
+<http://example.org/stkg/id/obs_pos_T-62_20260205T223653Z_22> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/PositionObservation> .
+<http://example.org/stkg/id/obs_pos_T-62_20260205T223653Z_22> <http://example.org/stkg/observedEntity> <http://example.org/stkg/id/platform_T-62> .
+<http://example.org/stkg/id/obs_pos_T-62_20260205T223653Z_22> <http://example.org/stkg/time> "2026-02-05T22:36:53Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<http://example.org/stkg/id/obs_pos_T-62_20260205T223653Z_22> <http://www.w3.org/2003/01/geo/wgs84_pos#lat> "35"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<http://example.org/stkg/id/obs_pos_T-62_20260205T223653Z_22> <http://www.w3.org/2003/01/geo/wgs84_pos#long> "130.0019316"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<http://example.org/stkg/id/obs_pos_T-62_20260205T223653Z_22> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/Observation> .
+<http://example.org/stkg/id/obs_pos_T-62_20260205T223653Z_22> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/PositionObservation> .
+
+<http://example.org/stkg/id/obs_pos_T-72_20260205T223653Z_22> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/PositionObservation> .
+<http://example.org/stkg/id/obs_pos_T-72_20260205T223653Z_22> <http://example.org/stkg/observedEntity> <http://example.org/stkg/id/platform_T-72> .
+<http://example.org/stkg/id/obs_pos_T-72_20260205T223653Z_22> <http://example.org/stkg/time> "2026-02-05T22:36:53Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<http://example.org/stkg/id/obs_pos_T-72_20260205T223653Z_22> <http://www.w3.org/2003/01/geo/wgs84_pos#lat> "35.0001082"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<http://example.org/stkg/id/obs_pos_T-72_20260205T223653Z_22> <http://www.w3.org/2003/01/geo/wgs84_pos#long> "130.00222134"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<http://example.org/stkg/id/obs_pos_T-72_20260205T223653Z_22> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/Observation> .
+<http://example.org/stkg/id/obs_pos_T-72_20260205T223653Z_22> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/PositionObservation> .
+
+<http://example.org/stkg/id/obs_rel_T-72_T-62_20260205T224149Z_318_b_a> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/SpatialRelationObservation> .
+<http://example.org/stkg/id/obs_rel_T-72_T-62_20260205T224149Z_318_b_a> <http://example.org/stkg/subjectEntity> <http://example.org/stkg/id/platform_T-72> .
+<http://example.org/stkg/id/obs_rel_T-72_T-62_20260205T224149Z_318_b_a> <http://example.org/stkg/objectEntity> <http://example.org/stkg/id/platform_T-62> .
+<http://example.org/stkg/id/obs_rel_T-72_T-62_20260205T224149Z_318_b_a> <http://example.org/stkg/relationType> <http://example.org/stkg/id/relation_in_back_of> .
+<http://example.org/stkg/id/obs_rel_T-72_T-62_20260205T224149Z_318_b_a> <http://example.org/stkg/time> "2026-02-05T22:41:49Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<http://example.org/stkg/id/obs_rel_T-72_T-62_20260205T224149Z_318_b_a> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/Observation> .
+<http://example.org/stkg/id/obs_rel_T-72_T-62_20260205T224149Z_318_b_a> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/SpatialRelationObservation> .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T224114Z_283> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/PositionObservation> .
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T224114Z_283> <http://example.org/stkg/observedEntity> <http://example.org/stkg/id/platform_BTR-80> .
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T224114Z_283> <http://example.org/stkg/time> "2026-02-05T22:41:14Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T224114Z_283> <http://www.w3.org/2003/01/geo/wgs84_pos#lat> "35.0001082"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T224114Z_283> <http://www.w3.org/2003/01/geo/wgs84_pos#long> "130.0248474"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T224114Z_283> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/Observation> .
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T224114Z_283> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/PositionObservation> .
+
+<http://example.org/stkg/id/obs_rel_T-62_T-72_20260205T223738Z_67_a_b> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/SpatialRelationObservation> .
+<http://example.org/stkg/id/obs_rel_T-62_T-72_20260205T223738Z_67_a_b> <http://example.org/stkg/subjectEntity> <http://example.org/stkg/id/platform_T-62> .
+<http://example.org/stkg/id/obs_rel_T-62_T-72_20260205T223738Z_67_a_b> <http://example.org/stkg/objectEntity> <http://example.org/stkg/id/platform_T-72> .
+<http://example.org/stkg/id/obs_rel_T-62_T-72_20260205T223738Z_67_a_b> <http://example.org/stkg/relationType> <http://example.org/stkg/id/relation_in_back_of> .
+<http://example.org/stkg/id/obs_rel_T-62_T-72_20260205T223738Z_67_a_b> <http://example.org/stkg/time> "2026-02-05T22:37:38Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<http://example.org/stkg/id/obs_rel_T-62_T-72_20260205T223738Z_67_a_b> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/Observation> .
+<http://example.org/stkg/id/obs_rel_T-62_T-72_20260205T223738Z_67_a_b> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/SpatialRelationObservation> .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223654Z_23> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/PositionObservation> .
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223654Z_23> <http://example.org/stkg/observedEntity> <http://example.org/stkg/id/platform_BTR-80> .
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223654Z_23> <http://example.org/stkg/time> "2026-02-05T22:36:54Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223654Z_23> <http://www.w3.org/2003/01/geo/wgs84_pos#lat> "35.0001082"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223654Z_23> <http://www.w3.org/2003/01/geo/wgs84_pos#long> "130.01756"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223654Z_23> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/Observation> .
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223654Z_23> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/PositionObservation> .
+
+<http://example.org/stkg/id/obs_pos_T-62_20260205T223655Z_24> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/PositionObservation> .
+<http://example.org/stkg/id/obs_pos_T-62_20260205T223655Z_24> <http://example.org/stkg/observedEntity> <http://example.org/stkg/id/platform_T-62> .
+<http://example.org/stkg/id/obs_pos_T-62_20260205T223655Z_24> <http://example.org/stkg/time> "2026-02-05T22:36:55Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<http://example.org/stkg/id/obs_pos_T-62_20260205T223655Z_24> <http://www.w3.org/2003/01/geo/wgs84_pos#lat> "35"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<http://example.org/stkg/id/obs_pos_T-62_20260205T223655Z_24> <http://www.w3.org/2003/01/geo/wgs84_pos#long> "130.0021072"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<http://example.org/stkg/id/obs_pos_T-62_20260205T223655Z_24> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/Observation> .
+<http://example.org/stkg/id/obs_pos_T-62_20260205T223655Z_24> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/PositionObservation> .
+
+<http://example.org/stkg/id/obs_pos_T-72_20260205T223655Z_24> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/PositionObservation> .
+<http://example.org/stkg/id/obs_pos_T-72_20260205T223655Z_24> <http://example.org/stkg/observedEntity> <http://example.org/stkg/id/platform_T-72> .
+<http://example.org/stkg/id/obs_pos_T-72_20260205T223655Z_24> <http://example.org/stkg/time> "2026-02-05T22:36:55Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<http://example.org/stkg/id/obs_pos_T-72_20260205T223655Z_24> <http://www.w3.org/2003/01/geo/wgs84_pos#lat> "35.0001082"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<http://example.org/stkg/id/obs_pos_T-72_20260205T223655Z_24> <http://www.w3.org/2003/01/geo/wgs84_pos#long> "130.00242328"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<http://example.org/stkg/id/obs_pos_T-72_20260205T223655Z_24> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/Observation> .
+<http://example.org/stkg/id/obs_pos_T-72_20260205T223655Z_24> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/PositionObservation> .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223655Z_24> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/PositionObservation> .
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223655Z_24> <http://example.org/stkg/observedEntity> <http://example.org/stkg/id/platform_BTR-80> .
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223655Z_24> <http://example.org/stkg/time> "2026-02-05T22:36:55Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223655Z_24> <http://www.w3.org/2003/01/geo/wgs84_pos#lat> "35.0001082"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223655Z_24> <http://www.w3.org/2003/01/geo/wgs84_pos#long> "130.01756"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223655Z_24> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/Observation> .
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223655Z_24> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/PositionObservation> .
+
+<http://example.org/stkg/id/obs_pos_T-62_20260205T223656Z_25> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/PositionObservation> .
+<http://example.org/stkg/id/obs_pos_T-62_20260205T223656Z_25> <http://example.org/stkg/observedEntity> <http://example.org/stkg/id/platform_T-62> .
+<http://example.org/stkg/id/obs_pos_T-62_20260205T223656Z_25> <http://example.org/stkg/time> "2026-02-05T22:36:56Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<http://example.org/stkg/id/obs_pos_T-62_20260205T223656Z_25> <http://www.w3.org/2003/01/geo/wgs84_pos#lat> "35"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<http://example.org/stkg/id/obs_pos_T-62_20260205T223656Z_25> <http://www.w3.org/2003/01/geo/wgs84_pos#long> "130.002195"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<http://example.org/stkg/id/obs_pos_T-62_20260205T223656Z_25> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/Observation> .
+<http://example.org/stkg/id/obs_pos_T-62_20260205T223656Z_25> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/PositionObservation> .
+
+<http://example.org/stkg/id/obs_rel_BTR-80_T-62_20260205T224307Z_396_c_a> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/SpatialRelationObservation> .
+<http://example.org/stkg/id/obs_rel_BTR-80_T-62_20260205T224307Z_396_c_a> <http://example.org/stkg/subjectEntity> <http://example.org/stkg/id/platform_BTR-80> .
+<http://example.org/stkg/id/obs_rel_BTR-80_T-62_20260205T224307Z_396_c_a> <http://example.org/stkg/objectEntity> <http://example.org/stkg/id/platform_T-62> .
+<http://example.org/stkg/id/obs_rel_BTR-80_T-62_20260205T224307Z_396_c_a> <http://example.org/stkg/relationType> <http://example.org/stkg/id/relation_side_by_side> .
+<http://example.org/stkg/id/obs_rel_BTR-80_T-62_20260205T224307Z_396_c_a> <http://example.org/stkg/time> "2026-02-05T22:43:07Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<http://example.org/stkg/id/obs_rel_BTR-80_T-62_20260205T224307Z_396_c_a> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/Observation> .
+<http://example.org/stkg/id/obs_rel_BTR-80_T-62_20260205T224307Z_396_c_a> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/SpatialRelationObservation> .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223656Z_25> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/PositionObservation> .
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223656Z_25> <http://example.org/stkg/observedEntity> <http://example.org/stkg/id/platform_BTR-80> .
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223656Z_25> <http://example.org/stkg/time> "2026-02-05T22:36:56Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223656Z_25> <http://www.w3.org/2003/01/geo/wgs84_pos#lat> "35.0001082"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223656Z_25> <http://www.w3.org/2003/01/geo/wgs84_pos#long> "130.01756"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223656Z_25> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/Observation> .
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223656Z_25> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/PositionObservation> .
+
+<http://example.org/stkg/id/obs_pos_T-62_20260205T223657Z_26> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/PositionObservation> .
+<http://example.org/stkg/id/obs_pos_T-62_20260205T223657Z_26> <http://example.org/stkg/observedEntity> <http://example.org/stkg/id/platform_T-62> .
+<http://example.org/stkg/id/obs_pos_T-62_20260205T223657Z_26> <http://example.org/stkg/time> "2026-02-05T22:36:57Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<http://example.org/stkg/id/obs_pos_T-62_20260205T223657Z_26> <http://www.w3.org/2003/01/geo/wgs84_pos#lat> "35"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<http://example.org/stkg/id/obs_pos_T-62_20260205T223657Z_26> <http://www.w3.org/2003/01/geo/wgs84_pos#long> "130.0022828"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<http://example.org/stkg/id/obs_pos_T-62_20260205T223657Z_26> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/Observation> .
+<http://example.org/stkg/id/obs_pos_T-62_20260205T223657Z_26> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/PositionObservation> .
+
+<http://example.org/stkg/id/obs_pos_T-72_20260205T223657Z_26> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/PositionObservation> .
+<http://example.org/stkg/id/obs_pos_T-72_20260205T223657Z_26> <http://example.org/stkg/observedEntity> <http://example.org/stkg/id/platform_T-72> .
+<http://example.org/stkg/id/obs_pos_T-72_20260205T223657Z_26> <http://example.org/stkg/time> "2026-02-05T22:36:57Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<http://example.org/stkg/id/obs_pos_T-72_20260205T223657Z_26> <http://www.w3.org/2003/01/geo/wgs84_pos#lat> "35.0001082"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<http://example.org/stkg/id/obs_pos_T-72_20260205T223657Z_26> <http://www.w3.org/2003/01/geo/wgs84_pos#long> "130.00262522"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<http://example.org/stkg/id/obs_pos_T-72_20260205T223657Z_26> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/Observation> .
+<http://example.org/stkg/id/obs_pos_T-72_20260205T223657Z_26> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/PositionObservation> .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223657Z_26> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/PositionObservation> .
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223657Z_26> <http://example.org/stkg/observedEntity> <http://example.org/stkg/id/platform_BTR-80> .
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223657Z_26> <http://example.org/stkg/time> "2026-02-05T22:36:57Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223657Z_26> <http://www.w3.org/2003/01/geo/wgs84_pos#lat> "35.0001082"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223657Z_26> <http://www.w3.org/2003/01/geo/wgs84_pos#long> "130.01756"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223657Z_26> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/Observation> .
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223657Z_26> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/PositionObservation> .
+
+<http://example.org/stkg/id/obs_pos_T-62_20260205T223658Z_27> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/PositionObservation> .
+<http://example.org/stkg/id/obs_pos_T-62_20260205T223658Z_27> <http://example.org/stkg/observedEntity> <http://example.org/stkg/id/platform_T-62> .
+<http://example.org/stkg/id/obs_pos_T-62_20260205T223658Z_27> <http://example.org/stkg/time> "2026-02-05T22:36:58Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<http://example.org/stkg/id/obs_pos_T-62_20260205T223658Z_27> <http://www.w3.org/2003/01/geo/wgs84_pos#lat> "35"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<http://example.org/stkg/id/obs_pos_T-62_20260205T223658Z_27> <http://www.w3.org/2003/01/geo/wgs84_pos#long> "130.0023706"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<http://example.org/stkg/id/obs_pos_T-62_20260205T223658Z_27> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/Observation> .
+<http://example.org/stkg/id/obs_pos_T-62_20260205T223658Z_27> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/PositionObservation> .
+
+<http://example.org/stkg/id/obs_pos_T-72_20260205T223658Z_27> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/PositionObservation> .
+<http://example.org/stkg/id/obs_pos_T-72_20260205T223658Z_27> <http://example.org/stkg/observedEntity> <http://example.org/stkg/id/platform_T-72> .
+<http://example.org/stkg/id/obs_pos_T-72_20260205T223658Z_27> <http://example.org/stkg/time> "2026-02-05T22:36:58Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<http://example.org/stkg/id/obs_pos_T-72_20260205T223658Z_27> <http://www.w3.org/2003/01/geo/wgs84_pos#lat> "35.0001082"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<http://example.org/stkg/id/obs_pos_T-72_20260205T223658Z_27> <http://www.w3.org/2003/01/geo/wgs84_pos#long> "130.00272619"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<http://example.org/stkg/id/obs_pos_T-72_20260205T223658Z_27> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/Observation> .
+<http://example.org/stkg/id/obs_pos_T-72_20260205T223658Z_27> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/PositionObservation> .
+
+<http://example.org/stkg/id/obs_rel_T-62_T-72_20260205T224346Z_435_a_b> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/SpatialRelationObservation> .
+<http://example.org/stkg/id/obs_rel_T-62_T-72_20260205T224346Z_435_a_b> <http://example.org/stkg/subjectEntity> <http://example.org/stkg/id/platform_T-62> .
+<http://example.org/stkg/id/obs_rel_T-62_T-72_20260205T224346Z_435_a_b> <http://example.org/stkg/objectEntity> <http://example.org/stkg/id/platform_T-72> .
+<http://example.org/stkg/id/obs_rel_T-62_T-72_20260205T224346Z_435_a_b> <http://example.org/stkg/relationType> <http://example.org/stkg/id/relation_in_front_of> .
+<http://example.org/stkg/id/obs_rel_T-62_T-72_20260205T224346Z_435_a_b> <http://example.org/stkg/time> "2026-02-05T22:43:46Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<http://example.org/stkg/id/obs_rel_T-62_T-72_20260205T224346Z_435_a_b> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/Observation> .
+<http://example.org/stkg/id/obs_rel_T-62_T-72_20260205T224346Z_435_a_b> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/SpatialRelationObservation> .
+
+<http://example.org/stkg/id/obs_rel_T-62_BTR-80_20260205T224132Z_301_a_c> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/SpatialRelationObservation> .
+<http://example.org/stkg/id/obs_rel_T-62_BTR-80_20260205T224132Z_301_a_c> <http://example.org/stkg/subjectEntity> <http://example.org/stkg/id/platform_T-62> .
+<http://example.org/stkg/id/obs_rel_T-62_BTR-80_20260205T224132Z_301_a_c> <http://example.org/stkg/objectEntity> <http://example.org/stkg/id/platform_BTR-80> .
+<http://example.org/stkg/id/obs_rel_T-62_BTR-80_20260205T224132Z_301_a_c> <http://example.org/stkg/relationType> <http://example.org/stkg/id/relation_side_by_side> .
+<http://example.org/stkg/id/obs_rel_T-62_BTR-80_20260205T224132Z_301_a_c> <http://example.org/stkg/time> "2026-02-05T22:41:32Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<http://example.org/stkg/id/obs_rel_T-62_BTR-80_20260205T224132Z_301_a_c> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/Observation> .
+<http://example.org/stkg/id/obs_rel_T-62_BTR-80_20260205T224132Z_301_a_c> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/SpatialRelationObservation> .
+
+<http://example.org/stkg/id/obs_rel_T-72_T-62_20260205T224253Z_382_b_a> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/SpatialRelationObservation> .
+<http://example.org/stkg/id/obs_rel_T-72_T-62_20260205T224253Z_382_b_a> <http://example.org/stkg/subjectEntity> <http://example.org/stkg/id/platform_T-72> .
+<http://example.org/stkg/id/obs_rel_T-72_T-62_20260205T224253Z_382_b_a> <http://example.org/stkg/objectEntity> <http://example.org/stkg/id/platform_T-62> .
+<http://example.org/stkg/id/obs_rel_T-72_T-62_20260205T224253Z_382_b_a> <http://example.org/stkg/relationType> <http://example.org/stkg/id/relation_in_back_of> .
+<http://example.org/stkg/id/obs_rel_T-72_T-62_20260205T224253Z_382_b_a> <http://example.org/stkg/time> "2026-02-05T22:42:53Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<http://example.org/stkg/id/obs_rel_T-72_T-62_20260205T224253Z_382_b_a> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/Observation> .
+<http://example.org/stkg/id/obs_rel_T-72_T-62_20260205T224253Z_382_b_a> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/SpatialRelationObservation> .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223659Z_28> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/PositionObservation> .
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223659Z_28> <http://example.org/stkg/observedEntity> <http://example.org/stkg/id/platform_BTR-80> .
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223659Z_28> <http://example.org/stkg/time> "2026-02-05T22:36:59Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223659Z_28> <http://www.w3.org/2003/01/geo/wgs84_pos#lat> "35.0001082"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223659Z_28> <http://www.w3.org/2003/01/geo/wgs84_pos#long> "130.01756"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223659Z_28> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/Observation> .
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223659Z_28> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/PositionObservation> .
+
+<http://example.org/stkg/id/obs_pos_T-62_20260205T223700Z_29> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/PositionObservation> .
+<http://example.org/stkg/id/obs_pos_T-62_20260205T223700Z_29> <http://example.org/stkg/observedEntity> <http://example.org/stkg/id/platform_T-62> .
+<http://example.org/stkg/id/obs_pos_T-62_20260205T223700Z_29> <http://example.org/stkg/time> "2026-02-05T22:37:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<http://example.org/stkg/id/obs_pos_T-62_20260205T223700Z_29> <http://www.w3.org/2003/01/geo/wgs84_pos#lat> "35"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<http://example.org/stkg/id/obs_pos_T-62_20260205T223700Z_29> <http://www.w3.org/2003/01/geo/wgs84_pos#long> "130.0025462"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<http://example.org/stkg/id/obs_pos_T-62_20260205T223700Z_29> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/Observation> .
+<http://example.org/stkg/id/obs_pos_T-62_20260205T223700Z_29> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/PositionObservation> .
+
+<http://example.org/stkg/id/obs_pos_T-72_20260205T223700Z_29> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/PositionObservation> .
+<http://example.org/stkg/id/obs_pos_T-72_20260205T223700Z_29> <http://example.org/stkg/observedEntity> <http://example.org/stkg/id/platform_T-72> .
+<http://example.org/stkg/id/obs_pos_T-72_20260205T223700Z_29> <http://example.org/stkg/time> "2026-02-05T22:37:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<http://example.org/stkg/id/obs_pos_T-72_20260205T223700Z_29> <http://www.w3.org/2003/01/geo/wgs84_pos#lat> "35.0001082"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<http://example.org/stkg/id/obs_pos_T-72_20260205T223700Z_29> <http://www.w3.org/2003/01/geo/wgs84_pos#long> "130.00292813"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<http://example.org/stkg/id/obs_pos_T-72_20260205T223700Z_29> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/Observation> .
+<http://example.org/stkg/id/obs_pos_T-72_20260205T223700Z_29> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/PositionObservation> .
+
+<http://example.org/stkg/id/obs_rel_T-72_T-62_20260205T224049Z_258_b_a> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/SpatialRelationObservation> .
+<http://example.org/stkg/id/obs_rel_T-72_T-62_20260205T224049Z_258_b_a> <http://example.org/stkg/subjectEntity> <http://example.org/stkg/id/platform_T-72> .
+<http://example.org/stkg/id/obs_rel_T-72_T-62_20260205T224049Z_258_b_a> <http://example.org/stkg/objectEntity> <http://example.org/stkg/id/platform_T-62> .
+<http://example.org/stkg/id/obs_rel_T-72_T-62_20260205T224049Z_258_b_a> <http://example.org/stkg/relationType> <http://example.org/stkg/id/relation_in_back_of> .
+<http://example.org/stkg/id/obs_rel_T-72_T-62_20260205T224049Z_258_b_a> <http://example.org/stkg/time> "2026-02-05T22:40:49Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<http://example.org/stkg/id/obs_rel_T-72_T-62_20260205T224049Z_258_b_a> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/Observation> .
+<http://example.org/stkg/id/obs_rel_T-72_T-62_20260205T224049Z_258_b_a> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/SpatialRelationObservation> .
+
+<http://example.org/stkg/id/obs_pos_T-62_20260205T223757Z_86> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/PositionObservation> .
+<http://example.org/stkg/id/obs_pos_T-62_20260205T223757Z_86> <http://example.org/stkg/observedEntity> <http://example.org/stkg/id/platform_T-62> .
+<http://example.org/stkg/id/obs_pos_T-62_20260205T223757Z_86> <http://example.org/stkg/time> "2026-02-05T22:37:57Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<http://example.org/stkg/id/obs_pos_T-62_20260205T223757Z_86> <http://www.w3.org/2003/01/geo/wgs84_pos#lat> "35"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<http://example.org/stkg/id/obs_pos_T-62_20260205T223757Z_86> <http://www.w3.org/2003/01/geo/wgs84_pos#long> "130.0075508"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<http://example.org/stkg/id/obs_pos_T-62_20260205T223757Z_86> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/Observation> .
+<http://example.org/stkg/id/obs_pos_T-62_20260205T223757Z_86> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/PositionObservation> .
+
+<http://example.org/stkg/id/obs_pos_T-72_20260205T223701Z_30> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/PositionObservation> .
+<http://example.org/stkg/id/obs_pos_T-72_20260205T223701Z_30> <http://example.org/stkg/observedEntity> <http://example.org/stkg/id/platform_T-72> .
+<http://example.org/stkg/id/obs_pos_T-72_20260205T223701Z_30> <http://example.org/stkg/time> "2026-02-05T22:37:01Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<http://example.org/stkg/id/obs_pos_T-72_20260205T223701Z_30> <http://www.w3.org/2003/01/geo/wgs84_pos#lat> "35.0001082"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<http://example.org/stkg/id/obs_pos_T-72_20260205T223701Z_30> <http://www.w3.org/2003/01/geo/wgs84_pos#long> "130.0030291"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<http://example.org/stkg/id/obs_pos_T-72_20260205T223701Z_30> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/Observation> .
+<http://example.org/stkg/id/obs_pos_T-72_20260205T223701Z_30> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/PositionObservation> .
+
+<http://example.org/stkg/id/obs_rel_BTR-80_T-72_20260205T224302Z_391_c_b> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/SpatialRelationObservation> .
+<http://example.org/stkg/id/obs_rel_BTR-80_T-72_20260205T224302Z_391_c_b> <http://example.org/stkg/subjectEntity> <http://example.org/stkg/id/platform_BTR-80> .
+<http://example.org/stkg/id/obs_rel_BTR-80_T-72_20260205T224302Z_391_c_b> <http://example.org/stkg/objectEntity> <http://example.org/stkg/id/platform_T-72> .
+<http://example.org/stkg/id/obs_rel_BTR-80_T-72_20260205T224302Z_391_c_b> <http://example.org/stkg/relationType> <http://example.org/stkg/id/relation_in_front_of> .
+<http://example.org/stkg/id/obs_rel_BTR-80_T-72_20260205T224302Z_391_c_b> <http://example.org/stkg/time> "2026-02-05T22:43:02Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<http://example.org/stkg/id/obs_rel_BTR-80_T-72_20260205T224302Z_391_c_b> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/Observation> .
+<http://example.org/stkg/id/obs_rel_BTR-80_T-72_20260205T224302Z_391_c_b> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/SpatialRelationObservation> .
+
+<http://example.org/stkg/id/obs_pos_T-62_20260205T223702Z_31> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/PositionObservation> .
+<http://example.org/stkg/id/obs_pos_T-62_20260205T223702Z_31> <http://example.org/stkg/observedEntity> <http://example.org/stkg/id/platform_T-62> .
+<http://example.org/stkg/id/obs_pos_T-62_20260205T223702Z_31> <http://example.org/stkg/time> "2026-02-05T22:37:02Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<http://example.org/stkg/id/obs_pos_T-62_20260205T223702Z_31> <http://www.w3.org/2003/01/geo/wgs84_pos#lat> "35"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<http://example.org/stkg/id/obs_pos_T-62_20260205T223702Z_31> <http://www.w3.org/2003/01/geo/wgs84_pos#long> "130.0027218"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<http://example.org/stkg/id/obs_pos_T-62_20260205T223702Z_31> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/Observation> .
+<http://example.org/stkg/id/obs_pos_T-62_20260205T223702Z_31> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/PositionObservation> .
+
+<http://example.org/stkg/id/obs_pos_T-72_20260205T223702Z_31> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/PositionObservation> .
+<http://example.org/stkg/id/obs_pos_T-72_20260205T223702Z_31> <http://example.org/stkg/observedEntity> <http://example.org/stkg/id/platform_T-72> .
+<http://example.org/stkg/id/obs_pos_T-72_20260205T223702Z_31> <http://example.org/stkg/time> "2026-02-05T22:37:02Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<http://example.org/stkg/id/obs_pos_T-72_20260205T223702Z_31> <http://www.w3.org/2003/01/geo/wgs84_pos#lat> "35.0001082"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<http://example.org/stkg/id/obs_pos_T-72_20260205T223702Z_31> <http://www.w3.org/2003/01/geo/wgs84_pos#long> "130.00313007"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<http://example.org/stkg/id/obs_pos_T-72_20260205T223702Z_31> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/Observation> .
+<http://example.org/stkg/id/obs_pos_T-72_20260205T223702Z_31> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/PositionObservation> .
+
+<http://example.org/stkg/id/obs_rel_T-72_BTR-80_20260205T224345Z_434_b_c> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/SpatialRelationObservation> .
+<http://example.org/stkg/id/obs_rel_T-72_BTR-80_20260205T224345Z_434_b_c> <http://example.org/stkg/subjectEntity> <http://example.org/stkg/id/platform_T-72> .
+<http://example.org/stkg/id/obs_rel_T-72_BTR-80_20260205T224345Z_434_b_c> <http://example.org/stkg/objectEntity> <http://example.org/stkg/id/platform_BTR-80> .
+<http://example.org/stkg/id/obs_rel_T-72_BTR-80_20260205T224345Z_434_b_c> <http://example.org/stkg/relationType> <http://example.org/stkg/id/relation_collision_with> .
+<http://example.org/stkg/id/obs_rel_T-72_BTR-80_20260205T224345Z_434_b_c> <http://example.org/stkg/time> "2026-02-05T22:43:45Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<http://example.org/stkg/id/obs_rel_T-72_BTR-80_20260205T224345Z_434_b_c> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/Observation> .
+<http://example.org/stkg/id/obs_rel_T-72_BTR-80_20260205T224345Z_434_b_c> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/SpatialRelationObservation> .
+
+<http://example.org/stkg/id/obs_pos_T-62_20260205T223703Z_32> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/PositionObservation> .
+<http://example.org/stkg/id/obs_pos_T-62_20260205T223703Z_32> <http://example.org/stkg/observedEntity> <http://example.org/stkg/id/platform_T-62> .
+<http://example.org/stkg/id/obs_pos_T-62_20260205T223703Z_32> <http://example.org/stkg/time> "2026-02-05T22:37:03Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<http://example.org/stkg/id/obs_pos_T-62_20260205T223703Z_32> <http://www.w3.org/2003/01/geo/wgs84_pos#lat> "35"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<http://example.org/stkg/id/obs_pos_T-62_20260205T223703Z_32> <http://www.w3.org/2003/01/geo/wgs84_pos#long> "130.0028096"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<http://example.org/stkg/id/obs_pos_T-62_20260205T223703Z_32> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/Observation> .
+<http://example.org/stkg/id/obs_pos_T-62_20260205T223703Z_32> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/PositionObservation> .
+
+<http://example.org/stkg/id/obs_rel_BTR-80_T-72_20260205T224438Z_487_c_b> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/SpatialRelationObservation> .
+<http://example.org/stkg/id/obs_rel_BTR-80_T-72_20260205T224438Z_487_c_b> <http://example.org/stkg/subjectEntity> <http://example.org/stkg/id/platform_BTR-80> .
+<http://example.org/stkg/id/obs_rel_BTR-80_T-72_20260205T224438Z_487_c_b> <http://example.org/stkg/objectEntity> <http://example.org/stkg/id/platform_T-72> .
+<http://example.org/stkg/id/obs_rel_BTR-80_T-72_20260205T224438Z_487_c_b> <http://example.org/stkg/relationType> <http://example.org/stkg/id/relation_collision_with> .
+<http://example.org/stkg/id/obs_rel_BTR-80_T-72_20260205T224438Z_487_c_b> <http://example.org/stkg/time> "2026-02-05T22:44:38Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<http://example.org/stkg/id/obs_rel_BTR-80_T-72_20260205T224438Z_487_c_b> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/Observation> .
+<http://example.org/stkg/id/obs_rel_BTR-80_T-72_20260205T224438Z_487_c_b> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/SpatialRelationObservation> .
+
+<http://example.org/stkg/id/obs_pos_T-62_20260205T223840Z_129> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/PositionObservation> .
+<http://example.org/stkg/id/obs_pos_T-62_20260205T223840Z_129> <http://example.org/stkg/observedEntity> <http://example.org/stkg/id/platform_T-62> .
+<http://example.org/stkg/id/obs_pos_T-62_20260205T223840Z_129> <http://example.org/stkg/time> "2026-02-05T22:38:40Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<http://example.org/stkg/id/obs_pos_T-62_20260205T223840Z_129> <http://www.w3.org/2003/01/geo/wgs84_pos#lat> "35"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<http://example.org/stkg/id/obs_pos_T-62_20260205T223840Z_129> <http://www.w3.org/2003/01/geo/wgs84_pos#long> "130.0113262"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<http://example.org/stkg/id/obs_pos_T-62_20260205T223840Z_129> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/Observation> .
+<http://example.org/stkg/id/obs_pos_T-62_20260205T223840Z_129> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/PositionObservation> .
+
+<http://example.org/stkg/id/obs_rel_BTR-80_T-72_20260205T224341Z_430_c_b> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/SpatialRelationObservation> .
+<http://example.org/stkg/id/obs_rel_BTR-80_T-72_20260205T224341Z_430_c_b> <http://example.org/stkg/subjectEntity> <http://example.org/stkg/id/platform_BTR-80> .
+<http://example.org/stkg/id/obs_rel_BTR-80_T-72_20260205T224341Z_430_c_b> <http://example.org/stkg/objectEntity> <http://example.org/stkg/id/platform_T-72> .
+<http://example.org/stkg/id/obs_rel_BTR-80_T-72_20260205T224341Z_430_c_b> <http://example.org/stkg/relationType> <http://example.org/stkg/id/relation_collision_with> .
+<http://example.org/stkg/id/obs_rel_BTR-80_T-72_20260205T224341Z_430_c_b> <http://example.org/stkg/time> "2026-02-05T22:43:41Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<http://example.org/stkg/id/obs_rel_BTR-80_T-72_20260205T224341Z_430_c_b> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/Observation> .
+<http://example.org/stkg/id/obs_rel_BTR-80_T-72_20260205T224341Z_430_c_b> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/stkg/id/SpatialRelationObservation> .
+
