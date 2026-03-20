@@ -25,3 +25,19 @@
     입력 csv 파일과 결과 출력 폴더 설정
 
     명령어 : make.bat
+
+5. KG 병합 방법
+
+    KG 생성 때 저장한 출력 폴더의 final-stkg.ttl 파일의 경로를 merge_test_7.py의 아래 사진과 같은 경로에 삽입
+
+    이 때, 병합 KG 출력 경로와 seed 매칭 쌍을 저장할 경로도 함께 지정
+
+    ![alt text](images/image2.png)
+
+    명령어 : python merge_test_7.py
+
+6. 결과
+
+    https://www.notion.so/325de7c5378c80c6be0ac643f5f00576?source=copy_link#329de7c5378c80bfb31cf35c49245fd5
+
+    위 노션 페이지 참고

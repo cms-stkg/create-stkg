@@ -1,0 +1,3 @@
+http://example.org/stkg/Platform	rdfs:subClassOf	http://example.org/stkg/Entity
+http://example.org/stkg/PositionObservation	rdfs:subClassOf	http://example.org/stkg/Observation
+http://example.org/stkg/SpatialRelationObservation	rdfs:subClassOf	http://example.org/stkg/Observation
