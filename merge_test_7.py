@@ -11,10 +11,10 @@ from rdflib.namespace import RDF, XSD, OWL
 # =========================
 # 설정
 # =========================
-KG1_FILE = "C:\\Users\\foxes\\LYS\\cybermarine\\STKG\\create-stkg\\yago-data6\\KG1\\stkg-final.ttl"
-KG2_FILE = "C:\\Users\\foxes\\LYS\\cybermarine\\STKG\\create-stkg\\yago-data6\\KG2_e2_\\stkg-final.ttl"
-OUT_FILE = "C:\\Users\\foxes\\LYS\\cybermarine\\STKG\\create-stkg\\yago-data6\\output\\merge_.ttl"
-MATCHED_POSITION_PAIR_CSV = "C:\\Users\\foxes\\LYS\\cybermarine\\STKG\\create-stkg\\yago-data6\\output\\merged_position_pairs_.csv"
+KG1_FILE = "C:\\Users\\foxes\\LYS\\cybermarine\\STKG\\create-stkg\\yago-data9\\KG1\\stkg-final.ttl"
+KG2_FILE = "C:\\Users\\foxes\\LYS\\cybermarine\\STKG\\create-stkg\\yago-data9\\KG2\\stkg-final.ttl"
+OUT_FILE = "C:\\Users\\foxes\\LYS\\cybermarine\\STKG\\create-stkg\\yago-data9\\output\\merge.ttl"
+MATCHED_POSITION_PAIR_CSV = "C:\\Users\\foxes\\LYS\\cybermarine\\STKG\\create-stkg\\yago-data9\\output\\merged_position_pairs_.csv"
 
 # 센서 오차 허용 범위
 # 0 -> 더 엄격(약 0.5m 수준), 1 -> 약 1m 수준
@@ -30,8 +30,11 @@ LONG_TOL = (8.78e-5 / 8) / sensorErrorTol[SENSOR_ERROR_TOLERANCE]
 STKG = Namespace("http://example.org/stkg/")
 GEO = Namespace("http://www.w3.org/2003/01/geo/wgs84_pos#")
 
-POSITION_OBS = URIRef("http://example.org/stkg/id/PositionObservation")
-RELATION_OBS = URIRef("http://example.org/stkg/id/SpatialRelationObservation")
+# POSITION_OBS = URIRef("http://example.org/stkg/id/PositionObservation")
+# RELATION_OBS = URIRef("http://example.org/stkg/id/SpatialRelationObservation")
+
+POSITION_OBS = STKG.PositionObservation
+RELATION_OBS = STKG.SpatialRelationObservation
 
 # 관계 observation 내부 속성 후보
 RELATION_VALUE_PROPS = [
@@ -482,10 +485,11 @@ def choose_component_representative(members):
     return URIRef(sorted(set(original_candidates), key=sort_key)[0])
 
 
-def build_entity_alignment_map_from_matches(position_records, matched_pairs, min_evidence=1):
+def build_entity_alignment_map_from_matches(position_records, matched_pairs, min_evidence=3):
     """
     시공간 매칭된 position pair를 evidence로 사용해서
     전역 엔티티 정렬 맵 생성
+    min_evidence 값 만큼 반복 매칭 되면 동일 엔티티로 간주
     """
     all_entities = set()
     for rec in position_records:

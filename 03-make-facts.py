@@ -24,10 +24,11 @@ Output:
 
 Algorithm:
 1) Read CSV rows
-2) Detect object slots, coordinates, and relation columns
+2) Detect object slots, coordinates, relation columns, unary predicate columns
 3) Create PositionObservation facts
-4) Create SpatialRelationObservation facts
-5) Write all facts as TSV triples
+4) Attach unary predicates/states to PositionObservation if present
+5) Create SpatialRelationObservation facts
+6) Write all facts as TSV triples
 """
 
 import argparse
@@ -61,6 +62,12 @@ _TIME_PATTERNS = [
 _SLOT_RE = re.compile(r"^BF_object_([A-Za-z0-9]+)$")
 _REL_RE_1 = re.compile(r"^([A-Za-z0-9]+)\-([A-Za-z0-9]+)$")
 _REL_RE_2 = re.compile(r"^([A-Za-z0-9]+)\-([A-Za-z0-9]+)\s*relation$", re.I)
+
+# relA, relB, relC / state1 / predicate1 / status1 같은 unary predicate 컬럼 탐지
+_UNARY_PRED_COL_RE = re.compile(
+    r"^(rel[A-Za-z0-9_]*|state[A-Za-z0-9_]*|predicate[A-Za-z0-9_]*|status[A-Za-z0-9_]*)$",
+    re.I,
+)
 
 
 def parse_time(timestr: str) -> datetime:
@@ -146,8 +153,6 @@ def normalize_relation(raw: str, rel_map: Dict[str, str]) -> str:
     hit = rel_map.get(r.lower())
     if hit:
         return hit
-    # KG 생성 단계에서는 의미 정규화를 하지 않고
-    # 입력 표현 자체만 URI-safe 토큰으로 변환
     return normalize_rel_fallback(r)
 
 
@@ -190,6 +195,31 @@ def detect_relation_cols(fieldnames: List[str]) -> List[Tuple[str, str, str]]:
         if m2:
             out.append((h, m2.group(1), m2.group(2)))
             continue
+    return out
+
+
+def detect_unary_predicate_cols(fieldnames: List[str]) -> List[str]:
+    """
+    relA, relB, relC / state1 / predicate1 / status1 같은 컬럼을 탐지한다.
+    단, A-B / A-B relation 같은 binary relation 컬럼은 제외한다.
+    """
+    binary_rel_cols = {h for h, _, _ in detect_relation_cols(fieldnames)}
+    out: List[str] = []
+
+    for h in fieldnames:
+        if h in binary_rel_cols:
+            continue
+        if h == "time":
+            continue
+        if _SLOT_RE.match(h):
+            continue
+        if h.startswith("lat_") or h.startswith("latitude_"):
+            continue
+        if h.startswith("long_") or h.startswith("longitude_") or h.startswith("lon_"):
+            continue
+        if _UNARY_PRED_COL_RE.match(h):
+            out.append(h)
+
     return out
 
 
@@ -244,6 +274,29 @@ def dedupe_preserve_order(facts: Iterable[Tuple[str, str, str]]) -> List[Tuple[s
     return out
 
 
+def dedupe_strings_preserve_order(values: Iterable[str]) -> List[str]:
+    seen: Set[str] = set()
+    out: List[str] = []
+    for v in values:
+        if v not in seen:
+            seen.add(v)
+            out.append(v)
+    return out
+
+
+def split_unary_predicate_values(raw: str) -> List[str]:
+    """
+    하나의 셀에 여러 상태가 들어오는 경우를 대비.
+    기본적으로 ; 또는 | 로 분리.
+    공백은 상태 내부("taking cover")에 쓰이므로 separator로 쓰지 않는다.
+    """
+    s = (raw or "").strip()
+    if not s:
+        return []
+    parts = re.split(r"[;|]+", s)
+    return [p.strip() for p in parts if p.strip()]
+
+
 def csv_to_facts(inp_path: str, rel_map: Dict[str, str]) -> List[Tuple[str, str, str]]:
     all_facts: List[Tuple[str, str, str]] = []
 
@@ -261,6 +314,7 @@ def csv_to_facts(inp_path: str, rel_map: Dict[str, str]) -> List[Tuple[str, str,
 
         slots = detect_slots(fieldnames)
         rel_cols = detect_relation_cols(fieldnames)
+        unary_pred_cols = detect_unary_predicate_cols(fieldnames)
         src_basename = os.path.basename(inp_path)
 
         for row_idx, row in enumerate(reader, start=1):
@@ -271,7 +325,12 @@ def csv_to_facts(inp_path: str, rel_map: Dict[str, str]) -> List[Tuple[str, str,
             t_key = time_to_key(dt)
             time_lit = typed_literal(iso_z, XSD_DATETIME)
 
-            # PositionObservation facts
+            # -------------------------------------------------
+            # 먼저 row 안의 position candidates를 수집
+            # -------------------------------------------------
+            pos_candidates: List[Tuple[str, str, str, str]] = []
+            # (slot, obj_id, lat_lex, lon_lex)
+
             for slot in slots:
                 obj_id = (row.get(f"BF_object_{slot}") or "").strip()
                 if not obj_id:
@@ -286,12 +345,44 @@ def csv_to_facts(inp_path: str, rel_map: Dict[str, str]) -> List[Tuple[str, str,
                 if lat_lex is None or lon_lex is None:
                     continue
 
+                pos_candidates.append((slot, obj_id, lat_lex, lon_lex))
+
+            # -------------------------------------------------
+            # unary predicate(relA, relB, relC 등)를 어느 PositionObservation에 붙일지 결정
+            # - 기본: row 내 position candidate가 1개면 그 엔티티에 붙임
+            # - 여러 개면 모호하므로 붙이지 않음
+            # -------------------------------------------------
+            unary_target_slots: Set[str] = set()
+            if len(pos_candidates) == 1 and unary_pred_cols:
+                unary_target_slots.add(pos_candidates[0][0])
+
+            unary_pred_tokens: List[str] = []
+            if unary_target_slots:
+                raw_values: List[str] = []
+                for col in unary_pred_cols:
+                    cell = (row.get(col) or "").strip()
+                    if not cell:
+                        continue
+                    raw_values.extend(split_unary_predicate_values(cell))
+
+                unary_pred_tokens = dedupe_strings_preserve_order(
+                    [
+                        normalize_relation(v, rel_map)
+                        for v in raw_values
+                        if normalize_relation(v, rel_map)
+                    ]
+                )
+
+            # -------------------------------------------------
+            # PositionObservation facts
+            # -------------------------------------------------
+            for slot, obj_id, lat_lex, lon_lex in pos_candidates:
                 platform = uri(f"platform/{obj_id}")
                 obs = uri(f"obs/pos/{obj_id}/{t_key}/{row_idx}")
                 src_file = typed_literal(src_basename, XSD_STRING)
                 src_row = integer_literal(row_idx)
 
-                all_facts.extend([
+                row_facts = [
                     fact(platform, RDF_TYPE, uri("Platform")),
                     fact(obs, RDF_TYPE, uri("PositionObservation")),
                     fact(obs, uri("observedEntity"), platform),
@@ -300,9 +391,21 @@ def csv_to_facts(inp_path: str, rel_map: Dict[str, str]) -> List[Tuple[str, str,
                     fact(obs, GEO_LONG, typed_literal(lon_lex, XSD_DECIMAL)),
                     fact(obs, uri("sourceFile"), src_file),
                     fact(obs, uri("sourceRow"), src_row),
-                ])
+                ]
 
-            # SpatialRelationObservation facts
+                # unary predicate를 PositionObservation에 부착
+                # 예: moving, not scouting, not taking cover
+                if slot in unary_target_slots:
+                    for pred_token in unary_pred_tokens:
+                        row_facts.append(
+                            fact(obs, uri("hasPredicate"), rel_uri(pred_token))
+                        )
+
+                all_facts.extend(row_facts)
+
+            # -------------------------------------------------
+            # SpatialRelationObservation facts (기존 binary relation)
+            # -------------------------------------------------
             for col_name, sub_slot, obj_slot in rel_cols:
                 rel_raw = (row.get(col_name) or "").strip()
                 if not rel_raw:
@@ -400,8 +503,6 @@ def main() -> None:
         os.makedirs(args.outdir, exist_ok=True)
         output_paths = [os.path.join(args.outdir, out_name_for_csv(p)) for p in input_paths]
 
-    # KG 생성 단계에서는 의미 정규화를 하지 않으므로
-    # 기본 동의어 맵은 사용하지 않고, 사용자가 relation_map을 준 경우에만 적용
     rel_map: Dict[str, str] = {}
     if args.relation_map and os.path.exists(args.relation_map):
         rel_map.update(load_relation_map_tsv(args.relation_map))

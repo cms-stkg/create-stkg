@@ -1,0 +1,45 @@
+STKG statistics
+
+Dump size: 0.3175 MB
+
+Total number of resources: 301
+  Platforms: 1
+  Observations: 300
+    PositionObservations: 300
+    SpatialRelationObservations: 0
+
+Total number of classes: 5
+
+Total number of predicates: 11
+Total number of facts: 1501
+Total number of meta facts: 600
+
+Avg number of classes per resource: 2.0000
+Avg number of facts per resource: 4.9867
+Avg number of facts per observation: 4.0000
+
+STKG-specific predicate counts:
+  time: 300
+  relationType: 0
+  hasPredicate: 0
+  geo facts (lat+long): 600
+
+Predicate counts:
+  http://www.w3.org/1999/02/22-rdf-syntax-ns#type: 301
+  http://example.org/stkg/observedEntity: 300
+  http://example.org/stkg/time: 300
+  http://www.w3.org/2003/01/geo/wgs84_pos#lat: 300
+  http://www.w3.org/2003/01/geo/wgs84_pos#long: 300
+  http://example.org/stkg/hasPredicate: 0
+  http://example.org/stkg/objectEntity: 0
+  http://example.org/stkg/relationType: 0
+  http://example.org/stkg/sourceFile: 0
+  http://example.org/stkg/sourceRow: 0
+  http://example.org/stkg/subjectEntity: 0
+
+Class counts:
+  http://example.org/stkg/Observation: 300
+  http://example.org/stkg/PositionObservation: 300
+  http://example.org/stkg/Entity: 1
+  http://example.org/stkg/Platform: 1
+  http://example.org/stkg/SpatialRelationObservation: 0

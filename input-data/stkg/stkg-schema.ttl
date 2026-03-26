@@ -64,3 +64,7 @@ geo:long a rdf:Property ;
   rdfs:domain stkg:PositionObservation ;
   rdfs:range xsd:decimal ;
   rdfs:label "longitude"@en .
+
+stkg:hasPredicate a rdf:Property ;
+    rdfs:domain stkg:PositionObservation ;
+    rdfs:range rdfs:Resource .

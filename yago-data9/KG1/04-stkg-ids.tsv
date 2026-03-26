@@ -401,3 +401,7 @@ http://example.org/stkg/obs/pos/BTR-80/20260205T224309Z/398	http://www.w3.org/20
 http://example.org/stkg/obs/pos/BTR-80/20260205T224310Z/399	http://www.w3.org/2002/07/owl#sameAs	http://example.org/stkg/id/obs_pos_BTR-80_20260205T224310Z_399
 http://example.org/stkg/obs/pos/BTR-80/20260205T224311Z/400	http://www.w3.org/2002/07/owl#sameAs	http://example.org/stkg/id/obs_pos_BTR-80_20260205T224311Z_400
 http://example.org/stkg/platform/BTR-80	http://www.w3.org/2002/07/owl#sameAs	http://example.org/stkg/id/platform_BTR-80
+http://example.org/stkg/relation/moving	http://www.w3.org/2002/07/owl#sameAs	http://example.org/stkg/id/relation_moving
+http://example.org/stkg/relation/not_scouting	http://www.w3.org/2002/07/owl#sameAs	http://example.org/stkg/id/relation_not_scouting
+http://example.org/stkg/relation/not_taking_cover	http://www.w3.org/2002/07/owl#sameAs	http://example.org/stkg/id/relation_not_taking_cover
+http://example.org/stkg/relation/scouting	http://www.w3.org/2002/07/owl#sameAs	http://example.org/stkg/id/relation_scouting

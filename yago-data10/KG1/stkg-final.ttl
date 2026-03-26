@@ -1,0 +1,2475 @@
+@prefix geo1: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix stkg: <http://example.org/stkg/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+stkg:Entity a rdfs:Class ;
+    rdfs:label "Entity"@en .
+
+stkg:Observation a rdfs:Class ;
+    rdfs:label "Observation"@en .
+
+stkg:Platform a rdfs:Class ;
+    rdfs:label "Platform"@en ;
+    rdfs:subClassOf stkg:Entity .
+
+stkg:PositionObservation a rdfs:Class ;
+    rdfs:label "Position Observation"@en ;
+    rdfs:subClassOf stkg:Observation .
+
+stkg:SpatialRelationObservation a rdfs:Class ;
+    rdfs:label "Spatial Relation Observation"@en ;
+    rdfs:subClassOf stkg:Observation .
+
+stkg:hasPredicate a rdf:Property ;
+    rdfs:domain stkg:PositionObservation ;
+    rdfs:range rdfs:Resource .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223632Z_1> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 1 ;
+    stkg:time "2026-02-05T22:36:32+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223633Z_2> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 2 ;
+    stkg:time "2026-02-05T22:36:33+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223634Z_3> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 3 ;
+    stkg:time "2026-02-05T22:36:34+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223635Z_4> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 4 ;
+    stkg:time "2026-02-05T22:36:35+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223636Z_5> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 5 ;
+    stkg:time "2026-02-05T22:36:36+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223637Z_6> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 6 ;
+    stkg:time "2026-02-05T22:36:37+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223638Z_7> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 7 ;
+    stkg:time "2026-02-05T22:36:38+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223639Z_8> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 8 ;
+    stkg:time "2026-02-05T22:36:39+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223640Z_9> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 9 ;
+    stkg:time "2026-02-05T22:36:40+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223641Z_10> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 10 ;
+    stkg:time "2026-02-05T22:36:41+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223642Z_11> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 11 ;
+    stkg:time "2026-02-05T22:36:42+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223643Z_12> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 12 ;
+    stkg:time "2026-02-05T22:36:43+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223644Z_13> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 13 ;
+    stkg:time "2026-02-05T22:36:44+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223645Z_14> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 14 ;
+    stkg:time "2026-02-05T22:36:45+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223646Z_15> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 15 ;
+    stkg:time "2026-02-05T22:36:46+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223647Z_16> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 16 ;
+    stkg:time "2026-02-05T22:36:47+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223648Z_17> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 17 ;
+    stkg:time "2026-02-05T22:36:48+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223649Z_18> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 18 ;
+    stkg:time "2026-02-05T22:36:49+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223650Z_19> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 19 ;
+    stkg:time "2026-02-05T22:36:50+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223651Z_20> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 20 ;
+    stkg:time "2026-02-05T22:36:51+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223652Z_21> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 21 ;
+    stkg:time "2026-02-05T22:36:52+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223653Z_22> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 22 ;
+    stkg:time "2026-02-05T22:36:53+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223654Z_23> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 23 ;
+    stkg:time "2026-02-05T22:36:54+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223655Z_24> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 24 ;
+    stkg:time "2026-02-05T22:36:55+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223656Z_25> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 25 ;
+    stkg:time "2026-02-05T22:36:56+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223657Z_26> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 26 ;
+    stkg:time "2026-02-05T22:36:57+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223658Z_27> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 27 ;
+    stkg:time "2026-02-05T22:36:58+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223659Z_28> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 28 ;
+    stkg:time "2026-02-05T22:36:59+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223700Z_29> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 29 ;
+    stkg:time "2026-02-05T22:37:00+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223701Z_30> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 30 ;
+    stkg:time "2026-02-05T22:37:01+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223702Z_31> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 31 ;
+    stkg:time "2026-02-05T22:37:02+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223703Z_32> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 32 ;
+    stkg:time "2026-02-05T22:37:03+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223704Z_33> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 33 ;
+    stkg:time "2026-02-05T22:37:04+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223705Z_34> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 34 ;
+    stkg:time "2026-02-05T22:37:05+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223706Z_35> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 35 ;
+    stkg:time "2026-02-05T22:37:06+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223707Z_36> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 36 ;
+    stkg:time "2026-02-05T22:37:07+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223708Z_37> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 37 ;
+    stkg:time "2026-02-05T22:37:08+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223709Z_38> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 38 ;
+    stkg:time "2026-02-05T22:37:09+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223710Z_39> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 39 ;
+    stkg:time "2026-02-05T22:37:10+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223711Z_40> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 40 ;
+    stkg:time "2026-02-05T22:37:11+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223712Z_41> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 41 ;
+    stkg:time "2026-02-05T22:37:12+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223713Z_42> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 42 ;
+    stkg:time "2026-02-05T22:37:13+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223714Z_43> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 43 ;
+    stkg:time "2026-02-05T22:37:14+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223715Z_44> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 44 ;
+    stkg:time "2026-02-05T22:37:15+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223716Z_45> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 45 ;
+    stkg:time "2026-02-05T22:37:16+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223717Z_46> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 46 ;
+    stkg:time "2026-02-05T22:37:17+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223718Z_47> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 47 ;
+    stkg:time "2026-02-05T22:37:18+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223719Z_48> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 48 ;
+    stkg:time "2026-02-05T22:37:19+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223720Z_49> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 49 ;
+    stkg:time "2026-02-05T22:37:20+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223721Z_50> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 50 ;
+    stkg:time "2026-02-05T22:37:21+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223722Z_51> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 51 ;
+    stkg:time "2026-02-05T22:37:22+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223723Z_52> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 52 ;
+    stkg:time "2026-02-05T22:37:23+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223724Z_53> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 53 ;
+    stkg:time "2026-02-05T22:37:24+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223725Z_54> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 54 ;
+    stkg:time "2026-02-05T22:37:25+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223726Z_55> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 55 ;
+    stkg:time "2026-02-05T22:37:26+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223727Z_56> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 56 ;
+    stkg:time "2026-02-05T22:37:27+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223728Z_57> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 57 ;
+    stkg:time "2026-02-05T22:37:28+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223729Z_58> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 58 ;
+    stkg:time "2026-02-05T22:37:29+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223730Z_59> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 59 ;
+    stkg:time "2026-02-05T22:37:30+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223731Z_60> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 60 ;
+    stkg:time "2026-02-05T22:37:31+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223732Z_61> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 61 ;
+    stkg:time "2026-02-05T22:37:32+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223733Z_62> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 62 ;
+    stkg:time "2026-02-05T22:37:33+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223734Z_63> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 63 ;
+    stkg:time "2026-02-05T22:37:34+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223735Z_64> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 64 ;
+    stkg:time "2026-02-05T22:37:35+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223736Z_65> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 65 ;
+    stkg:time "2026-02-05T22:37:36+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223737Z_66> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 66 ;
+    stkg:time "2026-02-05T22:37:37+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223738Z_67> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 67 ;
+    stkg:time "2026-02-05T22:37:38+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223739Z_68> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 68 ;
+    stkg:time "2026-02-05T22:37:39+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223740Z_69> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 69 ;
+    stkg:time "2026-02-05T22:37:40+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223741Z_70> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 70 ;
+    stkg:time "2026-02-05T22:37:41+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223742Z_71> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 71 ;
+    stkg:time "2026-02-05T22:37:42+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223743Z_72> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 72 ;
+    stkg:time "2026-02-05T22:37:43+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223744Z_73> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 73 ;
+    stkg:time "2026-02-05T22:37:44+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223745Z_74> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 74 ;
+    stkg:time "2026-02-05T22:37:45+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223746Z_75> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 75 ;
+    stkg:time "2026-02-05T22:37:46+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223747Z_76> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 76 ;
+    stkg:time "2026-02-05T22:37:47+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223748Z_77> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 77 ;
+    stkg:time "2026-02-05T22:37:48+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223749Z_78> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 78 ;
+    stkg:time "2026-02-05T22:37:49+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223750Z_79> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 79 ;
+    stkg:time "2026-02-05T22:37:50+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223751Z_80> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 80 ;
+    stkg:time "2026-02-05T22:37:51+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223752Z_81> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 81 ;
+    stkg:time "2026-02-05T22:37:52+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223753Z_82> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 82 ;
+    stkg:time "2026-02-05T22:37:53+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223754Z_83> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 83 ;
+    stkg:time "2026-02-05T22:37:54+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223755Z_84> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 84 ;
+    stkg:time "2026-02-05T22:37:55+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223756Z_85> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 85 ;
+    stkg:time "2026-02-05T22:37:56+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223757Z_86> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 86 ;
+    stkg:time "2026-02-05T22:37:57+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223758Z_87> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 87 ;
+    stkg:time "2026-02-05T22:37:58+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223759Z_88> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 88 ;
+    stkg:time "2026-02-05T22:37:59+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223800Z_89> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 89 ;
+    stkg:time "2026-02-05T22:38:00+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223801Z_90> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 90 ;
+    stkg:time "2026-02-05T22:38:01+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223802Z_91> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 91 ;
+    stkg:time "2026-02-05T22:38:02+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223803Z_92> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 92 ;
+    stkg:time "2026-02-05T22:38:03+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223804Z_93> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 93 ;
+    stkg:time "2026-02-05T22:38:04+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223805Z_94> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 94 ;
+    stkg:time "2026-02-05T22:38:05+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223806Z_95> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 95 ;
+    stkg:time "2026-02-05T22:38:06+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223807Z_96> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 96 ;
+    stkg:time "2026-02-05T22:38:07+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223808Z_97> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 97 ;
+    stkg:time "2026-02-05T22:38:08+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223809Z_98> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 98 ;
+    stkg:time "2026-02-05T22:38:09+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223810Z_99> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 99 ;
+    stkg:time "2026-02-05T22:38:10+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223811Z_100> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 100 ;
+    stkg:time "2026-02-05T22:38:11+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223812Z_101> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 101 ;
+    stkg:time "2026-02-05T22:38:12+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223813Z_102> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 102 ;
+    stkg:time "2026-02-05T22:38:13+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223814Z_103> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 103 ;
+    stkg:time "2026-02-05T22:38:14+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223815Z_104> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 104 ;
+    stkg:time "2026-02-05T22:38:15+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223816Z_105> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 105 ;
+    stkg:time "2026-02-05T22:38:16+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223817Z_106> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 106 ;
+    stkg:time "2026-02-05T22:38:17+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223818Z_107> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 107 ;
+    stkg:time "2026-02-05T22:38:18+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223819Z_108> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 108 ;
+    stkg:time "2026-02-05T22:38:19+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223820Z_109> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 109 ;
+    stkg:time "2026-02-05T22:38:20+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223821Z_110> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 110 ;
+    stkg:time "2026-02-05T22:38:21+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223822Z_111> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 111 ;
+    stkg:time "2026-02-05T22:38:22+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223823Z_112> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 112 ;
+    stkg:time "2026-02-05T22:38:23+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223824Z_113> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 113 ;
+    stkg:time "2026-02-05T22:38:24+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223825Z_114> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 114 ;
+    stkg:time "2026-02-05T22:38:25+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223826Z_115> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 115 ;
+    stkg:time "2026-02-05T22:38:26+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223827Z_116> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 116 ;
+    stkg:time "2026-02-05T22:38:27+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223828Z_117> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 117 ;
+    stkg:time "2026-02-05T22:38:28+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223829Z_118> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 118 ;
+    stkg:time "2026-02-05T22:38:29+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223830Z_119> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 119 ;
+    stkg:time "2026-02-05T22:38:30+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223831Z_120> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 120 ;
+    stkg:time "2026-02-05T22:38:31+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223832Z_121> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 121 ;
+    stkg:time "2026-02-05T22:38:32+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223833Z_122> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 122 ;
+    stkg:time "2026-02-05T22:38:33+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223834Z_123> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 123 ;
+    stkg:time "2026-02-05T22:38:34+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223835Z_124> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 124 ;
+    stkg:time "2026-02-05T22:38:35+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223836Z_125> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 125 ;
+    stkg:time "2026-02-05T22:38:36+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223837Z_126> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 126 ;
+    stkg:time "2026-02-05T22:38:37+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223838Z_127> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 127 ;
+    stkg:time "2026-02-05T22:38:38+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223839Z_128> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 128 ;
+    stkg:time "2026-02-05T22:38:39+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223840Z_129> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 129 ;
+    stkg:time "2026-02-05T22:38:40+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223841Z_130> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 130 ;
+    stkg:time "2026-02-05T22:38:41+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223842Z_131> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 131 ;
+    stkg:time "2026-02-05T22:38:42+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223843Z_132> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 132 ;
+    stkg:time "2026-02-05T22:38:43+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223844Z_133> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 133 ;
+    stkg:time "2026-02-05T22:38:44+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223845Z_134> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 134 ;
+    stkg:time "2026-02-05T22:38:45+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223846Z_135> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 135 ;
+    stkg:time "2026-02-05T22:38:46+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223847Z_136> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 136 ;
+    stkg:time "2026-02-05T22:38:47+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223848Z_137> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 137 ;
+    stkg:time "2026-02-05T22:38:48+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223849Z_138> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 138 ;
+    stkg:time "2026-02-05T22:38:49+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223850Z_139> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 139 ;
+    stkg:time "2026-02-05T22:38:50+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223851Z_140> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 140 ;
+    stkg:time "2026-02-05T22:38:51+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223852Z_141> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 141 ;
+    stkg:time "2026-02-05T22:38:52+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223853Z_142> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 142 ;
+    stkg:time "2026-02-05T22:38:53+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223854Z_143> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 143 ;
+    stkg:time "2026-02-05T22:38:54+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223855Z_144> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 144 ;
+    stkg:time "2026-02-05T22:38:55+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223856Z_145> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 145 ;
+    stkg:time "2026-02-05T22:38:56+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223857Z_146> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 146 ;
+    stkg:time "2026-02-05T22:38:57+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223858Z_147> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 147 ;
+    stkg:time "2026-02-05T22:38:58+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223859Z_148> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 148 ;
+    stkg:time "2026-02-05T22:38:59+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223900Z_149> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 149 ;
+    stkg:time "2026-02-05T22:39:00+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223901Z_150> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 150 ;
+    stkg:time "2026-02-05T22:39:01+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223902Z_151> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 151 ;
+    stkg:time "2026-02-05T22:39:02+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223903Z_152> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 152 ;
+    stkg:time "2026-02-05T22:39:03+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223904Z_153> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 153 ;
+    stkg:time "2026-02-05T22:39:04+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223905Z_154> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 154 ;
+    stkg:time "2026-02-05T22:39:05+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223906Z_155> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 155 ;
+    stkg:time "2026-02-05T22:39:06+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223907Z_156> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 156 ;
+    stkg:time "2026-02-05T22:39:07+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223908Z_157> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 157 ;
+    stkg:time "2026-02-05T22:39:08+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223909Z_158> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 158 ;
+    stkg:time "2026-02-05T22:39:09+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223910Z_159> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 159 ;
+    stkg:time "2026-02-05T22:39:10+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223911Z_160> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 160 ;
+    stkg:time "2026-02-05T22:39:11+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223912Z_161> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 161 ;
+    stkg:time "2026-02-05T22:39:12+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223913Z_162> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 162 ;
+    stkg:time "2026-02-05T22:39:13+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223914Z_163> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 163 ;
+    stkg:time "2026-02-05T22:39:14+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223915Z_164> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 164 ;
+    stkg:time "2026-02-05T22:39:15+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223916Z_165> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 165 ;
+    stkg:time "2026-02-05T22:39:16+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223917Z_166> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 166 ;
+    stkg:time "2026-02-05T22:39:17+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223918Z_167> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 167 ;
+    stkg:time "2026-02-05T22:39:18+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223919Z_168> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 168 ;
+    stkg:time "2026-02-05T22:39:19+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223920Z_169> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 169 ;
+    stkg:time "2026-02-05T22:39:20+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223921Z_170> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 170 ;
+    stkg:time "2026-02-05T22:39:21+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223922Z_171> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 171 ;
+    stkg:time "2026-02-05T22:39:22+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223923Z_172> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 172 ;
+    stkg:time "2026-02-05T22:39:23+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223924Z_173> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 173 ;
+    stkg:time "2026-02-05T22:39:24+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223925Z_174> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 174 ;
+    stkg:time "2026-02-05T22:39:25+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223926Z_175> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 175 ;
+    stkg:time "2026-02-05T22:39:26+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223927Z_176> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 176 ;
+    stkg:time "2026-02-05T22:39:27+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223928Z_177> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 177 ;
+    stkg:time "2026-02-05T22:39:28+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223929Z_178> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 178 ;
+    stkg:time "2026-02-05T22:39:29+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223930Z_179> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 179 ;
+    stkg:time "2026-02-05T22:39:30+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223931Z_180> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 180 ;
+    stkg:time "2026-02-05T22:39:31+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223932Z_181> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 181 ;
+    stkg:time "2026-02-05T22:39:32+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223933Z_182> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 182 ;
+    stkg:time "2026-02-05T22:39:33+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223934Z_183> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 183 ;
+    stkg:time "2026-02-05T22:39:34+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223935Z_184> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 184 ;
+    stkg:time "2026-02-05T22:39:35+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223936Z_185> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 185 ;
+    stkg:time "2026-02-05T22:39:36+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223937Z_186> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 186 ;
+    stkg:time "2026-02-05T22:39:37+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223938Z_187> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 187 ;
+    stkg:time "2026-02-05T22:39:38+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223939Z_188> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 188 ;
+    stkg:time "2026-02-05T22:39:39+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223940Z_189> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 189 ;
+    stkg:time "2026-02-05T22:39:40+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223941Z_190> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 190 ;
+    stkg:time "2026-02-05T22:39:41+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223942Z_191> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 191 ;
+    stkg:time "2026-02-05T22:39:42+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223943Z_192> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 192 ;
+    stkg:time "2026-02-05T22:39:43+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223944Z_193> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 193 ;
+    stkg:time "2026-02-05T22:39:44+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223945Z_194> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 194 ;
+    stkg:time "2026-02-05T22:39:45+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223946Z_195> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 195 ;
+    stkg:time "2026-02-05T22:39:46+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223947Z_196> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 196 ;
+    stkg:time "2026-02-05T22:39:47+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223948Z_197> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 197 ;
+    stkg:time "2026-02-05T22:39:48+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223949Z_198> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 198 ;
+    stkg:time "2026-02-05T22:39:49+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223950Z_199> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 199 ;
+    stkg:time "2026-02-05T22:39:50+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T223951Z_200> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 200 ;
+    stkg:time "2026-02-05T22:39:51+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.01756 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T224312Z_201> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 201 ;
+    stkg:time "2026-02-05T22:43:12+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.0352078 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T224313Z_202> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 202 ;
+    stkg:time "2026-02-05T22:43:13+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.0352956 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T224314Z_203> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 203 ;
+    stkg:time "2026-02-05T22:43:14+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.0353834 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T224315Z_204> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 204 ;
+    stkg:time "2026-02-05T22:43:15+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.0354712 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T224316Z_205> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 205 ;
+    stkg:time "2026-02-05T22:43:16+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.035559 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T224317Z_206> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 206 ;
+    stkg:time "2026-02-05T22:43:17+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.0356468 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T224318Z_207> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 207 ;
+    stkg:time "2026-02-05T22:43:18+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.0357346 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T224319Z_208> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 208 ;
+    stkg:time "2026-02-05T22:43:19+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.0358224 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T224320Z_209> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 209 ;
+    stkg:time "2026-02-05T22:43:20+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.0359102 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T224321Z_210> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 210 ;
+    stkg:time "2026-02-05T22:43:21+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.035998 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T224322Z_211> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 211 ;
+    stkg:time "2026-02-05T22:43:22+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.0360858 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T224323Z_212> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 212 ;
+    stkg:time "2026-02-05T22:43:23+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.0361736 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T224324Z_213> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 213 ;
+    stkg:time "2026-02-05T22:43:24+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.0362614 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T224325Z_214> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 214 ;
+    stkg:time "2026-02-05T22:43:25+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.0363492 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T224326Z_215> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 215 ;
+    stkg:time "2026-02-05T22:43:26+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.036437 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T224327Z_216> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 216 ;
+    stkg:time "2026-02-05T22:43:27+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.0365248 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T224328Z_217> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 217 ;
+    stkg:time "2026-02-05T22:43:28+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.0366126 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T224329Z_218> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 218 ;
+    stkg:time "2026-02-05T22:43:29+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.0367004 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T224330Z_219> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 219 ;
+    stkg:time "2026-02-05T22:43:30+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.0367882 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T224331Z_220> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 220 ;
+    stkg:time "2026-02-05T22:43:31+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.036876 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T224332Z_221> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 221 ;
+    stkg:time "2026-02-05T22:43:32+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.036876 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T224333Z_222> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 222 ;
+    stkg:time "2026-02-05T22:43:33+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.036876 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T224334Z_223> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 223 ;
+    stkg:time "2026-02-05T22:43:34+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.036876 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T224335Z_224> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 224 ;
+    stkg:time "2026-02-05T22:43:35+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.036876 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T224336Z_225> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 225 ;
+    stkg:time "2026-02-05T22:43:36+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.036876 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T224337Z_226> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 226 ;
+    stkg:time "2026-02-05T22:43:37+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.036876 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T224338Z_227> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 227 ;
+    stkg:time "2026-02-05T22:43:38+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.036876 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T224339Z_228> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 228 ;
+    stkg:time "2026-02-05T22:43:39+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.036876 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T224340Z_229> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 229 ;
+    stkg:time "2026-02-05T22:43:40+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.036876 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T224341Z_230> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 230 ;
+    stkg:time "2026-02-05T22:43:41+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.036876 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T224342Z_231> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 231 ;
+    stkg:time "2026-02-05T22:43:42+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.036876 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T224343Z_232> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 232 ;
+    stkg:time "2026-02-05T22:43:43+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.036876 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T224344Z_233> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 233 ;
+    stkg:time "2026-02-05T22:43:44+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.036876 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T224345Z_234> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 234 ;
+    stkg:time "2026-02-05T22:43:45+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.036876 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T224346Z_235> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 235 ;
+    stkg:time "2026-02-05T22:43:46+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.036876 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T224347Z_236> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 236 ;
+    stkg:time "2026-02-05T22:43:47+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.036876 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T224348Z_237> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 237 ;
+    stkg:time "2026-02-05T22:43:48+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.036876 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T224349Z_238> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 238 ;
+    stkg:time "2026-02-05T22:43:49+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.036876 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T224350Z_239> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 239 ;
+    stkg:time "2026-02-05T22:43:50+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.036876 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T224351Z_240> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 240 ;
+    stkg:time "2026-02-05T22:43:51+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.036876 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T224352Z_241> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 241 ;
+    stkg:time "2026-02-05T22:43:52+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.036876 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T224353Z_242> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 242 ;
+    stkg:time "2026-02-05T22:43:53+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.036876 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T224354Z_243> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 243 ;
+    stkg:time "2026-02-05T22:43:54+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.036876 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T224355Z_244> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 244 ;
+    stkg:time "2026-02-05T22:43:55+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.036876 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T224356Z_245> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 245 ;
+    stkg:time "2026-02-05T22:43:56+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.036876 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T224357Z_246> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 246 ;
+    stkg:time "2026-02-05T22:43:57+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.036876 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T224358Z_247> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 247 ;
+    stkg:time "2026-02-05T22:43:58+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.036876 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T224359Z_248> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 248 ;
+    stkg:time "2026-02-05T22:43:59+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.036876 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T224400Z_249> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 249 ;
+    stkg:time "2026-02-05T22:44:00+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.036876 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T224401Z_250> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 250 ;
+    stkg:time "2026-02-05T22:44:01+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.036876 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T224402Z_251> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 251 ;
+    stkg:time "2026-02-05T22:44:02+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.036876 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T224403Z_252> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 252 ;
+    stkg:time "2026-02-05T22:44:03+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.036876 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T224404Z_253> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 253 ;
+    stkg:time "2026-02-05T22:44:04+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.036876 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T224405Z_254> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 254 ;
+    stkg:time "2026-02-05T22:44:05+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.036876 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T224406Z_255> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 255 ;
+    stkg:time "2026-02-05T22:44:06+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.036876 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T224407Z_256> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 256 ;
+    stkg:time "2026-02-05T22:44:07+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.036876 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T224408Z_257> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 257 ;
+    stkg:time "2026-02-05T22:44:08+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.036876 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T224409Z_258> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 258 ;
+    stkg:time "2026-02-05T22:44:09+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.036876 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T224410Z_259> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 259 ;
+    stkg:time "2026-02-05T22:44:10+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.036876 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T224411Z_260> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 260 ;
+    stkg:time "2026-02-05T22:44:11+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.036876 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T224412Z_261> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 261 ;
+    stkg:time "2026-02-05T22:44:12+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.036876 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T224413Z_262> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 262 ;
+    stkg:time "2026-02-05T22:44:13+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.036876 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T224414Z_263> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 263 ;
+    stkg:time "2026-02-05T22:44:14+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.036876 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T224415Z_264> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 264 ;
+    stkg:time "2026-02-05T22:44:15+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.036876 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T224416Z_265> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 265 ;
+    stkg:time "2026-02-05T22:44:16+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.036876 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T224417Z_266> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 266 ;
+    stkg:time "2026-02-05T22:44:17+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.036876 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T224418Z_267> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 267 ;
+    stkg:time "2026-02-05T22:44:18+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.036876 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T224419Z_268> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 268 ;
+    stkg:time "2026-02-05T22:44:19+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.036876 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T224420Z_269> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 269 ;
+    stkg:time "2026-02-05T22:44:20+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.036876 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T224421Z_270> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 270 ;
+    stkg:time "2026-02-05T22:44:21+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.036876 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T224422Z_271> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 271 ;
+    stkg:time "2026-02-05T22:44:22+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.036876 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T224423Z_272> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 272 ;
+    stkg:time "2026-02-05T22:44:23+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.036876 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T224424Z_273> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 273 ;
+    stkg:time "2026-02-05T22:44:24+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.036876 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T224425Z_274> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 274 ;
+    stkg:time "2026-02-05T22:44:25+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.036876 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T224426Z_275> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 275 ;
+    stkg:time "2026-02-05T22:44:26+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.036876 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T224427Z_276> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 276 ;
+    stkg:time "2026-02-05T22:44:27+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.036876 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T224428Z_277> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 277 ;
+    stkg:time "2026-02-05T22:44:28+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.036876 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T224429Z_278> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 278 ;
+    stkg:time "2026-02-05T22:44:29+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.036876 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T224430Z_279> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 279 ;
+    stkg:time "2026-02-05T22:44:30+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.036876 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T224431Z_280> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 280 ;
+    stkg:time "2026-02-05T22:44:31+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.036876 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T224432Z_281> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 281 ;
+    stkg:time "2026-02-05T22:44:32+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.036876 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T224433Z_282> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 282 ;
+    stkg:time "2026-02-05T22:44:33+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.036876 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T224434Z_283> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 283 ;
+    stkg:time "2026-02-05T22:44:34+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.036876 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T224435Z_284> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 284 ;
+    stkg:time "2026-02-05T22:44:35+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.036876 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T224436Z_285> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 285 ;
+    stkg:time "2026-02-05T22:44:36+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.036876 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T224437Z_286> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 286 ;
+    stkg:time "2026-02-05T22:44:37+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.036876 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T224438Z_287> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 287 ;
+    stkg:time "2026-02-05T22:44:38+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.036876 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T224439Z_288> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 288 ;
+    stkg:time "2026-02-05T22:44:39+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.036876 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T224440Z_289> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 289 ;
+    stkg:time "2026-02-05T22:44:40+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.036876 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T224441Z_290> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 290 ;
+    stkg:time "2026-02-05T22:44:41+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.036876 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T224442Z_291> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 291 ;
+    stkg:time "2026-02-05T22:44:42+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.036876 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T224443Z_292> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 292 ;
+    stkg:time "2026-02-05T22:44:43+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.036876 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T224444Z_293> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 293 ;
+    stkg:time "2026-02-05T22:44:44+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.036876 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T224445Z_294> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 294 ;
+    stkg:time "2026-02-05T22:44:45+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.036876 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T224446Z_295> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 295 ;
+    stkg:time "2026-02-05T22:44:46+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.036876 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T224447Z_296> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 296 ;
+    stkg:time "2026-02-05T22:44:47+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.036876 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T224448Z_297> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 297 ;
+    stkg:time "2026-02-05T22:44:48+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.036876 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T224449Z_298> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 298 ;
+    stkg:time "2026-02-05T22:44:49+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.036876 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T224450Z_299> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 299 ;
+    stkg:time "2026-02-05T22:44:50+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.036876 .
+
+<http://example.org/stkg/id/obs_pos_BTR-80_20260205T224451Z_300> a stkg:PositionObservation ;
+    stkg:observedEntity <http://example.org/stkg/id/platform_BTR-80> ;
+    stkg:sourceFile "KG1_1_200_and_401_500.csv"^^xsd:string ;
+    stkg:sourceRow 300 ;
+    stkg:time "2026-02-05T22:44:51+00:00"^^xsd:dateTime ;
+    geo1:lat 35.0001082 ;
+    geo1:long 130.036876 .
+
+stkg:objectEntity a rdf:Property ;
+    rdfs:label "object entity"@en ;
+    rdfs:domain stkg:SpatialRelationObservation ;
+    rdfs:range stkg:Platform .
+
+stkg:observedEntity a rdf:Property ;
+    rdfs:label "observed entity"@en ;
+    rdfs:domain stkg:PositionObservation ;
+    rdfs:range stkg:Platform .
+
+stkg:relationType a rdf:Property ;
+    rdfs:label "relation type"@en ;
+    rdfs:domain stkg:SpatialRelationObservation ;
+    rdfs:range rdfs:Resource .
+
+stkg:sourceFile a rdf:Property ;
+    rdfs:label "source file"@en ;
+    rdfs:domain stkg:Observation ;
+    rdfs:range xsd:string .
+
+stkg:sourceRow a rdf:Property ;
+    rdfs:label "source row index"@en ;
+    rdfs:domain stkg:Observation ;
+    rdfs:range xsd:integer .
+
+stkg:subjectEntity a rdf:Property ;
+    rdfs:label "subject entity"@en ;
+    rdfs:domain stkg:SpatialRelationObservation ;
+    rdfs:range stkg:Platform .
+
+stkg:time a rdf:Property ;
+    rdfs:label "time"@en ;
+    rdfs:domain stkg:Observation ;
+    rdfs:range xsd:dateTime .
+
+geo1:lat a rdf:Property ;
+    rdfs:label "latitude"@en ;
+    rdfs:domain stkg:PositionObservation ;
+    rdfs:range xsd:decimal .
+
+geo1:long a rdf:Property ;
+    rdfs:label "longitude"@en ;
+    rdfs:domain stkg:PositionObservation ;
+    rdfs:range xsd:decimal .
+
+<http://example.org/stkg/id/platform_BTR-80> a stkg:Platform .
+

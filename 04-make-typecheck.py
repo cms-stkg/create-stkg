@@ -47,10 +47,13 @@ GEO_LONG = "http://www.w3.org/2003/01/geo/wgs84_pos#long"
 
 RDF_TYPE = str(RDF.type)
 RDFS_SUBCLASS = str(RDFS.subClassOf)
+RDFS_RESOURCE = str(RDFS.Resource)
+
 XSD_DATETIME = str(XSD.dateTime)
 XSD_DECIMAL = str(XSD.decimal)
 XSD_INTEGER = str(XSD.integer)
 XSD_STRING = str(XSD.string)
+XSD_NS = "http://www.w3.org/2001/XMLSchema#"
 
 
 def ensure_inputs(schema_file, taxonomy_file, facts_file):
@@ -220,6 +223,28 @@ def provisional_id_uri(resource_uri: str) -> str:
     return STKG + "id/" + quote(token)
 
 
+def subject_matches_domain(s, p, property_domain, instances, taxonomy_up):
+    dom = property_domain.get(p)
+    if not dom:
+        return True
+    if dom == RDFS_RESOURCE:
+        return is_uri(s)
+    return instance_of(s, dom, instances, taxonomy_up)
+
+
+def object_matches_schema_range(kind, obj_val, obj_dt, rng, instances, taxonomy_up):
+    if not rng:
+        return False
+
+    if rng.startswith(XSD_NS):
+        return kind == "literal" and obj_dt == rng
+
+    if rng == RDFS_RESOURCE:
+        return kind == "uri"
+
+    return kind == "uri" and instance_of(obj_val, rng, instances, taxonomy_up)
+
+
 def validate_fact(s, p, o, property_domain, property_range, instances, taxonomy_up, schema_classes):
     """
     Returns True if the fact is valid under the STKG schema/taxonomy.
@@ -239,6 +264,11 @@ def validate_fact(s, p, o, property_domain, property_range, instances, taxonomy_
             return True
         return False
 
+    # schema domain 체크
+    if not subject_matches_domain(s, p, property_domain, instances, taxonomy_up):
+        return False
+
+    # STKG 핵심 속성별 체크
     if p == STKG + "observedEntity":
         return kind == "uri" and instance_of(obj_val, STKG + "Platform", instances, taxonomy_up)
 
@@ -249,7 +279,14 @@ def validate_fact(s, p, o, property_domain, property_range, instances, taxonomy_
         return kind == "uri" and instance_of(obj_val, STKG + "Platform", instances, taxonomy_up)
 
     if p == STKG + "relationType":
-        return kind == "uri"
+        return kind == "uri" and obj_val.startswith(STKGREL)
+
+    if p == STKG + "hasPredicate":
+        return (
+            kind == "uri"
+            and obj_val.startswith(STKGREL)
+            and instance_of(s, STKG + "PositionObservation", instances, taxonomy_up)
+        )
 
     if p == STKG + "time":
         return kind == "literal" and obj_dt == XSD_DATETIME
@@ -261,14 +298,12 @@ def validate_fact(s, p, o, property_domain, property_range, instances, taxonomy_
         return kind == "literal" and obj_dt == XSD_INTEGER and safe_int(obj_val)
 
     if p == STKG + "sourceFile":
-        return kind == "literal"
+        return kind == "literal" and (obj_dt is None or obj_dt == XSD_STRING)
 
+    # 일반 schema range 체크
     rng = property_range.get(p)
     if rng:
-        if rng.startswith("http://www.w3.org/2001/XMLSchema#"):
-            return kind == "literal" and obj_dt == rng
-        else:
-            return kind == "uri" and instance_of(obj_val, rng, instances, taxonomy_up)
+        return object_matches_schema_range(kind, obj_val, obj_dt, rng, instances, taxonomy_up)
 
     return False
 

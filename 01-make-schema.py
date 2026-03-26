@@ -70,6 +70,7 @@ def validate_required_terms(g: Graph):
         STKG.relationType,
         STKG.sourceFile,
         STKG.sourceRow,
+        STKG.hasPredicate,   # 추가
     ]
 
     missing = []

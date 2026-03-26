@@ -1,7 +1,7 @@
 @echo off
 
-set CSV=input-data\ver3.1\KG2_last_400_with_rel_edit.csv
-set OUTDIR=yago-data9\KG2
+set CSV=input-data\ver3.2\KG2_201_400.csv
+set OUTDIR=yago-data10\KG2
 
 echo Running STKG pipeline...
 

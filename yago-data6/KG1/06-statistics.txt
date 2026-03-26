@@ -1,6 +1,6 @@
 STKG statistics
 
-Dump size: 4.8318 MB
+Dump size: 4.8104 MB
 
 Total number of resources: 4503
   Platforms: 3
@@ -8,9 +8,9 @@ Total number of resources: 4503
     PositionObservations: 1500
     SpatialRelationObservations: 3000
 
-Total number of classes: 8
+Total number of classes: 5
 
-Total number of predicates: 10
+Total number of predicates: 11
 Total number of facts: 22503
 Total number of meta facts: 9000
 
@@ -21,6 +21,7 @@ Avg number of facts per observation: 4.0000
 STKG-specific predicate counts:
   time: 4500
   relationType: 3000
+  hasPredicate: 0
   geo facts (lat+long): 3000
 
 Predicate counts:
@@ -32,15 +33,13 @@ Predicate counts:
   http://example.org/stkg/observedEntity: 1500
   http://www.w3.org/2003/01/geo/wgs84_pos#lat: 1500
   http://www.w3.org/2003/01/geo/wgs84_pos#long: 1500
+  http://example.org/stkg/hasPredicate: 0
   http://example.org/stkg/sourceFile: 0
   http://example.org/stkg/sourceRow: 0
 
 Class counts:
   http://example.org/stkg/Observation: 4500
-  http://example.org/stkg/id/SpatialRelationObservation: 3000
-  http://example.org/stkg/id/PositionObservation: 1500
+  http://example.org/stkg/SpatialRelationObservation: 3000
+  http://example.org/stkg/PositionObservation: 1500
   http://example.org/stkg/Entity: 3
-  http://example.org/stkg/id/Platform: 3
-  http://example.org/stkg/Platform: 0
-  http://example.org/stkg/PositionObservation: 0
-  http://example.org/stkg/SpatialRelationObservation: 0
+  http://example.org/stkg/Platform: 3

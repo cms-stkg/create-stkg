@@ -19,6 +19,10 @@ stkg:PositionObservation a rdfs:Class ;
 stkg:SpatialRelationObservation a rdfs:Class ;
     rdfs:label "Spatial Relation Observation"@en .
 
+stkg:hasPredicate a rdf:Property ;
+    rdfs:domain stkg:PositionObservation ;
+    rdfs:range rdfs:Resource .
+
 stkg:objectEntity a rdf:Property ;
     rdfs:label "object entity"@en ;
     rdfs:domain stkg:SpatialRelationObservation ;

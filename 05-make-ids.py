@@ -22,10 +22,10 @@ Output:
 
 Algorithm:
 - load provisional id mappings
-- remove bad classes from id map
+- keep only renamable instance resources in id map
 - replace subject/object ids in checked facts
 - split facts into entity / observation / relation / meta outputs
-- rename taxonomy as well
+- keep taxonomy as class hierarchy output
 """
 
 import os
@@ -34,6 +34,7 @@ import argparse
 OUTPUT_DEFAULT = "yago-data"
 
 STKG = "http://example.org/stkg/"
+STKGREL = "http://example.org/stkg/relation/"
 OWL_SAMEAS = "http://www.w3.org/2002/07/owl#sameAs"
 RDF_TYPE = "http://www.w3.org/1999/02/22-rdf-syntax-ns#type"
 RDFS_SUBCLASS = "rdfs:subClassOf"
@@ -49,6 +50,7 @@ OBSERVED_ENTITY = STKG + "observedEntity"
 SUBJECT_ENTITY = STKG + "subjectEntity"
 OBJECT_ENTITY = STKG + "objectEntity"
 RELATION_TYPE = STKG + "relationType"
+HAS_PREDICATE = STKG + "hasPredicate"
 TIME = STKG + "time"
 SOURCE_FILE = STKG + "sourceFile"
 SOURCE_ROW = STKG + "sourceRow"
@@ -104,12 +106,42 @@ def load_bad_classes(path):
     return bad
 
 
+def is_renamable_instance_uri(uri: str) -> bool:
+    """
+    Only rename data instance resources, not schema/vocabulary terms.
+
+    Current pipeline-generated instance namespaces:
+    - stkg/platform/...
+    - stkg/obs/...
+    """
+    if not is_uri(uri):
+        return False
+
+    return (
+        uri.startswith(STKG + "platform/")
+        or uri.startswith(STKG + "obs/")
+    )
+
+
+def filter_id_map_to_instances(id_map):
+    filtered = {}
+    for s, o in id_map.items():
+        if is_renamable_instance_uri(s) and is_uri(o):
+            filtered[s] = o
+    return filtered
+
+
 def rename_entity(entity, id_map, bad_classes):
     if not is_uri(entity):
         return entity
 
+    # schema/taxonomy bad classes are never data resources
     if entity in bad_classes:
         return None
+
+    # only rename actual instance URIs
+    if not is_renamable_instance_uri(entity):
+        return entity
 
     if entity in id_map:
         return id_map[entity]
@@ -127,7 +159,17 @@ def classify_fact(s, p, o, subject_types):
         return "meta"
 
     if POSITION_OBS in s_types or SPATIAL_REL_OBS in s_types:
-        if p in {OBSERVED_ENTITY, SUBJECT_ENTITY, OBJECT_ENTITY, RELATION_TYPE, TIME, GEO_LAT, GEO_LONG, RDF_TYPE}:
+        if p in {
+            OBSERVED_ENTITY,
+            SUBJECT_ENTITY,
+            OBJECT_ENTITY,
+            RELATION_TYPE,
+            HAS_PREDICATE,
+            TIME,
+            GEO_LAT,
+            GEO_LONG,
+            RDF_TYPE,
+        }:
             if p == RDF_TYPE and o == SPATIAL_REL_OBS:
                 return "relations"
             if SPATIAL_REL_OBS in s_types:
@@ -156,6 +198,16 @@ def collect_subject_types(facts):
     return subject_types
 
 
+def dedupe_preserve_order(rows):
+    seen = set()
+    out = []
+    for row in rows:
+        if row not in seen:
+            seen.add(row)
+            out.append(row)
+    return out
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--outdir", default=OUTPUT_DEFAULT, help="output directory")
@@ -181,12 +233,14 @@ def main():
 
     print(f"  Loading provisional ids from {in_ids} ...", end="", flush=True)
     id_map = load_id_map(in_ids)
+    id_map = filter_id_map_to_instances(id_map)
     print("done")
 
     print(f"  Loading bad classes from {in_bad_classes} ...", end="", flush=True)
     bad_classes = load_bad_classes(in_bad_classes)
     print("done")
 
+    # defensive: bad classes should not participate in renaming
     for bad in list(bad_classes):
         id_map.pop(bad, None)
 
@@ -231,6 +285,11 @@ def main():
             meta_rows.append((new_s, p, new_o))
     print("done")
 
+    observations_rows = dedupe_preserve_order(observations_rows)
+    relations_rows = dedupe_preserve_order(relations_rows)
+    entity_rows = dedupe_preserve_order(entity_rows)
+    meta_rows = dedupe_preserve_order(meta_rows)
+
     print(f"  Writing observations to {out_observations} ...", end="", flush=True)
     write_tsv(observations_rows, out_observations)
     print("done")
@@ -247,20 +306,14 @@ def main():
     write_tsv(meta_rows, out_meta)
     print("done")
 
-    print(f"  Renaming taxonomy from {in_taxonomy} ...", end="", flush=True)
-    renamed_taxonomy = []
-    for s, p, o in read_tsv(in_taxonomy):
-        new_s = rename_entity(s, id_map, bad_classes)
-        new_o = rename_entity(o, id_map, bad_classes)
-
-        if not new_s or not new_o:
-            continue
-
-        renamed_taxonomy.append((new_s, p, new_o))
+    # taxonomy is class hierarchy, not instance data
+    # so keep it unchanged
+    print(f"  Copying taxonomy from {in_taxonomy} ...", end="", flush=True)
+    final_taxonomy = list(read_tsv(in_taxonomy))
     print("done")
 
     print(f"  Writing final taxonomy to {out_taxonomy} ...", end="", flush=True)
-    write_tsv(renamed_taxonomy, out_taxonomy)
+    write_tsv(final_taxonomy, out_taxonomy)
     print("done")
 
     print(f"  Info: Renamed facts: {len(renamed_facts)}")
@@ -268,7 +321,7 @@ def main():
     print(f"  Info: Relation facts: {len(relations_rows)}")
     print(f"  Info: Entity facts: {len(entity_rows)}")
     print(f"  Info: Meta facts: {len(meta_rows)}")
-    print(f"  Info: Final taxonomy facts: {len(renamed_taxonomy)}")
+    print(f"  Info: Final taxonomy facts: {len(final_taxonomy)}")
 
 
 if __name__ == "__main__":

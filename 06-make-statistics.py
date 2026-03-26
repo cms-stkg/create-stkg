@@ -56,6 +56,7 @@ OBSERVED_ENTITY = str(STKG.observedEntity)
 SUBJECT_ENTITY = str(STKG.subjectEntity)
 OBJECT_ENTITY = str(STKG.objectEntity)
 RELATION_TYPE = str(STKG.relationType)
+HAS_PREDICATE = str(STKG.hasPredicate)
 TIME = str(STKG.time)
 SOURCE_FILE = str(STKG.sourceFile)
 SOURCE_ROW = str(STKG.sourceRow)
@@ -346,6 +347,7 @@ def main():
 
     time_fact_count = predicate_stats.get(TIME, 0)
     relation_type_fact_count = predicate_stats.get(RELATION_TYPE, 0)
+    has_predicate_fact_count = predicate_stats.get(HAS_PREDICATE, 0)
     geo_fact_count = predicate_stats.get(GEO_LAT, 0) + predicate_stats.get(GEO_LONG, 0)
 
     print("  Computing dump size ...", end="", flush=True)
@@ -367,10 +369,14 @@ def main():
     avg_classes_per_instance = (total_classes_per_instance / entity_count) if entity_count else 0.0
     avg_facts_per_resource = (total_facts / entity_count) if entity_count else 0.0
     avg_facts_per_observation = (
-        (predicate_stats.get(TIME, 0) + predicate_stats.get(OBSERVED_ENTITY, 0) +
-         predicate_stats.get(SUBJECT_ENTITY, 0) + predicate_stats.get(OBJECT_ENTITY, 0) +
-         predicate_stats.get(RELATION_TYPE, 0) + predicate_stats.get(GEO_LAT, 0) +
-         predicate_stats.get(GEO_LONG, 0)) / observation_count
+        (predicate_stats.get(TIME, 0)
+         + predicate_stats.get(OBSERVED_ENTITY, 0)
+         + predicate_stats.get(SUBJECT_ENTITY, 0)
+         + predicate_stats.get(OBJECT_ENTITY, 0)
+         + predicate_stats.get(RELATION_TYPE, 0)
+         + predicate_stats.get(HAS_PREDICATE, 0)
+         + predicate_stats.get(GEO_LAT, 0)
+         + predicate_stats.get(GEO_LONG, 0)) / observation_count
         if observation_count else 0.0
     )
 
@@ -396,6 +402,7 @@ def main():
         writer.write("STKG-specific predicate counts:\n")
         writer.write(f"  time: {time_fact_count}\n")
         writer.write(f"  relationType: {relation_type_fact_count}\n")
+        writer.write(f"  hasPredicate: {has_predicate_fact_count}\n")
         writer.write(f"  geo facts (lat+long): {geo_fact_count}\n\n")
 
         writer.write("Predicate counts:\n")
